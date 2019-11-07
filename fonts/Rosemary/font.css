@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Rosemary';
+    src: url('https://rodcordeiro.github.io/shares/fonts/Rosemary/Rosemary.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Rosemary/Rosemary.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Rosemary/Rosemary.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/Rosemary/Rosemary.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/Rosemary/Rosemary.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Rosemary/Rosemary.svg#Rosemary') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

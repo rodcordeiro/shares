@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Plane Crash';
+  src: url('https://rodcordeiro.github.io/shares/fonts/plane_crash/Plane%20Crash.eot');
+  src: url('https://rodcordeiro.github.io/shares/fonts/plane_crash/Plane%20Crash.woff2') format('woff2'),
+       url('https://rodcordeiro.github.io/shares/fonts/plane_crash/Plane%20Crash.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://rodcordeiro.github.io/shares/fonts/plane_crash/PlaneCrash.woff') format('woff'),
+       url('https://rodcordeiro.github.io/shares/fonts/plane_crash/PlaneCrash.ttf') format('truetype'),
+       url('https://rodcordeiro.github.io/shares/fonts/plane_crash/PlaneCrash.svg#PlaneCrash') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

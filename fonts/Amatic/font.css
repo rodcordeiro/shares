@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Amatic';
+    src: url('https://rodcordeiro.github.io/shares/fonts/Amatic/Amatic.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Amatic/Amatic.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Amatic/Amatic.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/Amatic/Amatic.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/Amatic/Amatic.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Amatic/Amatic.svg#Amatic') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+

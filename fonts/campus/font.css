@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'CAMPUSPERSONALUSE';
+  src: url('https://rodcordeiro.github.io/shares/fonts/campus/CAMPUSPERSONALUSE.woff') format('woff'),
+       url('https://rodcordeiro.github.io/shares/fonts/campus/CAMPUSPERSONALUSE.ttf') format('truetype'),
+       url('https://rodcordeiro.github.io/shares/fonts/campus/CAMPUSPERSONALUSE.svg#CAMPUSPERSONALUSE') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://rodcordeiro.github.io/shares/fonts/campus/campus.eot');
+  src: url('https://rodcordeiro.github.io/shares/fonts/campus/campus.woff2') format('woff2'),
+       url('https://rodcordeiro.github.io/shares/fonts/campus/campus.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Square721 BT';
+    src: url('https://rodcordeiro.github.io/shares/fonts/Square721BT-Roman/Square721BT-Roman/Square721BT-Roman.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Square721BT-Roman/Square721BT-Roman.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Square721BT-Roman/Square721BT-Roman.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/Square721BT-Roman/Square721BT-Roman.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/Square721BT-Roman/Square721BT-Roman.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Square721BT-Roman/Square721BT-Roman.svg#Square721BT-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Tengwar Annatar';
+    src: url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-BoldItalic.eot');
+    src: local('Tengwar Annatar Bold Italic'), local('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-BoldItalic'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-BoldItalic.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-BoldItalic.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-BoldItalic.svg#TengwarAnnatar-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Tengwar Annatar';
+    src: url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar.eot');
+    src: local('Tengwar Annatar'), local('TengwarAnnatar'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar.svg#TengwarAnnatar') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tengwar Annatar';
+    src: url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Italic.eot');
+    src: local('Tengwar Annatar Italic'), local('TengwarAnnatar-Italic'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Italic.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Italic.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Italic.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Italic.svg#TengwarAnnatar-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Tengwar Annatar';
+    src: url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Bold.eot');
+    src: local('Tengwar Annatar Bold'), local('TengwarAnnatar-Bold'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Bold.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Bold.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/tengwar_annatar/TengwarAnnatar-Bold.svg#TengwarAnnatar-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+

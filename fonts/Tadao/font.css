@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'TadaoW00';
+    src: url('https://rodcordeiro.github.io/shares/fonts/Tadao/TadaoW00-Bold.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Tadao/TadaoW00-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Tadao/TadaoW00-Bold.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/Tadao/TadaoW00-Bold.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/Tadao/TadaoW00-Bold.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Tadao/TadaoW00-Bold.svg#TadaoW00-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+

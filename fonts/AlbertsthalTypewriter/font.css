@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'Albertsthal Typewriter';
+	src: url('https://rodcordeiro.github.io/shares/fonts/AlbertsthalTypewriter/AlbertsthalTypewriter.eot');
+	src: url('https://rodcordeiro.github.io/shares/fonts/AlbertsthalTypewriter/AlbertsthalTypewriter.woff2') format('woff2'),   
+	url('Albertsthal Typewriter.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;	
+	src: url('https://rodcordeiro.github.io/shares/fonts/AlbertsthalTypewriter/AlbertsthalTypewriter.woff') format('woff'),
+	url('https://rodcordeiro.github.io/shares/fonts/AlbertsthalTypewriter/AlbertsthalTypewriter.ttf') format('truetype'),
+	url('https://rodcordeiro.github.io/shares/fonts/AlbertsthalTypewriter/AlbertsthalTypewriter.svg#AlbertsthalTypewriter') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+

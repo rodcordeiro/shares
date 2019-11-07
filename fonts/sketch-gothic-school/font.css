@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Sketch Gothic School';
+  src: url('https://rodcordeiro.github.io/shares/fonts/sketch-gothic-school/SketchGothicSchool.eot');
+  src: url('https://rodcordeiro.github.io/shares/fonts/sketch-gothic-school/SketchGothicSchool.woff2') format('woff2'),
+       url('https://rodcordeiro.github.io/shares/fonts/sketch-gothic-school/SketchGothicSchool.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://rodcordeiro.github.io/shares/fonts/sketch-gothic-school/SketchGothicSchool.woff') format('woff'),
+       url('https://rodcordeiro.github.io/shares/fonts/sketch-gothic-school/SketchGothicSchool.ttf') format('truetype'),
+       url('https://rodcordeiro.github.io/shares/fonts/sketch-gothic-school/SketchGothicSchool.svg#SketchGothicSchool') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

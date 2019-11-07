@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Vtc-NueTattooScript';
+    src: url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript.eot');
+    src: local('Vtc-NueTattooScript'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript.svg#Vtc-NueTattooScript') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript_1.eot');
+    src: local('Vtc-NueTattooScript'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript_1.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript_1.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript_1.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript_1.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/vtc-nuetattooscript/Vtc-NueTattooScript_1.svg#Vtc-NueTattooScript') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

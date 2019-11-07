@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Antishbusy';
+    src: url('https://rodcordeiro.github.io/shares/fonts/Antishbusy/Antishbusy.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Antishbusy/Antishbusy.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Antishbusy/Antishbusy.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/Antishbusy/Antishbusy.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/Antishbusy/Antishbusy.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Antishbusy/Antishbusy.svg#Antishbusy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

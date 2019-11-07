@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'MoviePosterPersonalUse';
+  src: url('https://rodcordeiro.github.io/shares/fonts/movie_poster/MoviePosterPersonalUse.woff') format('woff'),
+  url('https://rodcordeiro.github.io/shares/fonts/movie_poster/MoviePosterPersonalUse.ttf') format('truetype'),
+       url('https://rodcordeiro.github.io/shares/fonts/movie_poster/MoviePosterPersonalUse.svg#MoviePosterPersonalUse') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://rodcordeiro.github.io/shares/fonts/movie_poster/movieposter.eot');
+  src: url('https://rodcordeiro.github.io/shares/fonts/movie_poster/movieposter.woff2') format('woff2'),
+       url('https://rodcordeiro.github.io/shares/fonts/movie_poster/movieposter.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

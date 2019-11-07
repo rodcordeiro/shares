@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Daedra';
+  src: url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra.eot');
+  src: url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra.woff2') format('woff2'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra.woff') format('woff'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra.ttf') format('truetype'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra.svg#Daedra') format('svg'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Daedra-Bold';
+  src: url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Bold.eot');
+  src: url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Bold.woff2') format('woff2'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Bold.woff') format('woff'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Bold.ttf') format('truetype'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Bold.svg#Daedra-Bold') format('svg'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Daedra-BoldItalic';
+  src: url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-BoldItalic.eot');
+  src: url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-BoldItalic.woff2') format('woff2'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-BoldItalic.woff') format('woff'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-BoldItalic.ttf') format('truetype'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-BoldItalic.svg#Daedra-BoldItalic') format('svg'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-BoldItalic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Daedra-Italic';
+  src: url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Italic.eot');
+  src: url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Italic.woff2') format('woff2'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Italic.woff') format('woff'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Italic.ttf') format('truetype'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Italic.svg#Daedra-Italic') format('svg'),
+       url('https://rodcordeiro.github.io/shares/fonts/daedra/Daedra-Italic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

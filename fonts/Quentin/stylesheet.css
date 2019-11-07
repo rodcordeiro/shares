@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Quentin';
+    src: url('Quentin.eot');
+    src: url('Quentin.eot?#iefix') format('embedded-opentype'),
+        url('Quentin.woff2') format('woff2'),
+        url('Quentin.woff') format('woff'),
+        url('Quentin.ttf') format('truetype'),
+        url('Quentin.svg#Quentin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

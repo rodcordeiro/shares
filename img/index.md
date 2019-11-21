@@ -1,4 +1,3 @@
-# SHARES
 # Images
 This folder of the repo keeps all the image files
 

@@ -1,4 +1,3 @@
-# SHARES
 # Fonts
 This folder of the repo keeps all the special fonts that I use, like Aurebesh ([see it here](https://rodcordeiro.github.io/Projects/Aurebesh/index.html))
 

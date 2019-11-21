@@ -1,4 +1,3 @@
-# SHARES
 # Audio
 This folder of the repo keeps all the audio files
 

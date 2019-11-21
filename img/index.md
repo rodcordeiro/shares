@@ -3,22 +3,22 @@
 This folder of the repo keeps all the image files
 
 ---------------------------
-[avatar.png](avatar.png)
-[basket.jpg](basket.jpg)
-[city.jpg](city.jpg)
-[codigo.png](codigo.png)
-[estudante.jpg](estudante.jpg)
-[freira.jpg](freira.jpg)
-[galaxia1.jpg](galaxia1.jpg)
-[galaxia2.jpg](galaxia2.jpg)
-[logo.png](logo.png)
-[logo_branco.png](logo_branco.png)
-[luke.png](luke.png)
-[projeto_x.png](projeto_x.png)
-[RC.png](RC.png)
-[RC-W.png](RC-W.png)
-[Rosa.jpg](Rosa.jpg)
-[vmask_troopers.jpg](vmask_troopers.jpg)
+[avatar.png](avatar.png)<br>
+[basket.jpg](basket.jpg)<br>
+[city.jpg](city.jpg)<br>
+[codigo.png](codigo.png)<br>
+[estudante.jpg](estudante.jpg)<br>
+[freira.jpg](freira.jpg)<br>
+[galaxia1.jpg](galaxia1.jpg)<br>
+[galaxia2.jpg](galaxia2.jpg)<br>
+[logo_branco.png](logo_branco.png)<br>
+[logo.png](logo.png)<br>
+[luke.png](luke.png)<br>
+[projeto_x.png](projeto_x.png)<br>
+[RC.png](RC.png)<br>
+[RC-W.png](RC-W.png)<br>
+[Rosa.jpg](Rosa.jpg)<br>
+[vmask_troopers.jpg](vmask_troopers.jpg)<br>
 
 ---------------------------
 

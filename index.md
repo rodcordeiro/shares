@@ -10,7 +10,6 @@ This repo keeps all kind of files that I use on my web projects, like audios, im
 [img](img)<br>
 [node_modules](node_modules)<br>
 [scripts](scripts)<br>
-[teste.sh](teste.sh)<br>
 
 ---------------------------
 

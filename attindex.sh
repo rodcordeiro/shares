@@ -147,7 +147,7 @@ echo "[back](../)" >> index.md
 #*******************************************************
 # cmd
 cd cmd
-echo "Atualizando Scripts/"
+echo "Atualizando CMD/"
 echo "# Scripts > CMD" > index.md
 echo "This folder of the repo keeps all the batch scripts" >> index.md
 echo "" >> index.md
@@ -165,7 +165,7 @@ cd ..
 #*******************************************************
 # Shell
 cd sh
-echo "Atualizando Scripts/"
+echo "Atualizando Shell/"
 echo "# Scripts > Shell" > index.md
 echo "This folder of the repo keeps all the shell scripts" >> index.md
 echo "" >> index.md
@@ -179,4 +179,24 @@ echo "" >> index.md
 echo "---------------------------" >> index.md
 echo "" >> index.md
 echo "[back](../)" >> index.md
+cd ..
+#*******************************************************
+# Python
+cd py
+echo "Atualizando Python/"
+echo "# Scripts > Python" > index.md
+echo "This folder of the repo keeps all the python scripts" >> index.md
+echo "" >> index.md
+echo "---------------------------" >> index.md
+	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	for i in ${ls}; do
+		echo "[${i}](${i})<br>">> index.md
+	done
 
+echo "" >> index.md
+echo "---------------------------" >> index.md
+echo "" >> index.md
+echo "[back](../)" >> index.md
+cd ..
+
+cd ..

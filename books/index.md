@@ -9,9 +9,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [gallifreyan.pdf](gallifreyan.pdf)<br>
 [HowToCodeInHTML5AndCSS3.pdf](HowToCodeInHTML5AndCSS3.pdf)<br>
 [KaliLinuxIntrusionandExploitationCookbook.epub](KaliLinuxIntrusionandExploitationCookbook.epub)<br>
-[Linux_](Linux_)<br>
-[A](A)<br>
-[Biblia.pdf](Biblia.pdf)<br>
+[Linux_A_Biblia.pdf](Linux_A_Biblia.pdf)<br>
 [Php-Programando_Com_Orientação_a_Objetos-1.pdf](Php-Programando_Com_Orientação_a_Objetos-1.pdf)<br>
 [smacss-2012-08-21.pdf](smacss-2012-08-21.pdf)<br>
 [the-pfsense-book.epub](the-pfsense-book.epub)<br>

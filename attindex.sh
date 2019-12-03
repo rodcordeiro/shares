@@ -198,5 +198,24 @@ echo "---------------------------" >> index.md
 echo "" >> index.md
 echo "[back](../)" >> index.md
 cd ..
+#*******************************************************
+# SQL
+cd sql
+echo "Atualizando SQL/"
+echo "# Scripts > SQL" > index.md
+echo "This folder of the repo keeps all the SQL scripts" >> index.md
+./files.sh
+echo "" >> index.md
+echo "---------------------------" >> index.md
+	ls=`ls -1 --hide=readme.md --hide=att.sh --hide=files.sh | sort`
+	for i in ${ls}; do
+		echo "[${i}](${i})<br>">> index.md
+	done
+
+echo "" >> index.md
+echo "---------------------------" >> index.md
+echo "" >> index.md
+echo "[back](../)" >> index.md
+cd ..
 
 cd ..

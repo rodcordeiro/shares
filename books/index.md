@@ -13,6 +13,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [gallifreyan.pdf](gallifreyan.pdf)<br>
 [HowToCodeInHTML5AndCSS3.pdf](HowToCodeInHTML5AndCSS3.pdf)<br>
 [index.md](index.md)<br>
+[Instalacao_configuracao_windows.pdf](Instalacao_configuracao_windows.pdf)<br>
 [Introducing_InnoDB_Cluster.pdf](Introducing_InnoDB_Cluster.pdf)<br>
 [Java-Como_Programar.pdf](Java-Como_Programar.pdf)<br>
 [KaliLinuxIntrusionandExploitationCookbook.epub](KaliLinuxIntrusionandExploitationCookbook.epub)<br>
@@ -24,7 +25,6 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Penetration_Testing_with_the_Bash_shell.pdf](Penetration_Testing_with_the_Bash_shell.pdf)<br>
 [Php-Programando_Com_Orientação_a_Objetos-1.pdf](Php-Programando_Com_Orientação_a_Objetos-1.pdf)<br>
 [Professional_LAMP.pdf](Professional_LAMP.pdf)<br>
-[Python_Ava_1.pdf](Python_Ava_1.pdf)<br>
 [Python_Ava_10.pdf](Python_Ava_10.pdf)<br>
 [Python_Ava_11.pdf](Python_Ava_11.pdf)<br>
 [Python_Ava_12.pdf](Python_Ava_12.pdf)<br>
@@ -34,6 +34,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Python_Ava_16.pdf](Python_Ava_16.pdf)<br>
 [Python_Ava_17.pdf](Python_Ava_17.pdf)<br>
 [Python_Ava_18.pdf](Python_Ava_18.pdf)<br>
+[Python_Ava_1.pdf](Python_Ava_1.pdf)<br>
 [Python_Ava_2.pdf](Python_Ava_2.pdf)<br>
 [Python_Ava_3.pdf](Python_Ava_3.pdf)<br>
 [Python_Ava_4.pdf](Python_Ava_4.pdf)<br>

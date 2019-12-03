@@ -3,6 +3,7 @@ This folder of the repo keeps all the scripts that I use, including bash, pyton,
 
 ---------------------------
 [cmd](cmd)<br>
+[index.md](index.md)<br>
 [py](py)<br>
 [sh](sh)<br>
 

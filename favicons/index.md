@@ -11,6 +11,7 @@ This folder of the repo keeps all the favicons that I use on my personal project
 [favicon-rod](favicon-rod)<br>
 [icnt](icnt)<br>
 [imperio](imperio)<br>
+[index.md](index.md)<br>
 [map](map)<br>
 [speed](speed)<br>
 

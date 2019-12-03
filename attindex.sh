@@ -6,7 +6,7 @@ echo "# SHARES" > index.md
 echo "This repo keeps all kind of files that I use on my web projects, like audios, images, docs, fonts, scripts, etc." >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -23,7 +23,7 @@ echo "# Audio" > index.md
 echo "This folder of the repo keeps all the audio files" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -43,7 +43,7 @@ echo "# Images" > index.md
 echo "This folder of the repo keeps all the image files" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -61,7 +61,7 @@ echo "# Books" > index.md
 echo "This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -80,7 +80,7 @@ echo "# Favicons" >> index.md
 echo "This folder of the repo keeps all the favicons that I use on my personal projects" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -98,7 +98,7 @@ echo "# Docs" > index.md
 echo "This folder of the repo keeps all the files and docs used on my projects (like vcards)" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -116,7 +116,7 @@ echo "# Fonts" > index.md
 echo "This folder of the repo keeps all the special fonts that I use, like Aurebesh ([see it here](https://rodcordeiro.github.io/Projects/Aurebesh/index.html))" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -134,7 +134,7 @@ echo "# Scripts" > index.md
 echo "This folder of the repo keeps all the scripts that I use, including bash, pyton, cmd, js" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -152,7 +152,7 @@ echo "# Scripts > CMD" > index.md
 echo "This folder of the repo keeps all the batch scripts" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -170,7 +170,7 @@ echo "# Scripts > Shell" > index.md
 echo "This folder of the repo keeps all the shell scripts" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -188,7 +188,7 @@ echo "# Scripts > Python" > index.md
 echo "This folder of the repo keeps all the python scripts" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=attindex.sh`
+	ls=`ls -1 --hide=readme.md --hide=att.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done

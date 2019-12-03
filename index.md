@@ -10,7 +10,6 @@ This repo keeps all kind of files that I use on my web projects, like audios, im
 [files](files)<br>
 [fonts](fonts)<br>
 [img](img)<br>
-[index.md](index.md)<br>
 [node_modules](node_modules)<br>
 [rodrigocordeiro.com.br_2019-11-27_17-51-16.html](rodrigocordeiro.com.br_2019-11-27_17-51-16.html)<br>
 [scripts](scripts)<br>

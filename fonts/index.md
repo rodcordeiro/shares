@@ -8,7 +8,6 @@ This folder of the repo keeps all the special fonts that I use, like Aurebesh ([
 [Aurebesh](Aurebesh)<br>
 [campus](campus)<br>
 [daedra](daedra)<br>
-[index.md](index.md)<br>
 [movie_poster](movie_poster)<br>
 [plane_crash](plane_crash)<br>
 [Quentin](Quentin)<br>

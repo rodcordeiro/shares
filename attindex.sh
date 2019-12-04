@@ -153,11 +153,10 @@ echo "# Scripts > CMD" > index.md
 echo "This folder of the repo keeps all the batch scripts" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=*.sh | sort`
+	ls=`ls -1 --hide=index.md --hide=*.sh --hide=*.cmd --hide=*.bat | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
-
 echo "" >> index.md
 echo "---------------------------" >> index.md
 echo "" >> index.md

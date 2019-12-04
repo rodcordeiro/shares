@@ -7,6 +7,7 @@ arquivo=`cat ${a}`
 echo  "<!DOCTYPE html>" >>${a}.html
 echo  "<html>" >>${a}.html
 echo  "<head>" >>${a}.html
+echo  "<meta charset='utf-8'>" >>${a}.html
 echo  "<title>${a} | Cordeiro's DEV</title>" >>${a}.html
 echo  "<link rel='stylesheet' href='https://rodcordeiro.github.io/Depdevs/referencias/highlightjs/teste_estilo.css'>" >>${a}.html
 echo  "<script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js'></script>" >>${a}.html

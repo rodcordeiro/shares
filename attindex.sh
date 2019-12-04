@@ -6,7 +6,7 @@ echo "# SHARES" > index.md
 echo "This repo keeps all kind of files that I use on my web projects, like audios, images, docs, fonts, scripts, etc." >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh | sort`
+	ls=`ls -1 --hide=index.md --hide=*.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done

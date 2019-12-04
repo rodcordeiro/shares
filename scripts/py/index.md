@@ -2,10 +2,10 @@
 This folder of the repo keeps all the python scripts
 
 ---------------------------
-[condicional_if.py](condicional_if.py)<br>
-[helloWorld.py](helloWorld.py)<br>
-[variaveis.py](variaveis.py)<br>
-[while.py](while.py)<br>
+[condicional_if.py.html](condicional_if.py.html)<br>
+[helloWorld.py.html](helloWorld.py.html)<br>
+[variaveis.py.html](variaveis.py.html)<br>
+[while.py.html](while.py.html)<br>
 
 ---------------------------
 

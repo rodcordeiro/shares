@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>aptget.sh | Cordeiro's DEV</title>
+<link rel='stylesheet' href='https://rodcordeiro.github.io/Depdevs/referencias/highlightjs/teste_estilo.css'>
+<script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js'></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<h3><a href='aptget.sh' download='aptget.sh'>Download item</a>  |  <a href='../'>Voltar<a/></h3>
+<div>
+<pre><code class='bash'>
+#!/bin/sh
+
+echo "Nao esqueca de executar como root"
+
+apt-get update
+apt-get upgrade
+
+apt-get check
+apt-get --fix-missing install
+apt-get dist-upgrade
+apt-get update
+apt-get upgrade
+apt-get autoremove
+apt-get autoclean
+</code></pre>
+</div>
+</body>
+</html>

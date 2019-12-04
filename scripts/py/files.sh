@@ -1,7 +1,7 @@
 #!/bin/sh
 rm *.html 
 rm *md
-ls=`ls --hide=files.sh`
+ls=`ls --hide=*.sh`
 for a in ${ls}; do
 arquivo=`cat ${a}`
 echo  "<!DOCTYPE html>" >>${a}.html
@@ -16,7 +16,7 @@ echo  "</head>" >>${a}.html
 echo  "<body>" >>${a}.html
 echo "<h3><a href='${a}' download='${a}'>Download item</a>  |  <a href='../'>Voltar<a/></h3>">>${a}.html
 echo  "<div>" >>${a}.html
-echo  "<pre><code class='sql'>" >>${a}.html
+echo  "<pre><code class='python'>" >>${a}.html
 echo  "${arquivo}" >>${a}.html
 echo  "</code></pre>" >>${a}.html
 echo  "</div>" >>${a}.html

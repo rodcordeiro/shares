@@ -152,7 +152,7 @@ echo "# Scripts > CMD" > index.md
 echo "This folder of the repo keeps all the batch scripts" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh | sort`
+	ls=`ls -1 --hide=index.md --hide=att.sh  --hide=files.sh| sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -166,11 +166,12 @@ cd ..
 # Shell
 cd sh
 echo "Atualizando Shell/"
+./files.sh
 echo "# Scripts > Shell" > index.md
 echo "This folder of the repo keeps all the shell scripts" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh | sort`
+	ls=`ls -1 --hide=index.md --hide=*.sh | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -184,11 +185,12 @@ cd ..
 # Python
 cd py
 echo "Atualizando Python/"
+./files.sh
 echo "# Scripts > Python" > index.md
 echo "This folder of the repo keeps all the python scripts" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh | sort`
+	ls=`ls -1 --hide=index.md --hide=*.sh --hide=*.py | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done
@@ -202,12 +204,12 @@ cd ..
 # SQL
 cd sql
 echo "Atualizando SQL/"
+./files.sh
 echo "# Scripts > SQL" > index.md
 echo "This folder of the repo keeps all the SQL scripts" >> index.md
-./files.sh
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh --hide=files.sh | sort`
+	ls=`ls -1 --hide=index.md --hide=files.sh --hide=*.sql | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done

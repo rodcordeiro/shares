@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rename.sh | Cordeiro's DEV</title>
+<link rel='stylesheet' href='https://rodcordeiro.github.io/Depdevs/referencias/highlightjs/teste_estilo.css'>
+<script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js'></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<h3><a href='rename.sh' download='rename.sh'>Download item</a>  |  <a href='../'>Voltar<a/></h3>
+<div>
+<pre><code class='bash'>
+#!/bin/sh
+ls=`ls --hide=rename.sh`
+a=0
+for i in ${ls}; do
+	a=$(($a + 1))
+	mv ${i} "Python_Ava_${a}"
+done
+ls -1 --hide=rename.sh
+</code></pre>
+</div>
+</body>
+</html>

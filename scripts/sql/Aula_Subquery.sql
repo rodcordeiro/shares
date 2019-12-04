@@ -109,3 +109,5 @@ select * from funcionario where departamento in (select nome from departamento);
 
 
 Select a.nome, a.uf, b.id_pedido, b.valor from cliente a inner JOIN pedido b on a.id_cliente = b.id_cliente;
+
+select a.id_pedido,d.nome, a.valor, b.nome, b.preco from item_pedido c inner JOIN pedido a on c.id_pedido = a.id_pedido inner JOIN produto b on c.id_produto = b.id_produto  inner join cliente d on d.id_cliente = a.id_cliente order by a.id_pedido ASC;

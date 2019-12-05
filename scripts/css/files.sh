@@ -15,7 +15,7 @@ echo  "<script>hljs.initHighlightingOnLoad();</script>" >>${a}.html
 echo  "" >>${a}.html
 echo  "</head>" >>${a}.html
 echo  "<body>" >>${a}.html
-echo "<h3><a href='${a}' download='${a}'>Download item</a>  |  <a href='./'>Voltar<a/></h3>">>${a}.html
+echo "<h3><a href='${a}'>Download item</a>  |  <a href='./'>Voltar<a/></h3>">>${a}.html
 echo  "<div>" >>${a}.html
 echo  "<pre><code class='css'>" >>${a}.html
 echo  "${arquivo}" >>${a}.html

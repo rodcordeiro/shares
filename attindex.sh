@@ -228,7 +228,7 @@ echo "# Scripts > CSS" > index.md
 echo "This folder of the repo keeps all the css files shared between projects" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=files.sh --hide=*.sql | sort`
+	ls=`ls -1 --hide=index.md --hide=files.sh --hide=*.css | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done

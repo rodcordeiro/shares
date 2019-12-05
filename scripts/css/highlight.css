@@ -29,7 +29,7 @@ code{
 }
 
 .hljs-comment {
-    color: #888888
+    color: #25c6c6
 }
 
 .hljs-keyword,
@@ -76,7 +76,7 @@ code{
 .hljs-bullet,
 .hljs-code,
 .hljs-addition {
-    color: #25c6c6
+    color: #888888
 }
 
 .hljs-meta-string {

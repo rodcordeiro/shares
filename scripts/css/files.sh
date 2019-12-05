@@ -9,7 +9,7 @@ echo  "<html>" >>${a}.html
 echo  "<head>" >>${a}.html
 echo  "<meta charset='utf-8'>" >>${a}.html
 echo  "<title>${a} | Cordeiro's DEV</title>" >>${a}.html
-echo  "<link rel='stylesheet' href='https://raw.githubusercontent.com/rodcordeiro/Depdevs/master/referencias/Templates/highlightjs/teste_estilo.css'>" >>${a}.html
+echo  "<link rel='stylesheet' href='https://rodcordeiro.github.io/shares/scripts/css/highlight.css'>" >>${a}.html
 echo  "<script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js'></script>" >>${a}.html
 echo  "<script>hljs.initHighlightingOnLoad();</script>" >>${a}.html
 echo  "" >>${a}.html

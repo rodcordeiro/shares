@@ -3,6 +3,7 @@ import sys
 import dns.resolver
 argumentos = sys.argv
 dominios = []
+dominiosv = []
 
 try:
 	dominio = argumentos[1]
@@ -30,9 +31,16 @@ for linha in linhas:
 			dominios.append(subdominio)
 			pass
 	except:
-			pass
+		dominiosv.append(subdominio)
+		pass
 
 print("Dominios com retorno: ")
 for dom in dominios:
 	print(dom)
+	
+print("")
+print("Dominios sem retorno: ")
+for dom in dominiosv:
+	print(dom)
+
 sys.exit(1)

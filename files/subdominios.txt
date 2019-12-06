@@ -1,0 +1,7 @@
+www
+administrador
+admin
+panel
+painel
+dashboard
+webmail

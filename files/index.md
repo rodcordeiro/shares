@@ -3,6 +3,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 
 ---------------------------
 [rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
+[subdominios.txt](subdominios.txt)<br>
 
 ---------------------------
 

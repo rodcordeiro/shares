@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>dnsbruteforce.py | Cordeiro's DEV</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>	
+<link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-152x152.png'>
+<link rel='apple-touch-icon' sizes='180x180' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-180x180.png'>
+<link rel='icon' type='image/png' sizes='192x192'  href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/android-icon-192x192.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='96x96' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/favicon-96x96.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/favicon-16x16.png'>
+<link rel='manifest' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/manifest.json'>
+<meta name='msapplication-TileColor' content='#CCCCCC'>
+<meta name='msapplication-TileImage' content='https://rodcordeiro.github.io/shares/favicons/favicon-rc/ms-icon-144x144.png'>
+<link rel='stylesheet' href='https://rodcordeiro.github.io/shares/scripts/css/highlight.css'>
+<script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js'></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<h3><a href='dnsbruteforce.py' download='dnsbruteforce.py'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<div>
+<pre><code class='python'>
+# -*- coding: utf-8 -*-
+import sys
+import dns.resolver
+argumentos = sys.argv
+dominios = []
+
+try:
+	dominio = argumentos[1]
+except:
+	print("Faltam argumentos no comando! A syntaxe é dnbrute.py dominio.com listaSubdominios.txt")
+	sys.exit(1)
+
+try:
+	arquivo = open("subdominios.txt")
+	linhas = arquivo.read().splitlines()
+except:
+	print("Arquivo nao encontrado ou invalido")
+	sys.exit(1)
+
+for linha in linhas:
+	subdominio = linha + "." + dominio
+	try:
+		respostas = dns.resolver.query(subdominio,'a')
+
+		for resultado in respostas:
+			print("-------------------------------------")
+			print("--->  " + subdominio)
+			print(subdominio,resultado)
+			print("")
+			dominios.append(subdominio)
+			pass
+	except:
+			pass
+
+print("Dominios com retorno: ")
+for dom in dominios:
+	print(dom)
+sys.exit(1)
+</code></pre>
+</div>
+</body>
+</html>

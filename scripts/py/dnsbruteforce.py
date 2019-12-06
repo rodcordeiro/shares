@@ -8,7 +8,7 @@ dominiosv = []
 try:
 	dominio = argumentos[1]
 except:
-	print("Faltam argumentos no comando! A syntaxe é dnbrute.py dominio.com listaSubdominios.txt")
+	print("Faltam argumentos no comando! A syntaxe é dnsbruteforce.py dominio.com")
 	sys.exit(1)
 
 try:
@@ -22,22 +22,21 @@ for linha in linhas:
 	subdominio = linha + "." + dominio
 	try:
 		respostas = dns.resolver.query(subdominio,'a')
-
+		print("-------------------------------------")
+		print("--->  " + subdominio)
 		for resultado in respostas:
-			print("-------------------------------------")
-			print("--->  " + subdominio)
+			dominios.append(resultado)
 			print(subdominio,resultado)
-			print("")
-			dominios.append(subdominio)
 			pass
 	except:
 		dominiosv.append(subdominio)
 		pass
 
-print("Dominios com retorno: ")
+print("")
+print("Retorno: ")
 for dom in dominios:
 	print(dom)
-	
+
 print("")
 print("Dominios sem retorno: ")
 for dom in dominiosv:

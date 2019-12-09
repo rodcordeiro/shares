@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>create_readme.sh | Cordeiro's DEV</title>
+<title>teste.txt | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-60x60.png'>
@@ -26,37 +26,16 @@
 
 </head>
 <body>
-<h3><a href='create_readme.sh' download='create_readme.sh'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='teste.txt' download='teste.txt'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
 <pre><code class='bash'>
-#!/bin/sh
-echo "# Scripts Bash" > readme.md
-echo "This folder of the repo keeps all the scripts in bash" >> readme.md
-echo "" >> readme.md
-echo "---------------------------" >> readme.md
-ls=`ls -1`
-for a in ${ls}; do
-	if [ -d ${a} ]; then
-		echo ${a}
-		echo "[${a}](${a}) <br>" >>readme.md
-		cd ${a}
-		rm readme.md
-		ls=`ls -1 --hide=readme.md --hide=att.sh`
-		for a in ${ls}; do
-			echo "[${a}](${a}) <br>" >>readme.md
-		done	
-		echo "">>readme.md
-		echo "----------------------">>readme.md
-		echo "[back](../)">>readme.md
-		cd ..	
-	else
-		echo "[${a}](${a}) <br>" >>readme.md
-	fi
-done	
-echo "">>readme.md
-echo "----------------------">>readme.md
-echo "[back](../)">>readme.md
-cd ..
+Este é apenas um testo de exemplo
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </code></pre>
 </div>
 </body>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>create_readme.sh | Cordeiro's DEV</title>
+<title>portscan.py | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/favicon-rc/apple-icon-60x60.png'>
@@ -26,37 +26,38 @@
 
 </head>
 <body>
-<h3><a href='create_readme.sh' download='create_readme.sh'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='portscan.py' download='portscan.py'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='bash'>
-#!/bin/sh
-echo "# Scripts Bash" > readme.md
-echo "This folder of the repo keeps all the scripts in bash" >> readme.md
-echo "" >> readme.md
-echo "---------------------------" >> readme.md
-ls=`ls -1`
-for a in ${ls}; do
-	if [ -d ${a} ]; then
-		echo ${a}
-		echo "[${a}](${a}) <br>" >>readme.md
-		cd ${a}
-		rm readme.md
-		ls=`ls -1 --hide=readme.md --hide=att.sh`
-		for a in ${ls}; do
-			echo "[${a}](${a}) <br>" >>readme.md
-		done	
-		echo "">>readme.md
-		echo "----------------------">>readme.md
-		echo "[back](../)">>readme.md
-		cd ..	
-	else
-		echo "[${a}](${a}) <br>" >>readme.md
-	fi
-done	
-echo "">>readme.md
-echo "----------------------">>readme.md
-echo "[back](../)">>readme.md
-cd ..
+<pre><code class='python'>
+# -*- Coding: utf-8 -*-
+import socket
+import sys
+argumento = sys.argv
+portas = [80,8080,443,8443,21,23,110,587,143,993]
+
+try:
+	dominio = argumento[1]
+	arquivo = open("Documentos/" + dominio + "/"+dominio+".txt","r")
+	linhas = arquivo.readlines()
+	arquivo.close()
+except:
+	print "A syntaxe correta e python portscan.py dominio.com"
+file = dominio+".txt"
+arquivo = open("Documentos/" + dominio + "/" + file,"a")
+for linha in linhas:
+	print ""
+	print "---"
+	print "Testando o "+linha
+	for porta in portas:
+		cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		cliente.settimeout(1)
+		codigo = cliente.connect_ex((linha, porta))
+		if codigo == 0:
+			print porta, "Open"
+			arquivo.write(str(linha) + " " + str(porta) + "
+")
+
+sys.exit(1)
 </code></pre>
 </div>
 </body>

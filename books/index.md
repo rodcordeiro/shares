@@ -44,6 +44,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Python_Ava_9.pdf](Python_Ava_9.pdf)<br>
 [smacss-2012-08-21.pdf](smacss-2012-08-21.pdf)<br>
 [the-pfsense-book.epub](the-pfsense-book.epub)<br>
+[Web_Penetration_Testing_Kali_Linux_PT_BR.pdf](Web_Penetration_Testing_Kali_Linux_PT_BR.pdf)<br>
 [WorkshopAprenderaProgramar.pdf](WorkshopAprenderaProgramar.pdf)<br>
 [wsu-css-cheat-sheet.pdf](wsu-css-cheat-sheet.pdf)<br>
 

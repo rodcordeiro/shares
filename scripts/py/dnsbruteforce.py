@@ -35,7 +35,7 @@ for linha in linhas:
 print("")
 print("Retorno: ")
 arquivo_nome = dominio + ".txt"
-arquivo = open("Documentos/"+arquivo_nome, "w")
+arquivo = open("Documentos/"+dominio+"/"+arquivo_nome, "w")
 for dom in dominios:
 	print(dom)
 	dom = str(dom)

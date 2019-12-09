@@ -70,8 +70,7 @@ arquivo = open("Documentos/"+dominio+"/"+arquivo_nome, "w")
 for dom in dominios:
 	print(dom)
 	dom = str(dom)
-	arquivo.write(dom+"
-")
+	arquivo.write(dom+"\n")
 print("")
 arquivo.close()
 print("Dominios sem retorno: ")

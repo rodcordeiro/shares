@@ -10,8 +10,6 @@ This folder of the repo keeps all the shell scripts
 [ip.sh.html](ip.sh.html)<br>
 [nbs.sh.html](nbs.sh.html)<br>
 [rename.sh.html](rename.sh.html)<br>
-[teste.txt](teste.txt)<br>
-[teste.txt.html](teste.txt.html)<br>
 [wc.sh.html](wc.sh.html)<br>
 
 ---------------------------

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>ip.sh | Cordeiro's DEV</title>
+<title>monitor.py | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,18 +63,45 @@
 
 </head>
 <body>
-<h3><a href='ip.sh' download='ip.sh'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='monitor.py' download='monitor.py'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='bash'>
-#!/bin/sh
+<pre><code class='python'>
+# -*- coding: utf-8 -*-
+# Author: Rodrigo Cordeiro
 
-dhclient -r
-dhclient -v
-echo "------------------------------------------------"
-echo ""
-ipext=`curl -4 http://ifconfig.co/ip`
-echo "IP Externo: $ipext"
-ifconfig | grep "inet "
+from scapy.all import ARP, sniff
+from collections import defaultdict
+import os
+
+sniff(prn=pacotes, filter="arp", iface=interface, timeout=10)
+list_ips = defaultdict(set)
+
+def pacotes(pacote):
+    """Checa se o valor do opcode dentro do protocolo arp é igual a 2."""
+    if pacote[ARP].op == 2:
+        # Se for adiciona o ip de origem e seu mac à dict list_ips
+        list_ips[pacote[ARP].psrc].add(pacote[ARP].hwsrc)
+
+
+os.system('which arp')
+/usr/sbin/arp
+
+def monitorar(interface):
+    """
+    O comando arp no FreeBSD usa os parametros:
+
+    -d para deletar as entradas
+    -i para declarar a interface
+    -a para representar todas entradas a serem deletas.
+    """
+    cmd = "/usr/sbin/arp -d -i {} -a".format(interface)
+    os.system(cmd)
+    sniff(prn=pacotes, filter="arp", iface=interface, timeout=10)
+
+monitorar("em0")
+
+for ip in list_ips:
+    print "IP: {} -> MACs: {}".format(ip, ", ".join(list(list_ips[ip])))
 </code></pre>
 </div>
 </body>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>downftp.sh | Cordeiro's DEV</title>
+<title>proxySantos.vbs | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,34 +63,22 @@
 
 </head>
 <body>
-<h3><a href='downftp.sh' download='downftp.sh'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='proxySantos.vbs' download='proxySantos.vbs'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='bash'>
-#!/bin/sh
-#
-# SCRIPT DE BKP
-# Created by Rodrigo Cordeiro
-# August 2019
+<pre><code class='VBScript'>
+dim oShell
+set oShell = Wscript.CreateObject("Wscript.Shell")
 
-#*******************************************
-#Conexão FTP
-FTP_HOST="LINK"
-FTP_USER="USUARIO"
-FTP_PWD="@SENHA"
+if msgbox("Habilitar Proxy?", vbQuestion or vbYesNo,"TI Akta Motors") = vbYes then
+oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 1, "REG_DWORD"
+oShell.RegWrite "HKCU\Software\Microsoft\Windows\currentVersion\Internet Settings\ProxyServer", "192.168.33.254:3128", "REG_SZ"
+oShell.RegWrite "HKCU\Software\Microsoft\Windows\currentVersion\Internet Settings\ProxyOverride", "*.local;*.kiacom.*;<local>", "REG_SZ"
+else 
+oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 0, "REG_DWORD"
 
-#*******************************************
-echo "-------------------------------------"
-echo "Conectando ao FTP e enviando os arquivos"
-ftp -in <<EOF
-open $FTP_HOST
-user $FTP_USER $FTP_PWD
-bin
-hash
-prompt
-cd public_html
-mget *
-bye
-EOF
+End if
+
+Set oShell = Nothing
 </code></pre>
 </div>
 </body>

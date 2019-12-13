@@ -6,9 +6,9 @@
 
 #*******************************************
 #Conexão FTP
-FTP_HOST="files.000webhost.com"
-FTP_USER="rodconceptive"
-FTP_PWD="@Drigo13"
+FTP_HOST="LINK"
+FTP_USER="USUARIO"
+FTP_PWD="@SENHA"
 
 #*******************************************
 echo "-------------------------------------"

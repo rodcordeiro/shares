@@ -238,5 +238,44 @@ echo "---------------------------" >> index.md
 echo "" >> index.md
 echo "[back](../)" >> index.md
 cd ..
+#*******************************************************
+# VBS
+cd VBS
+echo "Atualizando VBS/"
+./files.sh
+echo "# Scripts > VBS" > index.md
+echo "This folder of the repo keeps all the VisualBasic Scripts files shared between projects" >> index.md
+echo "" >> index.md
+echo "---------------------------" >> index.md
+	ls=`ls -1 --hide=index.md --hide=files.sh --hide=*.vbs | sort`
+	for i in ${ls}; do
+		echo "[${i}](${i})<br>">> index.md
+	done
+
+echo "" >> index.md
+echo "---------------------------" >> index.md
+echo "" >> index.md
+echo "[back](../)" >> index.md
+cd ..
+#*******************************************************
+# PowerShell
+cd Powershell
+echo "Atualizando PS/"
+./files.sh
+echo "# Scripts > PowerShell" > index.md
+echo "This folder of the repo keeps all the PowerShell files shared between projects" >> index.md
+echo "" >> index.md
+echo "---------------------------" >> index.md
+	ls=`ls -1 --hide=index.md --hide=files.sh --hide=*.ps1 | sort`
+	for i in ${ls}; do
+		echo "[${i}](${i})<br>">> index.md
+	done
+
+echo "" >> index.md
+echo "---------------------------" >> index.md
+echo "" >> index.md
+echo "[back](../)" >> index.md
+cd ..
+
 
 cd ..

@@ -9,6 +9,7 @@ This folder of the repo keeps all the image files
 [codigo2.jpg](codigo2.jpg)<br>
 [estudante.jpg](estudante.jpg)<br>
 [eu.jpg](eu.jpg)<br>
+[favicon.ico](favicon.ico)<br>
 [freira.jpg](freira.jpg)<br>
 [galaxia1.jpg](galaxia1.jpg)<br>
 [galaxia2.jpg](galaxia2.jpg)<br>

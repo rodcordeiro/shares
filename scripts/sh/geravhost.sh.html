@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>highlight.css | Cordeiro's DEV</title>
+<title>geravhost.sh | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,101 +63,60 @@
 
 </head>
 <body>
-<h3><a href='highlight.css' download='highlight.css'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='geravhost.sh' download='geravhost.sh'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='css'>
-/*
+<pre><code class='bash'>
+#Criado por Adler Parnas <adler.parnas@doisdeum.com.br>   #
+#                                                         #
+# 2011-02-23                                              #
+#                                                         #
+# Adaptado por Lauro Guedes <leowgweb.com>                #
+#                                                         #
+# 2015-11-26                                              #
+###########################################################
+#                                                         #
+# Script para criar um virtual host no apache e adicionar #
+# o nome do host no arquivo hosts                         #
+#                                                         #
+###########################################################
+#!/bin/bash
+ 
+echo "Informe o nome do servidor (Ex.: siteexemplo) :"
+read vhost
+ 
+echo "Informe o caminho do site (Ex.: /var/www/sitexemplo) :"
+read path
+ 
+echo "Criando configuração de VHost para o servidor"
 
-Lightfair style (c) Tristian Kelly <tristian.kelly560@gmail.com>
+#aqui é criado o arquivo de virtual host para o domínio e 
+#é feita a escrita das configurações no arquivo
+echo "<VirtualHost *:80>
+    	ServerAdmin webmaster@localhost
+    	ServerName $vhost
+    	ServerAlias www.$vhost 
+    	DocumentRoot /var/www/$path
+   	 <Directory /var/www/$path>
+       		Options Indexes FollowSymLinks MultiViews
+        	AllowOverride All
+        	Order allow,deny
+        	Allow from all
+    	 </Directory>
+</VirtualHost>" > /etc/apache2/sites-available/$vhost.conf
 
-*/
+#ativa-se o o virtual host para que o serviço possa reconhecê-lo
+echo "Ativando VHOST $vhost"
+a2ensite $vhost.conf
 
-code{
-  background-color: #181818;
-}
+#escreve no arquivo de hosts do linux
+echo "Atualizando arquivo hosts"
+echo "127.0.1.1     $vhost www.$vhost" >> /etc/hosts
 
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  /* TODO: background? */
-}
-
-.hljs-name {
-    color:#01a3a3;
-}
-
-.hljs-tag,.hljs-meta {
-    color:#778899;
-}
-
-.hljs,
-.hljs-subst {
-    color: #888888
-}
-
-.hljs-comment {
-    color: #444
-}
-
-.hljs-keyword,
-.hljs-attribute,
-.hljs-selector-tag,
-.hljs-meta-keyword,
-.hljs-doctag,
-.hljs-name {
-    font-weight: bold
-}
-
-.hljs-type,
-.hljs-string,
-.hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-    color: #4286f4
-}
-
-.hljs-title,
-.hljs-section {
-    color: #4286f4;
-    font-weight: bold
-}
-
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-    color: #BC6060
-}
-
-.hljs-literal {
-    color: #62bcbc
-}
-
-.hljs-built_in,
-.hljs-bullet,
-.hljs-code,
-.hljs-addition {
-    color: #25c6c6
-}
-
-.hljs-meta-string {
-    color: #4d99bf
-}
-
-.hljs-emphasis {
-    font-style: italic
-}
-
-.hljs-strong {
-    font-weight: bold
-}
+#renicia-se o servidor apache para aplicar as configurações
+echo "Reiniciando apache";
+service apache2 restart
+ 
+echo "VHOST criado";
 </code></pre>
 </div>
 </body>

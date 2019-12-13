@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>proxyGastao.vbs | Cordeiro's DEV</title>
+<title>ativar_proxy.vbs | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,7 +63,7 @@
 
 </head>
 <body>
-<h3><a href='proxyGastao.vbs' download='proxyGastao.vbs'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='ativar_proxy.vbs' download='ativar_proxy.vbs'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
 <pre><code class='VBScript'>
 dim oShell
@@ -71,8 +71,8 @@ set oShell = Wscript.CreateObject("Wscript.Shell")
 
 if msgbox("Habilitar Proxy?", vbQuestion or vbYesNo,"TI Akta Motors") = vbYes then
 oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 1, "REG_DWORD"
-oShell.RegWrite "HKCU\Software\Microsoft\Windows\currentVersion\Internet Settings\ProxyServer", "192.168.30.1:3128", "REG_SZ"
-oShell.RegWrite "HKCU\Software\Microsoft\Windows\currentVersion\Internet Settings\ProxyOverride", "*.local;*.kiacom.com.br;<local>", "REG_SZ"
+oShell.RegWrite "HKCU\Software\Microsoft\Windows\currentVersion\Internet Settings\ProxyServer", "127.0.0.1:6666", "REG_SZ"
+oShell.RegWrite "HKCU\Software\Microsoft\Windows\currentVersion\Internet Settings\ProxyOverride", "*.local;<local>;E outros sites que queria que passem por fora do proxy", "REG_SZ"
 else 
 oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 0, "REG_DWORD"
 

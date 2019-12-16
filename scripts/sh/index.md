@@ -3,7 +3,6 @@ This folder of the repo keeps all the shell scripts
 
 ---------------------------
 [aptget.sh.html](aptget.sh.html)<br>
-[bruteforce.sh.html](bruteforce.sh.html)<br>
 [cordeiro.sh.html](cordeiro.sh.html)<br>
 [create_readme.sh.html](create_readme.sh.html)<br>
 [downftp.sh.html](downftp.sh.html)<br>

@@ -6,6 +6,7 @@ This repo keeps all kind of files that I use on my web projects, like audios, im
 [books](books)<br>
 [favicons](favicons)<br>
 [files](files)<br>
+[fontawesome](fontawesome)<br>
 [fonts](fonts)<br>
 [img](img)<br>
 [node_modules](node_modules)<br>

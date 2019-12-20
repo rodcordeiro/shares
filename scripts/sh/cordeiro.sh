@@ -41,7 +41,9 @@ preparar(){
 
 	echo "
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04
-https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-18-04" > LAMP.txt
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-18-04
+https://www.linuxmint.com.br/discussion/47814/alternativa-para-rdesktop
+" > "Área de Trabalho/OutrasInstalacoes.txt"
 }
 
 Atualizar(){

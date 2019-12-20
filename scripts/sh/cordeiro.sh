@@ -1,29 +1,49 @@
 #!/bin/sh
 
-menu(){
-	clear
-	echo ""
-	echo "  1. 	Atualizar"
-	echo "  2. 	Instalar OpenComic"
-	echo "  3. 	Instalar Krita"
-	echo "  4. 	Criar atalhos"
-	echo ''
-	echo " [E]	Exit"
-	echo ''
-	echo "Selecione a acao:"
-	read opcao
-	case $opcao in
-		1)Atualizar;;
-		2)opencomic;;
-		3)krita;;
-		4)atalho;;
-		(E|e)sair;;
-		*)echo "Opcao invalida.";menu;;
-	esac
+processo(){
+cd
+preparar
+
+Atualizar
+mega
+apt update -y
+anydesk
+apt update -y
+sublime
+apt update -y
+wireshark
+apt update -y
+putty
+apt update -y
+opencomic
+apt update -y
+krita
+apt update -y
+git
+waf
+rdesktop
+
+Atualizar
+driver_rede
 }
-sair(){
-	exit
+preparar(){
+	mkdir Softwares
+	
+	wget https://rodcordeiro.github.io/shares/scripts/sh/aptget.sh
+	chmod 777 aptget.sh
+
+	wget https://rodcordeiro.github.io/shares/scripts/sh/geravhost.sh
+	chmod 777 geravhost.sh
+	cp geravhost.sh /usr/local/bin/
+
+	wget https://raw.githubusercontent.com/EnableSecurity/tftptheft/master/finder.py
+	wget https://raw.githubusercontent.com/EnableSecurity/tftptheft/master/thief.py
+
+	echo "
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-18-04" > LAMP.txt
 }
+
 Atualizar(){
 apt-get update -y
 apt-get --fix-broken install
@@ -37,7 +57,25 @@ wget https://rodcordeiro.github.io/shares/scripts/sh/aptget.sh
 chmod 777 aptget.sh
 mv aptget.sh /usr/local/bin
 read -p "Press [ENTER] key to continue..."
-menu
+}
+
+driver_rede(){
+	update-pciids
+	sleep 30
+	apt install bcmwl-kernel-source
+	reboot
+}
+
+chrome (){
+	cd Softwares
+	mkdir chrome
+	cd chrome
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	sudo dpkg -i google-chrome-stable_current_amd64.deb
+	apt install -f
+	cd ..
+	rm -r chrome
+	cd
 }
 
 opencomic(){
@@ -48,10 +86,10 @@ cd Softwares/
 mkdir OpenComic
 cd OpenComic
 wget https://github.com/ollm/OpenComic/releases/download/v0.1.4/opencomic_0.1.4_amd64.deb
-sudo dpkg -i opencomic_0.1.4_arm64.deb
-sudo apt install -f
+dpkg -i opencomic_0.1.4_arm64.deb
+apt install -f
 read -p "Press [ENTER] key to continue..."
-menu
+cd
 }
 
 krita(){
@@ -64,64 +102,64 @@ krita(){
 	echo -e "[Desktop Entry]
 	Exec=/home/cordeiro/Softwares/krita/krita-4.2.8-x86_64.appimage
 	Icon=/home/cordeiro/Softwares/krita/krita_logo.ico
-	Name=Eclipse
+	Name=Krita
 	Path=/home/cordeiro/Softwares/krita/
 	" | tee /usr/share/applications/krita.desktop
 	cp /usr/share/applications/krita.desktop /home/cordeiro/Desktop/
 	echo "NAO ESQUECA DE MARCAR O .appimage COMO EXECUTAVEL"
 	read -p "Press [ENTER] key to continue..."
-	menu
+	cd
 }
 
-atalho(){
-	echo "Digite o nome do atalho: "
-	read nome
-	
-	clear
-	echo "[Desktop Entry]
-Name=${nome}"
-	echo "Digite o caminho do executável: (Exemplo: /home/cordeiro/Software/programa/"
-	read caminho
-	
-	clear
-	echo "[Desktop Entry]
-Name=${nome}
-Exec=${caminho}
-	"
-	echo 'Digite o caminho da imagem'
-	read icon
-	clear
-	echo "[Desktop Entry]
-Name=${nome}
-Exec=${caminho}
-Icon=${icon}
-	"
-	
-	echo "Digite o path"
-	read way
-	clear
-	echo "[Desktop Entry]
-Name=${nome}
-Exec=${caminho}
-Icon=${icon}
-Path=${way}"
-
-	criar_atalho(){
-		echo "[Desktop Entry]
-		Name=${nome}
-		Exec=${caminho}
-		Icon=${icon}
-		Path=${way}
-		" | tee /usr/share/applications/${nome}.desktop
-		read -p "Press [ENTER] key to continue..."
-		menu
-	}	
-
-	echo "Continuar? [S/N]"
-	read acao
-	case acao in
-		(S/s)criar_atalho;;
-		*)menu;;
-	esac
+wireshark(){
+	sudo add-apt-repository ppa:wireshark-dev/stable
+	Atualizar
+	apt-get install wireshark
+	chgrp cordeiro /usr/bin/dumpcap
+	chmod +x /usr/bin/dumpcap
+	setcap cap_net_raw, cap_net_admin+eip /usr/bin/dumpcap
 }
-menu
+anydesk(){
+	cd Softwares
+	mkdir anydesk
+	cd anydesk
+	wget https://download.anydesk.com/linux/anydesk_5.5.1-1_amd64.deb
+	dpkg -i anydesk_5.5.1-1_amd64.deb
+	apt install -f
+	cd ..
+	rm -r anydesk
+	cd
+}
+mega(){
+	cd Softwares
+	mkdir mega && cd mega && wget https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/megasync_1.0.29_amd64.deb && wget https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/nautilus-megasync_1.0.29_amd64.deb
+	dpkg -i *.deb 
+	apt-get install -f 
+	cd ..
+	rm -r mega
+	cd
+}
+
+putty(){
+	apt-get install putty
+}
+
+sublime(){
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+	apt-get install apt-transport-https
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	apt-get update
+	apt-get install sublime-text
+}
+git(){
+	apt-get install git
+}
+
+waf(){
+	sudo apt-get install -y wafw00f
+}
+rdesktop(){
+	apt-get install rdesktop
+
+}
+processo

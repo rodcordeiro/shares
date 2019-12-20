@@ -11,6 +11,7 @@ This folder of the repo keeps all the image files
 [eu.jpg](eu.jpg)<br>
 [favicon.ico](favicon.ico)<br>
 [freira.jpg](freira.jpg)<br>
+[galaxia_frase.jpg](galaxia_frase.jpg)<br>
 [galaxia1.jpg](galaxia1.jpg)<br>
 [galaxia2.jpg](galaxia2.jpg)<br>
 [galaxia3.jpg](galaxia3.jpg)<br>

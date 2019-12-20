@@ -22,6 +22,8 @@ apt update -y
 git
 waf
 rdesktop
+speedtest
+modulos
 
 Atualizar
 driver_rede
@@ -64,7 +66,7 @@ read -p "Press [ENTER] key to continue..."
 driver_rede(){
 	update-pciids
 	sleep 30
-	apt install bcmwl-kernel-source
+	apt install bcmwl-kernel-source -y
 	reboot
 }
 
@@ -74,7 +76,7 @@ chrome (){
 	cd chrome
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome-stable_current_amd64.deb
-	apt install -f
+	apt install -f -y
 	cd ..
 	rm -r chrome
 	cd
@@ -89,7 +91,7 @@ mkdir OpenComic
 cd OpenComic
 wget https://github.com/ollm/OpenComic/releases/download/v0.1.4/opencomic_0.1.4_amd64.deb
 dpkg -i opencomic_0.1.4_arm64.deb
-apt install -f
+apt install -f -y
 read -p "Press [ENTER] key to continue..."
 cd
 }
@@ -116,7 +118,7 @@ krita(){
 wireshark(){
 	sudo add-apt-repository ppa:wireshark-dev/stable
 	Atualizar
-	apt-get install wireshark
+	apt-get install wireshark -y
 	chgrp cordeiro /usr/bin/dumpcap
 	chmod +x /usr/bin/dumpcap
 	setcap cap_net_raw, cap_net_admin+eip /usr/bin/dumpcap
@@ -127,7 +129,7 @@ anydesk(){
 	cd anydesk
 	wget https://download.anydesk.com/linux/anydesk_5.5.1-1_amd64.deb
 	dpkg -i anydesk_5.5.1-1_amd64.deb
-	apt install -f
+	apt install -f -y
 	cd ..
 	rm -r anydesk
 	cd
@@ -136,14 +138,14 @@ mega(){
 	cd Softwares
 	mkdir mega && cd mega && wget https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/megasync_1.0.29_amd64.deb && wget https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/nautilus-megasync_1.0.29_amd64.deb
 	dpkg -i *.deb 
-	apt-get install -f 
+	apt-get install -f -y
 	cd ..
 	rm -r mega
 	cd
 }
 
 putty(){
-	apt-get install putty
+	apt-get install putty -y
 }
 
 sublime(){
@@ -151,17 +153,35 @@ sublime(){
 	apt-get install apt-transport-https
 	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 	apt-get update
-	apt-get install sublime-text
+	apt-get install sublime-text -y
 }
 git(){
-	apt-get install git
+	apt-get install git -y
 }
 
 waf(){
 	sudo apt-get install -y wafw00f
 }
 rdesktop(){
-	apt-get install rdesktop
+	apt-get install rdesktop -y
 
+}
+speedtest(){
+	sudo apt-get install gnupg1 apt-transport-https dirmngr -y
+export INSTALL_KEY=379CE192D401AB61
+# Ubuntu versions supported: xenial, bionic
+# Debian versions supported: jessie, stretch, buster
+export DEB_DISTRO=$(lsb_release -sc)
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
+echo "deb https://ookla.bintray.com/debian ${DEB_DISTRO} main" | sudo tee  /etc/apt/sources.list.d/speedtest.list
+sudo apt-get update
+# Other non-official binaries will conflict with Speedtest CLI
+# Example how to remove using apt-get
+# sudo apt-get remove speedtest-cli
+sudo apt-get install speedtest -y
+
+}
+modulos(){
+	pip install dnstools
 }
 processo

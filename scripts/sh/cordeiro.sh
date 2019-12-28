@@ -22,7 +22,7 @@ waf
 rdesktop
 speedtest
 modulos
-
+ssh
 Atualizar
 driver_rede
 }

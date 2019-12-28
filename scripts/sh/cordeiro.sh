@@ -5,6 +5,7 @@ cd
 preparar
 
 Atualizar
+git
 mega
 apt update -y
 anydesk
@@ -12,14 +13,11 @@ apt update -y
 sublime
 apt update -y
 wireshark
-apt update -y
 putty
 apt update -y
 opencomic
-apt update -y
 krita
 apt update -y
-git
 waf
 rdesktop
 speedtest
@@ -30,22 +28,34 @@ driver_rede
 }
 preparar(){
 	mkdir Softwares
+	mkdir Projetos
 	
 	wget https://rodcordeiro.github.io/shares/scripts/sh/aptget.sh
-	chmod 777 aptget.sh
-
 	wget https://rodcordeiro.github.io/shares/scripts/sh/geravhost.sh
-	chmod 777 geravhost.sh
-	cp geravhost.sh /usr/local/bin/
+	wget https://rodcordeiro.github.io/shares/scripts/sh/ip.sh
+	wget https://rodcordeiro.github.io/shares/scripts/sh/nbs.sh
+	
+	chmod +x *.sh
 
-	wget https://raw.githubusercontent.com/EnableSecurity/tftptheft/master/finder.py
-	wget https://raw.githubusercontent.com/EnableSecurity/tftptheft/master/thief.py
+	cp aptget.sh /usr/local/bin/
+	cp geravhost.sh /usr/local/bin/
+	
+
+	echo "alias atualizar='sudo aptget.sh'
+alias vhost='sudo geravhost.sh'" >~/.bash_aliases
 
 	echo "
+## PENDENCIAS
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-18-04
+
+Configurar o ssh no github
+
+#Outras informações
 https://www.linuxmint.com.br/discussion/47814/alternativa-para-rdesktop
-" > "Área de Trabalho/OutrasInstalacoes.txt"
+" > "Área de Trabalho/Pendencias.txt"
+
+	wget https://rodcordeiro.github.io/shares/files/subdominios.txt
 }
 
 Atualizar(){
@@ -57,10 +67,6 @@ apt-get dist-upgrade -y
 apt-get upgrade -y
 apt-get autoremove
 apt-get autoclean
-wget https://rodcordeiro.github.io/shares/scripts/sh/aptget.sh
-chmod 777 aptget.sh
-mv aptget.sh /usr/local/bin
-read -p "Press [ENTER] key to continue..."
 }
 
 driver_rede(){
@@ -70,12 +76,12 @@ driver_rede(){
 	reboot
 }
 
-chrome (){
+chrome(){
 	cd Softwares
 	mkdir chrome
 	cd chrome
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	sudo dpkg -i google-chrome-stable_current_amd64.deb
+	sudo dpkg -i *.deb
 	apt install -f -y
 	cd ..
 	rm -r chrome
@@ -90,7 +96,7 @@ cd Softwares/
 mkdir OpenComic
 cd OpenComic
 wget https://github.com/ollm/OpenComic/releases/download/v0.1.4/opencomic_0.1.4_amd64.deb
-dpkg -i opencomic_0.1.4_arm64.deb
+sudo dpkg -i *.deb
 apt install -f -y
 read -p "Press [ENTER] key to continue..."
 cd
@@ -102,16 +108,15 @@ krita(){
 	chmod 777 krita
 	cd krita
 	wget https://download.kde.org/stable/krita/4.2.8/krita-4.2.8-x86_64.appimage
-	wget https://rodcordeiro.github.io/shares/img/krita_logo.ico
-	echo -e "[Desktop Entry]
+	wget https://rodcordeiro.github.io/shares/img/krita.png
+	sudo echo -e "[Desktop Entry]
 	Exec=/home/cordeiro/Softwares/krita/krita-4.2.8-x86_64.appimage
-	Icon=/home/cordeiro/Softwares/krita/krita_logo.ico
+	Icon=/home/cordeiro/Softwares/krita/krita.png
 	Name=Krita
 	Path=/home/cordeiro/Softwares/krita/
 	" | tee /usr/share/applications/krita.desktop
-	cp /usr/share/applications/krita.desktop /home/cordeiro/Desktop/
-	echo "NAO ESQUECA DE MARCAR O .appimage COMO EXECUTAVEL"
-	read -p "Press [ENTER] key to continue..."
+	sudo cp /usr/share/applications/krita.desktop "/home/cordeiro/Área de Trabalho/"
+	chmod +x *.appimage
 	cd
 }
 
@@ -136,7 +141,10 @@ anydesk(){
 }
 mega(){
 	cd Softwares
-	mkdir mega && cd mega && wget https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/megasync_1.0.29_amd64.deb && wget https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/nautilus-megasync_1.0.29_amd64.deb
+	mkdir mega 
+	cd mega 
+	wget https://mega.nz/linux/MEGAsync/xUbuntu_18.04/amd64/megasync-xUbuntu_18.04_amd64.deb
+	wget https://mega.nz/linux/MEGAsync/xUbuntu_18.04/amd64/nautilus-megasync-xUbuntu_18.04_amd64.deb
 	dpkg -i *.deb 
 	apt-get install -f -y
 	cd ..
@@ -157,6 +165,15 @@ sublime(){
 }
 git(){
 	apt-get install git -y
+	git config --global user.email "rodrigomendoncca@gmail.com"
+	git config --global user.name "Rodrigo Cordeiro"
+}
+ssh(){
+	cd
+	mkdir .ssh
+	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_rsa
 }
 
 waf(){
@@ -167,7 +184,7 @@ rdesktop(){
 
 }
 speedtest(){
-	sudo apt-get install gnupg1 apt-transport-https dirmngr -y
+sudo apt-get install gnupg1 apt-transport-https dirmngr -y
 export INSTALL_KEY=379CE192D401AB61
 # Ubuntu versions supported: xenial, bionic
 # Debian versions supported: jessie, stretch, buster
@@ -178,10 +195,21 @@ sudo apt-get update
 # Other non-official binaries will conflict with Speedtest CLI
 # Example how to remove using apt-get
 # sudo apt-get remove speedtest-cli
-sudo apt-get install speedtest -y
+sudo apt-get install speedtest-cli -y
 
 }
 modulos(){
+	apt-get install python-pip
+	apt-get install python3-pip
+	
 	pip install dnstools
+	pip install reportlab
+	pip install setuptools
+	pip install virtualenv
+
+	pip3 install dnstools
+	pip3 install reportlab
+	pip3 install setuptools
+	pip3 install virtualenv
 }
 processo

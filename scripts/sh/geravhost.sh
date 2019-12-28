@@ -15,9 +15,13 @@
  
 echo "Informe o nome do servidor (Ex.: siteexemplo) :"
 read vhost
- 
-echo "Informe o caminho do site (Ex.: /var/www/sitexemplo) :"
-read path
+
+caminho="/var/www/$vhost"
+mkdir $caminho
+chown -R $USER:$USER $caminho
+chmod -R 755 $caminho
+echo "<h1>Working</h1>" >"$caminho/index.html"
+
  
 echo "Criando configuração de VHost para o servidor"
 
@@ -27,8 +31,8 @@ echo "<VirtualHost *:80>
     	ServerAdmin webmaster@localhost
     	ServerName $vhost
     	ServerAlias www.$vhost 
-    	DocumentRoot /var/www/$path
-   	 <Directory /var/www/$path>
+    	DocumentRoot $caminho
+   	 <Directory $caminho>
        		Options Indexes FollowSymLinks MultiViews
         	AllowOverride All
         	Order allow,deny

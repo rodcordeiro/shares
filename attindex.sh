@@ -98,7 +98,7 @@ echo "# Docs" > index.md
 echo "This folder of the repo keeps all the files and docs used on my projects (like vcards)" >> index.md
 echo "" >> index.md
 echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh | sort`
+	ls=`ls -1 --hide=index.md --hide=att.sh --hide=*.xhb | sort`
 	for i in ${ls}; do
 		echo "[${i}](${i})<br>">> index.md
 	done

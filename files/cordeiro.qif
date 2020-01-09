@@ -1,0 +1,60 @@
+!Account
+NDinheiro
+TCash
+^
+!Type:Cash
+D01/09/2020
+T-1.00
+C
+P
+Mteste
+L
+^
+!Account
+NGuardado
+TCash
+^
+!Type:Cash
+!Account
+NNubank
+TBank
+^
+!Type:Bank
+!Account
+NItau
+TBank
+^
+!Type:Bank
+D01/09/2020
+T400.00
+C
+PYasmim Regina
+M(NULL)
+LNão é uma despesa
+^
+!Account
+NSantander
+TBank
+^
+!Type:Bank
+D01/08/2020
+T-351.28
+C
+P
+MLuz 12/2019
+LNotas
+^
+D01/09/2020
+T-29.10
+C
+P
+MPassagem Santos
+LTrabalho Despesa:Reembolso
+^
+D01/09/2020
+T-400.00
+C
+PYasmim Regina
+M(NULL)
+LVariado
+^

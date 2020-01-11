@@ -3,18 +3,53 @@ NDinheiro
 TCash
 ^
 !Type:Cash
-D01/09/2020
-T-1.00
+D10/01/2020
+T117.45
+C
+PRodrigo Cordeiro
+MReembolso 09/01/20
+LSalário e Salário:Reembolso
+^
+D10/01/2020
+T-20.00
 C
 P
-Mteste
-L
+MLanche - Rodrigo
+LComida
+^
+D10/01/2020
+T-10.00
+C
+P
+MLanche - Rodrigo
+LComida
+^
+D10/01/2020
+T-15.30
+C
+P
+MCaneta unipin
+LVariado
+^
+D10/01/2020
+T-27.40
+C
+P
+MPassagem Santos/Jabaquara
+LTrabalho Despesa:Reembolso
+^
+D10/01/2020
+T-28.15
+C
+P
+MPassagem Jabaquara/Santos
+LTrabalho Despesa:Reembolso
 ^
 !Account
 NGuardado
-TCash
+TBank
 ^
-!Type:Cash
+!Type:Bank
 !Account
 NNubank
 TBank
@@ -25,36 +60,78 @@ NItau
 TBank
 ^
 !Type:Bank
-D01/09/2020
+D09/01/2020
+T-18.00
+C
+P
+MMarmita
+LComida
+^
+D09/01/2020
+T-7.34
+C
+P
+MRemédio
+LCuidados de saúde:Prescrição
+^
+D09/01/2020
 T400.00
 C
 PYasmim Regina
-M(NULL)
-LNão é uma despesa
+MPag Curso Yah
+L[Santander]
+^
+D10/01/2020
+T-15.00
+C
+P
+MMarmita Yah
+LComida
+^
+D11/01/2020
+T-13.00
+C
+P
+MRemédio cólica
+LCuidados de saúde:Prescrição
 ^
 !Account
 NSantander
 TBank
 ^
 !Type:Bank
-D01/08/2020
+D09/01/2020
+T-29.10
+C
+P
+MPassagem Jabaquara/Santos
+LTrabalho Despesa:Reembolso
+^
+D09/01/2020
+T-28.35
+C
+P
+MPassagem Santos/Jabaquara
+LTrabalho Despesa:Reembolso
+^
+D09/01/2020
+T-400.00
+C
+PYasmim Regina
+MPag Curso Yah
+L[Itau]
+^
+D09/01/2020
+T-14.98
+C
+P
+MCaixa de chocolate + Bala Ere
+LPresentes
+^
+D10/01/2020
 T-351.28
 C
 P
 MLuz 12/2019
-LNotas
-^
-D01/09/2020
-T-29.10
-C
-P
-MPassagem Santos
-LTrabalho Despesa:Reembolso
-^
-D01/09/2020
-T-400.00
-C
-PYasmim Regina
-M(NULL)
-LVariado
+LNotas:Electricidade
 ^

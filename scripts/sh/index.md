@@ -13,6 +13,7 @@ This folder of the repo keeps all the shell scripts
 [menu.sh.html](menu.sh.html)<br>
 [nbs.sh.html](nbs.sh.html)<br>
 [rename.sh.html](rename.sh.html)<br>
+[speed.sh.html](speed.sh.html)<br>
 [vader.sh.html](vader.sh.html)<br>
 [verificar_backup.sh.html](verificar_backup.sh.html)<br>
 [wc.sh.html](wc.sh.html)<br>

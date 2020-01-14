@@ -1,6 +1,20 @@
+# -*- coding: utf-8 -*-
+# Author: Rodrigo Cordeiro
+
+
 import json
-dados = [{'peso': 10, 'cor': 'verde'}, {'peso': 15, 'cor': 'azul'}]
-def gravar(dados):
-    with open('dados.json', 'w') as f:
-        f.write(json.dumps(dados))
-gravar(dados)
+
+def gravar(secao,mensagem):
+	with open('dados.json','r') as f:
+		arquivo = json.load(f)
+		nota = arquivo[secao]
+		nota.append(mensagem)
+		arquivo[secao] = nota
+		file = open('dados.json','w')
+		file.write(json.dumps(arquivo))
+
+def ler(dado):
+	with open('dados.json','r') as f:
+		arquivo = json.load(f)
+		return arquivo[dado]
+

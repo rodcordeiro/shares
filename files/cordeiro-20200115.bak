@@ -13,8 +13,6 @@
 <pay key="4" name="Raízes"/>
 <pay key="5" name="ICNT"/>
 <pay key="6" name="Poupança"/>
-<pay key="7" name="Sil"/>
-<pay key="8" name="SABESP"/>
 <cat key="1" name="Pensão de alimentos"/>
 <cat key="2" name="Automóvel"/>
 <cat key="5" parent="2" flags="1" name="Manutenção"/>
@@ -141,10 +139,6 @@
 <cat key="124" parent="119" flags="3" name="Net Pay"/>
 <cat key="123" parent="119" flags="3" name="Remuneração Bruta"/>
 <cat key="121" parent="119" flags="3" name="Comissão"/>
-<asg key="1" field="1" name="Conta de água"/>
-<fav key="3" amount="0" account="1" paymode="8" payee="8" category="25" wording="Conta de água" nextdate="737439" every="1" unit="2" limit="1"/>
-<fav key="1" amount="-130" account="2" paymode="3" st="3" flags="4" category="38" wording="Curso Aux. Necrópsia" nextdate="737460" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="2" amount="-100" account="2" paymode="3" payee="7" category="48" wording="Psicóloga" nextdate="737439" every="1" unit="2" limit="1"/>
 <ope date="737434" amount="117.45" account="5" paymode="3" flags="2" payee="1" category="126" wording="Reembolso 09/01/20" info="Reembolso 09/01/20"/>
 <ope date="737434" amount="-20" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
 <ope date="737434" amount="-10" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
@@ -164,8 +158,6 @@
 <ope date="737438" amount="-480" account="2" paymode="6" category="37" wording="Matrícula Curso Banho e Tosa" info="Matrícula Curso Banho e Tosa"/>
 <ope date="737438" amount="-7.9000000000000004" account="2" paymode="10" category="8" wording="Contrato de seguro" info="Contrato de Seguro"/>
 <ope date="737438" amount="-20" account="2" paymode="3" category="26" wording="Saque" info="Saque"/>
-<ope date="737439" amount="605.95000000000005" account="2" paymode="9" flags="2" payee="2" category="123" wording="Salário" info="Salário"/>
-<ope date="737439" amount="-401.26999999999998" account="2" paymode="8" category="11" wording="Conta Claro" info="Conta Claro"/>
 <ope date="737433" amount="-29.100000000000001" account="1" paymode="6" category="71" wording="Passagem Jabaquara/Santos" info="Passagem Jabaquara/Santos"/>
 <ope date="737433" amount="-28.350000000000001" account="1" paymode="6" category="71" wording="Passagem Santos/Jabaquara" info="Passagem Santos/Jabaquara"/>
 <ope date="737433" amount="-400" account="1" dst_account="2" paymode="5" payee="2" category="76" wording="Pag Curso Yah" info="Pag Curso Yah" kxfer="1"/>

@@ -1,7 +1,7 @@
 #!/bin/sh
 rm *.html 
 rm *md
-ls=`ls --hide=*.sh`
+ls=`ls *.py`
 for a in ${ls}; do
 arquivo=`cat ${a}`
 echo  "<!DOCTYPE html>" >>${a}.html

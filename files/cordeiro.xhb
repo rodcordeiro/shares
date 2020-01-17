@@ -21,11 +21,11 @@
 <cat key="4" parent="2" flags="1" name="Gasoline"/>
 <cat key="3" parent="2" flags="1" name="Pagamento de carro"/>
 <cat key="6" name="Os encargos bancários"/>
-<cat key="7" parent="6" flags="1" name="Juros pagos"/>
 <cat key="8" parent="6" flags="1" name="Taxa de Serviço"/>
+<cat key="7" parent="6" flags="1" name="Juros pagos"/>
 <cat key="9" name="Notas"/>
-<cat key="10" parent="9" flags="1" name="TV a cabo / satélite"/>
-<cat key="12" parent="9" flags="1" name="Electricidade"/>
+<cat key="13" parent="9" flags="1" name="Lixo e Reciclagem"/>
+<cat key="11" parent="9" flags="1" name="Celular"/>
 <cat key="25" parent="9" flags="1" name="Água e Esgoto"/>
 <cat key="24" parent="9" flags="1" name="Telefone"/>
 <cat key="23" parent="9" flags="1" name="O pagamento do empréstimo de estudante"/>
@@ -38,114 +38,114 @@
 <cat key="16" parent="9" flags="1" name="Taxas de Associação"/>
 <cat key="15" parent="9" flags="1" name="Dues Home-proprietário"/>
 <cat key="14" parent="9" flags="1" name="Health Club"/>
-<cat key="13" parent="9" flags="1" name="Lixo e Reciclagem"/>
-<cat key="11" parent="9" flags="1" name="Celular"/>
+<cat key="10" parent="9" flags="1" name="TV a cabo / satélite"/>
+<cat key="12" parent="9" flags="1" name="Electricidade"/>
 <cat key="26" name="Retirar Dinheiro"/>
 <cat key="27" name="Doações"/>
 <cat key="28" name="Childcare"/>
 <cat key="29" name="Crianças / brinquedos"/>
-<cat key="31" parent="29" flags="1" name="Creche"/>
 <cat key="30" parent="29" flags="1" name="Apoio à Criança"/>
+<cat key="31" parent="29" flags="1" name="Creche"/>
 <cat key="32" name="Vestuário"/>
 <cat key="33" name="Pagamentos com cartão de crédito / Transfers"/>
 <cat key="34" name="Dining Out"/>
 <cat key="35" name="Educação"/>
-<cat key="37" parent="35" flags="1" name="Taxas"/>
-<cat key="38" parent="35" flags="1" name="Mensalidades"/>
 <cat key="36" parent="35" flags="1" name="Livros"/>
+<cat key="38" parent="35" flags="1" name="Mensalidades"/>
+<cat key="37" parent="35" flags="1" name="Taxas"/>
 <cat key="39" name="Diversão"/>
 <cat key="40" name="Honorários"/>
 <cat key="41" name="Comida"/>
 <cat key="42" name="Presentes"/>
 <cat key="43" name="Mercearia"/>
 <cat key="44" name="Cuidados de saúde"/>
+<cat key="46" parent="44" flags="1" name="Eye de cuidados"/>
+<cat key="48" parent="44" flags="1" name="Médico"/>
+<cat key="49" parent="44" flags="1" name="Prescrição"/>
 <cat key="45" parent="44" flags="1" name="Dental"/>
 <cat key="47" parent="44" flags="1" name="Hospital"/>
-<cat key="49" parent="44" flags="1" name="Prescrição"/>
-<cat key="48" parent="44" flags="1" name="Médico"/>
-<cat key="46" parent="44" flags="1" name="Eye de cuidados"/>
 <cat key="50" name="Hobbies e Lazer"/>
-<cat key="51" parent="50" flags="1" name="Livros e Revistas"/>
-<cat key="53" parent="50" flags="1" name="Entertaining"/>
+<cat key="52" parent="50" flags="1" name="Eventos Culturais"/>
+<cat key="54" parent="50" flags="1" name="Cinema e Video Rentals"/>
 <cat key="58" parent="50" flags="1" name="Brinquedos e Games"/>
 <cat key="57" parent="50" flags="1" name="Tapes &amp; CDs"/>
 <cat key="56" parent="50" flags="1" name="Esporte e Lazer"/>
 <cat key="55" parent="50" flags="1" name="Eventos Esportivos"/>
-<cat key="54" parent="50" flags="1" name="Cinema e Video Rentals"/>
-<cat key="52" parent="50" flags="1" name="Eventos Culturais"/>
+<cat key="51" parent="50" flags="1" name="Livros e Revistas"/>
+<cat key="53" parent="50" flags="1" name="Entertaining"/>
 <cat key="59" name="Home Improvement"/>
 <cat key="60" name="Casa"/>
-<cat key="63" parent="60" flags="1" name="Serviço de Quintal"/>
-<cat key="61" parent="60" flags="1" name="Mobiliário"/>
 <cat key="62" parent="60" flags="1" name="Lavagem House"/>
+<cat key="61" parent="60" flags="1" name="Mobiliário"/>
+<cat key="63" parent="60" flags="1" name="Serviço de Quintal"/>
 <cat key="64" name="Seguro"/>
-<cat key="65" parent="64" flags="1" name="Automobile"/>
-<cat key="67" parent="64" flags="1" name="Home-proprietário / locatário do"/>
-<cat key="68" parent="64" flags="1" name="Life"/>
 <cat key="66" parent="64" flags="1" name="Saúde"/>
+<cat key="68" parent="64" flags="1" name="Life"/>
+<cat key="67" parent="64" flags="1" name="Home-proprietário / locatário do"/>
+<cat key="65" parent="64" flags="1" name="Automobile"/>
 <cat key="69" name="Trabalho Despesa"/>
-<cat key="70" parent="69" flags="1" name="Não reembolsáveis"/>
 <cat key="71" parent="69" flags="1" name="Reembolso"/>
+<cat key="70" parent="69" flags="1" name="Não reembolsáveis"/>
 <cat key="72" name="Empréstimo"/>
-<cat key="75" parent="72" flags="1" name="Juros do empréstimo de estudante"/>
-<cat key="73" parent="72" flags="1" name="Juros de empréstimos"/>
 <cat key="74" parent="72" flags="1" name="Interesse Mortgage"/>
+<cat key="73" parent="72" flags="1" name="Juros de empréstimos"/>
+<cat key="75" parent="72" flags="1" name="Juros do empréstimo de estudante"/>
 <cat key="76" name="Variado"/>
 <cat key="77" name="Mortgage / Rent"/>
 <cat key="78" name="Cuidados Pessoais"/>
 <cat key="79" name="Pet Care"/>
-<cat key="81" parent="79" flags="1" name="Suprimentos"/>
-<cat key="82" parent="79" flags="1" name="Veterinário"/>
 <cat key="80" parent="79" flags="1" name="Alimentos"/>
+<cat key="82" parent="79" flags="1" name="Veterinário"/>
+<cat key="81" parent="79" flags="1" name="Suprimentos"/>
 <cat key="83" name="Telefone / Wireless"/>
 <cat key="84" name="Serviços / Associações"/>
 <cat key="85" name="Impostos"/>
-<cat key="89" parent="85" flags="1" name="Imposto sobre Medicare"/>
-<cat key="87" parent="85" flags="1" name="Ano Receita Federal Tax-Anterior"/>
+<cat key="88" parent="85" flags="1" name="Imposto de Renda Local"/>
+<cat key="86" parent="85" flags="1" name="Imposto de Renda Federal"/>
 <cat key="95" parent="85" flags="1" name="Estadual / municipal"/>
 <cat key="94" parent="85" flags="1" name="Imposto de Renda Estado"/>
 <cat key="93" parent="85" flags="1" name="Imposto de Segurança Social"/>
 <cat key="92" parent="85" flags="1" name="Imposto sobre Vendas"/>
 <cat key="91" parent="85" flags="1" name="Real Estate Impostos"/>
 <cat key="90" parent="85" flags="1" name="Outros Impostos"/>
-<cat key="88" parent="85" flags="1" name="Imposto de Renda Local"/>
-<cat key="86" parent="85" flags="1" name="Imposto de Renda Federal"/>
+<cat key="89" parent="85" flags="1" name="Imposto sobre Medicare"/>
+<cat key="87" parent="85" flags="1" name="Ano Receita Federal Tax-Anterior"/>
 <cat key="96" name="Viagens de férias /"/>
-<cat key="98" parent="96" flags="1" name="Viagem"/>
 <cat key="97" parent="96" flags="1" name="Hospedagem"/>
+<cat key="98" parent="96" flags="1" name="Viagem"/>
 <cat key="99" name="Utilitários"/>
 <cat key="100" flags="2" name="Renda / Juros"/>
 <cat key="101" flags="2" name="Rendimento de Investimento"/>
-<cat key="103" parent="101" flags="3" name="Dividendos"/>
-<cat key="105" parent="101" flags="3" name="Interesse tax-exempt"/>
 <cat key="102" parent="101" flags="3" name="Ganhos de Capital"/>
 <cat key="104" parent="101" flags="3" name="Juros"/>
+<cat key="105" parent="101" flags="3" name="Interesse tax-exempt"/>
+<cat key="103" parent="101" flags="3" name="Dividendos"/>
 <cat key="106" flags="2" name="Não é uma despesa"/>
 <cat key="107" flags="2" name="Outras receitas"/>
-<cat key="108" parent="107" flags="3" name="Apoio à Criança Recebido"/>
-<cat key="109" parent="107" flags="3" name="Employee Stock Option"/>
+<cat key="110" parent="107" flags="3" name="Dons recebidos"/>
+<cat key="112" parent="107" flags="3" name="Loterias"/>
 <cat key="114" parent="107" flags="3" name="Compensação de desemprego"/>
 <cat key="113" parent="107" flags="3" name="Restituição Imposto Estadual e Municipal"/>
-<cat key="112" parent="107" flags="3" name="Loterias"/>
+<cat key="109" parent="107" flags="3" name="Employee Stock Option"/>
 <cat key="111" parent="107" flags="3" name="Principal empréstimo recebido"/>
-<cat key="110" parent="107" flags="3" name="Dons recebidos"/>
+<cat key="108" parent="107" flags="3" name="Apoio à Criança Recebido"/>
 <cat key="115" flags="2" name="Renda de aposentadoria"/>
-<cat key="117" parent="115" flags="3" name="Pensões e Anuidades"/>
-<cat key="118" parent="115" flags="3" name="Benefícios Sociais Segurança"/>
 <cat key="116" parent="115" flags="3" name="Distribuição IRA"/>
+<cat key="118" parent="115" flags="3" name="Benefícios Sociais Segurança"/>
+<cat key="117" parent="115" flags="3" name="Pensões e Anuidades"/>
 <cat key="119" flags="2" name="Salário e Salário"/>
-<cat key="123" parent="119" flags="3" name="Remuneração Bruta"/>
-<cat key="121" parent="119" flags="3" name="Comissão"/>
+<cat key="120" parent="119" flags="3" name="Bonus"/>
+<cat key="122" parent="119" flags="3" name="Correspondência de Empregador"/>
 <cat key="126" parent="119" flags="3" name="Reembolso"/>
 <cat key="125" parent="119" flags="3" name="Overtime"/>
 <cat key="124" parent="119" flags="3" name="Net Pay"/>
-<cat key="122" parent="119" flags="3" name="Correspondência de Empregador"/>
-<cat key="120" parent="119" flags="3" name="Bonus"/>
+<cat key="123" parent="119" flags="3" name="Remuneração Bruta"/>
+<cat key="121" parent="119" flags="3" name="Comissão"/>
 <asg key="1" field="1" name="Conta de água"/>
 <fav key="3" amount="0" account="1" paymode="8" payee="8" category="25" wording="Conta de água" nextdate="737439" every="1" unit="2" limit="1"/>
 <fav key="1" amount="-130" account="2" paymode="3" st="3" flags="4" category="38" wording="Curso Aux. Necrópsia" nextdate="737460" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="4" amount="-50" account="2" paymode="11" flags="4" category="84" wording="PIC 1" nextdate="737454" every="1" unit="2" limit="1"/>
-<fav key="5" amount="-50" account="2" paymode="11" flags="4" category="84" wording="PIC 2" nextdate="737454" every="1" unit="2" limit="1"/>
+<fav key="4" amount="-50" account="2" dst_account="4" paymode="5" flags="4" category="84" wording="PIC 1" nextdate="737454" every="1" unit="2" limit="1"/>
+<fav key="5" amount="-50" account="2" dst_account="4" paymode="5" flags="4" category="84" wording="PIC 2" nextdate="737454" every="1" unit="2" limit="1"/>
 <fav key="2" amount="-100" account="2" paymode="3" payee="7" category="48" wording="Psicóloga" nextdate="737439" every="1" unit="2" limit="1"/>
 <ope date="737434" amount="117.45" account="5" paymode="3" flags="2" payee="1" category="126" wording="Reembolso 09/01/20" info="Reembolso 09/01/20"/>
 <ope date="737434" amount="-20" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
@@ -158,6 +158,7 @@
 <ope date="737438" amount="-0.55000000000000004" account="5" paymode="3" category="27" wording="Doação erês" info="Doação erês"/>
 <ope date="737438" amount="-2" account="5" paymode="3" category="27" wording="Doação" info="Doação"/>
 <ope date="737438" amount="-4.4000000000000004" account="5" paymode="3" category="76" wording="Passagem ônibus" info="Passagem ônibus"/>
+<ope date="737440" amount="-7" account="5" paymode="3" category="41" wording="Comida" info="Comida"/>
 <ope date="737433" amount="-18" account="2" paymode="6" category="41" wording="Marmita" info="Lanche - Yah"/>
 <ope date="737433" amount="-7.3399999999999999" account="2" paymode="6" category="49" wording="Remédio" info="Remédio"/>
 <ope date="737433" amount="400" account="2" dst_account="1" paymode="5" flags="2" payee="2" category="76" wording="Pag Curso Yah" info="Pag Curso Yah" kxfer="1"/>
@@ -168,6 +169,7 @@
 <ope date="737438" amount="-20" account="2" paymode="3" category="26" wording="Saque" info="Saque"/>
 <ope date="737439" amount="605.95000000000005" account="2" paymode="9" flags="2" payee="2" category="123" wording="Salário" info="Salário"/>
 <ope date="737439" amount="-401.26999999999998" account="2" paymode="8" category="11" wording="Conta Claro" info="Conta Claro"/>
+<ope date="737440" amount="-50" account="2" paymode="3" category="26" wording="Dinheiro Roberto" info="Dinheiro Roberto"/>
 <ope date="737433" amount="-29.100000000000001" account="1" paymode="6" category="71" wording="Passagem Jabaquara/Santos" info="Passagem Jabaquara/Santos"/>
 <ope date="737433" amount="-28.350000000000001" account="1" paymode="6" category="71" wording="Passagem Santos/Jabaquara" info="Passagem Santos/Jabaquara"/>
 <ope date="737433" amount="-400" account="1" dst_account="2" paymode="5" payee="2" category="76" wording="Pag Curso Yah" info="Pag Curso Yah" kxfer="1"/>

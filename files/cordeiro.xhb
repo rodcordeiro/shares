@@ -144,9 +144,10 @@
 <asg key="1" field="1" name="Conta de água"/>
 <fav key="3" amount="0" account="1" paymode="8" payee="8" category="25" wording="Conta de água" nextdate="737439" every="1" unit="2" limit="1"/>
 <fav key="1" amount="-130" account="2" paymode="3" st="3" flags="4" category="38" wording="Curso Aux. Necrópsia" nextdate="737460" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="4" amount="-50" account="2" dst_account="4" paymode="5" flags="4" category="84" wording="PIC 1" nextdate="737454" every="1" unit="2" limit="1"/>
-<fav key="5" amount="-50" account="2" dst_account="4" paymode="5" flags="4" category="84" wording="PIC 2" nextdate="737454" every="1" unit="2" limit="1"/>
+<fav key="4" amount="-50" account="2" dst_account="4" paymode="5" flags="132" payee="2" category="84" wording="PIC 1" nextdate="737454" every="1" unit="2" limit="48"/>
+<fav key="5" amount="-50" account="2" dst_account="4" paymode="5" flags="132" payee="2" category="84" wording="PIC 2" nextdate="737454" every="1" unit="2" limit="48"/>
 <fav key="2" amount="-100" account="2" paymode="3" payee="7" category="48" wording="Psicóloga" nextdate="737439" every="1" unit="2" limit="1"/>
+<fav key="6" amount="-50" account="1" dst_account="3" paymode="5" flags="132" payee="2" category="76" wording="Save money" nextdate="737445" every="1" unit="2" limit="12" weekend="2"/>
 <ope date="737434" amount="117.45" account="5" paymode="3" flags="2" payee="1" category="126" wording="Reembolso 09/01/20" info="Reembolso 09/01/20"/>
 <ope date="737434" amount="-20" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
 <ope date="737434" amount="-10" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
@@ -177,6 +178,8 @@
 <ope date="737440" amount="-50" account="2" paymode="3" category="26" wording="Dinheiro Roberto" info="Dinheiro Roberto"/>
 <ope date="737442" amount="-144.15000000000001" account="2" paymode="6" category="38" wording="Mensal Necrópsia" info="Mensal Necrópsia"/>
 <ope date="737444" amount="-50" account="2" paymode="3" category="76" wording="Recarga Bilhete Unico" info="Recarga Bilhete Unico"/>
+<ope date="737444" amount="50" account="2" dst_account="1" paymode="5" flags="2" category="76" wording="Reposição limite" info="Reposição limite" kxfer="3"/>
+<ope date="737444" amount="-10" account="2" paymode="6" category="41" wording="Comida" info="Comida"/>
 <ope date="737433" amount="-29.100000000000001" account="1" paymode="6" category="71" wording="Passagem Jabaquara/Santos" info="Passagem Jabaquara/Santos"/>
 <ope date="737433" amount="-28.350000000000001" account="1" paymode="6" category="71" wording="Passagem Santos/Jabaquara" info="Passagem Santos/Jabaquara"/>
 <ope date="737433" amount="-400" account="1" dst_account="2" paymode="5" payee="2" category="76" wording="Pag Curso Yah" info="Pag Curso Yah" kxfer="1"/>
@@ -186,4 +189,5 @@
 <ope date="737440" amount="-202.40000000000001" account="1" paymode="8" payee="8" category="25" wording="Conta de água" info="AGUA dez/19"/>
 <ope date="737442" amount="-80" account="1" paymode="6" category="76" wording="Materiais Tatto" info="Materiais Tatto"/>
 <ope date="737442" amount="-50" account="1" dst_account="5" paymode="5" category="26" wording="saque" info="saque" kxfer="2"/>
+<ope date="737444" amount="-50" account="1" dst_account="2" paymode="5" category="76" wording="Reposição limite" info="Reposição limite" kxfer="3"/>
 </homebank>

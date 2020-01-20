@@ -162,7 +162,7 @@
 <ope date="737441" amount="-2" account="5" paymode="3" category="41" wording="Esfihas" info="Esfihas"/>
 <ope date="737441" amount="-19" account="5" paymode="3" category="41" wording="Almoço" info="Almoço "/>
 <ope date="737442" amount="-70" account="5" paymode="3" category="5" wording="Conserto Carro" info="Conserto Carro"/>
-<ope date="737444" amount="50" account="5" dst_account="1" paymode="5" flags="2" category="26" wording="saque" info="saque" kxfer="2"/>
+<ope date="737442" amount="50" account="5" dst_account="1" paymode="5" flags="2" category="26" wording="saque" info="saque" kxfer="2"/>
 <ope date="737442" amount="-1.99" account="3" paymode="6" category="41" wording="Chocolate" info="Chocolate"/>
 <ope date="737433" amount="-18" account="2" paymode="6" category="41" wording="Marmita" info="Lanche - Yah"/>
 <ope date="737433" amount="-7.3399999999999999" account="2" paymode="6" category="49" wording="Remédio" info="Remédio"/>
@@ -175,8 +175,9 @@
 <ope date="737439" amount="605.95000000000005" account="2" paymode="9" flags="2" payee="2" category="123" wording="Salário" info="Salário"/>
 <ope date="737439" amount="-401.26999999999998" account="2" paymode="8" category="11" wording="Conta Claro" info="Conta Claro"/>
 <ope date="737440" amount="-50" account="2" paymode="3" category="26" wording="Dinheiro Roberto" info="Dinheiro Roberto"/>
-<ope date="737444" amount="-144.15000000000001" account="2" paymode="6" category="38" wording="Mensal Necrópsia" info="Mensal Necrópsia"/>
+<ope date="737442" amount="-144.15000000000001" account="2" paymode="6" category="38" wording="Mensal Necrópsia" info="Mensal Necrópsia"/>
 <ope date="737444" amount="-50" account="2" paymode="3" category="76" wording="Recarga Bilhete Unico" info="Recarga Bilhete Unico"/>
+<ope date="737444" amount="50" account="2" dst_account="1" paymode="5" flags="2" category="76" wording="Reposição limite" info="Reposição limite" kxfer="3"/>
 <ope date="737433" amount="-29.100000000000001" account="1" paymode="6" category="71" wording="Passagem Jabaquara/Santos" info="Passagem Jabaquara/Santos"/>
 <ope date="737433" amount="-28.350000000000001" account="1" paymode="6" category="71" wording="Passagem Santos/Jabaquara" info="Passagem Santos/Jabaquara"/>
 <ope date="737433" amount="-400" account="1" dst_account="2" paymode="5" payee="2" category="76" wording="Pag Curso Yah" info="Pag Curso Yah" kxfer="1"/>
@@ -184,6 +185,7 @@
 <ope date="737434" amount="-351.27999999999997" account="1" paymode="8" category="12" wording="Luz 12/2019" info="Luz 12/2019"/>
 <ope date="737440" amount="352" account="1" paymode="4" flags="2" payee="1" category="106" wording="Dev. Conta Luz" info="Dev. Conta Luz"/>
 <ope date="737440" amount="-202.40000000000001" account="1" paymode="8" payee="8" category="25" wording="Conta de água" info="AGUA dez/19"/>
-<ope date="737444" amount="-80" account="1" paymode="6" category="76" wording="Materiais Tatto" info="Materiais Tatto"/>
-<ope date="737444" amount="-50" account="1" dst_account="5" paymode="5" category="26" wording="saque" info="saque" kxfer="2"/>
+<ope date="737442" amount="-80" account="1" paymode="6" category="76" wording="Materiais Tatto" info="Materiais Tatto"/>
+<ope date="737442" amount="-50" account="1" dst_account="5" paymode="5" category="26" wording="saque" info="saque" kxfer="2"/>
+<ope date="737444" amount="-50" account="1" dst_account="2" paymode="5" category="76" wording="Reposição limite" info="Reposição limite" kxfer="3"/>
 </homebank>

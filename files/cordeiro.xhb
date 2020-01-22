@@ -203,4 +203,6 @@
 <ope date="737445" amount="-10" account="1" paymode="6" category="41" wording="Lanche Yah" info="Lanche Yah"/>
 <ope date="737445" amount="-34.420000000000002" account="1" paymode="6" category="49" wording="Remédios" info="Remédios"/>
 <ope date="737445" amount="-150" account="1" paymode="4" payee="4" category="16" wording="Mensalidades Raízes" info="Mensalidades"/>
+<ope date="737446" amount="-6.7800000000000002" account="1" paymode="6" category="41" wording="Comida" info="Comida"/>
+<ope date="737446" amount="-19" account="1" paymode="6" category="41" wording="Almoço" info="Almoço"/>
 </homebank>

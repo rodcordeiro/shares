@@ -5,6 +5,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [cordeiro.xhb~](cordeiro.xhb~)<br>
 [cordeiro-20200120.bak](cordeiro-20200120.bak)<br>
 [cordeiro-20200121.bak](cordeiro-20200121.bak)<br>
+[cordeiro-20200122.bak](cordeiro-20200122.bak)<br>
 [Rodrigo](Rodrigo)<br>
 [Curriculo.docx](Curriculo.docx)<br>
 [Rodrigo](Rodrigo)<br>

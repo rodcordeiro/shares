@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>jogo.py | Cordeiro's DEV</title>
+<title>rename.py | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,55 +63,44 @@
 
 </head>
 <body>
-<h3><a href='jogo.py' download='jogo.py'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='rename.py' download='rename.py'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
 <pre><code class='python'>
-# -*_ coding: utf-8 -*-
-import random
+# -*- coding: utf-8 -*-
 
-#Criar jogo megasena
-#1 jogo de 6 números que podem ir de 1 a 60
+import re
+import os
+import shutil
 
-def jogo():
-	jogo = []
-	for x in range(6):
-		jogo.append(random.randint(1,60))
-	return jogo
+main_folder='./teste/'
 
-def difference(a, b):
-	_b = set(b)
-	return [item for item in a if item not in _b]
+def rename_file(file):
+	file_name, file_extension = os.path.splitext(file)
+	file_name_numbers = re.findall('\d+',file_name)
+	if not file_name_numbers:
+		return file
+	file_name_numbers = file_name_numbers[0].zfill(3)
+	return f'{file_name_numbers}{file_extension}'
+
+def file_loop(root,dirs,files):
+	for file in files:
+		if not re.search('\.txt$',file):
+			continue
+		new_file_name= rename_file(file)
+		old_file_full_path = os.path.join(root,file)
+		new_file_full_path = os.path.join(root, new_file_name)
+		print(f'Movendo arquivo {file} para {new_file_name}')
+		shutil.move(old_file_full_path,new_file_full_path)
 
 
-def novo_jogo():
-	jogo1 = jogo()
-	jogo2 = jogo()
-	resultado = difference(jogo1,jogo2)
-	return resultado[1]
 
-def numeros():
-	partida = []
-	partida2 = []
-	partida3 = []
-	for x in range(6):
-		partida.append(novo_jogo())
-		partida2.append(novo_jogo())
-		partida3.append(novo_jogo())
-	partida4 = difference(partida,partida2)
-	return difference(partida3,partida4)
 
-def rodada():
-	rodada = numeros()
-	if len(rodada)<6:
-		while len(rodada)<6:
-			rodada.append(random.randint(1,60))
-		return rodada
-	else:
-		return rodada
+def main_loop():
+	for root, dirs, files in os.walk(main_folder):
+		file_loop(root, dirs, files)
 
-print(rodada())
-print(rodada())
-print(rodada())
+
+main_loop()
 </code></pre>
 </div>
 </body>

@@ -41,6 +41,6 @@ def rodada():
 	else:
 		return rodada
 
-print rodada()
-print rodada()
-print rodada()
+print(rodada())
+print(rodada())
+print(rodada())

@@ -4,6 +4,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 ---------------------------
 [01_-_Livro_completo_java_para_iniciantes_herbert_Schildt.pdf](01_-_Livro_completo_java_para_iniciantes_herbert_Schildt.pdf)<br>
 [1000nomes.pdf](1000nomes.pdf)<br>
+[A_Arte_de_Invadir_-_Kevin_D._Mitnick.pdf](A_Arte_de_Invadir_-_Kevin_D._Mitnick.pdf)<br>
 [caelum-csharp-dotnet-fn13.pdf](caelum-csharp-dotnet-fn13.pdf)<br>
 [CompTIA_PenTest_Practice_Tests.pdf](CompTIA_PenTest_Practice_Tests.pdf)<br>
 [CSSAnimations.pdf](CSSAnimations.pdf)<br>
@@ -11,6 +12,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [desenvolvimento-web-com-python-e-django.pdf](desenvolvimento-web-com-python-e-django.pdf)<br>
 [EBOOK_Dashboard.pdf](EBOOK_Dashboard.pdf)<br>
 [gallifreyan.pdf](gallifreyan.pdf)<br>
+[Guia_do_Hacker_Brasileiro.pdf](Guia_do_Hacker_Brasileiro.pdf)<br>
 [HowToCodeInHTML5AndCSS3.pdf](HowToCodeInHTML5AndCSS3.pdf)<br>
 [Instalacao_configuracao_windows.pdf](Instalacao_configuracao_windows.pdf)<br>
 [Intro_Linux_e_ShellScripting.pdf](Intro_Linux_e_ShellScripting.pdf)<br>
@@ -20,6 +22,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Learning_PHP,MySQL](Learning_PHP,MySQL)<br>
 [_JavaScript.pdf](_JavaScript.pdf)<br>
 [Linux_A_Biblia.pdf](Linux_A_Biblia.pdf)<br>
+[Livro_Proibido_do_Curso_de_Hacker.pdf](Livro_Proibido_do_Curso_de_Hacker.pdf)<br>
 [Mastering_MariaDB.pdf](Mastering_MariaDB.pdf)<br>
 [Oracle_DBA_Mentor.pdf](Oracle_DBA_Mentor.pdf)<br>
 [Penetration_Testing_with_the_Bash_shell.pdf](Penetration_Testing_with_the_Bash_shell.pdf)<br>

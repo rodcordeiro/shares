@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Testamentos-Jed@';
+    src: url('https://rodcordeiro.github.io/shares/fonts/testamentos_jeda/Testamentos-Jed.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/testamentos_jeda/Testamentos-Jed.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/testamentos_jeda/Testamentos-Jed.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/testamentos_jeda/Testamentos-Jed.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/testamentos_jeda/Testamentos-Jed.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/testamentos_jeda/Testamentos-Jed.svg#Testamentos-Jed@') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

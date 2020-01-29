@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Tatoo Sailor';
+    src: url('https://rodcordeiro.github.io/shares/fonts/tatoo_sailor/TatooSailor.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/tatoo_sailor/TatooSailor.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/tatoo_sailor/TatooSailor.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/tatoo_sailor/TatooSailor.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/tatoo_sailor/TatooSailor.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/tatoo_sailor/TatooSailor.svg#TatooSailor') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+

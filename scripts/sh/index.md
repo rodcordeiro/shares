@@ -12,6 +12,7 @@ This folder of the repo keeps all the shell scripts
 [ip.sh.html](ip.sh.html)<br>
 [menu.sh.html](menu.sh.html)<br>
 [nbs.sh.html](nbs.sh.html)<br>
+[prepare.sh.html](prepare.sh.html)<br>
 [rename.sh.html](rename.sh.html)<br>
 [speed.sh.html](speed.sh.html)<br>
 [vader.sh.html](vader.sh.html)<br>

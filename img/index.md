@@ -5,8 +5,8 @@ This folder of the repo keeps all the image files
 [avatar.png](avatar.png)<br>
 [basket.jpg](basket.jpg)<br>
 [city.jpg](city.jpg)<br>
-[codigo.png](codigo.png)<br>
 [codigo2.jpg](codigo2.jpg)<br>
+[codigo.png](codigo.png)<br>
 [estudante.jpg](estudante.jpg)<br>
 [eu.jpg](eu.jpg)<br>
 [freira.jpg](freira.jpg)<br>
@@ -15,8 +15,8 @@ This folder of the repo keeps all the image files
 [galaxia3.jpg](galaxia3.jpg)<br>
 [Kordeiro.jpg](Kordeiro.jpg)<br>
 [krita.png](krita.png)<br>
-[logo.png](logo.png)<br>
 [logo_branco.png](logo_branco.png)<br>
+[logo.png](logo.png)<br>
 [luke.png](luke.png)<br>
 [paisagem.jpg](paisagem.jpg)<br>
 [projeto_x.png](projeto_x.png)<br>

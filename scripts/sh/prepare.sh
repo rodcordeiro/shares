@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+###########################################################
+#                                                         #
+# Criado por Rodrigo Cordeiro                             #
+#                                                         #
+# 2020                                                    #
+###########################################################
+#  Script desenvolvido para 'preparar' o desktop após a   #
+# formatação. Possui os principais programas utilizados e #
+# permite a seleção do que será instalado.                #
+###########################################################
 
 preparar(){
   echo """
@@ -10,15 +20,69 @@ read -p "Qual seu e-mail? " email
 echo "Irei lhe apresentar agora os programas que posso instalar para que possa escolher:"
 echo ""
 
-array=("git" "speedtest" "putty" "mega" "anydesk" "wireshark" "chrome" "lamp" "monodevelop" "eclipse")
+
 instalar=()
-for prog in ${array[*]}; do
-  read -p "Deseja instalar o programa ${prog}? (y/n)" opcao
-  case $opcao in
-    (Y|y)instalar=(${instalar[*]} $prog);;
+read -p "Deseja instalar o git? O git é um gerenciador de versionamento. (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "git");;
     (N|n);;
-  esac
-done
+esac
+read -p "Deseja configurar sua chave ssh? Irei fazer isto por ti mas preciso que esteja atento para selecionar algumas opções. (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "ssh");;
+    (N|n);;
+esac
+read -p "Deseja instalar alguns pacotes Python? Irei instalar o virtualenv, o reportlab e o setuptools. (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "python");;
+    (N|n);;
+esac
+read -p "Deseja instalar a ferramenta do Speedtest? (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "speedtest");;
+    (N|n);;
+esac
+read -p "Deseja instalar o putty? Ele serve para acessar remotamente o terminal de dispositivos (acessar um servidor linux, um roteador ou coisas assim). (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "putty");;
+    (N|n);;
+esac
+read -p "Deseja instalar o MEGAsync? (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "mega");;
+    (N|n);;
+esac
+read -p "Deseja instalar o anydesk? Serve para acesso remoto a desktop (útil para prestar suporte) (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "anydesk");;
+    (N|n);;
+esac
+read -p "Deseja instalar o wireshark? Precisarei que fique atento a algumas configurações (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "wireshark");;
+    (N|n);;
+esac
+read -p "Deseja instalar o Google Chrome? (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "chrome");;
+    (N|n);;
+esac
+read -p "Deseja configurar o servidor LAMP?? Irei instalar o Apache, o MySQL Server e o PHP. Precisarei que preste atenção durante a instalação para que possa prosseguir. (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "lamp");;
+    (N|n);;
+esac
+read -p "Deseja instalar o Monodevelop? (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "monodevelop");;
+    (N|n);;
+esac
+read -p "Deseja instalar o eclipse? (IDE Java)(y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "eclipse");;
+    (N|n);;
+esac
+
 echo "Os programas ${instalar[*]} serão instalados."
 
   echo "Baixa script que atualiza o ip"
@@ -69,7 +133,6 @@ git(){
 }
 ssh(){
 	cd
-	mkdir .ssh
 	ssh-keygen -t rsa -b 4096 -C "$email"
 	eval "$(ssh-agent -s)"
 	ssh-add ~/.ssh/id_rsa
@@ -103,7 +166,7 @@ mega(){
 	cd
 }
 anydesk(){
-	wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+  wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
   echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
   apt update
   apt install anydesk
@@ -170,5 +233,11 @@ eclipse(){
   chmod +x /usr/share/applications/eclipse.desktop
   cp /usr/share/applications/eclipse.desktop  ~/Área\ de\ Trabalho/
 }
+
+# Este if checa se o usuário é root.
+if ! [ $(id -u) = 0 ]; then
+   echo "This script must be run as root, use sudo ./prepare.sh"
+   exit 1
+fi
 preparar
 iniciar

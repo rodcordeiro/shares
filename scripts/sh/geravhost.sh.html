@@ -80,25 +80,25 @@
 #                                                         #
 ###########################################################
 #!/bin/bash
- 
+
 echo "Informe o nome do servidor (Ex.: siteexemplo) :"
 read vhost
 
 caminho="/var/www/$vhost"
 mkdir $caminho
-chown -R $USER:$USER $caminho
+chown -hR $USER:$USER $caminho
 chmod -R 755 $caminho
 echo "<h1>Working</h1>" >"$caminho/index.html"
 
- 
+
 echo "Criando configuração de VHost para o servidor"
 
-#aqui é criado o arquivo de virtual host para o domínio e 
+#aqui é criado o arquivo de virtual host para o domínio e
 #é feita a escrita das configurações no arquivo
 echo "<VirtualHost *:80>
     	ServerAdmin webmaster@localhost
     	ServerName $vhost
-    	ServerAlias www.$vhost 
+    	ServerAlias www.$vhost
     	DocumentRoot $caminho
    	 <Directory $caminho>
        		Options Indexes FollowSymLinks MultiViews
@@ -119,7 +119,7 @@ echo "127.0.1.1     $vhost www.$vhost" >> /etc/hosts
 #renicia-se o servidor apache para aplicar as configurações
 echo "Reiniciando apache";
 service apache2 restart
- 
+
 echo "VHOST criado";
 </code></pre>
 </div>

@@ -150,6 +150,11 @@ case $opcao in
     (Y|y)instalar=(${instalar[*]} "eclipse");;
     (N|n);;
 esac
+read -p "Deseja instalar o Packet Tracer? (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "packettracer");;
+    (N|n);;
+esac
 
 echo "Os programas ${instalar[*]} serão instalados."
 
@@ -300,6 +305,17 @@ eclipse(){
   echo -e '[Desktop Entry]\n Version=1.0\n Name=eclipse\n Exec=/opt/eclipse/eclipse\n Icon=/opt/eclipse/eclipse.png\n Type=Application\n Categories=Application' | tee /usr/share/applications/eclipse.desktop
   chmod +x /usr/share/applications/eclipse.desktop
   cp /usr/share/applications/eclipse.desktop  ~/Área\ de\ Trabalho/
+}
+
+packettracer(){
+  cd
+  cd Softwares
+  mkdir pt && chown -hR $USER pt && cd pt
+  wget http://ftp.us.debian.org/debian/pool/main/libp/libpng/libpng12-0_1.2.50-2+deb8u3_amd64.deb
+  dpkg -i libpng12-0_1.2.50-2+deb8u3_amd64.deb
+  wget http://rodcordeiro.github.io/shares/files/PacketTracer_730_amd64.deb
+  dpkg -i PacketTracer_730_amd64.deb
+  apt-get install -f
 }
 
 # Este if checa se o usuário é root.

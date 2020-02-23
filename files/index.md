@@ -4,6 +4,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 ---------------------------
 [Alura.txt](Alura.txt)<br>
 [cordeiro.xhb~](cordeiro.xhb~)<br>
+[rodcordeiro.xcf](rodcordeiro.xcf)<br>
 [Rodrigo](Rodrigo)<br>
 [Cordeiro.pdf](Cordeiro.pdf)<br>
 [rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>

@@ -108,7 +108,7 @@ echo "Os programas ${instalar[*]} serão instalados."
   apt-get autoclean
   """ > /usr/local/bin/atualizar.sh
   chmod +x /usr/local/bin/atualizar.sh
-  echo "alias atualizar='sudo aptget.sh'" >~/.bash_aliases
+  echo "alias atualizar='sudo atualizar.sh'" >~/.bash_aliases
   echo "Criar pastas"
   mkdir Softwares && chown -hR $USER Softwares
   mkdir Projetos && chown -hR $USER Projetos
@@ -134,7 +134,7 @@ git(){
     apt-get update
     apt install git -y
     git config --global user.email "$email"
-  	git config --global user.name "$nome"
+	git config --global user.name "$nome"
 }
 ssh(){
 	cd

@@ -60,29 +60,32 @@ verifica_vhosts(){
 
 prepara_repositorios(){
     if [ $(git remote) ]; then
-      echo "Atualizando repositório"
+      echo ""
+      echo "> Atualizando repositório"
       git pull
     fi
     if [ -e "update_readme.sh" ]; then
-      echo "Atualizando Readme"
+      echo ""
+      echo "> Atualizando Readme"
       sudo ./update_readme.sh
     fi
-    cd
 }
 
 atualiza_repositorio(){
-
   banner
-
   lista_repositorios
   for repositorio in ${repositorios[@]}; do
     echo "---------------------
 Repositório : $repositorio"
     cd $repositorio
     prepara_repositorios
+    echo ""
+    echo "> Commitando arquivos"
     git add .
     git commit -m "Update files"
     if [ $(git remote) ]; then
+      echo ""
+      echo "> Atualizando repositório remoto"
       git push
     fi
     cd

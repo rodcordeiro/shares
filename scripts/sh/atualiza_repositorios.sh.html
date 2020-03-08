@@ -76,6 +76,20 @@ if [ $repositorios ]; then
   norepos=()
 fi
 
+banner(){
+  echo "==============================="
+  echo "|                             |"
+  echo "| ATUALIZADOR DE repositorios |"
+  echo "|                             |"
+  echo "==============================="
+  echo "|                             |"
+  echo "| Script para atualização de  |"
+  echo "|   repositorios locais e     |"
+  echo "| atualizando seu repo remoto |"
+  echo "|                             |"
+  echo "==============================="
+}
+
 lista_repositorios(){
   verifica_documentos
   verifica_projetos
@@ -106,37 +120,41 @@ verifica_vhosts(){
   for pasta in $pastas; do
     if [ -d "/var/www/$pasta/.git" ]; then
       repositorios=(${repositorios[@]} "/var/www/$pasta")
+    else
+      norepos=(${norepos[@]} "/var/www/$projeto")
     fi
   done
 }
 
 prepara_repositorios(){
-  lista_repositorios
-  for repositorio in ${repositorios[@]}; do
-    cd $repositorio
+    if [ $(git remote) ]; then
+      echo "Atualizando repositório"
+      git pull
+    fi
     if [ -e "update_readme.sh" ]; then
+      echo "Atualizando Readme"
       sudo ./update_readme.sh
     fi
     cd
-  done
 }
 
 atualiza_repositorio(){
-  prepara_repositorios
-  clear
+
+  banner
+
+  lista_repositorios
   for repositorio in ${repositorios[@]}; do
     echo "---------------------
 Repositório : $repositorio"
     cd $repositorio
-    if [ $(git remote) ]; then
-      git pull
-    fi
+    prepara_repositorios
     git add .
     git commit -m "Update files"
     if [ $(git remote) ]; then
       git push
     fi
     cd
+    echo ""
   done
   if [ $norepos ]; then
     echo "Os projetos abaixo não possuem repositório:"

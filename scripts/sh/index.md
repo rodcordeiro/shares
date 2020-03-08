@@ -3,6 +3,7 @@ This folder of the repo keeps all the shell scripts
 
 ---------------------------
 [aptget.sh.html](aptget.sh.html)<br>
+[argumentos.sh.html](argumentos.sh.html)<br>
 [bkp.sh.html](bkp.sh.html)<br>
 [cordeiro.sh.html](cordeiro.sh.html)<br>
 [create_readme.sh.html](create_readme.sh.html)<br>

@@ -42,6 +42,12 @@ case $opcao in
     (Y|y)instalar=(${instalar[*]} "speedtest");;
     (N|n);;
 esac
+woeusb
+read -p "Deseja instalar WoeUSB? É uma ferramenta para criar pendrive bootavel com Windows. (y/n)" opcao
+case $opcao in
+    (Y|y)instalar=(${instalar[*]} "woeusb");;
+    (N|n);;
+esac
 read -p "Deseja instalar o putty? Ele serve para acessar remotamente o terminal de dispositivos (acessar um servidor linux, um roteador ou coisas assim). (y/n)" opcao
 case $opcao in
     (Y|y)instalar=(${instalar[*]} "putty");;
@@ -95,18 +101,24 @@ echo "Os programas ${instalar[*]} serão instalados."
   chmod +x ip.sh
 
   echo "Preparar comando 'atualizar'"
-  echo """
-  #!/usr/bin/env bash
-  apt-get update -y
-  apt-get upgrade -y
-  apt-get check
-  apt-get --fix-missing install -y
-  apt-get dist-upgrade -y
-  apt-get update -y
-  apt-get upgrade -y
-  apt-get autoremove
-  apt-get autoclean
-  """ > /usr/local/bin/atualizar.sh
+  echo """#!/usr/bin/env bash
+apt-get update -y
+apt-get upgrade -y
+apt-get check
+apt-get --fix-missing install -y
+apt-get dist-upgrade -y
+apt-get update -y
+apt-get upgrade -y
+apt-get autoremove
+apt-get autoclean
+
+recomendacoes=$(apt-cache depends gedit | grep "Recomenda")
+for dado in $recomendacoes; do
+  if [ $dado != "Recomenda:" ]; then
+    apt-get install $dado -y
+  fi
+done;  
+""" > /usr/local/bin/atualizar.sh
   chmod +x /usr/local/bin/atualizar.sh
   echo "alias atualizar='sudo atualizar.sh'" >~/.bash_aliases
   echo "Criar pastas"
@@ -120,21 +132,22 @@ iniciar(){
   done
 }
 atualizar(){
-  apt-get update -y
-  apt-get upgrade -y
-  apt-get check
-  apt-get --fix-missing install -y
-  apt-get dist-upgrade -y
-  apt-get update -y
-  apt-get upgrade -y
-  apt-get autoremove
-  apt-get autoclean
+    apt-get update -y
+    apt-get upgrade -y
+    apt-get check
+    apt-get --fix-missing install -y
+    apt-get dist-upgrade -y
+    apt-get update -y
+    apt-get upgrade -y
+    apt-get autoremove
+    apt-get autoclean
 }
 git(){
     apt-get update
     apt install git -y
     git config --global user.email "$email"
 	git config --global user.name "$nome"
+    wget https://rodcordeiro.github.io/shares/scripts/sh/atualiza_repositorios.sh
 }
 ssh(){
 	cd
@@ -180,9 +193,13 @@ wireshark(){
   add-apt-repository ppa:wireshark-dev/stable
   apt-get update
   apt-get install wireshark -y
-  chgrp $USER /usr/bin/dumpcap
-	chmod +x /usr/bin/dumpcap
-  dpkg-reconfigure wireshark-common
+    groupadd wireshark
+    usermod -a -G wireshark $USER
+    chgrp wireshark /usr/bin/dumpcap
+    chmod 750 /usr/bin/dumpcap
+    setcap cap_net_raw,cap_net_admin=eip /usr/bin/dumpcap
+    chmod o+x /usr/bin/dumpcap
+    dpkg-reconfigure wireshark-common
 	adduser $USER wireshark
 }
 chrome(){
@@ -249,7 +266,12 @@ packettracer(){
   dpkg -i PacketTracer_730_amd64.deb
   apt-get install -f
 }
+woeusb(){
+add-apt-repository ppa:nilarimogard/webupd8 -y
+apt-get update
+apt-get install woeusb
 
+}
 # Este if checa se o usuário é root.
 if ! [ $(id -u) = 0 ]; then
    echo "This script must be run as root, use sudo ./prepare.sh"

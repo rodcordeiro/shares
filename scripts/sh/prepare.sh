@@ -151,9 +151,13 @@ git(){
     apt-get update
     apt install git -y
     git config --global user.email "$email"
-	git config --global user.name "$nome"
+	  git config --global user.name "$nome"
     wget https://rodcordeiro.github.io/shares/scripts/sh/atualiza_repositorios.sh
+    sudo chmod +x atualiza_repositorios.sh
+    sudo echo "alias repos='./atualiza_repositorios.sh'" >~/.bash_aliases
 }
+
+
 ssh(){
 	cd
 	ssh-keygen -t rsa -b 4096 -C "$email"

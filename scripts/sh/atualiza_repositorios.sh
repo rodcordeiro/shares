@@ -11,6 +11,7 @@ fi
 lista_repositorios(){
   verifica_documentos
   verifica_projetos
+  verifica_vhosts
 }
 verifica_documentos(){
   pastas=$(ls ~/Documentos/)
@@ -31,6 +32,16 @@ verifica_projetos(){
     fi
   done
 }
+
+verifica_vhosts(){
+  pastas=$(ls /var/www/)
+  for pasta in $pastas; do
+    if [ -d "/var/www/$pasta/.git" ]; then
+      repositorios=(${repositorios[@]} "/var/www/$pasta")
+    fi
+  done
+}
+
 prepara_repositorios(){
   lista_repositorios
   for repositorio in ${repositorios[@]}; do

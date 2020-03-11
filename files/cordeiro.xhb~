@@ -151,7 +151,7 @@
 <fav key="4" amount="-50" account="2" dst_account="4" flags="140" payee="2" category="128" wording="PIC 1" nextdate="737484" every="1" unit="2" limit="47" gap="1"/>
 <fav key="5" amount="-50" account="2" dst_account="4" flags="140" payee="2" category="128" wording="PIC 2" nextdate="737484" every="1" unit="2" limit="47" gap="1"/>
 <fav key="2" amount="-100" account="2" paymode="3" payee="7" category="48" wording="Psicóloga" nextdate="737439" every="1" unit="2" limit="1"/>
-<fav key="6" amount="-50" account="1" dst_account="3" flags="140" payee="2" category="76" wording="Save money" nextdate="737476" every="1" unit="2" limit="11" weekend="2"/>
+<fav key="6" amount="-50" account="1" dst_account="3" flags="1164" payee="2" category="76" wording="Save money" nextdate="737505" every="1" unit="2" limit="10" weekend="2"/>
 <ope date="737434" amount="117.45" account="5" paymode="3" flags="2" payee="1" category="126" wording="Reembolso 09/01/20" info="Reembolso 09/01/20"/>
 <ope date="737434" amount="-20" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
 <ope date="737434" amount="-10" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
@@ -194,6 +194,7 @@
 <ope date="737469" amount="-9.9900000000000002" account="3" paymode="6" category="49" wording="Remédio" info="Remédio"/>
 <ope date="737472" amount="20" account="3" dst_account="4" flags="10" payee="3" category="76" wording="Guardado &gt; NuBank" info="Guardado &gt; NuBank" kxfer="16"/>
 <ope date="737472" amount="-20" account="3" dst_account="1" flags="8" payee="1" category="76" wording="NuBank &gt; Santander" info="NuBank &gt; Santander" kxfer="17"/>
+<ope date="737476" amount="50" account="3" dst_account="1" flags="138" payee="2" category="76" wording="Save money" kxfer="18"/>
 <ope date="737433" amount="-18" account="2" paymode="6" category="41" wording="Marmita" info="Lanche - Yah"/>
 <ope date="737433" amount="-7.3399999999999999" account="2" paymode="6" category="49" wording="Remédio" info="Remédio"/>
 <ope date="737433" amount="400" account="2" dst_account="1" flags="10" payee="2" category="76" wording="Pag Curso Yah" info="Pag Curso Yah" kxfer="1"/>
@@ -287,6 +288,7 @@
 <ope date="737475" amount="-50" account="1" paymode="4" payee="10" category="22" wording="Ajuda Casa" info="Mãe"/>
 <ope date="737475" amount="800" account="1" paymode="9" flags="2" payee="1" category="119" wording="Adiantamento de Salário" info="Salário"/>
 <ope date="737475" amount="-389.80000000000001" account="1" paymode="8" category="11" wording="Conta Claro" info="Conta Celulares"/>
+<ope date="737476" amount="-50" account="1" dst_account="3" flags="136" payee="2" category="76" wording="Save money" kxfer="18"/>
 <ope date="737476" amount="-250.25999999999999" account="1" paymode="11" category="77" wording="Emprestimo (034/036)" info="Emprestimo"/>
 <ope date="737476" amount="-10.300000000000001" account="1" paymode="10" category="8" wording="Tarifa Ted Eletrônico" info="Tarifa Ted Eletronico"/>
 </homebank>

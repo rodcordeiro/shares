@@ -13,6 +13,7 @@ This folder of the repo keeps all the image files
 [galaxia1.jpg](galaxia1.jpg)<br>
 [galaxia2.jpg](galaxia2.jpg)<br>
 [galaxia3.jpg](galaxia3.jpg)<br>
+[heroes.png](heroes.png)<br>
 [Kordeiro.jpg](Kordeiro.jpg)<br>
 [krita.png](krita.png)<br>
 [logo_branco.png](logo_branco.png)<br>

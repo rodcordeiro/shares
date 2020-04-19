@@ -3,6 +3,7 @@ This folder of the repo keeps all the image files
 
 ---------------------------
 [avatar.png](avatar.png)<br>
+[baracktocat.jpg](baracktocat.jpg)<br>
 [basket.jpg](basket.jpg)<br>
 [city.jpg](city.jpg)<br>
 [codigo2.jpg](codigo2.jpg)<br>
@@ -20,6 +21,7 @@ This folder of the repo keeps all the image files
 [logo.png](logo.png)<br>
 [luke.png](luke.png)<br>
 [paisagem.jpg](paisagem.jpg)<br>
+[privateinvestocat.jpg](privateinvestocat.jpg)<br>
 [projeto_x.png](projeto_x.png)<br>
 [RC.png](RC.png)<br>
 [RC-W.png](RC-W.png)<br>

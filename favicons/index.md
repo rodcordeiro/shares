@@ -13,6 +13,7 @@ This folder of the repo keeps all the favicons that I use on my personal project
 [icnt](icnt)<br>
 [imperio](imperio)<br>
 [map](map)<br>
+[skyrim](skyrim)<br>
 [speed](speed)<br>
 
 ---------------------------

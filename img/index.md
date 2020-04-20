@@ -7,6 +7,7 @@ This folder of the repo keeps all the image files
 [basket.jpg](basket.jpg)<br>
 [city.jpg](city.jpg)<br>
 [codigo2.jpg](codigo2.jpg)<br>
+[codigo3.jpeg](codigo3.jpeg)<br>
 [codigo.png](codigo.png)<br>
 [estudante.jpg](estudante.jpg)<br>
 [eu.jpg](eu.jpg)<br>

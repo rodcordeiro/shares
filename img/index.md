@@ -19,6 +19,7 @@ This folder of the repo keeps all the image files
 [Kordeiro.jpg](Kordeiro.jpg)<br>
 [krita.png](krita.png)<br>
 [logo_branco.png](logo_branco.png)<br>
+[LogoICNT.jpg](LogoICNT.jpg)<br>
 [logo.png](logo.png)<br>
 [luke.png](luke.png)<br>
 [paisagem.jpg](paisagem.jpg)<br>

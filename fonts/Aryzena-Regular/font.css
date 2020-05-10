@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Aryzena';
+    src: url('https://rodcordeiro.github.io/shares/fonts/Aryzena-Regular/Aryzena-Regular.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Aryzena-Regular/Aryzena-Regular.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Aryzena-Regular/Aryzena-Regular.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/Aryzena-Regular/Aryzena-Regular.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/Aryzena-Regular/Aryzena-Regular.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Aryzena-Regular/Aryzena-Regular.svg#Aryzena-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

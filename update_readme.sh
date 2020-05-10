@@ -67,6 +67,7 @@ echo "<!DOCTYPE html>
     </style>
 </head>
 <body>
+	<a href='../'>Back ../ </a>
     <div class='container'>"> index.html
 	ls=`ls -1 --hide=index.md --hide=index.html | sort`
 	for i in ${ls}; do
@@ -152,19 +153,70 @@ cd ..
 #*******************************************************
 # Fonts
 cd fonts
-echo "# Fonts" > index.md
-echo "This folder of the repo keeps all the special fonts that I use, like Aurebesh ([see it here](https://rodcordeiro.github.io/Projects/Aurebesh/index.html))" >> index.md
-echo "" >> index.md
-echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh | sort`
+rm fonts.css
+echo "
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Fonts | Share</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            min-height: 80vh;
+            width: 80%;
+            margin: 5% auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px;
+            flex-wrap: wrap;
+            font-family: sans-serif;
+        }
+        .container p{
+            margin: 5px;
+            line-height: 24pt;
+            font-size: 24pt;
+            padding: 10px 15px;
+            border: 2px solid;
+        }
+    </style>
+    <link rel='stylesheet' href='fonts.css'>
+</head>
+<body>
+    <a href='../'>Back ../ </a>
+    <div class='container'>" > index.html
+	ls=`ls -1 --hide=index.md --hide=index.html | sort`
 	for i in ${ls}; do
-		echo "[${i}](${i})<br>">> index.md
+	fontfamily=`sed -n "2p" ./${i}/font.css`
+	echo `cat ./${i}/font.css` >>fonts.css
+	echo "<p onclick='getElement(\"http\:\/\/rodcordeiro.github.io\/shares\/fonts\/${i}\/font.css\")'>${i}: <span style=\"${fontfamily}\">The brown fox jumps over the lazy dog</span></p>">>index.html
 	done
 
-echo "" >> index.md
-echo "---------------------------" >> index.md
-echo "" >> index.md
-echo "[back](../)" >> index.md
+echo "</div>
+    <script>
+        const copyToClipboard = str => {
+            const el = document.createElement('textarea');
+            el.value = str;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+        function getElement(element){
+            console.log(element)
+        }
+    </script>
+</body>
+</html>" >> index.html
 cd ..
 #*******************************************************
 # Scripts
@@ -187,6 +239,7 @@ echo "[back](../)" >> index.md
 # cmd
 cd cmd
 ./files.sh
+
 echo "# Scripts > CMD" > index.md
 echo "This folder of the repo keeps all the batch scripts" >> index.md
 echo "" >> index.md

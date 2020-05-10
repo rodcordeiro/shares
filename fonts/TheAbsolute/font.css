@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'The Absolute';
+    src: url('https://rodcordeiro.github.io/shares/fonts/TheAbsolute/TheAbsoluteRegular.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/TheAbsolute/TheAbsoluteRegular.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/TheAbsolute/TheAbsoluteRegular.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/TheAbsolute/TheAbsoluteRegular.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/TheAbsolute/TheAbsoluteRegular.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/TheAbsolute/TheAbsoluteRegular.svg#TheAbsoluteRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

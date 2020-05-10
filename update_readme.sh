@@ -212,7 +212,7 @@ echo "</div>
             document.body.removeChild(el);
         };
         function getElement(element){
-            console.log(element)
+            copyToClipboard(element)
         }
     </script>
 </body>

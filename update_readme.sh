@@ -37,19 +37,65 @@ cd ..
 #*******************************************************
 # IMG
 cd img
-echo "# Images" > index.md
-echo "This folder of the repo keeps all the image files" >> index.md
-echo "" >> index.md
-echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh | sort`
-	for i in ${ls}; do
-		echo "[${i}](${i})<br>">> index.md
-	done
 
-echo "" >> index.md
-echo "---------------------------" >> index.md
-echo "" >> index.md
-echo "[back](../)" >> index.md
+echo "<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Images | Share</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            min-height: 80vh;
+            width: 80%;
+            margin: 5% auto;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+        .container img {
+            height: 250px;
+            width: 250px;
+            border: 1px solid;
+            margin: 15px
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>"> index.html
+	ls=`ls -1 --hide=index.md --hide=index.html | sort`
+	for i in ${ls}; do
+		echo "<img src='${i}' onclick='getElement(this)' alt='${i}'>">> index.html
+	done
+echo "</div>
+    <script>
+		const copyToClipboard = str => {
+            const el = document.createElement('textarea');
+            el.value = str;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+        function getElement(element){
+            copyToClipboard(element.src)
+        }
+    </script>
+</body>
+</html>">>index.html
+
+# echo "" >> index.html
+# echo "---------------------------" >> index.md
+# echo "" >> index.md
+# echo "[back](../)" >> index.md
 cd ..
 #*******************************************************
 # BOOKS

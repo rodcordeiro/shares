@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Images | Share</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            min-height: 80vh;
+            width: 80%;
+            margin: 5% auto;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+        .container img {
+            height: 250px;
+            width: 250px;
+            border: 1px solid;
+            margin: 15px
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+<img src='avatar.png' onclick='getElement(this)' alt='avatar.png'>
+<img src='baracktocat.jpg' onclick='getElement(this)' alt='baracktocat.jpg'>
+<img src='basket.jpg' onclick='getElement(this)' alt='basket.jpg'>
+<img src='city.jpg' onclick='getElement(this)' alt='city.jpg'>
+<img src='codigo2.jpg' onclick='getElement(this)' alt='codigo2.jpg'>
+<img src='codigo3.jpeg' onclick='getElement(this)' alt='codigo3.jpeg'>
+<img src='codigo.png' onclick='getElement(this)' alt='codigo.png'>
+<img src='estudante.jpg' onclick='getElement(this)' alt='estudante.jpg'>
+<img src='eu.jpg' onclick='getElement(this)' alt='eu.jpg'>
+<img src='freira.jpg' onclick='getElement(this)' alt='freira.jpg'>
+<img src='galaxia1.jpg' onclick='getElement(this)' alt='galaxia1.jpg'>
+<img src='galaxia2.jpg' onclick='getElement(this)' alt='galaxia2.jpg'>
+<img src='galaxia3.jpg' onclick='getElement(this)' alt='galaxia3.jpg'>
+<img src='heroes.png' onclick='getElement(this)' alt='heroes.png'>
+<img src='Kordeiro.jpg' onclick='getElement(this)' alt='Kordeiro.jpg'>
+<img src='krita.png' onclick='getElement(this)' alt='krita.png'>
+<img src='logo_branco.png' onclick='getElement(this)' alt='logo_branco.png'>
+<img src='LogoICNT.jpg' onclick='getElement(this)' alt='LogoICNT.jpg'>
+<img src='logo.png' onclick='getElement(this)' alt='logo.png'>
+<img src='luke.png' onclick='getElement(this)' alt='luke.png'>
+<img src='paisagem.jpg' onclick='getElement(this)' alt='paisagem.jpg'>
+<img src='privateinvestocat.jpg' onclick='getElement(this)' alt='privateinvestocat.jpg'>
+<img src='projeto_x.png' onclick='getElement(this)' alt='projeto_x.png'>
+<img src='RC.png' onclick='getElement(this)' alt='RC.png'>
+<img src='RC-W.png' onclick='getElement(this)' alt='RC-W.png'>
+<img src='Rosa.jpg' onclick='getElement(this)' alt='Rosa.jpg'>
+<img src='vader.png' onclick='getElement(this)' alt='vader.png'>
+<img src='vmask_troopers.jpg' onclick='getElement(this)' alt='vmask_troopers.jpg'>
+<img src='Wallpapers_OmniStack_11.zip' onclick='getElement(this)' alt='Wallpapers_OmniStack_11.zip'>
+</div>
+    <script>
+		const copyToClipboard = str => {
+            const el = document.createElement('textarea');
+            el.value = str;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+        function getElement(element){
+            copyToClipboard(element.src)
+        }
+    </script>
+</body>
+</html>

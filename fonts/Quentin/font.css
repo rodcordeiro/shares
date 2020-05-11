@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Quentin';
-    src: url('Quentin.eot');
-    src: url('Quentin.eot?#iefix') format('embedded-opentype'),
-        url('Quentin.woff2') format('woff2'),
-        url('Quentin.woff') format('woff'),
-        url('Quentin.ttf') format('truetype'),
-        url('Quentin.svg#Quentin') format('svg');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Quentin/Quentin.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Quentin/Quentin.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Quentin/Quentin.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/Quentin/Quentin.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/Quentin/Quentin.ttf') format('truetype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Quentin/Quentin.svg#Quentin') format('svg');
     font-weight: normal;
     font-style: normal;
 }

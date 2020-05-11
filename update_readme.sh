@@ -93,10 +93,6 @@ echo "</div>
 </body>
 </html>">>index.html
 
-# echo "" >> index.html
-# echo "---------------------------" >> index.md
-# echo "" >> index.md
-# echo "[back](../)" >> index.md
 cd ..
 #*******************************************************
 # BOOKS
@@ -118,20 +114,78 @@ cd ..
 #*******************************************************
 # FAVICONS
 cd favicons
-echo "# SHARES" > index.md
-echo "# Favicons" >> index.md
-echo "This folder of the repo keeps all the favicons that I use on my personal projects" >> index.md
-echo "" >> index.md
-echo "---------------------------" >> index.md
-	ls=`ls -1 --hide=index.md --hide=att.sh | sort`
+echo "<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Favicons | Share</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            min-height: 80vh;
+            width: 80%;
+            margin: 5% auto;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+        .container img {
+            height: 250px;
+            width: 250px;
+            border: 1px solid;
+            margin: 15px
+        }
+    </style>
+</head>
+<body>
+	<a href='../'>Back ../ </a>
+    <div class='container'>"> index.html
+	ls=`ls -1 --hide=index.md --hide=index.html | sort`
 	for i in ${ls}; do
-		echo "[${i}](${i})<br>">> index.md
+		echo "<img src='${i}/apple-icon.png' onclick='getElement(\"${i}\")' alt='${i}'>">> index.html
 	done
-
-echo "" >> index.md
-echo "---------------------------" >> index.md
-echo "" >> index.md
-echo "[back](../)" >> index.md
+echo "</div>
+    <script>
+		const fav = elementar => { 
+            return \`<!-- FAVICON -->\n\
+	<link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-57x57.png\">\n\
+	<link rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-76x76.png\">\n\
+	<link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-72x72.png\">\n\
+	<link rel=\"apple-touch-icon\" sizes=\"60x60\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-60x60.png\">\n\
+	<link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-114x114.png\">\n\
+	<link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-120x120.png\">\n\
+	<link rel=\"apple-touch-icon\" sizes=\"144x144\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-144x144.png\">\n\
+	<link rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-152x152.png\">\n\
+	<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/apple-icon-180x180.png\">\n\
+	<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\"  href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/android-icon-192x192.png\">\n\
+	<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/favicon-32x32.png\">\n\
+	<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/favicon-96x96.png\">\n\
+	<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/favicon-16x16.png\">\n\
+	<link rel=\"manifest\" href=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/manifest.json\">\n\
+	<meta name=\"msapplication-TileImage\" content=\"HTTPS://rodcordeiro.github.io/shares/favicons/\${elementar}/ms-icon-144x144.png\">\n\
+\`}
+		const copyToClipboard = str => {
+            const el = document.createElement('textarea');
+            el.value = str;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+        function getElement(element){
+            copyToClipboard(fav(element))
+        }
+    </script>
+</body>
+</html>">>index.html
 cd ..
 #*******************************************************
 # Files

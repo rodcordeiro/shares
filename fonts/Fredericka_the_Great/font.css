@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Fredericka the Great';
+    src: url('https://rodcordeiro.github.io/shares/fonts/Fredericka_the_Great/FrederickatheGreat-Regular.eot');
+    src: url('https://rodcordeiro.github.io/shares/fonts/Fredericka_the_Great/FrederickatheGreat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('https://rodcordeiro.github.io/shares/fonts/Fredericka_the_Great/FrederickatheGreat-Regular.woff2') format('woff2'),
+        url('https://rodcordeiro.github.io/shares/fonts/Fredericka_the_Great/FrederickatheGreat-Regular.woff') format('woff'),
+        url('https://rodcordeiro.github.io/shares/fonts/Fredericka_the_Great/FrederickatheGreat-Regular.svg#FrederickatheGreat-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

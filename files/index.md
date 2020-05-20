@@ -7,15 +7,12 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [integrationHabiticaTrello.js](integrationHabiticaTrello.js)<br>
 [krunkerAssets](krunkerAssets)<br>
 [rodcordeiro.xcf](rodcordeiro.xcf)<br>
-[Rodrigo](Rodrigo)<br>
-[Cordeiro.pdf](Cordeiro.pdf)<br>
+[RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>
 [rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
-[Rodrigo](Rodrigo)<br>
-[Curriculo](Curriculo)<br>
-[bkp.docx](bkp.docx)<br>
-[Rodrigo](Rodrigo)<br>
-[Curriculo.docx](Curriculo.docx)<br>
+[RodrigoCurriculobkp.docx](RodrigoCurriculobkp.docx)<br>
+[RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
 [subdominios.txt](subdominios.txt)<br>
+[uninoveMaio.pdf](uninoveMaio.pdf)<br>
 
 ---------------------------
 

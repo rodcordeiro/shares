@@ -75,15 +75,15 @@ put $LOCALHOST_BKP
 bye
 EOF
 
-#END MSG
-echo "-------------------------------------"
-echo "Backup ${BKP_NAME} e ${LOCALHOST_BKP} realizados com sucesso!"
-echo ""
-echo "Diretório de destino: ${FTP_HOST}/BKP"
-echo ""
-echo "-------------------------------------"
-echo ""
-rm -r BKP
+	#END MSG
+		echo "-------------------------------------"
+		echo "Backup ${BKP_NAME} e ${LOCALHOST_BKP} realizados com sucesso!"
+		echo ""
+		echo "Diretório de destino: ${FTP_HOST}/BKP"
+		echo ""
+		echo "-------------------------------------"
+		echo ""
+		rm -r BKP
 rm $BKP_NAME
 rm $LOCALHOST_BKP
 }

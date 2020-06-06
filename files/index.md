@@ -4,12 +4,14 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 ---------------------------
 [Alura.txt](Alura.txt)<br>
 [cordeiro.xhb~](cordeiro.xhb~)<br>
+[flag.txt](flag.txt)<br>
 [krunkerAssets](krunkerAssets)<br>
 [rodcordeiro.xcf](rodcordeiro.xcf)<br>
 [RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>
 [rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
 [RodrigoCurriculobkp.docx](RodrigoCurriculobkp.docx)<br>
 [RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
+[saporra.txt](saporra.txt)<br>
 [subdominios.txt](subdominios.txt)<br>
 [uninoveMaio.pdf](uninoveMaio.pdf)<br>
 

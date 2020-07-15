@@ -70,60 +70,49 @@
 
 processo(){
 cd
+ssh
 preparar
 
 Atualizar
-git
+
 mega
-apt update -y
+
 anydesk
-apt update -y
+
 sublime
-apt update -y
-wireshark
-putty
-apt update -y
-opencomic
-krita
-apt update -y
-waf
-rdesktop
+
+
+woeusb
+clip
 speedtest
 modulos
-ssh
 Atualizar
 driver_rede
 }
 preparar(){
+	cd
 	mkdir Softwares
-	mkdir Projetos
-	
-	wget https://rodcordeiro.github.io/shares/scripts/sh/aptget.sh
-	wget https://rodcordeiro.github.io/shares/scripts/sh/geravhost.sh
-	wget https://rodcordeiro.github.io/shares/scripts/sh/ip.sh
-	wget https://rodcordeiro.github.io/shares/scripts/sh/nbs.sh
-	
-	chmod +x *.sh
+	echo "Preparar comando 'atualizar'"
+  	echo """#!/usr/bin/env bash
+apt-get update -y
+apt-get upgrade -y
+apt-get check
+apt-get --fix-missing install -y
+apt-get dist-upgrade -y
+apt-get update -y
+apt-get upgrade -y
+apt-get autoremove
+apt-get autoclean
 
-	cp aptget.sh /usr/local/bin/
-	cp geravhost.sh /usr/local/bin/
-	
-
-	echo "alias atualizar='sudo aptget.sh'
-alias vhost='sudo geravhost.sh'" >~/.bash_aliases
-
-	echo "
-## PENDENCIAS
-https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04
-https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-18-04
-
-Configurar o ssh no github
-
-#Outras informações
-https://www.linuxmint.com.br/discussion/47814/alternativa-para-rdesktop
-" > "Área de Trabalho/Pendencias.txt"
-
-	wget https://rodcordeiro.github.io/shares/files/subdominios.txt
+recomendacoes=$(apt-cache depends gedit | grep "Recomenda")
+for dado in $recomendacoes; do
+  if [ $dado != "Recomenda:" ]; then
+    apt-get install $dado -y
+  fi
+done;
+""" > /usr/local/bin/atualizar.sh
+  chmod +x /usr/local/bin/atualizar.sh
+  echo "alias atualizar='sudo atualizar.sh'" >~/.bash_aliases
 }
 
 Atualizar(){
@@ -145,56 +134,32 @@ driver_rede(){
 }
 
 chrome(){
-	cd Softwares
+  cd
+  cd Softwares
 	mkdir chrome
 	cd chrome
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	sudo dpkg -i *.deb
+	dpkg -i *.deb
 	apt install -f -y
 	cd ..
-	rm -r chrome
+	rm -rf chrome
 	cd
 }
-
-opencomic(){
-##
-# Instalando OpenComic
-# https://github.com/ollm/OpenComic
-cd Softwares/
-mkdir OpenComic
-cd OpenComic
-wget https://github.com/ollm/OpenComic/releases/download/v0.1.4/opencomic_0.1.4_amd64.deb
-sudo dpkg -i *.deb
-apt install -f -y
-read -p "Press [ENTER] key to continue..."
-cd
+woeusb(){
+add-apt-repository ppa:nilarimogard/webupd8 -y
+apt-get update
+apt-get install woeusb
 }
-
-krita(){
-	cd Softwares
-	mkdir krita
-	chmod 777 krita
-	cd krita
-	wget https://download.kde.org/stable/krita/4.2.8/krita-4.2.8-x86_64.appimage
-	wget https://rodcordeiro.github.io/shares/img/krita.png
-	sudo echo -e "[Desktop Entry]
-	Exec=/home/cordeiro/Softwares/krita/krita-4.2.8-x86_64.appimage
-	Icon=/home/cordeiro/Softwares/krita/krita.png
-	Name=Krita
-	Path=/home/cordeiro/Softwares/krita/
-	" | tee /usr/share/applications/krita.desktop
-	sudo cp /usr/share/applications/krita.desktop "/home/cordeiro/Área de Trabalho/"
-	chmod +x *.appimage
+clip(){
+  apt-get update
+  apt-get install xclip
+  echo "alias clip='xclip -selection clipboard'" > ~/.bash_aliases
+}
+ssh(){
 	cd
-}
-
-wireshark(){
-	sudo add-apt-repository ppa:wireshark-dev/stable
-	Atualizar
-	apt-get install wireshark -y
-	chgrp cordeiro /usr/bin/dumpcap
-	chmod +x /usr/bin/dumpcap
-	setcap cap_net_raw, cap_net_admin+eip /usr/bin/dumpcap
+	ssh-keygen -t rsa -b 4096 -C "$email"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_rsa
 }
 anydesk(){
 	cd Softwares
@@ -224,33 +189,7 @@ putty(){
 	apt-get install putty -y
 }
 
-sublime(){
-	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-	apt-get install apt-transport-https
-	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-	apt-get update
-	apt-get install sublime-text -y
-}
-git(){
-	apt-get install git -y
-	git config --global user.email "rodrigomendoncca@gmail.com"
-	git config --global user.name "Rodrigo Cordeiro"
-}
-ssh(){
-	cd
-	mkdir .ssh
-	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-	eval "$(ssh-agent -s)"
-	ssh-add ~/.ssh/id_rsa
-}
 
-waf(){
-	sudo apt-get install -y wafw00f
-}
-rdesktop(){
-	apt-get install rdesktop -y
-
-}
 speedtest(){
 sudo apt-get install gnupg1 apt-transport-https dirmngr -y
 export INSTALL_KEY=379CE192D401AB61

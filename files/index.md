@@ -3,6 +3,8 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 
 ---------------------------
 [Alura.txt](Alura.txt)<br>
+[bethehero.jks](bethehero.jks)<br>
+[betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
 [cordeiro.xhb~](cordeiro.xhb~)<br>
 [flag.txt](flag.txt)<br>
 [krunkerAssets](krunkerAssets)<br>

@@ -287,9 +287,12 @@ clip(){
 }
 
 
+fspec=$0
+filename="${fspec##*/}"  # get filename
+
 # Este if checa se o usuário é root.
 if ! [ $(id -u) = 0 ]; then
-   echo "This script must be run as root, use sudo ./prepare.sh"
+   echo "This script must be run as root, use sudo ./${filename}"
    exit 1
 fi
 preparar

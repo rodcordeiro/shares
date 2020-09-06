@@ -5,3 +5,12 @@ panel
 painel
 dashboard
 webmail
+kb
+knowledgebase
+control
+login
+sessions
+session
+user
+users
+wp

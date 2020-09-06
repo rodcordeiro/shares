@@ -6,6 +6,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [bethehero.jks](bethehero.jks)<br>
 [betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
 [cordeiro.xhb~](cordeiro.xhb~)<br>
+[Documentacao.zip](Documentacao.zip)<br>
 [flag.txt](flag.txt)<br>
 [krunkerAssets](krunkerAssets)<br>
 [mago.html](mago.html)<br>

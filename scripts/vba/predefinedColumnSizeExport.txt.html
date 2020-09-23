@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>ativar_proxy.vbs | Cordeiro's DEV</title>
+<title>predefinedColumnSizeExport.txt | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,15 +63,93 @@
 
 </head>
 <body>
-<h3><a href='ativar_proxy.vbs' download='ativar_proxy.vbs'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='predefinedColumnSizeExport.txt' download='predefinedColumnSizeExport.txt'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='VBScript'>
-dim oShell
-set oShell = Wscript.CreateObject("Wscript.Shell")
+<pre><code class='PowerShell'>
+Sub export()
 
-if msgbox("Este programa tem o Intuito de configurar o proxy para que possa navegar dentro e fora da Akta. Deseja habilitar ou desabilitar o Poxy?" & Chr(13) & Chr(10) & Chr(13) & Chr(10) & "- SIM: Caso esteja na Akta "& Chr(13) & Chr(10) & "- NAO: Caso esteja fora da Akta", vbQuestion or vbYesNo,"TI Akta Motors") = vbYes then
-oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 1, "REG_DWORD"
-oShell.RegWrite "HKCU\Software\Microsoft\Windows</code></pre>
+'This script takes the data on the sheet and exports into file with predefined column sizes.
+
+coluna = 18
+
+Dim valor As String
+Dim result As String
+Dim file As String
+
+file = "C:\Userskta\Desktopesult.txt"
+
+'Abre o arquivo no qual será exportado
+Open file For Output As 1
+
+
+Range("A2").Select
+
+Do While ActiveCell.Value <> ""
+  valor = Len(ActiveCell.Value)
+  result = ActiveCell.Value
+
+  'Calcula 1 IdAnt
+  If valor < coluna Then
+    While valor < coluna
+       valor = valor + 1
+       result = "0" & result
+    Wend
+  End If
+
+  'Calcula 2 DescAnt
+  Cells(ActiveCell.Row, ActiveCell.Column + 1).Select
+  valor = Len(ActiveCell.Value)
+  result = result & ActiveCell.Value
+  If valor < coluna Then
+    While valor < coluna
+       valor = valor + 1
+       result = result & " "
+    Wend
+  End If
+
+  'Calcula 3 IdNew
+  Cells(ActiveCell.Row, ActiveCell.Column + 1).Select
+  valor = Len(ActiveCell.Value)
+  result = result & ActiveCell.Value
+  If valor < coluna Then
+    While valor < coluna
+       valor = valor + 1
+       result = "0" & result
+    Wend
+  End If
+
+  'Calcula 4 DescNew
+  Cells(ActiveCell.Row, ActiveCell.Column + 1).Select
+  valor = Len(ActiveCell.Value)
+  result = result & ActiveCell.Value
+  If valor < coluna Then
+    While valor < coluna
+       valor = valor + 1
+       result = result & " "
+    Wend
+  End If
+
+  'Coluna 5 Qtd
+  result = result & "1"
+
+  'Coluna 6 CTG
+  result = result & "Y"
+
+  'Coluna 7 Validade
+  Cells(ActiveCell.Row, ActiveCell.Column + 1).Select
+  Selection.NumberFormat = "m/d/yyyy"
+  result = result & ActiveCell.Value
+
+  Print #1, result
+  Cells(ActiveCell.Row + 1, ActiveCell.Column - 4).Select
+Loop
+
+
+MsgBox "Export completed", vbInformation, "Rodrigo Cordeiro informa:"
+Close 1
+
+End Sub
+</code></pre>
 </div>
 </body>
 </html>

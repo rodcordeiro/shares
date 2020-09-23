@@ -66,15 +66,92 @@
 <h3><a href='ip.sh' download='ip.sh'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
 <pre><code class='bash'>
-#!/bin/sh
+#!/usr/bin/env bash
+    
+###Variables
+commands=()
+argsCount=$#
+i=0
+device=""
 
+###FUNCTIONS
+external(){
+ipext4=`curl -s -4 http://ifconfig.co/ip`
+ipext6=`curl -s -6 http://ifconfig.co/ip`
+echo "------------------------------------------------"
+echo "IP Externo: "
+echo -e "IPv4: " $ipext4
+echo -e "IPv6: " $ipext6
+
+echo ""
+}
+
+resetDhcp(){
+dhclient -r
+dhclient
+echo "------------------------------------------------"
+echo "IPs:"
+ifconfig | grep "inet "
+echo ""
+}
+
+verboseResetDhcp(){
 dhclient -r
 dhclient -v
 echo "------------------------------------------------"
-echo ""
-ipext=`curl -4 http://ifconfig.co/ip`
-echo "IP Externo: $ipext"
+echo "IPs:"
 ifconfig | grep "inet "
+echo ""
+}
+help(){
+    echo -e """------------------------------------------------
+[1mReset DHCP
+[2m[96mAuthor: [2mRodrigo Cordeiro[0m
+
+This script provides facilities to reseting the ip addresses trhough DHCP and gives additional functionalities.
+Usage:
+[3m[1mNo argumments[0m: When no argumments are passed to the scripts it runs the default function to renew de DHCP client in silent mode.
+
+[3m[1m-v[0m: Renew the DHCP client in verbose mode.
+
+[3m[1m-e[0m: Returns the external IP of the device.
+"""
+}
+
+execution(){
+    for command in "${commands[@]}";do
+        $command
+    done
+}
+
+###UserCheck
+if ! [ $(id -u) = 0 ]; then
+   echo -e "[2mThis script must be run as root, use [0m[3m[1m[96msudo $0"
+   exit 1
+fi
+
+if [ $argsCount -eq "0" ]; then
+    commands=(${commands[@]} "resetDhcp")
+else
+    for arg in "$@"
+    do
+        i=$(($i+1))
+        if [ $arg = "-e" ]; then
+            commands=(${commands[@]} "external")
+        elif [ $arg = "-v" ]; then
+            commands=(${commands[@]} "verboseResetDhcp")
+        elif [ $arg = "-r" ]; then
+            commands=(${commands[@]} "resetDhcp")
+        elif [ $arg = "-h" ]; then
+            commands=("help")
+            break
+        else
+            echo -e "[2mInvalid argument. Use -h to see help."
+            echo ""
+        fi
+    done
+fi
+execution
 </code></pre>
 </div>
 </body>

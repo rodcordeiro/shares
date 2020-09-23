@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>ativar_proxy.vbs | Cordeiro's DEV</title>
+<title>lumiance.js | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,15 +63,32 @@
 
 </head>
 <body>
-<h3><a href='ativar_proxy.vbs' download='ativar_proxy.vbs'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='lumiance.js' download='lumiance.js'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='VBScript'>
-dim oShell
-set oShell = Wscript.CreateObject("Wscript.Shell")
+<pre><code class='PowerShell'>
+function lumiance(hex, luminosity = 0){
+  hex=hex.replace(/[^0-9a-f]/gi,'')
 
-if msgbox("Este programa tem o Intuito de configurar o proxy para que possa navegar dentro e fora da Akta. Deseja habilitar ou desabilitar o Poxy?" & Chr(13) & Chr(10) & Chr(13) & Chr(10) & "- SIM: Caso esteja na Akta "& Chr(13) & Chr(10) & "- NAO: Caso esteja fora da Akta", vbQuestion or vbYesNo,"TI Akta Motors") = vbYes then
-oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 1, "REG_DWORD"
-oShell.RegWrite "HKCU\Software\Microsoft\Windows</code></pre>
+const isValidHex = hex.length === 3 || hex.length === 6;
+ if(!isValidHex) throw new Error("Invalid Hex");
+ if(hex.length === 3) hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+ const twoDigitGroup =hex.match(/([0-9a-f]){2}/gi);
+
+let newHex ="#";
+ for ( let twoDigit of twoDigitGroup){
+  const numberFromHex = parseInt(twoDigit, 16);
+  const calculateLuminosity = numberFromHex + (luminosity * 255);
+  const blackOrLuminosity = Math.max(0,calculateLuminosity);
+  const partialColor = Math.min(255,blackOrLuminosity);
+
+ const newColor = Math.round(partialColor);
+const numberToHex = newColor.toString(16)
+ const result = `0${numberToHex}`.slice(-2);
+ newHex += result;
+ }
+ return newHex;
+}
+</code></pre>
 </div>
 </body>
 </html>

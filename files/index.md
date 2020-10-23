@@ -10,6 +10,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [flag.txt](flag.txt)<br>
 [krunkerAssets](krunkerAssets)<br>
 [mago.html](mago.html)<br>
+[me.xcf](me.xcf)<br>
 [OmniStack11.pdf](OmniStack11.pdf)<br>
 [rodcordeiro.xcf](rodcordeiro.xcf)<br>
 [RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>

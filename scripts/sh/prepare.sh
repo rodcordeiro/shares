@@ -11,7 +11,7 @@
 ###########################################################
 
 shell=""
-programas=("zsh" "git" "xclip" "ssh" "pythonPackages" "speedtest" "woeusb" "putty" "anydesk" "chrome" "lamp" "monodevelop" "eclipse" "driver" "zsh" "remmina" "PS2" "beekeeper" "insomnia" "nmap" "snap" "heroku")
+programas=("zsh" "git" "xclip" "ssh" "pythonPackages" "speedtest" "woeusb" "putty" "anydesk" "chrome" "lamp" "monodevelop" "eclipse" "driver" "zsh" "remmina" "PS2" "beekeeper" "insomnia" "nmap" "snap" "heroku" "youtubeDl" "androidStudio")
 instalar=()
 
 preparar(){
@@ -128,6 +128,7 @@ pythonPackages(){
 speedtest(){
   apt-get install speedtest-cli -y
 }
+
 putty(){
 	apt-get install putty -y
 }
@@ -202,12 +203,14 @@ packettracer(){
   dpkg -i *.deb
   apt-get --fix-broken install -y
 }
+
 woeusb(){
 add-apt-repository ppa:nilarimogard/webupd8 -y
 apt-get update
 apt-get install woeusb -y
 }
-clip(){
+
+xclip(){
   apt-get update
   apt-get install xclip -y
   echo "alias clip='xclip -selection clipboard'" > ~/$shell_alias
@@ -221,8 +224,8 @@ zsh(){
     zsh --version
   # change your shell to zsh
   chsh -s $(which zsh)
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   # Install plugins
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 
   echo "zinit light zsh-users/zsh-autosuggestions
@@ -306,6 +309,20 @@ heroku (){
 nmap(){
   apt update
   apt-get install nmap -y
+}
+
+androidStudio(){
+  cd ~/Softwares
+  mkdir android-studio
+  cd android-studio
+  # apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
+  wget -c https://r6---sn-b8u-bg0z.gvt1.com/edgedl/android/studio/ide-zips/4.1.0.19/android-studio-ide-201.6858069-linux.tar.gz?cms_redirect=yes&mh=gy&mip=2804:7f1:1280:5266:1849:9aa6:ef63:dd2&mm=28&mn=sn-b8u-bg0z&ms=nvh&mt=1603939518&mv=m&mvi=6&pcm2cms=yes&pl=36&shardbypass=yes -O androidStudio.tar.gz
+  tar -xvf androidStudio.tar.gz
+  ./android-studio/bin/studio.sh
+}
+youtubeDl(){
+  apt-get update
+  apt-get install youtube-dl -y
 }
 
 fspec=$0

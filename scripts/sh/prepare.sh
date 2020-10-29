@@ -11,9 +11,8 @@
 ###########################################################
 
 shell=""
-programas=("zsh" "git" "xclip" "ssh" "pythonPackages" "speedtest" "woeusb" "putty" "anydesk" "chrome" "lamp" "monodevelop" "eclipse" "driver" "zsh" "remmina" "PS2" "beekeeper" "insomnia")
+programas=("zsh" "git" "xclip" "ssh" "pythonPackages" "speedtest" "woeusb" "putty" "anydesk" "chrome" "lamp" "monodevelop" "eclipse" "driver" "zsh" "remmina" "PS2" "beekeeper" "insomnia" "nmap" "snap" "heroku")
 instalar=()
-
 
 preparar(){
   echo """
@@ -103,7 +102,8 @@ git(){
     apt-get update
     apt install git -y
     git config --global user.email "$email"
-	  git config --global user.name "$nome"
+    git config --global user.name "$nome"
+    git config --global init.defaultBranch main
 }
 
 
@@ -222,6 +222,19 @@ zsh(){
   # change your shell to zsh
   chsh -s $(which zsh)
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  # Install plugins
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+
+  echo "zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zdharma/fast-syntax-highlighting
+
+LS_COLORS=$LS_COLORS:'ow=01;34:' ; export LS_COLORS
+unsetopt PROMPT_SP
+
+alias la='ls -a'
+
+" >> .zshrc
 }
 
 remmina(){
@@ -275,6 +288,24 @@ insomnia(){
 driver(){
   apt-get install bcmwl-kernel-source -y
   modprobe wl
+}
+
+snap(){
+  if [ -e /etc/apt/preferences.d/nosnap.pref ];then
+    rm /etc/apt/preferences.d/nosnap.pref
+  fi  
+  apt update
+  apt install snapd -y
+}
+
+heroku (){ 
+  snap
+  install --classic heroku
+}
+
+nmap(){
+  apt update
+  apt-get install nmap -y
 }
 
 fspec=$0

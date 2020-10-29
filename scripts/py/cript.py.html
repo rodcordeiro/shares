@@ -24,8 +24,8 @@
 	<meta property='og:type' content='website'>
 	<meta property='og:locale' content='pt_BR' />
 	<meta property='og:image' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png'>
-	<meta property='og:site_name' content='Rodrigo Cordeiro | Cordeiro's DEV'>
-	<meta property='og:title' content='Rodrigo Cordeiro | Cordeiro's DEV'>
+	<meta property='og:site_name' content='Rodrigo Cordeiro | Cordeiro\'s DEV'>
+	<meta property='og:title' content='Rodrigo Cordeiro | Cordeiro\'s DEV'>
 	<meta property='og:determiner' content='the'>
 	<meta property='og:url' content='https://rodcordeiro.github.io/shares/'>
 	<meta property='og:description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'>
@@ -33,14 +33,14 @@
 
 	<meta name='twitter:card' content='summary' />
 	<meta name='twitter:description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'/>
-	<meta name='twitter:title' content='Rodrigo Cordeiro | Cordeiro's DEV' />
+	<meta name='twitter:title' content='Rodrigo Cordeiro | Cordeiro\'s DEV' />
 	<meta name='twitter:site' content='@drigocordeiro13' />
 	<meta name='twitter:image' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png' />
 	<meta name='twitter:creator' content='@drigocordeiro13' />
 
 	<link rel='prefetch' href='https://rodcordeiro.github.io/shares/'>
 	<link rel='prerender' href='https://rodcordeiro.github.io/shares/'>
-	<meta itemprop='name' content=' | Cordeiro's DEV' />
+	<meta itemprop='name' content=' | Cordeiro\'s DEV' />
 	<meta itemprop='url' content='https://rodcordeiro.github.io/shares/' />
 	<meta property='description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'>
 
@@ -90,7 +90,7 @@ def ping(host):
         ping_str = "-n 5"
     else:
         ping_str = "-c 5"
-    resposta = os.system("ping " + ping_str + " " + host + " >>c:\\Users\\TI\\Desktop\\Cordeiro\\Rod\\dev\\projeto\\bot_akta\\ping.txt")
+    resposta = os.system("ping " + ping_str + " " + host + " >>c:\Users\TI\Desktop\Cordeiro\Rod\dev\projeto\bot_akta\ping.txt")
     return host,resposta == 0
 
 def gravar(dado):
@@ -112,7 +112,11 @@ def gravar(dado):
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
-    await message.reply("Akta On!\nEste robo é para informações da Akta. Comandos:\n - /con: retorna testes de pings de alguns ips chave;\n - /ping - pinga o ip específicado e retorna o resultado (/ping 192.168.30.1 );\n - /auth solicita autorização para executar os comandos")
+    await message.reply("Akta On!
+Este robo é para informações da Akta. Comandos:
+ - /con: retorna testes de pings de alguns ips chave;
+ - /ping - pinga o ip específicado e retorna o resultado (/ping 192.168.30.1 );
+ - /auth solicita autorização para executar os comandos")
 
 @dp.message_handler(commands=['con'])
 async def test_con(message: types.Message):
@@ -124,7 +128,10 @@ async def test_con(message: types.Message):
             await bot.send_message(1021953062,"O usuário {} executou o comando /con".format(message.chat.first_name))
     else:
         await message.reply("Ta tentando me invadir? Me respeita!")
-        info = "Execução do comando /con!!\nUsuario: {} \nNome: {} {} \n".format(message.chat.username,message.chat.first_name,message.chat.last_name)
+        info = "Execução do comando /con!!
+Usuario: {} 
+Nome: {} {} 
+".format(message.chat.username,message.chat.first_name,message.chat.last_name)
         await bot.send_message(1021953062,info)
 
 @dp.message_handler(commands=['ping'])
@@ -139,17 +146,27 @@ async def test_con(message: types.Message):
             await bot.send_message(1021953062,"O usuário {} executou o comando {}".format(message.chat.first_name,message.text))
     else:
         await message.reply("Ta tentando me invadir? Me respeita!")
-        info = "Execução do comando /ping!!\nUsuario: {} \nNome: {} {} \n".format(message.chat.username,message.chat.first_name,message.chat.last_name)
+        info = "Execução do comando /ping!!
+Usuario: {} 
+Nome: {} {} 
+".format(message.chat.username,message.chat.first_name,message.chat.last_name)
         await bot.send_message(1021953062,info)
 
 @dp.message_handler(commands=['auth'])
 async def auth(message: types.Message):
-    file = open("c:\\Users\\TI\\Desktop\\Cordeiro\\Rod\\dev\\projeto\\bot_akta\\auth.txt","w")
-    info = "ID: {} \nUSUARIO: {} \nNOME: {} \nSOBRENOME: {} \nCONVERSA: {}".format(message.chat.id,message.chat.username,message.chat.first_name,message.chat.last_name,message.chat.type)
+    file = open("c:\Users\TI\Desktop\Cordeiro\Rod\dev\projeto\bot_akta\auth.txt","w")
+    info = "ID: {} 
+USUARIO: {} 
+NOME: {} 
+SOBRENOME: {} 
+CONVERSA: {}".format(message.chat.id,message.chat.username,message.chat.first_name,message.chat.last_name,message.chat.type)
     file.write(info)
     file.close()
-    await message.reply(info+"\nAguarde autorização.")
-    await bot.send_message(1021953062,info + "\n \n Aguardando autorização. /autorizado_{}".format(message.chat.id))
+    await message.reply(info+"
+Aguarde autorização.")
+    await bot.send_message(1021953062,info + "
+ 
+ Aguardando autorização. /autorizado_{}".format(message.chat.id))
 
 @dp.message_handler(filters.RegexpCommandsFilter(regexp_commands=['autorizado_([a-zA-Z0-9]*)']))
 async def autorizado(message: types.Message, regexp_command):

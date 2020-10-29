@@ -24,8 +24,8 @@
 	<meta property='og:type' content='website'>
 	<meta property='og:locale' content='pt_BR' />
 	<meta property='og:image' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png'>
-	<meta property='og:site_name' content='Rodrigo Cordeiro | Cordeiro's DEV'>
-	<meta property='og:title' content='Rodrigo Cordeiro | Cordeiro's DEV'>
+	<meta property='og:site_name' content='Rodrigo Cordeiro | Cordeiro\'s DEV'>
+	<meta property='og:title' content='Rodrigo Cordeiro | Cordeiro\'s DEV'>
 	<meta property='og:determiner' content='the'>
 	<meta property='og:url' content='https://rodcordeiro.github.io/shares/'>
 	<meta property='og:description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'>
@@ -33,14 +33,14 @@
 
 	<meta name='twitter:card' content='summary' />
 	<meta name='twitter:description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'/>
-	<meta name='twitter:title' content='Rodrigo Cordeiro | Cordeiro's DEV' />
+	<meta name='twitter:title' content='Rodrigo Cordeiro | Cordeiro\'s DEV' />
 	<meta name='twitter:site' content='@drigocordeiro13' />
 	<meta name='twitter:image' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png' />
 	<meta name='twitter:creator' content='@drigocordeiro13' />
 
 	<link rel='prefetch' href='https://rodcordeiro.github.io/shares/'>
 	<link rel='prerender' href='https://rodcordeiro.github.io/shares/'>
-	<meta itemprop='name' content=' | Cordeiro's DEV' />
+	<meta itemprop='name' content=' | Cordeiro\'s DEV' />
 	<meta itemprop='url' content='https://rodcordeiro.github.io/shares/' />
 	<meta property='description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'>
 
@@ -69,17 +69,9 @@
 dim oShell
 set oShell = Wscript.CreateObject("Wscript.Shell")
 
-if msgbox("Habilitar Proxy?", vbQuestion or vbYesNo,"TI Akta Motors") = vbYes then
+if msgbox("Este programa tem o Intuito de configurar o proxy para que possa navegar dentro e fora da Akta. Deseja habilitar ou desabilitar o Poxy?" & Chr(13) & Chr(10) & Chr(13) & Chr(10) & "- SIM: Caso esteja na Akta "& Chr(13) & Chr(10) & "- NAO: Caso esteja fora da Akta", vbQuestion or vbYesNo,"TI Akta Motors") = vbYes then
 oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 1, "REG_DWORD"
-oShell.RegWrite "HKCU\Software\Microsoft\Windows\currentVersion\Internet Settings\ProxyServer", "127.0.0.1:6666", "REG_SZ"
-oShell.RegWrite "HKCU\Software\Microsoft\Windows\currentVersion\Internet Settings\ProxyOverride", "*.local;<local>;E outros sites que queria que passem por fora do proxy", "REG_SZ"
-else 
-oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 0, "REG_DWORD"
-
-End if
-
-Set oShell = Nothing
-</code></pre>
+oShell.RegWrite "HKCU\Software\Microsoft\Windows</code></pre>
 </div>
 </body>
 </html>

@@ -12,6 +12,7 @@ This folder of the repo keeps all the shell scripts
 [files.sh.html](files.sh.html)<br>
 [geravhost.sh.html](geravhost.sh.html)<br>
 [ifexample.sh.html](ifexample.sh.html)<br>
+[installEclipse.sh.html](installEclipse.sh.html)<br>
 [ip.sh.html](ip.sh.html)<br>
 [menu.sh.html](menu.sh.html)<br>
 [nbs.sh.html](nbs.sh.html)<br>

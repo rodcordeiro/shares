@@ -18,6 +18,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [RodrigoCurriculobkp.docx](RodrigoCurriculobkp.docx)<br>
 [RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
 [saporra.txt](saporra.txt)<br>
+[smb.conf](smb.conf)<br>
 [subdominios.txt](subdominios.txt)<br>
 [uninoveMaio.pdf](uninoveMaio.pdf)<br>
 

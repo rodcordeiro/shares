@@ -312,6 +312,7 @@ unsetopt PROMPT_SP
 alias la='ls -a'
 
 " >> .zshrc
+  zsh-theme
 }
 
 remmina(){
@@ -397,6 +398,26 @@ androidStudio(){
 youtubeDl(){
   apt-get update
   apt-get install youtube-dl -y
+}
+
+zsh-theme(){
+    # This function sets the zsh theme
+    cd
+
+    # Set here the theme name
+    theme="gallifrey"
+    
+    zsh_regex="^ZSH_THEME"
+    filename="/home/$USER/.zshrc"
+    while read -r line; do
+        if [[ $line =~ $zsh_regex ]];
+        then
+            line="ZSH_THEME=\"gallifrey\""
+        fi
+        echo $line >> zsh.txt
+    done < "$filename"
+    rm -rf /home/$USER/.zshrc
+    mv /home/$USER/zsh.txt /home/$USER/.zshrc    
 }
 
 fspec=$0

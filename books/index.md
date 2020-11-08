@@ -23,6 +23,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Learning_PHP,MySQL](Learning_PHP,MySQL)<br>
 [_JavaScript.pdf](_JavaScript.pdf)<br>
 [Linux_A_Biblia.pdf](Linux_A_Biblia.pdf)<br>
+[LinuxNotesForProfessionals.pdf](LinuxNotesForProfessionals.pdf)<br>
 [Livro_completo_java_para_iniciantes_herbert_Schildt.pdf](Livro_completo_java_para_iniciantes_herbert_Schildt.pdf)<br>
 [Livro_Proibido_do_Curso_de_Hacker.pdf](Livro_Proibido_do_Curso_de_Hacker.pdf)<br>
 [Mastering_MariaDB.pdf](Mastering_MariaDB.pdf)<br>

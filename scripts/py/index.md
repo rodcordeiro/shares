@@ -9,6 +9,7 @@ This folder of the repo keeps all the python scripts
 [data.py](data.py)<br>
 [dnsbruteforce.py](dnsbruteforce.py)<br>
 [finder.py](finder.py)<br>
+[finder.py.html](finder.py.html)<br>
 [helloWorld.py](helloWorld.py)<br>
 [jogo.py](jogo.py)<br>
 [lambda.py](lambda.py)<br>
@@ -21,6 +22,7 @@ This folder of the repo keeps all the python scripts
 [rename.py](rename.py)<br>
 [teste.py](teste.py)<br>
 [thief.py](thief.py)<br>
+[thief.py.html](thief.py.html)<br>
 [variaveis.py](variaveis.py)<br>
 [while.py](while.py)<br>
 [write_json.py](write_json.py)<br>

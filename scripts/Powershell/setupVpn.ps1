@@ -1,0 +1,2 @@
+Add-VPNConnection -Name "Name" -ServerAddress ServerAddress -TunnelType Pptp -RememberCredential -SplitTunneling
+Add-VPNConnection -Name "Name" -ServerAddress ServerAddress -TunnelType Pptp -RememberCredential -SplitTunneling

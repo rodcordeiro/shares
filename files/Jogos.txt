@@ -1,3 +1,12 @@
+http://162.210.194.49/113LAJdnnkhry2Jfgs27jHaA/Playstation2Europe/isos/Disney's%20Stitch%20-%20Experiment%20626%20(Europe)%20(Es,Pt).7z
+
+https://www.romsmax.com/ps2/dragon-ball-z-budokai-tenkaichi-3-portugues/
+https://www.emulatorgames.net/roms/playstation-2/god-hand/
+
+wget -c https://static.emulatorgames.net/static2/roms/playstation-2/FIFA%20Street%202%20(USA)%20(En,Es).7z
+wget -c https://static.emulatorgames.net/static2/roms/playstation-2/Star%20Wars%20-%20The%20Force%20Unleashed%20(USA)%20(En,Fr).7z
+
+
 wget -c https://romsforever.cc/PS2/Shadow%20of%20the%20Colossus%20\(USA\).7z
 wget -c https://romsforever.cc/PS2/EU-JP/DragonBall%20Z%20-%20Budokai%20Tenkaichi%203%20%28Europe%2C%20Australia%29%20%28En%2CJa%2CFr%2CDe%2CEs%2CIt%29.7z
 wget -c https://romsforever.cc/PS2/Star%20Wars%20-%20Battlefront%20II%20\(USA\).7z
@@ -7,6 +16,8 @@ wget -c https://static.emulatorgames.net/static2/roms/playstation-2/Soulcalibur%
 wget -c https://romsforever.cc/PS2/Need%20for%20Speed%20-%20ProStreet%20\(USA\).7z  
 wget -c https://romsforever.cc/PS2/Black%20\(USA\).7z   
 wget -c https://romsforever.cc/PS2/Crash%20of%20the%20Titans%20\(USA\).7z  
+
+
 
 
 

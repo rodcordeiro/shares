@@ -19,6 +19,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Introducing_InnoDB_Cluster.pdf](Introducing_InnoDB_Cluster.pdf)<br>
 [Intro_Linux_e_ShellScripting.pdf](Intro_Linux_e_ShellScripting.pdf)<br>
 [Java-Como_Programar.pdf](Java-Como_Programar.pdf)<br>
+[jwt-handbook-v0_14_1.pdf](jwt-handbook-v0_14_1.pdf)<br>
 [KaliLinuxIntrusionandExploitationCookbook.epub](KaliLinuxIntrusionandExploitationCookbook.epub)<br>
 [Learning_PHP,MySQL](Learning_PHP,MySQL)<br>
 [_JavaScript.pdf](_JavaScript.pdf)<br>

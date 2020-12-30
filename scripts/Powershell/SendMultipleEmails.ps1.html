@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>SendMultipleEmails.ps1 | Cordeiro's DEV</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>	
+<link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-152x152.png'>
+<link rel='apple-touch-icon' sizes='180x180' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-180x180.png'>
+<link rel='icon' type='image/png' sizes='192x192'  href='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='https://rodcordeiro.github.io/shares/favicons/game/favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='96x96' href='https://rodcordeiro.github.io/shares/favicons/game/favicon-96x96.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='https://rodcordeiro.github.io/shares/favicons/game/favicon-16x16.png'>
+<link rel='manifest' href='https://rodcordeiro.github.io/shares/favicons/game/manifest.json'>
+<meta name='msapplication-TileImage' content='https://rodcordeiro.github.io/shares/favicons/game/ms-icon-144x144.png'>
+<!-- Informações da página -->
+	<!-- Informações sobre o Site quando o link é compartilhado-->
+	<meta property='og:type' content='website'>
+	<meta property='og:locale' content='pt_BR' />
+	<meta property='og:image' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png'>
+	<meta property='og:site_name' content='Rodrigo Cordeiro | Cordeiro\'s DEV'>
+	<meta property='og:title' content='Rodrigo Cordeiro | Cordeiro\'s DEV'>
+	<meta property='og:determiner' content='the'>
+	<meta property='og:url' content='https://rodcordeiro.github.io/shares/'>
+	<meta property='og:description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'>
+	<meta property='og:image:secure_url' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png' />
+
+	<meta name='twitter:card' content='summary' />
+	<meta name='twitter:description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'/>
+	<meta name='twitter:title' content='Rodrigo Cordeiro | Cordeiro\'s DEV' />
+	<meta name='twitter:site' content='@drigocordeiro13' />
+	<meta name='twitter:image' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png' />
+	<meta name='twitter:creator' content='@drigocordeiro13' />
+
+	<link rel='prefetch' href='https://rodcordeiro.github.io/shares/'>
+	<link rel='prerender' href='https://rodcordeiro.github.io/shares/'>
+	<meta itemprop='name' content=' | Cordeiro\'s DEV' />
+	<meta itemprop='url' content='https://rodcordeiro.github.io/shares/' />
+	<meta property='description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'>
+
+	<!-- Outros dados como o site, como permissão para indexação do site, faixa etária, idioma, etc. -->
+	<link rel='home' href='https://rodcordeiro.github.io/shares/'>
+	<meta name='keywords' content='html, css, js, javascript, código, programação, web, development, webdesign, devops,front-end,aprender, educação, aprendizado'>
+	<meta name='robots' content='index, follow'>
+	<meta name='revisit-after' content='1 day'>
+	<meta name='rating' content='general'>
+	<meta name='language' content='pt-br'>
+
+	<!-- Informações sobre o Autor -->
+	<meta property='author' content='Rodrigo Cordeiro'>
+	<meta name='dc.creator.address' content='rodrigomendoncca@gmail.com'>
+
+<!-- LINKS -->
+<link rel='stylesheet' href='https://rodcordeiro.github.io/shares/scripts/css/highlight.css'>
+<script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js'></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<h3><a href='SendMultipleEmails.ps1' download='SendMultipleEmails.ps1'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<div>
+<pre><code class='PowerShell'>
+﻿$emailsToSend = @(
+    "helymatosc@hotmail.com",
+    "rodrigomendoncca@gmail.com"
+    )
+
+
+$USER = "YOUR_EMAIL"
+
+# Remetente
+$From = $USER
+
+# Destinatário
+
+# Assunto
+$Subject = "E-mail de teste"
+
+# Corpo do e-mail
+
+$body = @'
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td> 
+    <td>94</td>
+  </tr>
+</table>
+'@
+
+# Endereço do servidor SMTP
+$SMTPServer = "smtp.gmail.com" # Substitua esse endereço pelo endereço do servidor SMTP que for utilizar
+
+# Porta do servidor SMTP
+$SMTPPort = "587"
+
+# A senha do e-mail remetente
+$password = ConvertTo-SecureString –String "YOUR_PASSWORD" –AsPlainText -Force
+
+# Novamente o endereço de e-mail do remetente
+$userName = $USER
+
+# Aqui a variável credential está recebendo um novo objeto contendo a o usuário e a senha para a autenticação no SMTP
+$credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
+# Codificação de caracteres do texto
+$Encoding= New-Object System.Text.UTF8Encoding
+
+# Realizando o envio da mensagem
+
+$emailsToSend | ForEach-Object {
+$To = $_
+Send-Mailmessage -smtpServer $smtpServer -from $From -to $To -subject $Subject -body $Body -BodyAsHtml -priority High -encoding UTF8 -port $SMTPPort -UseSsl -Credential $credential -ErrorAction Stop
+}
+
+ 
+</code></pre>
+</div>
+</body>
+</html>

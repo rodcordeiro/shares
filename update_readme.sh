@@ -58,11 +58,19 @@ echo "<!DOCTYPE html>
             padding: 15px;
             flex-wrap: wrap;
         }
-        .container img {
+        .container .img{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:flex-start;
             height: 250px;
             width: 250px;
-            border: 1px solid;
             margin: 15px
+        }
+        .container img {
+            border: 1px solid;
+            height: 100%;
+            width: 100%;
         }
     </style>
 </head>
@@ -71,7 +79,10 @@ echo "<!DOCTYPE html>
     <div class='container'>"> index.html
 	ls=`ls -1 --hide=index.md --hide=index.html | sort`
 	for i in ${ls}; do
-		echo "<img src='${i}' onclick='getElement(this)' alt='${i}'>">> index.html
+		echo "<figure class='img'>
+            <img src='${i}' onclick='getElement(this)' alt='${i}'>
+            <caption>${i}</caption>
+        </figure>">> index.html
 	done
 echo "</div>
     <script>

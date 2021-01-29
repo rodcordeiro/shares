@@ -1,36 +1,26 @@
 <?xml version="1.0"?>
-<homebank v="1.3999999999999999" d="050400">
-<properties title="Rodrigo Cordeiro" curr="1" auto_smode="1" auto_weekday="1"/>
+<homebank v="1.3999999999999999" d="050403">
+<properties title="Cordeiro" curr="1" auto_smode="1" auto_weekday="1"/>
 <cur key="1" flags="0" iso="BRL" name="Brazilian Real" symb="R$" syprf="1" dchar="," gchar="." frac="2" rate="0" mdate="0"/>
-<account key="1" pos="1" type="1" curr="1" name="Santander" bankname="Santander" initial="458.5" minimum="0"/>
-<account key="2" pos="2" type="1" curr="1" name="Itau" initial="151.37" minimum="0"/>
-<account key="3" pos="3" type="1" curr="1" name="Nubank" initial="2.0099999999999998" minimum="0"/>
-<account key="4" pos="4" type="1" curr="1" name="Guardado" initial="0" minimum="0"/>
-<account key="5" pos="5" type="2" curr="1" name="Dinheiro" initial="0" minimum="0"/>
-<pay key="1" name="Rodrigo Cordeiro"/>
-<pay key="2" name="Yasmim Regina"/>
-<pay key="3" name="Nubank"/>
-<pay key="4" name="Raízes"/>
-<pay key="5" name="ICNT"/>
-<pay key="6" name="Poupança"/>
-<pay key="7" name="Sil"/>
-<pay key="8" name="SABESP"/>
-<pay key="9" name="Gilberto Barbosa Cordeiro"/>
-<pay key="10" name="Mirian Bezerra de Mendonça Cordeiro"/>
+<account key="1" pos="1" type="1" curr="1" name="Santander" number="01029518-7" bankname="Santander" initial="-355.32999999999998" minimum="0" grp="2"/>
+<account key="2" pos="2" type="5" curr="1" name="PoupançaSantander1" number="2045/60.018292.3" bankname="Santander" initial="352.81999999999999" minimum="0" grp="1"/>
+<account key="3" pos="3" type="5" curr="1" name="PoupançaSantander2" number="2045/60.014272.1" bankname="Santander" initial="0" minimum="0" grp="1"/>
+<account key="4" pos="4" type="5" curr="1" name="DinDin1" number="EAF60362952" bankname="Santander" initial="150" minimum="0" grp="1"/>
+<account key="5" pos="5" type="5" curr="1" name="DinDin2" number="EAF60#62953" bankname="Santander" initial="150" minimum="0" grp="1"/>
+<account key="6" pos="6" type="1" curr="1" name="Nubank" bankname="NuBank" initial="0.25" minimum="0" grp="2"/>
+<account key="7" pos="7" type="4" curr="1" name="CCNubank" bankname="Nubank" initial="-179.36000000000001" minimum="0" notes="Vencimento Dia 26" grp="2"/>
+<account key="8" pos="8" type="5" curr="1" name="NubankGuardado" bankname="Nubank" initial="0" minimum="0" grp="1"/>
+<account key="9" pos="9" type="1" curr="1" name="PicPay" bankname="PicPay" initial="0.029999999999999999" minimum="0" grp="2"/>
+<pay key="1" name="Sr Leo"/>
 <cat key="1" name="Pensão de alimentos"/>
 <cat key="2" name="Automóvel"/>
 <cat key="5" parent="2" flags="1" name="Manutenção"/>
 <cat key="4" parent="2" flags="1" name="Gasoline"/>
 <cat key="3" parent="2" flags="1" name="Pagamento de carro"/>
 <cat key="6" name="Os encargos bancários"/>
-<cat key="7" parent="6" flags="1" name="Juros pagos"/>
 <cat key="8" parent="6" flags="1" name="Taxa de Serviço"/>
+<cat key="7" parent="6" flags="1" name="Juros pagos"/>
 <cat key="9" name="Notas"/>
-<cat key="10" parent="9" flags="1" name="TV a cabo / satélite"/>
-<cat key="12" parent="9" flags="1" name="Electricidade"/>
-<cat key="25" parent="9" flags="1" name="Água e Esgoto"/>
-<cat key="24" parent="9" flags="1" name="Telefone"/>
-<cat key="23" parent="9" flags="1" name="O pagamento do empréstimo de estudante"/>
 <cat key="22" parent="9" flags="1" name="Rent"/>
 <cat key="21" parent="9" flags="1" name="O pagamento do empréstimo Outros"/>
 <cat key="20" parent="9" flags="1" name="Serviço de On-line/Internet"/>
@@ -41,7 +31,13 @@
 <cat key="15" parent="9" flags="1" name="Dues Home-proprietário"/>
 <cat key="14" parent="9" flags="1" name="Health Club"/>
 <cat key="13" parent="9" flags="1" name="Lixo e Reciclagem"/>
+<cat key="12" parent="9" flags="1" name="Electricidade"/>
+<cat key="126" parent="9" flags="1" name="Poupança"/>
 <cat key="11" parent="9" flags="1" name="Celular"/>
+<cat key="10" parent="9" flags="1" name="TV a cabo / satélite"/>
+<cat key="25" parent="9" flags="1" name="Água e Esgoto"/>
+<cat key="24" parent="9" flags="1" name="Telefone"/>
+<cat key="23" parent="9" flags="1" name="O pagamento do empréstimo de estudante"/>
 <cat key="26" name="Retirar Dinheiro"/>
 <cat key="27" name="Doações"/>
 <cat key="28" name="Childcare"/>
@@ -52,8 +48,8 @@
 <cat key="33" name="Pagamentos com cartão de crédito / Transfers"/>
 <cat key="34" name="Dining Out"/>
 <cat key="35" name="Educação"/>
-<cat key="37" parent="35" flags="1" name="Taxas"/>
 <cat key="38" parent="35" flags="1" name="Mensalidades"/>
+<cat key="37" parent="35" flags="1" name="Taxas"/>
 <cat key="36" parent="35" flags="1" name="Livros"/>
 <cat key="39" name="Diversão"/>
 <cat key="40" name="Honorários"/>
@@ -62,332 +58,90 @@
 <cat key="43" name="Mercearia"/>
 <cat key="44" name="Cuidados de saúde"/>
 <cat key="45" parent="44" flags="1" name="Dental"/>
-<cat key="47" parent="44" flags="1" name="Hospital"/>
 <cat key="49" parent="44" flags="1" name="Prescrição"/>
 <cat key="48" parent="44" flags="1" name="Médico"/>
+<cat key="47" parent="44" flags="1" name="Hospital"/>
 <cat key="46" parent="44" flags="1" name="Eye de cuidados"/>
 <cat key="50" name="Hobbies e Lazer"/>
-<cat key="51" parent="50" flags="1" name="Livros e Revistas"/>
-<cat key="53" parent="50" flags="1" name="Entertaining"/>
 <cat key="58" parent="50" flags="1" name="Brinquedos e Games"/>
 <cat key="57" parent="50" flags="1" name="Tapes &amp; CDs"/>
 <cat key="56" parent="50" flags="1" name="Esporte e Lazer"/>
 <cat key="55" parent="50" flags="1" name="Eventos Esportivos"/>
 <cat key="54" parent="50" flags="1" name="Cinema e Video Rentals"/>
+<cat key="53" parent="50" flags="1" name="Entertaining"/>
 <cat key="52" parent="50" flags="1" name="Eventos Culturais"/>
+<cat key="51" parent="50" flags="1" name="Livros e Revistas"/>
 <cat key="59" name="Home Improvement"/>
 <cat key="60" name="Casa"/>
 <cat key="63" parent="60" flags="1" name="Serviço de Quintal"/>
-<cat key="61" parent="60" flags="1" name="Mobiliário"/>
 <cat key="62" parent="60" flags="1" name="Lavagem House"/>
+<cat key="61" parent="60" flags="1" name="Mobiliário"/>
 <cat key="64" name="Seguro"/>
-<cat key="65" parent="64" flags="1" name="Automobile"/>
-<cat key="67" parent="64" flags="1" name="Home-proprietário / locatário do"/>
 <cat key="68" parent="64" flags="1" name="Life"/>
+<cat key="67" parent="64" flags="1" name="Home-proprietário / locatário do"/>
 <cat key="66" parent="64" flags="1" name="Saúde"/>
+<cat key="65" parent="64" flags="1" name="Automobile"/>
 <cat key="69" name="Trabalho Despesa"/>
-<cat key="70" parent="69" flags="1" name="Não reembolsáveis"/>
 <cat key="71" parent="69" flags="1" name="Reembolso"/>
+<cat key="70" parent="69" flags="1" name="Não reembolsáveis"/>
 <cat key="72" name="Empréstimo"/>
 <cat key="75" parent="72" flags="1" name="Juros do empréstimo de estudante"/>
-<cat key="73" parent="72" flags="1" name="Juros de empréstimos"/>
 <cat key="74" parent="72" flags="1" name="Interesse Mortgage"/>
+<cat key="73" parent="72" flags="1" name="Juros de empréstimos"/>
 <cat key="76" name="Variado"/>
 <cat key="77" name="Mortgage / Rent"/>
 <cat key="78" name="Cuidados Pessoais"/>
 <cat key="79" name="Pet Care"/>
-<cat key="81" parent="79" flags="1" name="Suprimentos"/>
 <cat key="82" parent="79" flags="1" name="Veterinário"/>
+<cat key="81" parent="79" flags="1" name="Suprimentos"/>
 <cat key="80" parent="79" flags="1" name="Alimentos"/>
 <cat key="83" name="Telefone / Wireless"/>
 <cat key="84" name="Serviços / Associações"/>
 <cat key="85" name="Impostos"/>
+<cat key="91" parent="85" flags="1" name="Real Estate Impostos"/>
+<cat key="90" parent="85" flags="1" name="Outros Impostos"/>
 <cat key="89" parent="85" flags="1" name="Imposto sobre Medicare"/>
+<cat key="88" parent="85" flags="1" name="Imposto de Renda Local"/>
 <cat key="87" parent="85" flags="1" name="Ano Receita Federal Tax-Anterior"/>
+<cat key="86" parent="85" flags="1" name="Imposto de Renda Federal"/>
 <cat key="95" parent="85" flags="1" name="Estadual / municipal"/>
 <cat key="94" parent="85" flags="1" name="Imposto de Renda Estado"/>
 <cat key="93" parent="85" flags="1" name="Imposto de Segurança Social"/>
 <cat key="92" parent="85" flags="1" name="Imposto sobre Vendas"/>
-<cat key="91" parent="85" flags="1" name="Real Estate Impostos"/>
-<cat key="90" parent="85" flags="1" name="Outros Impostos"/>
-<cat key="88" parent="85" flags="1" name="Imposto de Renda Local"/>
-<cat key="86" parent="85" flags="1" name="Imposto de Renda Federal"/>
 <cat key="96" name="Viagens de férias /"/>
 <cat key="98" parent="96" flags="1" name="Viagem"/>
 <cat key="97" parent="96" flags="1" name="Hospedagem"/>
 <cat key="99" name="Utilitários"/>
 <cat key="100" flags="2" name="Renda / Juros"/>
 <cat key="101" flags="2" name="Rendimento de Investimento"/>
-<cat key="128" parent="101" flags="3" name="Poupança"/>
-<cat key="103" parent="101" flags="3" name="Dividendos"/>
 <cat key="105" parent="101" flags="3" name="Interesse tax-exempt"/>
-<cat key="102" parent="101" flags="3" name="Ganhos de Capital"/>
 <cat key="104" parent="101" flags="3" name="Juros"/>
+<cat key="103" parent="101" flags="3" name="Dividendos"/>
+<cat key="102" parent="101" flags="3" name="Ganhos de Capital"/>
 <cat key="106" flags="2" name="Não é uma despesa"/>
 <cat key="107" flags="2" name="Outras receitas"/>
-<cat key="108" parent="107" flags="3" name="Apoio à Criança Recebido"/>
-<cat key="109" parent="107" flags="3" name="Employee Stock Option"/>
 <cat key="114" parent="107" flags="3" name="Compensação de desemprego"/>
 <cat key="113" parent="107" flags="3" name="Restituição Imposto Estadual e Municipal"/>
 <cat key="112" parent="107" flags="3" name="Loterias"/>
 <cat key="111" parent="107" flags="3" name="Principal empréstimo recebido"/>
 <cat key="110" parent="107" flags="3" name="Dons recebidos"/>
+<cat key="109" parent="107" flags="3" name="Employee Stock Option"/>
+<cat key="108" parent="107" flags="3" name="Apoio à Criança Recebido"/>
 <cat key="115" flags="2" name="Renda de aposentadoria"/>
-<cat key="117" parent="115" flags="3" name="Pensões e Anuidades"/>
 <cat key="118" parent="115" flags="3" name="Benefícios Sociais Segurança"/>
+<cat key="117" parent="115" flags="3" name="Pensões e Anuidades"/>
 <cat key="116" parent="115" flags="3" name="Distribuição IRA"/>
 <cat key="119" flags="2" name="Salário e Salário"/>
-<cat key="123" parent="119" flags="3" name="Remuneração Bruta"/>
-<cat key="121" parent="119" flags="3" name="Comissão"/>
-<cat key="126" parent="119" flags="3" name="Reembolso"/>
 <cat key="125" parent="119" flags="3" name="Overtime"/>
 <cat key="124" parent="119" flags="3" name="Net Pay"/>
+<cat key="123" parent="119" flags="3" name="Remuneração Bruta"/>
 <cat key="122" parent="119" flags="3" name="Correspondência de Empregador"/>
+<cat key="121" parent="119" flags="3" name="Comissão"/>
 <cat key="120" parent="119" flags="3" name="Bonus"/>
-<cat key="127" name="Poupança"/>
-<cat key="129" name="taxa"/>
-<asg key="1" pos="1" field="1" name="Conta de água"/>
-<fav key="6" amount="-50" account="1" dst_account="3" flags="1164" payee="2" category="76" wording="Save money" nextdate="737597" every="1" unit="2" limit="7" weekend="2"/>
-<fav key="2" amount="-100" account="2" paymode="3" payee="7" category="48" wording="Psicóloga" nextdate="737439" every="1" unit="2" limit="1"/>
-<fav key="5" amount="-50" account="2" dst_account="4" flags="140" payee="2" category="128" wording="PIC 2" nextdate="737606" every="1" unit="2" limit="43"/>
-<fav key="4" amount="-50" account="2" dst_account="4" flags="140" payee="2" category="128" wording="PIC 1" nextdate="737606" every="1" unit="2" limit="43"/>
-<fav key="1" amount="-130" account="2" paymode="3" st="3" flags="4" category="38" wording="Curso Aux. Necrópsia" nextdate="737581" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="3" amount="0" account="1" paymode="8" payee="8" category="25" wording="Conta de água" nextdate="737439" every="1" unit="2" limit="1"/>
-<ope date="737434" amount="117.45" account="5" paymode="3" flags="2" payee="1" category="126" wording="Reembolso 09/01/20" info="Reembolso 09/01/20"/>
-<ope date="737434" amount="-20" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
-<ope date="737434" amount="-10" account="5" paymode="3" category="41" wording="Lanche - Rodrigo" info="Lanche - Rodrigo"/>
-<ope date="737434" amount="-15.300000000000001" account="5" paymode="3" category="76" wording="Caneta unipin" info="Caneta unipin"/>
-<ope date="737434" amount="-27.399999999999999" account="5" paymode="3" category="71" wording="Passagem Santos/Jabaquara" info="Passagem Santos/Jabaquara"/>
-<ope date="737434" amount="-28.149999999999999" account="5" paymode="3" category="71" wording="Passagem Jabaquara/Santos" info="Passagem Jabaquara/Santos"/>
-<ope date="737434" amount="-3.0499999999999998" account="5" paymode="3" category="27" wording="Doação erês" info="Doação erês"/>
-<ope date="737438" amount="50.549999999999997" account="5" paymode="3" flags="2" category="126" wording="Reembolso 10/01" info="Reembolso 10/01"/>
-<ope date="737438" amount="-0.55000000000000004" account="5" paymode="3" category="27" wording="Doação erês" info="Doação erês"/>
-<ope date="737438" amount="-2" account="5" paymode="3" category="27" wording="Doação" info="Doação"/>
-<ope date="737438" amount="-4.4000000000000004" account="5" paymode="3" category="76" wording="Passagem ônibus" info="Passagem ônibus"/>
-<ope date="737440" amount="-7" account="5" paymode="3" category="41" wording="Comida" info="Comida"/>
-<ope date="737441" amount="-2" account="5" paymode="3" category="41" wording="Esfihas" info="Esfihas"/>
-<ope date="737441" amount="-19" account="5" paymode="3" category="41" wording="Almoço" info="Almoço "/>
-<ope date="737442" amount="-70" account="5" paymode="3" category="5" wording="Conserto Carro" info="Conserto Carro"/>
-<ope date="737442" amount="50" account="5" dst_account="1" flags="10" category="26" wording="saque" info="saque" kxfer="2"/>
-<ope date="737494" amount="27" account="5" paymode="3" flags="2" category="106" wording="Reajuste de saldo" info="Reajuste de saldo"/>
-<ope date="737445" amount="25" account="4" dst_account="3" flags="10" category="127" wording="Dinheiro guardado" info="Dinheiro guardado" kxfer="5"/>
-<ope date="737445" amount="50" account="4" dst_account="1" flags="10" category="127" wording="Poupança" info="Poupança" kxfer="7"/>
-<ope date="737452" amount="20" account="4" dst_account="1" flags="10" category="127" wording="Poupança" info="Poupança" kxfer="6"/>
-<ope date="737454" amount="-50" account="4" dst_account="1" flags="8" payee="1" category="76" wording="Transf Poupança &gt; Santander" info="Poupança &gt; Santander" kxfer="9"/>
-<ope date="737454" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 2" kxfer="10"/>
-<ope date="737454" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 1" kxfer="11"/>
-<ope date="737458" amount="-20.57" account="4" dst_account="1" flags="8" payee="1" category="76" wording="Poupança &gt; Santander" info="Poupança &gt; Santander" kxfer="12"/>
-<ope date="737472" amount="-20" account="4" dst_account="3" flags="8" payee="3" category="76" wording="Guardado &gt; NuBank" info="Guardado &gt; NuBank" kxfer="16"/>
-<ope date="737484" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 2" kxfer="19"/>
-<ope date="737484" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 1" kxfer="20"/>
-<ope date="737514" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 2" kxfer="22"/>
-<ope date="737514" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 1" kxfer="23"/>
-<ope date="737545" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 2" kxfer="25"/>
-<ope date="737545" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 1" kxfer="26"/>
-<ope date="737575" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 2" kxfer="28"/>
-<ope date="737575" amount="50" account="4" dst_account="2" flags="138" payee="2" category="128" wording="PIC 1" kxfer="29"/>
-<ope date="737442" amount="-1.99" account="3" paymode="6" category="41" wording="Chocolate" info="Chocolate"/>
-<ope date="737445" amount="50" account="3" dst_account="1" flags="138" payee="2" category="76" wording="Save money" kxfer="4"/>
-<ope date="737445" amount="-25" account="3" dst_account="4" flags="8" category="127" wording="Dinheiro guardado" info="Dinheiro guardado" kxfer="5"/>
-<ope date="737446" amount="-15" account="3" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737446" amount="-4.29" account="3" paymode="6" category="76" wording="Drogaria" info="Drogaria"/>
-<ope date="737449" amount="-5" account="3" paymode="6" category="41" wording="Padaria" info="Padaria"/>
-<ope date="737452" amount="100" account="3" dst_account="1" flags="10" payee="3" category="77" wording="Dentista" info="Dentista" kxfer="8"/>
-<ope date="737452" amount="-18" account="3" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737453" amount="-15" account="3" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737458" amount="-12.529999999999999" account="3" paymode="6" category="49" wording="Remédios" info="Remédios"/>
-<ope date="737460" amount="-22.420000000000002" account="3" paymode="6" category="49" wording="Remédios" info="Remédios"/>
-<ope date="737463" amount="-32" account="3" paymode="6" category="76" wording="Agência de Modelo" info="Agência de Modelo"/>
-<ope date="737465" amount="50" account="3" dst_account="1" flags="10" payee="2" category="127" wording="Santander &gt; NuBank" info="Santander &gt; Nubank" kxfer="13"/>
-<ope date="737467" amount="-30" account="3" dst_account="1" flags="8" payee="1" category="76" wording="Nubank &gt; Santander" info="Nubank &gt; Santander" kxfer="14"/>
-<ope date="737467" amount="-10" account="3" dst_account="1" flags="8" payee="1" category="76" wording="Nubank &gt; Santander" info="Nubank &gt; Santander" kxfer="15"/>
-<ope date="737469" amount="-9.9900000000000002" account="3" paymode="6" category="49" wording="Remédio" info="Remédio"/>
-<ope date="737472" amount="20" account="3" dst_account="4" flags="10" payee="3" category="76" wording="Guardado &gt; NuBank" info="Guardado &gt; NuBank" kxfer="16"/>
-<ope date="737472" amount="-20" account="3" dst_account="1" flags="8" payee="1" category="76" wording="NuBank &gt; Santander" info="NuBank &gt; Santander" kxfer="17"/>
-<ope date="737476" amount="50" account="3" dst_account="1" flags="138" payee="2" category="76" wording="Save money" kxfer="18"/>
-<ope date="737493" amount="50" account="3" dst_account="1" flags="10" payee="2" category="127" wording="Poupança" info="Guarda Dinheiro" kxfer="30"/>
-<ope date="737507" amount="50" account="3" dst_account="1" flags="138" payee="2" category="76" wording="Save money" kxfer="21"/>
-<ope date="737524" amount="50" account="3" dst_account="1" flags="10" payee="2" category="127" wording="Poupança" info="Poupança" kxfer="32"/>
-<ope date="737536" amount="50" account="3" dst_account="1" flags="138" payee="2" category="76" wording="Save money" kxfer="24"/>
-<ope date="737566" amount="50" account="3" dst_account="1" flags="138" payee="2" category="76" wording="Save money" kxfer="27"/>
-<ope date="737433" amount="-18" account="2" paymode="6" category="41" wording="Marmita" info="Lanche - Yah"/>
-<ope date="737433" amount="-7.3399999999999999" account="2" paymode="6" category="49" wording="Remédio" info="Remédio"/>
-<ope date="737433" amount="400" account="2" dst_account="1" flags="10" payee="2" category="76" wording="Pag Curso Yah" info="Pag Curso Yah" kxfer="1"/>
-<ope date="737434" amount="-15" account="2" paymode="6" category="41" wording="Marmita Yah" info="Marmita Yah"/>
-<ope date="737435" amount="-13" account="2" paymode="6" category="49" wording="Remédio cólica" info="Remédio cólica"/>
-<ope date="737438" amount="-480" account="2" paymode="6" category="37" wording="Matrícula Curso Banho e Tosa" info="Matrícula Curso Banho e Tosa"/>
-<ope date="737438" amount="-7.9000000000000004" account="2" paymode="10" category="8" wording="Contrato de seguro" info="Contrato de Seguro"/>
-<ope date="737438" amount="-20" account="2" paymode="3" category="26" wording="Saque" info="Saque"/>
-<ope date="737439" amount="605.95000000000005" account="2" paymode="9" flags="2" payee="2" category="123" wording="Salário" info="Salário"/>
-<ope date="737439" amount="-401.26999999999998" account="2" paymode="8" category="11" wording="Conta Claro" info="Conta Claro"/>
-<ope date="737440" amount="-50" account="2" paymode="3" category="26" wording="Dinheiro Roberto" info="Dinheiro Roberto"/>
-<ope date="737442" amount="-144.15000000000001" account="2" paymode="6" category="38" wording="Mensal Necrópsia" info="Mensal Necrópsia"/>
-<ope date="737444" amount="-50" account="2" paymode="3" category="76" wording="Recarga Bilhete Unico" info="Recarga Bilhete Unico"/>
-<ope date="737444" amount="50" account="2" dst_account="1" flags="10" category="76" wording="Reposição limite" info="Reposição limite" kxfer="3"/>
-<ope date="737444" amount="-10" account="2" paymode="6" category="41" wording="Comida" info="Comida"/>
-<ope date="737454" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 2" kxfer="10"/>
-<ope date="737454" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 1" kxfer="11"/>
-<ope date="737460" amount="-130" account="2" paymode="3" st="3" category="38" wording="Curso Aux. Necrópsia"/>
-<ope date="737484" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 2" kxfer="19"/>
-<ope date="737484" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 1" kxfer="20"/>
-<ope date="737489" amount="-130" account="2" paymode="3" st="3" category="38" wording="Curso Aux. Necrópsia"/>
-<ope date="737497" amount="109.34" account="2" flags="2" category="106" wording="Ajuste de contas" info="Ajuste de contas"/>
-<ope date="737497" amount="411.25999999999999" account="2" flags="2" category="88" wording="Reajuste de saldo" info="Reajuste de Saldo"/>
-<ope date="737497" amount="600" account="2" dst_account="1" flags="10" payee="2" category="76" wording="Ajuda Mega Models" info="Ajuda Mega Models" kxfer="31"/>
-<ope date="737514" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 2" kxfer="22"/>
-<ope date="737514" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 1" kxfer="23"/>
-<ope date="737521" amount="-130" account="2" paymode="3" st="3" category="38" wording="Curso Aux. Necrópsia"/>
-<ope date="737545" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 2" kxfer="25"/>
-<ope date="737545" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 1" kxfer="26"/>
-<ope date="737550" amount="-130" account="2" paymode="3" st="3" category="38" wording="Curso Aux. Necrópsia"/>
-<ope date="737575" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 2" kxfer="28"/>
-<ope date="737575" amount="-50" account="2" dst_account="4" flags="136" payee="2" category="128" wording="PIC 1" kxfer="29"/>
-<ope date="737433" amount="-29.100000000000001" account="1" paymode="6" category="71" wording="Passagem Jabaquara/Santos" info="Passagem Jabaquara/Santos"/>
-<ope date="737433" amount="-28.350000000000001" account="1" paymode="6" category="71" wording="Passagem Santos/Jabaquara" info="Passagem Santos/Jabaquara"/>
-<ope date="737433" amount="-400" account="1" dst_account="2" flags="8" payee="2" category="76" wording="Pag Curso Yah" info="Pag Curso Yah" kxfer="1"/>
-<ope date="737433" amount="-14.98" account="1" paymode="6" category="42" wording="Caixa de chocolate + Bala Ere" info="Caixa de chocolate + Bala Ere"/>
-<ope date="737434" amount="-351.27999999999997" account="1" paymode="8" category="12" wording="Luz 12/2019" info="Luz 12/2019"/>
-<ope date="737440" amount="352" account="1" paymode="4" flags="2" payee="1" category="106" wording="Dev. Conta Luz" info="Dev. Conta Luz"/>
-<ope date="737440" amount="-202.40000000000001" account="1" paymode="8" payee="8" category="25" wording="Conta de água" info="AGUA dez/19"/>
-<ope date="737442" amount="-80" account="1" paymode="6" category="76" wording="Materiais Tatto" info="Materiais Tatto"/>
-<ope date="737442" amount="-50" account="1" dst_account="5" flags="8" category="26" wording="saque" info="saque" kxfer="2"/>
-<ope date="737444" amount="-50" account="1" dst_account="2" flags="8" category="76" wording="Reposição limite" info="Reposição limite" kxfer="3"/>
-<ope date="737444" amount="800" account="1" paymode="9" flags="2" payee="1" category="123" wording="Salário" info="Salário"/>
-<ope date="737444" amount="-10.300000000000001" account="1" paymode="10" category="8" wording="Tarifa TED eletrônico" info="Tarifa TED eletrônico"/>
-<ope date="737445" amount="-50" account="1" dst_account="4" flags="8" category="127" wording="Poupança" info="Poupança" kxfer="7"/>
-<ope date="737445" amount="-50" account="1" dst_account="3" flags="136" payee="2" category="76" wording="Save money" kxfer="4"/>
-<ope date="737445" amount="-20" account="1" dst_account="4" flags="8" category="127" wording="Poupança" info="Poupança" kxfer="6"/>
-<ope date="737445" amount="-250.25999999999999" account="1" paymode="11" category="22" wording="Parcela Empréstimo" info="Parcela Empréstimo"/>
-<ope date="737445" amount="-10.300000000000001" account="1" paymode="11" category="8" wording="Tarifa Ted Eletrônico" info="Tarifa Ted Eletrônico"/>
-<ope date="737445" amount="-10" account="1" paymode="6" category="76" wording="Recarga Bilhete Unico" info="Recarga BU"/>
-<ope date="737445" amount="-10" account="1" paymode="6" category="41" wording="Lanche Yah" info="Lanche Yah"/>
-<ope date="737445" amount="-34.420000000000002" account="1" paymode="6" category="49" wording="Remédios" info="Remédios"/>
-<ope date="737445" amount="-150" account="1" paymode="4" payee="4" category="16" wording="Mensalidades Raízes" info="Mensalidades"/>
-<ope date="737445" amount="70" account="1" paymode="9" flags="2" payee="1" category="106" wording="Devolução Pai" info="Devolução Pai"/>
-<ope date="737446" amount="-6.7800000000000002" account="1" paymode="6" category="41" wording="Comida" info="Comida"/>
-<ope date="737446" amount="-19" account="1" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737446" amount="-10.300000000000001" account="1" paymode="10" category="8" wording="Tarifa TED Eletrônico" info="Tarifa TED Eletrônico"/>
-<ope date="737447" amount="-19" account="1" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737448" amount="-19" account="1" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737450" amount="-18.829999999999998" account="1" paymode="6" category="43" wording="Mercado da Familia" info="Mercado da Familia"/>
-<ope date="737451" amount="-100" account="1" dst_account="3" flags="8" payee="3" category="77" wording="Dentista" info="Dentista" kxfer="8"/>
-<ope date="737451" amount="-21.5" account="1" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737451" amount="-10.300000000000001" account="1" paymode="10" category="8" wording="Tarifa TED eletrônico" info="Tarifa TED eletrônico"/>
-<ope date="737453" amount="-10" account="1" paymode="6" category="76" wording="Recarga BOM" info="Recarga BOM"/>
-<ope date="737453" amount="-0.98999999999999999" account="1" paymode="10" category="7" wording="Juros de Mora" info="Juros de Mora"/>
-<ope date="737453" amount="-13.4" account="1" paymode="10" category="7" wording="Juros saldo utilizado periodo excesso" info="Juros saldo utilizado periodo excesso"/>
-<ope date="737453" amount="-12.16" account="1" paymode="10" category="7" wording="Juros de saldo utilizado" info="Juros de saldo utilizado"/>
-<ope date="737453" amount="-3.3999999999999999" account="1" paymode="10" category="8" wording="Seguro cheque protegido" info="Seguro Cheque protegido"/>
-<ope date="737453" amount="-27.899999999999999" account="1" paymode="6" category="41" wording="McDonalds" info="McDonalds"/>
-<ope date="737453" amount="-8.0600000000000005" account="1" paymode="10" category="7" wording="Multa moratoria" info="Multa moratoria"/>
-<ope date="737454" amount="50" account="1" dst_account="4" flags="10" payee="1" category="76" wording="Transf Poupança &gt; Santander" info="Poupança &gt; Santander" kxfer="9"/>
-<ope date="737454" amount="-20" account="1" paymode="6" category="76" wording="Recarga BOM" info="Recarga Bom"/>
-<ope date="737457" amount="-8" account="1" paymode="6" category="41" wording="Comida" info="Lanche"/>
-<ope date="737458" amount="20.57" account="1" dst_account="4" flags="10" payee="1" category="76" wording="Poupança &gt; Santander" info="Poupança &gt; Santander" kxfer="12"/>
-<ope date="737458" amount="-19" account="1" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737458" amount="-0.67000000000000004" account="1" paymode="10" category="90" wording="IoF " info="IoF "/>
-<ope date="737458" amount="-3.7200000000000002" account="1" paymode="10" category="90" wording="IoF adicional" info="IoF adicional"/>
-<ope date="737460" amount="75" account="1" paymode="9" flags="2" payee="1" category="107" wording="Transferência cliente Mãe" info="Transferência cliente Mãe"/>
-<ope date="737461" amount="920" account="1" paymode="9" flags="2" payee="1" category="123" wording="Salário" info="Salario"/>
-<ope date="737461" amount="-5" account="1" paymode="6" category="41" wording="Lanche - Rodrigo" info="Lanche"/>
-<ope date="737461" amount="-75" account="1" paymode="4" payee="10" category="76" wording="Cliente La Belle" info="Cliente La Belle"/>
-<ope date="737462" amount="-28.800000000000001" account="1" paymode="10" category="8" wording="Mensalidade Pacote de serviços" info="Tarifa Mensalidade"/>
-<ope date="737462" amount="-8.7799999999999994" account="1" paymode="6" category="41" wording="Lanche - Rodrigo" info="Lanche"/>
-<ope date="737462" amount="-524.79999999999995" account="1" paymode="8" category="38" wording="Mensal Uninove" info="Uni9"/>
-<ope date="737462" amount="-20" account="1" paymode="6" category="76" wording="Recarga cartão" info="Recarga cartão"/>
-<ope date="737463" amount="-9" account="1" paymode="6" category="41" wording="Lanche - Rodrigo" info="Lanche"/>
-<ope date="737465" amount="75" account="1" paymode="9" flags="2" payee="10" category="107" wording="Cliente La Belle" info="Cliente La Belle"/>
-<ope date="737465" amount="-40" account="1" paymode="4" payee="10" category="76" wording="Cliente La Belle" info="Cliente La Belle"/>
-<ope date="737465" amount="-4.4000000000000004" account="1" paymode="6" category="76" wording="Recarga BOM" info="Recarga Bom"/>
-<ope date="737465" amount="-100" account="1" paymode="9" category="42" wording="Buquê" info="Buquê"/>
-<ope date="737465" amount="-200" account="1" paymode="4" payee="9" category="72" wording="Emprestado Pai" info="Empréstimo Pai"/>
-<ope date="737465" amount="-50" account="1" dst_account="3" flags="8" payee="2" category="127" wording="Santander &gt; NuBank" info="Santander &gt; Nubank" kxfer="13"/>
-<ope date="737467" amount="30" account="1" dst_account="3" flags="10" payee="1" category="76" wording="Nubank &gt; Santander" info="Nubank &gt; Santander" kxfer="14"/>
-<ope date="737467" amount="-30.899999999999999" account="1" paymode="10" category="8" wording="Tarifa Ted Eletrônico" info="Tarifa Ted Eletrônico"/>
-<ope date="737467" amount="10" account="1" dst_account="3" flags="10" payee="1" category="76" wording="Nubank &gt; Santander" info="Nubank &gt; Santander" kxfer="15"/>
-<ope date="737467" amount="-9.9800000000000004" account="1" paymode="6" category="41" wording="Lanche - Rodrigo" info="Lanche"/>
-<ope date="737467" amount="-10.300000000000001" account="1" paymode="10" category="8" wording="Tarifa TED eletrônico" info="Tarifa Ted eletronico"/>
-<ope date="737472" amount="20" account="1" dst_account="3" flags="10" payee="1" category="76" wording="NuBank &gt; Santander" info="NuBank &gt; Santander" kxfer="17"/>
-<ope date="737472" amount="-10" account="1" paymode="6" category="41" wording="Dogao" info="Hot Dog"/>
-<ope date="737472" amount="200" account="1" paymode="9" flags="2" payee="1" category="106" wording="Transf. Pai" info="Transf. Pai"/>
-<ope date="737473" amount="-45.899999999999999" account="1" paymode="11" category="20" wording="Netflix" info="Netflix"/>
-<ope date="737473" amount="-10" account="1" paymode="6" category="76" wording="Cartão BU" info="Cartão BU"/>
-<ope date="737473" amount="-19.629999999999999" account="1" paymode="6" category="43" wording="Padaria" info="Padaria"/>
-<ope date="737474" amount="-20" account="1" paymode="6" category="76" wording="Recarga BU" info="Recarga BU"/>
-<ope date="737475" amount="-4.9900000000000002" account="1" paymode="6" category="41" wording="Doces" info="Doces"/>
-<ope date="737475" amount="-50" account="1" paymode="4" payee="10" category="22" wording="Ajuda Casa" info="Mãe"/>
-<ope date="737475" amount="800" account="1" paymode="9" flags="2" payee="1" category="119" wording="Adiantamento de Salário" info="Salário"/>
-<ope date="737475" amount="-389.80000000000001" account="1" paymode="8" category="11" wording="Conta Claro" info="Conta Celulares"/>
-<ope date="737476" amount="-50" account="1" dst_account="3" flags="136" payee="2" category="76" wording="Save money" kxfer="18"/>
-<ope date="737476" amount="-250.25999999999999" account="1" paymode="11" category="77" wording="Emprestimo (034/036)" info="Emprestimo"/>
-<ope date="737476" amount="-10.300000000000001" account="1" paymode="10" category="8" wording="Tarifa Ted Eletrônico" info="Tarifa Ted Eletronico"/>
-<ope date="737476" amount="-21.5" account="1" paymode="6" category="41" wording="Almoço" info="Almoço"/>
-<ope date="737476" amount="-41" account="1" paymode="6" category="76" wording="Banca de jornal" info="Banca"/>
-<ope date="737477" amount="-6" account="1" paymode="6" category="76" wording="Lan House" info="Lan House"/>
-<ope date="737477" amount="-8" account="1" paymode="6" category="41" wording="Bomboniere" info="Bomboniere"/>
-<ope date="737477" amount="-17.5" account="1" paymode="6" category="41" wording="Lanche" info="Monster dog"/>
-<ope date="737477" amount="-3.75" account="1" paymode="6" category="41" wording="Padaria" info="Padaria"/>
-<ope date="737479" amount="-10" account="1" paymode="6" category="76" wording="Recarga BU" info="Recarga Cartão"/>
-<ope date="737479" amount="-17.899999999999999" account="1" paymode="6" category="41" wording="Padaria" info="Padaria"/>
-<ope date="737480" amount="-15" account="1" paymode="6" category="41" wording="Espeto Café" info="Espeto Café"/>
-<ope date="737481" amount="-9" account="1" paymode="6" category="76" wording="Banca de jornal" info="Banca de jornal"/>
-<ope date="737486" amount="-0.70999999999999996" account="1" paymode="10" category="90" wording="IoF " info="IOF Fevereiro"/>
-<ope date="737486" amount="-3.3999999999999999" account="1" paymode="10" category="90" wording="IoF adicional" info="IoF adicional"/>
-<ope date="737486" amount="-21.309999999999999" account="1" paymode="10" category="7" wording="Juros de saldo utilizado" info="Juros uso Limite"/>
-<ope date="737486" amount="-4.8300000000000001" account="1" paymode="10" category="7" wording="Juros saldo utilizado periodo excesso" info="Juros uso Limite excesso"/>
-<ope date="737486" amount="-0.60999999999999999" account="1" paymode="10" category="7" wording="Juros de Mora" info="Juros de Mora"/>
-<ope date="737486" amount="-8.4299999999999997" account="1" paymode="10" category="7" wording="Multa moratoria" info="Multa moratória"/>
-<ope date="737490" amount="957.87" account="1" paymode="9" flags="2" payee="1" category="123" wording="Salário" info="Salário"/>
-<ope date="737493" amount="-5" account="1" paymode="10" category="8" wording="tarifa extrato consolidado" info="Tarifa extrato consolidado"/>
-<ope date="737493" amount="-28.800000000000001" account="1" paymode="10" category="8" wording="Mensalidade Pacote de serviços" info="Tarifa mensal Fev"/>
-<ope date="737493" amount="-50" account="1" dst_account="3" flags="8" payee="2" category="127" wording="Poupança" info="Guarda Dinheiro" kxfer="30"/>
-<ope date="737493" amount="-91.599999999999994" account="1" paymode="6" category="41" wording="Lanche" info="Lanche BK"/>
-<ope date="737494" amount="-10" account="1" paymode="6" category="41" wording="Lanche - Rodrigo" info="Dudu Dog"/>
-<ope date="737497" amount="-600" account="1" dst_account="2" flags="8" payee="2" category="76" wording="Ajuda Mega Models" info="Ajuda Mega Models" kxfer="31"/>
-<ope date="737497" amount="-14" account="1" paymode="6" category="76" wording="Mercado" info="Mercado"/>
-<ope date="737497" amount="-37.939999999999998" account="1" paymode="6" category="76" wording="Mercado" info="Mercado São Jorge"/>
-<ope date="737497" amount="-37.700000000000003" account="1" paymode="6" category="41" wording="Almoço" info="Mc Donald&apos;s"/>
-<ope date="737497" amount="0.01" account="1" paymode="9" flags="2" payee="1" category="100" wording="Remuneração contamax" info="Remuneração Contamax"/>
-<ope date="737498" amount="-8" account="1" paymode="6" category="76" wording="Kratus" info="Kratus"/>
-<ope date="737498" amount="-20.5" account="1" paymode="6" category="76" wording="Jr Silva Comércio" info="Jr Silva Comercio"/>
-<ope date="737499" amount="-5.9900000000000002" account="1" paymode="6" category="41" wording="Lopes supermercado" info="Lopes Supermercado"/>
-<ope date="737504" amount="802.79999999999995" account="1" paymode="9" flags="2" payee="1" category="123" wording="Salário" info="Salário"/>
-<ope date="737504" amount="-10.300000000000001" account="1" paymode="10" category="8" wording="Tarifa Ted Eletrônico" info="Tarifa ted eletrõnico"/>
-<ope date="737504" amount="-45.899999999999999" account="1" paymode="11" category="20" wording="Netflix" info="Netflix"/>
-<ope date="737507" amount="-50" account="1" dst_account="3" flags="136" payee="2" category="76" wording="Save money" kxfer="21"/>
-<ope date="737507" amount="-148.00999999999999" account="1" paymode="8" payee="8" category="25" wording="Conta de água" info="Água Mar"/>
-<ope date="737507" amount="-250.25999999999999" account="1" paymode="11" category="22" wording="Emprestimo" info="Empréstimo (035/036)"/>
-<ope date="737507" amount="-100" account="1" paymode="4" category="16" wording="Mensalidades Raízes" info="Raízes fev/mar"/>
-<ope date="737507" amount="-20.600000000000001" account="1" paymode="10" category="8" wording="Tarifa Ted Eletrônico" info="Tarifa Ted Eletronico"/>
-<ope date="737508" amount="-50" account="1" paymode="6" category="76" wording="Recarga BOM" info="Recarga BOM"/>
-<ope date="737509" amount="-5" account="1" paymode="10" category="8" wording="tarifa extrato consolidado" info="Tarifa extrato consolidado"/>
-<ope date="737509" amount="-10" account="1" paymode="6" category="76" wording="Perto S.A." info="Perto SA"/>
-<ope date="737512" amount="-50" account="1" paymode="6" category="76" wording="Romauccio" info="Romauccio"/>
-<ope date="737514" amount="-20" account="1" paymode="6" category="76" wording="Recarga BOM" info="Recarga BOM"/>
-<ope date="737514" amount="-3.29" account="1" paymode="11" category="8" wording="Seguro cheque protegido" info="Seguro Cheque protegido"/>
-<ope date="737514" amount="-12.41" account="1" paymode="11" category="8" wording="Juros de saldo utilizado" info="Juros Saldo utilizado"/>
-<ope date="737514" amount="-6.79" account="1" paymode="11" category="8" wording="Juros saldo utilizado periodo excesso" info="Juros saldo utilizado excesso"/>
-<ope date="737514" amount="-0.84999999999999998" account="1" paymode="10" category="7" wording="Juros de Mora" info="Juros de mora"/>
-<ope date="737514" amount="-8.7799999999999994" account="1" paymode="10" category="7" wording="Multa moratoria" info="Multa moratória"/>
-<ope date="737515" amount="-10" account="1" paymode="6" category="76" wording="Recarga BOM" info="Recarga BOM"/>
-<ope date="737515" amount="-5" account="1" paymode="6" category="76" wording="Recarga BOM" info="Recarga BOM"/>
-<ope date="737516" amount="-0.59999999999999998" account="1" paymode="11" category="90" wording="IoF " info="IoF"/>
-<ope date="737516" amount="-3.8999999999999999" account="1" paymode="11" category="90" wording="IoF adicional" info="IoF adicional"/>
-<ope date="737521" amount="793.45000000000005" account="1" paymode="9" flags="2" payee="1" category="123" wording="Salário" info="Salário"/>
-<ope date="737522" amount="-28.800000000000001" account="1" paymode="10" category="8" wording="Mensalidade Pacote de serviços" info="Tarifa Mensalidade serviços"/>
-<ope date="737524" amount="-50" account="1" dst_account="3" flags="8" payee="2" category="127" wording="Poupança" info="Poupança" kxfer="32"/>
-<ope date="737528" amount="-50" account="1" paymode="6" category="26" wording="Saque" info="Saque dinheiro"/>
-<ope date="737535" amount="-524.79999999999995" account="1" paymode="8" category="38" wording="Mensal Uninove" info="Facu"/>
-<ope date="737535" amount="0.01" account="1" paymode="9" flags="2" payee="1" category="100" wording="Remuneração contamax" info="Remuneração contamax"/>
-<ope date="737536" amount="-50" account="1" dst_account="3" flags="136" payee="2" category="76" wording="Save money" kxfer="24"/>
-<ope date="737537" amount="-3.5899999999999999" account="1" paymode="6" category="76" wording="Mercado" info="Mercado São Jorge"/>
-<ope date="737538" amount="-10.300000000000001" account="1" paymode="10" category="8" wording="Tarifa Ted Eletrônico" info="Tarifa ted eletronico"/>
-<ope date="737538" amount="-45.899999999999999" account="1" paymode="11" category="20" wording="Netflix" info="Netflix"/>
-<ope date="737544" amount="-3.3999999999999999" account="1" paymode="11" category="8" wording="Seguro cheque protegido" info="Seguro cheque protegido"/>
-<ope date="737544" amount="-16.609999999999999" account="1" paymode="11" category="7" wording="Juros de saldo utilizado" info="Juros Saldo utilizado"/>
-<ope date="737545" amount="54" account="1" paymode="4" flags="2" payee="1" category="106" wording="Cliente La Belle" info="Cliente La Belle"/>
-<ope date="737545" amount="-5" account="1" paymode="11" category="129" wording="tarifa extrato consolidado" info="Tarifa de extrato consolidado"/>
-<ope date="737547" amount="-53.189999999999998" account="1" category="76" wording="Ajuste de contas" info="Ajuste de conta"/>
-<ope date="737549" amount="-54" account="1" paymode="6" category="76" wording="Cliente La Belle" info="Cliente La Belle"/>
-<ope date="737566" amount="-50" account="1" dst_account="3" flags="136" payee="2" category="76" wording="Save money" kxfer="27"/>
+<fav key="3" amount="-500" account="1" paymode="4" st="1" flags="516" payee="1" category="22" wording="Aluguel" info="Aluguel" nextdate="737831" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="4" amount="0" account="6" dst_account="7" flags="1548" category="33" wording="Cartão de crédito Nubank" info="Cartão de crédito Nubank" nextdate="737816" every="1" unit="2" limit="1" weekend="1"/>
+<fav key="1" amount="-50" account="1" dst_account="4" st="1" flags="1676" category="126" wording="DinDin1" info="DinDin1" nextdate="737811" every="1" unit="2" limit="54" weekend="2"/>
+<fav key="2" amount="-50" account="1" dst_account="5" st="1" flags="652" category="126" wording="DinDin2" info="DinDin2" nextdate="737811" every="1" unit="2" limit="54" weekend="2"/>
+<grp key="1" name="Guardado"/>
+<grp key="2" name="Conta"/>
 </homebank>

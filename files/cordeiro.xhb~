@@ -141,12 +141,17 @@
 <cat key="122" parent="119" flags="3" name="Correspondência de Empregador"/>
 <cat key="121" parent="119" flags="3" name="Comissão"/>
 <cat key="120" parent="119" flags="3" name="Bonus"/>
-<fav key="3" amount="-500" account="1" paymode="4" st="1" flags="516" payee="1" category="22" wording="Aluguel" info="Aluguel" nextdate="737831" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="4" amount="0" account="6" dst_account="7" flags="1548" category="33" wording="Cartão de crédito Nubank" info="Cartão de crédito Nubank" nextdate="737816" every="1" unit="2" limit="1" weekend="1"/>
-<fav key="1" amount="-50" account="1" dst_account="4" st="1" flags="1676" category="126" wording="DinDin1" info="DinDin1" nextdate="737811" every="1" unit="2" limit="54" weekend="2"/>
-<fav key="2" amount="-50" account="1" dst_account="5" st="1" flags="652" category="126" wording="DinDin2" info="DinDin2" nextdate="737811" every="1" unit="2" limit="54" weekend="2"/>
-<fav key="5" amount="-45.899999999999999" account="1" paymode="11" st="1" flags="516" category="20" wording="Netflix" info="Netflix" nextdate="737841" every="1" unit="2" limit="1"/>
 <fav key="6" amount="-50" account="1" paymode="4" st="1" flags="516" payee="2" category="16" wording="Raízes" info="Raizes" nextdate="737859" every="1" unit="2" limit="1"/>
+<fav key="5" amount="-45.899999999999999" account="1" paymode="11" st="1" flags="516" category="20" wording="Netflix" info="Netflix" nextdate="737841" every="1" unit="2" limit="1"/>
+<fav key="2" amount="-50" account="1" dst_account="5" st="1" flags="652" category="126" wording="DinDin2" info="DinDin2" nextdate="737811" every="1" unit="2" limit="54" weekend="2"/>
+<fav key="1" amount="-50" account="1" dst_account="4" st="1" flags="1676" category="126" wording="DinDin1" info="DinDin1" nextdate="737811" every="1" unit="2" limit="54" weekend="2"/>
+<fav key="7" amount="-120" account="1" paymode="8" st="1" flags="516" category="11" wording="Celulares" info="Celulares" nextdate="737842" every="1" unit="2" limit="1"/>
+<fav key="4" amount="0" account="6" dst_account="7" flags="1548" category="33" wording="Cartão de crédito Nubank" info="Cartão de crédito Nubank" nextdate="737847" every="1" unit="2" limit="1" weekend="1"/>
+<fav key="3" amount="-500" account="1" paymode="4" st="1" flags="516" payee="1" category="22" wording="Aluguel" info="Aluguel" nextdate="737831" every="1" unit="2" limit="1" weekend="2"/>
 <grp key="1" name="Guardado"/>
 <grp key="2" name="Conta"/>
+<ope date="737816" amount="179.36000000000001" account="7" dst_account="6" flags="10" category="33" wording="Cartão de crédito Nubank" info="Cartão de crédito Nubank" kxfer="1"/>
+<ope date="737820" amount="669.96000000000004" account="1" paymode="9" st="1" flags="2" payee="4" category="122" wording="Pagamento de benefícios" info="Pagamento de benefícios"/>
+<ope date="737816" amount="-179.36000000000001" account="6" dst_account="7" flags="8" category="33" wording="Cartão de crédito Nubank" info="Cartão de crédito Nubank" kxfer="1"/>
+<ope date="737820" amount="190" account="6" paymode="4" st="1" flags="2" payee="4" category="106" wording="Para pagar o cartão" info="Para pagar o cartao"/>
 </homebank>

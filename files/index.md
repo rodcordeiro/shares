@@ -3,33 +3,33 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 
 ---------------------------
 [Alura.txt](Alura.txt)<br>
-[bethehero.jks](bethehero.jks)<br>
-[betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
 [ContratoDeLocacao.pdf](ContratoDeLocacao.pdf)<br>
-[cordeiro.xhb~](cordeiro.xhb~)<br>
 [Documentacao.zip](Documentacao.zip)<br>
-[flag.txt](flag.txt)<br>
 [Jogos.txt](Jogos.txt)<br>
-[krunkerAssets](krunkerAssets)<br>
-[mago.html](mago.html)<br>
-[me.xcf](me.xcf)<br>
 [OmniStack11.pdf](OmniStack11.pdf)<br>
 [PlanilhaReembolso_Data.xlsm](PlanilhaReembolso_Data.xlsm)<br>
-[rodcordeiro.xcf](rodcordeiro.xcf)<br>
 [RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>
-[rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
-[RodrigoCurriculobkp.docx](RodrigoCurriculobkp.docx)<br>
 [RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
-[saporra.txt](saporra.txt)<br>
-[smb.conf](smb.conf)<br>
-[subdominios.txt](subdominios.txt)<br>
+[RodrigoCurriculobkp.docx](RodrigoCurriculobkp.docx)<br>
 [Visit](Visit)<br>
 [Report](Report)<br>
 [Airon](Airon)<br>
 [Prosegur](Prosegur)<br>
 [classico.xls](classico.xls)<br>
-[zabbix_agentd.conf](zabbix_agentd.conf)<br>
+[bethehero.jks](bethehero.jks)<br>
+[betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
+[cordeiro.xhb~](cordeiro.xhb~)<br>
+[flag.txt](flag.txt)<br>
+[krunkerAssets](krunkerAssets)<br>
+[mago.html](mago.html)<br>
+[me.xcf](me.xcf)<br>
+[rodcordeiro.xcf](rodcordeiro.xcf)<br>
+[rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
+[saporra.txt](saporra.txt)<br>
+[smb.conf](smb.conf)<br>
+[subdominios.txt](subdominios.txt)<br>
 [zabbix_agent.zip](zabbix_agent.zip)<br>
+[zabbix_agentd.conf](zabbix_agentd.conf)<br>
 
 ---------------------------
 

@@ -1,0 +1,9 @@
+[Unit]
+Description = Start the Telegram Bot
+After = network.target
+
+[Service]
+ExecStart = /bin/bash /home/beltis/Scripts/start_bot.sh
+
+[Install]
+WantedBy = multi-user.target

@@ -141,15 +141,15 @@ anydesk(){
 }
 
 chrome(){
-  cd
-  cd Softwares
-	mkdir chrome
-	cd chrome
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	dpkg -i *.deb
-	apt install -f -y
-	cd ..
-	rm -rf chrome
+  cd # Volta para a pasta raiz
+  cd Softwares # Entra na pasta Softwares que o script cria anteriormente
+	mkdir chrome # Cria uma pasta chrome
+	cd chrome #Entra na pasta chrome
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb # Baixa o pacote .deb da versão atualizada
+	dpkg -i *.deb # Instala o pacote .deb baixado
+	apt install -f -y # Instala dependências faltantes ou que tenham apresentado falhas ( --fix-broken )
+	cd .. # Volta uma pasta
+	rm -rf chrome # Exclui a pasta chrome
 	cd
 }
 lamp(){

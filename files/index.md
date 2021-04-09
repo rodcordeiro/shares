@@ -28,8 +28,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [saporra.txt](saporra.txt)<br>
 [smb.conf](smb.conf)<br>
 [subdominios.txt](subdominios.txt)<br>
-[zabbix_agent.zip](zabbix_agent.zip)<br>
-[zabbix_agentd.conf](zabbix_agentd.conf)<br>
+[zabbix](zabbix)<br>
 
 ---------------------------
 

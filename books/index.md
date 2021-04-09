@@ -9,6 +9,10 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [CompTIA_PenTest_Practice_Tests.pdf](CompTIA_PenTest_Practice_Tests.pdf)<br>
 [Debian_GNU-Linux_Bible.pdf](Debian_GNU-Linux_Bible.pdf)<br>
 [EBOOK_Dashboard.pdf](EBOOK_Dashboard.pdf)<br>
+[Eragon_I.pdf](Eragon_I.pdf)<br>
+[Eragon_III_Brisingr.pdf](Eragon_III_Brisingr.pdf)<br>
+[Eragon_II_Eldest.pdf](Eragon_II_Eldest.pdf)<br>
+[Eragon_IV_Herança.pdf](Eragon_IV_Herança.pdf)<br>
 [Guia_do_Hacker_Brasileiro.pdf](Guia_do_Hacker_Brasileiro.pdf)<br>
 [HowToCodeInHTML5AndCSS3.pdf](HowToCodeInHTML5AndCSS3.pdf)<br>
 [Instalacao_configuracao_windows.pdf](Instalacao_configuracao_windows.pdf)<br>

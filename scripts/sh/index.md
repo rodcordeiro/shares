@@ -25,10 +25,10 @@ This folder of the repo keeps all the shell scripts
 [telegram_bot.service](telegram_bot.service)<br>
 [telegram_bot.service.html](telegram_bot.service.html)<br>
 [vader.sh.html](vader.sh.html)<br>
+[validate_external_ip.sh.html](validate_external_ip.sh.html)<br>
 [verificar_backup.sh.html](verificar_backup.sh.html)<br>
 [wc.sh.html](wc.sh.html)<br>
 [wireless-info.sh.html](wireless-info.sh.html)<br>
-[zabbix.sh.html](zabbix.sh.html)<br>
 
 ---------------------------
 

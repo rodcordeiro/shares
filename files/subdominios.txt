@@ -14,3 +14,5 @@ session
 user
 users
 wp
+glpi
+zabbix

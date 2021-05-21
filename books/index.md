@@ -21,8 +21,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Introducing_InnoDB_Cluster.pdf](Introducing_InnoDB_Cluster.pdf)<br>
 [Java-Como_Programar.pdf](Java-Como_Programar.pdf)<br>
 [KaliLinuxIntrusionandExploitationCookbook.epub](KaliLinuxIntrusionandExploitationCookbook.epub)<br>
-[Learning_PHP,MySQL](Learning_PHP,MySQL)<br>
-[_JavaScript.pdf](_JavaScript.pdf)<br>
+[Learning_PHP,MySQL_JavaScript.pdf](Learning_PHP,MySQL_JavaScript.pdf)<br>
 [LinuxNotesForProfessionals.pdf](LinuxNotesForProfessionals.pdf)<br>
 [Linux_A_Biblia.pdf](Linux_A_Biblia.pdf)<br>
 [Livro_Proibido_do_Curso_de_Hacker.pdf](Livro_Proibido_do_Curso_de_Hacker.pdf)<br>
@@ -50,6 +49,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Python_Ava_7.pdf](Python_Ava_7.pdf)<br>
 [Python_Ava_8.pdf](Python_Ava_8.pdf)<br>
 [Python_Ava_9.pdf](Python_Ava_9.pdf)<br>
+[Scrum_GestaoAgil_para_projetos_de_sucesso-Casa_do_Codigo.pdf](Scrum_GestaoAgil_para_projetos_de_sucesso-Casa_do_Codigo.pdf)<br>
 [Web_Penetration_Testing_Kali_Linux_PT_BR.pdf](Web_Penetration_Testing_Kali_Linux_PT_BR.pdf)<br>
 [WorkshopAprenderaProgramar.pdf](WorkshopAprenderaProgramar.pdf)<br>
 [caelum-csharp-dotnet-fn13.pdf](caelum-csharp-dotnet-fn13.pdf)<br>

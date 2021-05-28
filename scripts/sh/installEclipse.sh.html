@@ -83,7 +83,13 @@ eclipse(){
   tar -zxvf eclipse.tar.gz -C /opt/
   mv /opt/eclipse*/ /opt/eclipse
   wget https://dl2.macupdate.com/images/icons128/11662.png -O /opt/eclipse/eclipse.png
-  echo -e '[Desktop Entry]\n Version=1.0\n Name=eclipse\n Exec=/opt/eclipse/eclipse\n Icon=/opt/eclipse/eclipse.png\n Type=Application\n Categories=Application' | tee /usr/share/applications/eclipse.desktop
+  echo -e '[Desktop Entry]
+ Version=1.0
+ Name=eclipse
+ Exec=/opt/eclipse/eclipse
+ Icon=/opt/eclipse/eclipse.png
+ Type=Application
+ Categories=Application' | tee /usr/share/applications/eclipse.desktop
   chmod +x /usr/share/applications/eclipse.desktop
   cp /usr/share/applications/eclipse.desktop  ~/Área\ de\ Trabalho/
   cd

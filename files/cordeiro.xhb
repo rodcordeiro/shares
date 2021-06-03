@@ -1,17 +1,19 @@
 <?xml version="1.0"?>
-<homebank v="1.3999999999999999" d="050403">
+<homebank v="1.3999999999999999" d="050502">
 <properties title="Cordeiro" curr="1" auto_smode="1" auto_weekday="1"/>
 <cur key="1" flags="0" iso="BRL" name="Brazilian Real" symb="R$" syprf="1" dchar="," gchar="." frac="2" rate="0" mdate="0"/>
-<account key="1" pos="1" type="1" curr="1" name="Santander" number="2045/01029518-7" bankname="Santander" initial="-293.24000000000001" minimum="0" grp="1"/>
-<account key="2" pos="2" type="5" curr="1" name="Poup1" number="2045/60.019292.3" bankname="Santander" initial="0" minimum="0" grp="2"/>
-<account key="3" pos="3" type="5" curr="1" name="Poup2" number="2045/60.014272.1" bankname="Santander" initial="0" minimum="0" grp="2"/>
-<account key="4" pos="4" type="1" curr="1" name="Nubank" number="0001/51205399-7" bankname="Nu Bank" initial="50.939999999999998" minimum="0" grp="1"/>
-<account key="5" pos="5" type="5" curr="1" name="NU Guardado" number="0001/51205399-7" bankname="Nubank" initial="0" minimum="0" grp="2"/>
-<account key="6" pos="6" type="1" curr="1" name="PicPay" number="0001/48466160-4" bankname="380 - Picpay" initial="0.97999999999999998" minimum="0" grp="1"/>
-<account key="7" pos="7" type="1" curr="1" name="C6" bankname="336 - Banco C6" initial="0" minimum="0" grp="1"/>
-<account key="8" pos="8" type="4" curr="1" name="CC NuBank" bankname="NuBank" initial="300" minimum="299" grp="1"/>
-<account key="9" pos="9" type="3" curr="1" name="Dindin1" number="EAF60362952" bankname="Santander" initial="284.64999999999998" minimum="0" grp="2"/>
-<account key="10" pos="10" type="3" curr="1" name="DinDin2" number="EAF60362953" bankname="Santander" initial="284.64999999999998" minimum="0" grp="2"/>
+<grp key="1" name="Banco"/>
+<grp key="2" name="Poupança"/>
+<account key="1" pos="1" type="1" curr="1" name="Santander" number="2045/01029518-7" bankname="Santander" initial="-293.24000000000001" minimum="0" maximum="0" grp="1"/>
+<account key="2" pos="2" type="5" curr="1" name="Poup1" number="2045/60.019292.3" bankname="Santander" initial="0" minimum="0" maximum="0" grp="2"/>
+<account key="3" pos="3" type="5" curr="1" name="Poup2" number="2045/60.014272.1" bankname="Santander" initial="0" minimum="0" maximum="0" grp="2"/>
+<account key="4" pos="4" type="1" curr="1" name="Nubank" number="0001/51205399-7" bankname="Nu Bank" initial="50.939999999999998" minimum="0" maximum="0" grp="1"/>
+<account key="5" pos="5" type="5" curr="1" name="NU Guardado" number="0001/51205399-7" bankname="Nubank" initial="0" minimum="0" maximum="0" grp="2"/>
+<account key="6" pos="6" type="1" curr="1" name="PicPay" number="0001/48466160-4" bankname="380 - Picpay" initial="0.97999999999999998" minimum="0" maximum="0" grp="1"/>
+<account key="7" pos="7" type="1" curr="1" name="C6" bankname="336 - Banco C6" initial="0" minimum="0" maximum="0" grp="1"/>
+<account key="8" pos="8" type="4" curr="1" name="CC NuBank" bankname="NuBank" initial="300" minimum="299" maximum="0" grp="1"/>
+<account key="9" pos="9" type="3" curr="1" name="Dindin1" number="EAF60362952" bankname="Santander" initial="284.64999999999998" minimum="0" maximum="0" grp="2"/>
+<account key="10" pos="10" type="3" curr="1" name="DinDin2" number="EAF60362953" bankname="Santander" initial="284.64999999999998" minimum="0" maximum="0" grp="2"/>
 <pay key="1" name="Raízes de Aruanda"/>
 <cat key="1" name="Pensão de alimentos"/>
 <cat key="2" name="Automóvel"/>
@@ -138,15 +140,16 @@
 <cat key="122" parent="119" flags="3" name="Correspondência de Empregador"/>
 <cat key="121" parent="119" flags="3" name="Comissão"/>
 <cat key="120" parent="119" flags="3" name="Bonus"/>
-<fav key="5" amount="-251.99000000000001" account="1" paymode="8" st="3" flags="516" category="38" wording="Uni9" info="Faculdade" nextdate="737961" every="1" unit="2" limit="1"/>
-<fav key="8" amount="-120" account="7" paymode="8" st="3" flags="516" category="11" wording="Recarga Celulares" info="Recarga Celulares" nextdate="737949" every="1" unit="2" limit="1"/>
-<fav key="7" amount="-50" account="1" paymode="4" st="3" flags="516" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes" nextdate="737951" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="6" amount="-45.899999999999999" account="1" paymode="11" st="3" flags="1540" category="20" wording="Netflix" info="Netflix" nextdate="737940" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="3" flags="644" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737962" every="1" unit="2" limit="44" weekend="2"/>
-<fav key="2" amount="-50" account="1" dst_account="10" st="3" flags="1676" category="26" wording="DinDin2" info="DinDin2" tags="PoupançaDinDin" nextdate="737962" every="1" unit="2" limit="59" weekend="2"/>
-<fav key="1" amount="-50" account="1" dst_account="9" flags="1676" category="26" wording="DinDin1" info="DinDin1" tags="PoupançaDinDin" nextdate="737962" every="1" unit="2" limit="59" weekend="2"/>
 <fav key="4" amount="-135.56" account="8" st="3" flags="1540" category="33" wording="Cartão de crédito" info="Fatura CC Nubank" nextdate="737934" every="1" unit="2" limit="1"/>
-<grp key="1" name="Banco"/>
-<grp key="2" name="Poupança"/>
+<fav key="1" amount="-50" account="1" dst_account="9" flags="1676" category="26" wording="DinDin1" info="DinDin1" tags="PoupançaDinDin" nextdate="737962" every="1" unit="2" limit="59" weekend="2"/>
+<fav key="2" amount="-50" account="1" dst_account="10" st="3" flags="1676" category="26" wording="DinDin2" info="DinDin2" tags="PoupançaDinDin" nextdate="737962" every="1" unit="2" limit="59" weekend="2"/>
+<fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="3" flags="644" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737962" every="1" unit="2" limit="44" weekend="2"/>
+<fav key="6" amount="-45.899999999999999" account="1" paymode="11" st="3" flags="1540" category="20" wording="Netflix" info="Netflix" nextdate="737940" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="7" amount="-50" account="1" paymode="4" st="3" flags="516" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes" nextdate="737951" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="8" amount="-120" account="7" paymode="8" st="3" flags="516" category="11" wording="Recarga Celulares" info="Recarga Celulares" nextdate="737949" every="1" unit="2" limit="1"/>
+<fav key="5" amount="-251.99000000000001" account="1" paymode="8" st="3" flags="516" category="38" wording="Uni9" info="Faculdade" nextdate="737961" every="1" unit="2" limit="1"/>
 <ope date="737937" amount="-266.45999999999998" account="8" paymode="1" st="1" category="76" info="Atualização de saldo"/>
+<ope date="737937" amount="-20" account="4" paymode="6" category="76" wording="Recarga BOM" info="Recarga BOM"/>
+<ope date="737937" amount="-20" account="4" paymode="6" category="76" wording="Recarga BOM" info="Recarga BOM"/>
+<ope date="737939" amount="-2.4500000000000002" account="4" paymode="6" category="41" wording="Pão" info="Pão"/>
 </homebank>

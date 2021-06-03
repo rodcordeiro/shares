@@ -149,5 +149,4 @@
 <grp key="1" name="Banco"/>
 <grp key="2" name="Poupança"/>
 <ope date="737937" amount="-266.45999999999998" account="8" paymode="1" st="1" category="76" info="Atualização de saldo"/>
-<ope date="737937" amount="-20.45999999999998" account="1" paymode="1" st="1" category="76" info="Teste"/>
 </homebank>

@@ -138,16 +138,23 @@
 <cat key="122" parent="119" flags="3" name="Correspondência de Empregador"/>
 <cat key="121" parent="119" flags="3" name="Comissão"/>
 <cat key="120" parent="119" flags="3" name="Bonus"/>
-<fav key="5" amount="-251.99000000000001" account="1" paymode="8" st="3" flags="516" category="38" wording="Uni9" info="Faculdade" nextdate="737961" every="1" unit="2" limit="1"/>
-<fav key="8" amount="-120" account="7" paymode="8" st="3" flags="516" category="11" wording="Recarga Celulares" info="Recarga Celulares" nextdate="737949" every="1" unit="2" limit="1"/>
-<fav key="7" amount="-50" account="1" paymode="4" st="3" flags="516" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes" nextdate="737951" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="6" amount="-45.899999999999999" account="1" paymode="11" st="3" flags="1540" category="20" wording="Netflix" info="Netflix" nextdate="737940" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="3" flags="644" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737962" every="1" unit="2" limit="44" weekend="2"/>
-<fav key="2" amount="-50" account="1" dst_account="10" st="3" flags="1676" category="26" wording="DinDin2" info="DinDin2" tags="PoupançaDinDin" nextdate="737962" every="1" unit="2" limit="59" weekend="2"/>
-<fav key="1" amount="-50" account="1" dst_account="9" flags="1676" category="26" wording="DinDin1" info="DinDin1" tags="PoupançaDinDin" nextdate="737962" every="1" unit="2" limit="59" weekend="2"/>
 <fav key="4" amount="-135.56" account="8" st="3" flags="1540" category="33" wording="Cartão de crédito" info="Fatura CC Nubank" nextdate="737934" every="1" unit="2" limit="1"/>
+<fav key="1" amount="-50" account="1" dst_account="9" flags="1676" category="26" wording="DinDin1" info="DinDin1" tags="PoupançaDinDin" nextdate="737962" every="1" unit="2" limit="59" weekend="2"/>
+<fav key="2" amount="-50" account="1" dst_account="10" st="3" flags="1676" category="26" wording="DinDin2" info="DinDin2" tags="PoupançaDinDin" nextdate="737962" every="1" unit="2" limit="59" weekend="2"/>
+<fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="3" flags="644" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737962" every="1" unit="2" limit="44" weekend="2"/>
+<fav key="6" amount="-45.899999999999999" account="1" paymode="11" st="3" flags="1540" category="20" wording="Netflix" info="Netflix" nextdate="737940" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="7" amount="-50" account="1" paymode="4" st="3" flags="516" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes" nextdate="737951" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="8" amount="-120" account="7" paymode="8" st="3" flags="516" category="11" wording="Recarga Celulares" info="Recarga Celulares" nextdate="737949" every="1" unit="2" limit="1"/>
+<fav key="5" amount="-251.99000000000001" account="1" paymode="8" st="3" flags="516" category="38" wording="Uni9" info="Faculdade" nextdate="737961" every="1" unit="2" limit="1"/>
 <grp key="1" name="Banco"/>
 <grp key="2" name="Poupança"/>
 <ope date="737937" amount="-266.45999999999998" account="8" paymode="1" st="1" category="76" info="Atualização de saldo"/>
-<ope date="737937" amount="-20.45999999999998" account="1" paymode="1" st="1" category="76" info="Teste"/>
+<ope date="737941" amount="818.84000000000003" account="1" paymode="9" flags="2" category="120" wording="Pagamento de Benefícios" info="Pagamento de Benefícios"/>
+<ope date="737941" amount="-100" account="1" paymode="6" category="70" wording="Recarga BOM" info="Recarga Bom"/>
+<ope date="737941" amount="-12.83" account="1" paymode="11" category="84" wording="Uber" info="Uber"/>
+<ope date="737941" amount="-3.3999999999999999" account="1" paymode="10" category="8" wording="Seguro cheque protegido" info="Seguro cheque protegido"/>
+<ope date="737941" amount="-15.140000000000001" account="1" paymode="10" category="7" wording="Juros saldo utilizado" info="Juros Saldo utilizado"/>
+<ope date="737937" amount="-20" account="4" paymode="6" category="70" wording="Recarga BOM" info="Recarga BOM"/>
+<ope date="737937" amount="-20" account="4" paymode="6" category="70" wording="Recarga BOM" info="Recarga BOM"/>
+<ope date="737970" amount="-2.4500000000000002" account="4" paymode="6" category="41" wording="Padaria" info="Padaria"/>
 </homebank>

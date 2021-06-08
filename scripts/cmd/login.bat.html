@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>ip.sh | Cordeiro's DEV</title>
+<title>login.bat | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,95 +63,176 @@
 
 </head>
 <body>
-<h3><a href='ip.sh' download='ip.sh'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='login.bat' download='login.bat'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='bash'>
-#!/usr/bin/env bash
-    
-###Variables
-commands=()
-argsCount=$#
-i=0
-device=""
+<pre><code class='dos'>
+@echo off
+:home
+title Log in to CMD
+color 07
+cls
+echo.
+echo Cmd Accounts
+echo =============
+echo.
+echo [1] Log In
+echo [2] Sign Up
+echo [3] Exit
+echo.
+set /p op=
+if %op%==1 goto 1
+if %op%==2 goto 2
+if %op%==3 goto 3
+goto error
+:2
+cls
+echo Sign Up
+echo ======================================
+echo.
+set /p newname="Enter new username:"
+if "%newname%"=="%newname%" goto inputname
+:inputname
+cd "%userprofile%\documents"
+if exist "cmdacoBin" goto skip
+if not exist "cmdacoBin" goto noskip
+:noskip
+md "cmdacoBin"
+goto skip
+:skip
+cd "%userprofile%\documents\cmdacoBin"
+if exist "%newname%.bat" goto namexist
+if not exist "%newname%.bat" goto skip2
+:skip2
+echo set realusername=%newname%> "%newname%.bat"
+goto next
+:next
+echo.
+set /p pswd=Enter new Password:
+if "%pswd%"=="%pswd%" goto inputpass
+:inputpass
+cd "%userprofile%\documents\cmdacoBin"
+echo set password=%pswd%>> "%newname%.bat"
+goto next1
+:namexist
+echo.
+echo The entered username already exists.
+echo Press any key to return. . .
+pause >nul
+goto 2
+:next1
+cls
+echo Cmd Accounts
+echo ============
+echo.
+echo Your account has been successfully created!
+echo.
+pause
+goto home
+:1
+color 0b
+cls
+echo Cmd Accounts Log In
+echo ================================
+echo.
+Set /p logname=Username:
+if "%logname%"=="%logname%" goto 2.1
+:2.1
+echo.
+set /p logpass="Password:"
+if "%logpass%"=="%logpass%" goto login
+:login
+cd "%userprofile%\documents\cmdacoBin"
+if exist "%logname%.bat" goto call
+if not exist "%logname%.bat" goto errorlog
+:call
+call "%logname%.bat"
+if "%password%"=="%logpass%" goto logdone
+goto errorlog
+:errorlog
+color 47
+echo.
+echo Username or Password incorrect.
+echo Access denied.
+pause >nul
+goto home
+:logdone
+cls
+echo Command Prompt
+echo ==============
+echo.
+echo Successfully logged in!
+echo.
+pause
+goto account
+:account
+cls
+cd "%userprofile%\documents\cmdacoBin"
+call "%realusername%color.bat"
+call "%realusername%.bat"
+color %colorcode%
+cls
+echo.
+echo -------------------------------------------------------------------------------
+echo %realusername%
+echo -------------------------------------------------------------------------------
+@echo off
+break off
+Title Command Prompt
+color 0a
+cls
 
-###FUNCTIONS
-external(){
-ipext4=`curl -s -4 http://ifconfig.co/ip`
-ipext6=`curl -s -6 http://ifconfig.co/ip`
-echo "------------------------------------------------"
-echo "IP Externo: "
-echo -e "IPv4: " $ipext4
-echo -e "IPv6: " $ipext6
+echo Type "home" any time to go to the current user profile directory.
+echo Type "desktop" any time to go to the current user desktop.
+echo.
+echo Type help to see list of common commands like cd, rd, md, del,
+echo ren, replace, copy, xcopy, move, attrib, tree, edit, and cls.
+echo Type [command]/? for detailed info.
+echo.
+pause
+cls
 
-echo ""
-}
+:cmd
+echo Directory: %CD%
+set /P CMD=Command:
+if "%CMD%" == "cls" goto cls
+if "%CMD%" == "home" goto home2
+if "%CMD%" == "desktop" goto desktop
+if "%CMD%" == "red" goto red
+if "%CMD%" == "green" goto green
+if "%CMD%" == "normal" goto normal
 
-resetDhcp(){
-dhclient -r
-dhclient
-echo "------------------------------------------------"
-echo "IPs:"
-ifconfig | grep "inet "
-echo ""
-}
+%CMD%
+cd C:\
+goto cmd
 
-verboseResetDhcp(){
-dhclient -r
-dhclient -v
-echo "------------------------------------------------"
-echo "IPs:"
-ifconfig | grep "inet "
-echo ""
-}
-help(){
-    echo -e """------------------------------------------------
-\e[1mReset DHCP
-\e[2m\e[96mAuthor: \e[2mRodrigo Cordeiro\e[0m
+:cls
+cls
+goto cmd
 
-This script provides facilities to reseting the ip addresses trhough DHCP and gives additional functionalities.
-Usage:
-\e[3m\e[1mNo argumments\e[0m: When no argumments are passed to the scripts it runs the default function to renew de DHCP client in silent mode.
+:home2
+cd /d %USERPROFILE%
+cls
+goto cmd
 
-\e[3m\e[1m-v\e[0m: Renew the DHCP client in verbose mode.
+:desktop
+cd /d %SystemDrive%\Users\%USERNAME%\Desktop
+cls
+goto cmd
 
-\e[3m\e[1m-e\e[0m: Returns the external IP of the device.
-"""
-}
+:red
+color 0c
+cls
+goto cmd
 
-execution(){
-    for command in "${commands[@]}";do
-        $command
-    done
-}
+:green
+color 0a
+cls
+goto cmd
 
-###UserCheck
-if ! [ $(id -u) = 0 ]; then
-   echo -e "\e[2mThis script must be run as root, use \e[0m\e[3m\e[1m\e[96msudo $0"
-   exit 1
-fi
-
-if [ $argsCount -eq "0" ]; then
-    commands=(${commands[@]} "resetDhcp")
-else
-    for arg in "$@"
-    do
-        i=$(($i+1))
-        if [ $arg = "-e" ]; then
-            commands=(${commands[@]} "external")
-        elif [ $arg = "-v" ]; then
-            commands=(${commands[@]} "verboseResetDhcp")
-        elif [ $arg = "-r" ]; then
-            commands=(${commands[@]} "resetDhcp")
-        elif [ $arg = "-h" ]; then
-            commands=("help")
-            break
-        else
-            echo -e "\e[2mInvalid argument. Use -h to see help."
-            echo ""
-        fi
-    done
-fi
-execution
+:normal
+color 07
+cls
+goto cmd
 </code></pre>
 </div>
 </body>

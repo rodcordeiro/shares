@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>ip.sh | Cordeiro's DEV</title>
+<title>Start.bat | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,95 +63,71 @@
 
 </head>
 <body>
-<h3><a href='ip.sh' download='ip.sh'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='Start.bat' download='Start.bat'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='bash'>
-#!/usr/bin/env bash
-    
-###Variables
-commands=()
-argsCount=$#
-i=0
-device=""
+<pre><code class='dos'>
+:: ==================================================================================
+:: NOME       : Inicio de expediente
+:: AUTOR      : Rodrigo Cordeiro
+:: VERSION    : 1.0
+:: ==================================================================================
 
-###FUNCTIONS
-external(){
-ipext4=`curl -s -4 http://ifconfig.co/ip`
-ipext6=`curl -s -6 http://ifconfig.co/ip`
-echo "------------------------------------------------"
-echo "IP Externo: "
-echo -e "IPv4: " $ipext4
-echo -e "IPv6: " $ipext6
+:: Configurações de tela.
+:: /************************************************************************************/
+:mode
 
-echo ""
-}
+echo off
+title Testes PRODAM
+color 0B
+::/**********************************************
 
-resetDhcp(){
-dhclient -r
-dhclient
-echo "------------------------------------------------"
-echo "IPs:"
-ifconfig | grep "inet "
-echo ""
-}
+:: INICIO
+cls
+echo.
+echo.
+echo.	BOM DIA RODRIGO!!
+echo.
+echo. Como você está hoje? Espero que bem. Vamos começar?
+timeout /t 5
 
-verboseResetDhcp(){
-dhclient -r
-dhclient -v
-echo "------------------------------------------------"
-echo "IPs:"
-ifconfig | grep "inet "
-echo ""
-}
-help(){
-    echo -e """------------------------------------------------
-\e[1mReset DHCP
-\e[2m\e[96mAuthor: \e[2mRodrigo Cordeiro\e[0m
+::/*********************************************
+::Iniciar os programas e arquivos necessários
+cls
+echo. 	INICIANDO OS PROGRAMAS, AGUARDE...
+start outlook.exe
+start C:\Users\rodrigo.cordeiro\Desktop\ipscan.exe
+start \\192.168.3.5\rmc\Sistema novo\2018
+start https://beltis.octadesk.com/home/tickets/list/UnresolvedTickets/
+start C:\Users\rodrigo.cordeiro\Desktop\TeamViewer12
 
-This script provides facilities to reseting the ip addresses trhough DHCP and gives additional functionalities.
-Usage:
-\e[3m\e[1mNo argumments\e[0m: When no argumments are passed to the scripts it runs the default function to renew de DHCP client in silent mode.
+goto menu
+::/***********************************************
+:menu
+echo. O que vamos fazer hoje?
+echo.
+echo.	1. Vamos desenhar! Abra o photoshop por favor.
+echo.	2. Desenvolveer! Abra o sublime jovem padawan.
+echo.	3. Ler um pouco, deixe-me ver minhas HQs.
+echo.	4. Nada por hoje, pode descansar Jarvis.
+set /p option= Select your action=
+if %option% equ 1(
+	start Photoshop.exe
+) else if %option% equ 2(
+	start sublime_text.exe
+) else if %option% equ 3 (
+	start CDisplay.exe
+) else if %option% equ 4 (
+	goto sair
+)
+:: /***************************************************
+:sair
+echo.
+echo. TENHA UM BOM DIA!!
+echo. Ate amanha!
+echo.
+timeout /t 3
 
-\e[3m\e[1m-v\e[0m: Renew the DHCP client in verbose mode.
-
-\e[3m\e[1m-e\e[0m: Returns the external IP of the device.
-"""
-}
-
-execution(){
-    for command in "${commands[@]}";do
-        $command
-    done
-}
-
-###UserCheck
-if ! [ $(id -u) = 0 ]; then
-   echo -e "\e[2mThis script must be run as root, use \e[0m\e[3m\e[1m\e[96msudo $0"
-   exit 1
-fi
-
-if [ $argsCount -eq "0" ]; then
-    commands=(${commands[@]} "resetDhcp")
-else
-    for arg in "$@"
-    do
-        i=$(($i+1))
-        if [ $arg = "-e" ]; then
-            commands=(${commands[@]} "external")
-        elif [ $arg = "-v" ]; then
-            commands=(${commands[@]} "verboseResetDhcp")
-        elif [ $arg = "-r" ]; then
-            commands=(${commands[@]} "resetDhcp")
-        elif [ $arg = "-h" ]; then
-            commands=("help")
-            break
-        else
-            echo -e "\e[2mInvalid argument. Use -h to see help."
-            echo ""
-        fi
-    done
-fi
-execution
+:: /***************************************************
 </code></pre>
 </div>
 </body>

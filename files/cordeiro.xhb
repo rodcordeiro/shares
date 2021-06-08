@@ -1,22 +1,20 @@
 <?xml version="1.0"?>
-<homebank v="1.3999999999999999" d="050502">
+<homebank v="1.3999999999999999" d="050403">
 <properties title="Cordeiro" curr="1" auto_smode="1" auto_weekday="1"/>
 <cur key="1" flags="0" iso="BRL" name="Brazilian Real" symb="R$" syprf="1" dchar="," gchar="." frac="2" rate="0" mdate="0"/>
-<grp key="1" name="Banco"/>
-<grp key="2" name="Poupança"/>
-<account key="1" pos="1" type="1" curr="1" name="Santander" number="2045/01029518-7" bankname="Santander" initial="-293.24000000000001" minimum="0" maximum="0" notes="Salário&#xa;" grp="1"/>
-<account key="2" pos="2" type="5" curr="1" name="Poup1" number="2045/60.019292.3" bankname="Santander" initial="0" minimum="0" maximum="0" notes="Emergência" grp="2"/>
-<account key="3" pos="3" type="5" curr="1" name="Poup2" number="2045/60.014272.1" bankname="Santander" initial="0" minimum="0" maximum="0" notes="Compras" grp="2"/>
-<account key="4" pos="4" type="1" curr="1" name="Nubank rod" number="0001/51205399-7" bankname="Nu Bank" initial="50.939999999999998" minimum="0" maximum="0" notes="Uso diário" grp="1"/>
-<account key="5" pos="5" type="5" curr="1" name="NU Rod Guardado" number="0001/51205399-7" bankname="Nubank" initial="0" minimum="0" maximum="0" grp="2"/>
-<account key="6" pos="6" type="1" curr="1" name="PicPay" number="0001/48466160-4" bankname="380 - Picpay" initial="0.97999999999999998" minimum="0" maximum="0" grp="1"/>
-<account key="7" pos="7" type="1" curr="1" name="C6" bankname="336 - Banco C6" initial="0" minimum="0" maximum="0" notes="Contas fixas devem ser colocadas aqui&#xa;" grp="1"/>
-<account key="8" pos="8" type="4" curr="1" name="CC NuBank Rod" bankname="NuBank" initial="300" minimum="299" maximum="0" grp="1"/>
-<account key="9" flags="2" pos="9" type="3" curr="1" name="Dindin1" number="EAF60362952" bankname="Santander" initial="284.64999999999998" minimum="0" maximum="0" grp="2"/>
-<account key="10" flags="2" pos="10" type="3" curr="1" name="DinDin2" number="EAF60362953" bankname="Santander" initial="284.64999999999998" minimum="0" maximum="0" grp="2"/>
-<account key="11" pos="11" type="1" curr="1" name="Itau" bankname="Itau" initial="0" minimum="0" maximum="0" grp="1"/>
-<account key="12" pos="12" type="1" curr="1" name="Nubank Yah" bankname="Nubank" initial="180.06999999999999" minimum="0" maximum="0" grp="1"/>
-<account key="13" pos="13" type="4" curr="1" name="CC Nubank Yah" initial="600" minimum="0" maximum="0" grp="1"/>
+<account key="1" pos="1" type="1" curr="1" name="Santander" number="2045/01029518-7" bankname="Santander" initial="-293.24000000000001" minimum="0" notes="Salário&#xa;" grp="1"/>
+<account key="2" pos="2" type="5" curr="1" name="Poup1 2923" number="2045/60.019292.3" bankname="Santander" initial="0" minimum="0" notes="Emergência" grp="2"/>
+<account key="3" pos="3" type="5" curr="1" name="Poup2 272" number="2045/60.014272.1" bankname="Santander" initial="0" minimum="0" notes="Compras" grp="2"/>
+<account key="4" pos="4" type="1" curr="1" name="Nubank rod" number="0001/51205399-7" bankname="Nu Bank" initial="50.939999999999998" minimum="0" notes="Uso diário" grp="1"/>
+<account key="5" pos="5" type="5" curr="1" name="NU Rod Guardado" number="0001/51205399-7" bankname="Nubank" initial="0" minimum="0" grp="2"/>
+<account key="6" pos="6" type="1" curr="1" name="PicPay" number="0001/48466160-4" bankname="380 - Picpay" initial="0.97999999999999998" minimum="0" grp="1"/>
+<account key="7" pos="7" type="1" curr="1" name="C6" bankname="336 - Banco C6" initial="0" minimum="0" notes="Contas fixas devem ser colocadas aqui&#xa;" grp="1"/>
+<account key="8" pos="8" type="4" curr="1" name="CC NuBank Rod" bankname="NuBank" initial="300" minimum="299" grp="1"/>
+<account key="9" flags="2" pos="9" type="3" curr="1" name="Dindin1" number="EAF60362952" bankname="Santander" initial="284.64999999999998" minimum="0" grp="2"/>
+<account key="10" flags="2" pos="10" type="3" curr="1" name="DinDin2" number="EAF60362953" bankname="Santander" initial="284.64999999999998" minimum="0" grp="2"/>
+<account key="11" pos="11" type="1" curr="1" name="Itau" bankname="Itau" initial="0" minimum="0" grp="1"/>
+<account key="12" pos="12" type="1" curr="1" name="Nubank Yah" bankname="Nubank" initial="180.06999999999999" minimum="0" grp="1"/>
+<account key="13" pos="13" type="4" curr="1" name="CC Nubank Yah" initial="600" minimum="0" grp="1"/>
 <pay key="1" name="Raízes de Aruanda"/>
 <pay key="2" name="Yasmim Regina"/>
 <cat key="1" name="Pensão de alimentos"/>
@@ -144,18 +142,25 @@
 <cat key="122" parent="119" flags="3" name="Correspondência de Empregador"/>
 <cat key="121" parent="119" flags="3" name="Comissão"/>
 <cat key="120" parent="119" flags="3" name="Bonus"/>
-<fav key="4" amount="-135.56" account="8" st="3" flags="1540" category="33" wording="Cartão de crédito Rod" info="Fatura CC Nubank" nextdate="737934" every="1" unit="2" limit="1"/>
+<fav key="4" amount="-135.56" account="8" st="1" flags="1540" category="33" wording="Cartão de crédito Rod" info="Fatura CC Nubank" nextdate="737965" every="1" unit="2" limit="1"/>
 <fav key="10" amount="-331.98000000000002" account="13" paymode="8" flags="1540" category="33" wording="Cartão de crédito Yah" info="Fatura CC Nubank" nextdate="737961" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="3" flags="644" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737962" every="1" unit="2" limit="44" weekend="2"/>
+<fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="1" flags="1668" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737962" every="1" unit="2" limit="44" weekend="2"/>
 <fav key="9" amount="-151.09" account="11" paymode="11" flags="644" category="72" wording="Empréstimo Yah" info="Empréstimo Yah" nextdate="737946" every="1" unit="2" limit="17" weekend="2"/>
-<fav key="6" amount="-45.899999999999999" account="7" paymode="11" st="3" flags="1540" category="20" wording="Netflix" info="Netflix" nextdate="737971" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="12" amount="-50" account="1" dst_account="2" flags="1548" category="76" wording="Poupança de Emergência" info="Poupança de Emergência" nextdate="737949" every="1" unit="2" limit="1"/>
-<fav key="13" amount="-100" account="1" dst_account="3" flags="524" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" nextdate="737949" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="7" amount="-50" account="1" paymode="4" st="3" flags="516" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes" nextdate="737951" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="8" amount="-120" account="7" paymode="8" st="3" flags="516" category="11" wording="Recarga Celulares" info="Recarga Celulares" nextdate="737949" every="1" unit="2" limit="1"/>
+<fav key="6" amount="-45.899999999999999" account="7" paymode="11" st="1" flags="1540" category="20" wording="Netflix" info="Netflix" nextdate="737971" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="12" amount="-50" account="1" dst_account="2" flags="1548" category="76" wording="Poupança de Emergência" info="Poupança de Emergência" nextdate="737979" every="1" unit="2" limit="1"/>
+<fav key="13" amount="-100" account="1" dst_account="3" flags="524" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" nextdate="737979" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="7" amount="-50" account="1" paymode="4" st="1" flags="1540" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes" nextdate="737981" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="8" amount="-120" account="7" paymode="8" st="1" flags="1540" category="11" wording="Recarga Celulares" info="Recarga Celulares" nextdate="737979" every="1" unit="2" limit="1"/>
 <fav key="11" amount="-150" account="1" flags="516" category="16" wording="Terreiro Yah" info="Terreiro Yah" nextdate="737940" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="5" amount="-251.99000000000001" account="1" paymode="8" st="3" flags="516" category="38" wording="Uni9" info="Faculdade" nextdate="737961" every="1" unit="2" limit="1"/>
+<fav key="5" amount="-251.99000000000001" account="1" paymode="8" flags="1540" category="38" wording="Uni9" info="Faculdade" nextdate="737961" every="1" unit="2" limit="1"/>
+<grp key="1" name="Banco"/>
+<grp key="2" name="Poupança"/>
+<ope date="737949" amount="120" account="7" dst_account="1" flags="10" category="11" info="Recarga Celulares" kxfer="6"/>
+<ope date="737949" amount="-120" account="7" paymode="8" st="1" category="11" wording="Recarga Celulares" info="Recarga Celulares"/>
+<ope date="737934" amount="135.56" account="8" dst_account="1" flags="10" category="33" wording="Cartão de crédito Rod" info="Fatura CC Nubank" kxfer="7"/>
 <ope date="737937" amount="-266.45999999999998" account="8" paymode="1" st="1" category="76" info="Atualização de saldo"/>
+<ope date="737949" amount="50" account="2" dst_account="1" flags="10" category="76" wording="Poupança de Emergência" info="Poupança de Emergência" kxfer="4"/>
+<ope date="737934" amount="-135.56" account="1" dst_account="8" st="1" flags="8" category="33" wording="Cartão de crédito Rod" info="Fatura CC Nubank" kxfer="7"/>
 <ope date="737941" amount="818.84000000000003" account="1" paymode="9" flags="2" category="120" wording="Pagamento de Benefícios" info="Pagamento de Benefícios"/>
 <ope date="737941" amount="-100" account="1" paymode="6" category="70" wording="Recarga BOM" info="Recarga Bom"/>
 <ope date="737941" amount="-12.83" account="1" paymode="11" category="84" wording="Uber" info="Uber"/>
@@ -165,16 +170,29 @@
 <ope date="737942" amount="-0.42999999999999999" account="1" paymode="10" category="90" wording="IOF" info="IOF"/>
 <ope date="737942" amount="-2.2200000000000002" account="1" paymode="10" category="90" wording="IOF Adicional" info="IOF Adicional"/>
 <ope date="737943" amount="-40.950000000000003" account="1" paymode="6" category="41" wording="Doces" info="Doces"/>
-<ope date="737944" amount="285.95999999999998" account="1" dst_account="9" flags="10" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="1"/>
-<ope date="737944" amount="285.95999999999998" account="1" dst_account="10" flags="10" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="2"/>
 <ope date="737944" amount="-200" account="1" dst_account="12" flags="8" payee="2" category="76" wording="Dinheiro pra comprar chuveiro" info="Dinheiro pra comprar chuveiro" kxfer="3"/>
+<ope date="737945" amount="-6" account="1" paymode="6" category="41" wording="Padaria" info="Padaria"/>
+<ope date="737946" amount="-22.25" account="1" category="41" wording="Padaria" info="Padaria"/>
+<ope date="737946" amount="-11.970000000000001" account="1" paymode="11" category="84" wording="Uber" info="Uber"/>
+<ope date="737948" amount="866" account="1" paymode="9" flags="2" category="123" wording="Salário" info="Salário &lt;3"/>
+<ope date="737948" amount="-407.26999999999998" account="1" paymode="8" category="25" wording="Conta de água" info="Conta de água"/>
+<ope date="737949" amount="-50" account="1" dst_account="2" flags="8" category="76" wording="Poupança de Emergência" info="Poupança de Emergência" kxfer="4"/>
+<ope date="737949" amount="-50" account="1" paymode="4" st="1" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes"/>
+<ope date="737949" amount="-100" account="1" dst_account="3" flags="8" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" kxfer="5"/>
+<ope date="737949" amount="-120" account="1" dst_account="7" flags="8" category="11" info="Recarga Celulares" kxfer="6"/>
+<ope date="737949" amount="-29.899999999999999" account="1" paymode="10" category="8" wording="Mensalidade pacote serviços" info="Mensalidade Pacote serviços"/>
+<ope date="737950" amount="285.95999999999998" account="1" dst_account="9" flags="10" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="1"/>
+<ope date="737950" amount="285.95999999999998" account="1" dst_account="10" flags="10" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="2"/>
 <ope date="737944" amount="1.3100000000000001" account="9" paymode="9" flags="2" category="104" wording="Ajuste de conta " info="Juros"/>
 <ope date="737944" amount="-285.95999999999998" account="9" dst_account="1" flags="8" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="1"/>
+<ope date="737949" amount="100" account="3" dst_account="1" flags="10" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" kxfer="5"/>
 <ope date="737944" amount="1.3100000000000001" account="10" paymode="9" flags="2" category="104" wording="Ajuste de conta " info="Ajuste de conta"/>
 <ope date="737944" amount="-285.95999999999998" account="10" dst_account="1" flags="8" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="2"/>
 <ope date="737937" amount="-20" account="4" paymode="6" category="70" wording="Recarga BOM" info="Recarga BOM"/>
 <ope date="737937" amount="-20" account="4" paymode="6" category="70" wording="Recarga BOM" info="Recarga BOM"/>
-<ope date="737970" amount="-2.4500000000000002" account="4" paymode="6" category="41" wording="Padaria" info="Padaria"/>
+<ope date="737939" amount="-2.4500000000000002" account="4" paymode="6" category="41" wording="Padaria" info="Padaria"/>
+<ope date="737949" amount="0.01" account="4" paymode="9" flags="2" category="104" wording="Rendimento da conta" info="Rendimento"/>
 <ope date="737944" amount="200" account="12" dst_account="1" flags="10" payee="2" category="76" wording="Dinheiro pra comprar chuveiro" info="Dinheiro pra comprar chuveiro" kxfer="3"/>
+<ope date="737949" amount="0.01" account="6" paymode="9" flags="2" category="104" wording="Rendimento da conta" info="Rendimento"/>
 <ope date="737944" amount="-500.27999999999997" account="13" category="76" wording="Ajuste de conta " info="Ajuste de conta "/>
 </homebank>

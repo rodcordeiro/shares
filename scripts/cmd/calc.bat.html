@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>calc.bat | Cordeiro's DEV</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>	
+<link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-152x152.png'>
+<link rel='apple-touch-icon' sizes='180x180' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-180x180.png'>
+<link rel='icon' type='image/png' sizes='192x192'  href='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='https://rodcordeiro.github.io/shares/favicons/game/favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='96x96' href='https://rodcordeiro.github.io/shares/favicons/game/favicon-96x96.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='https://rodcordeiro.github.io/shares/favicons/game/favicon-16x16.png'>
+<link rel='manifest' href='https://rodcordeiro.github.io/shares/favicons/game/manifest.json'>
+<meta name='msapplication-TileImage' content='https://rodcordeiro.github.io/shares/favicons/game/ms-icon-144x144.png'>
+<!-- Informações da página -->
+	<!-- Informações sobre o Site quando o link é compartilhado-->
+	<meta property='og:type' content='website'>
+	<meta property='og:locale' content='pt_BR' />
+	<meta property='og:image' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png'>
+	<meta property='og:site_name' content='Rodrigo Cordeiro | Cordeiro\'s DEV'>
+	<meta property='og:title' content='Rodrigo Cordeiro | Cordeiro\'s DEV'>
+	<meta property='og:determiner' content='the'>
+	<meta property='og:url' content='https://rodcordeiro.github.io/shares/'>
+	<meta property='og:description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'>
+	<meta property='og:image:secure_url' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png' />
+
+	<meta name='twitter:card' content='summary' />
+	<meta name='twitter:description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'/>
+	<meta name='twitter:title' content='Rodrigo Cordeiro | Cordeiro\'s DEV' />
+	<meta name='twitter:site' content='@drigocordeiro13' />
+	<meta name='twitter:image' content='https://rodcordeiro.github.io/shares/favicons/game/android-icon-192x192.png' />
+	<meta name='twitter:creator' content='@drigocordeiro13' />
+
+	<link rel='prefetch' href='https://rodcordeiro.github.io/shares/'>
+	<link rel='prerender' href='https://rodcordeiro.github.io/shares/'>
+	<meta itemprop='name' content=' | Cordeiro\'s DEV' />
+	<meta itemprop='url' content='https://rodcordeiro.github.io/shares/' />
+	<meta property='description' content='Compartilhamento de livros, imagens, audios e scripts utilizados em meus projetos.'>
+
+	<!-- Outros dados como o site, como permissão para indexação do site, faixa etária, idioma, etc. -->
+	<link rel='home' href='https://rodcordeiro.github.io/shares/'>
+	<meta name='keywords' content='html, css, js, javascript, código, programação, web, development, webdesign, devops,front-end,aprender, educação, aprendizado'>
+	<meta name='robots' content='index, follow'>
+	<meta name='revisit-after' content='1 day'>
+	<meta name='rating' content='general'>
+	<meta name='language' content='pt-br'>
+
+	<!-- Informações sobre o Autor -->
+	<meta property='author' content='Rodrigo Cordeiro'>
+	<meta name='dc.creator.address' content='rodrigomendoncca@gmail.com'>
+
+<!-- LINKS -->
+<link rel='stylesheet' href='https://rodcordeiro.github.io/shares/scripts/css/highlight.css'>
+<script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js'></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<h3><a href='calc.bat' download='calc.bat'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<div>
+<pre><code class='dos'>
+@echo off
+cls
+:start
+Echo Press 1 for Addition
+echo Press 2 for Subtraction
+echo Press 3 for Multiplication
+echo Press 4 for Division
+echo Press 5 to Quit
+set /p type=
+if %type%==1 goto a
+if %type%==2 goto b
+if %type%==3 goto c
+if %type%==4 goto d
+if %type%==5 goto e
+ :a
+echo Addition
+echo Please choose the 2 numbers you wish to add
+set /p num1=
+set /p num2=
+echo %num1%+%num2%?
+pause
+set /a Answer=%num1%+%num2%
+echo %Answer%
+pause
+goto start
+ :b
+echo Subtraction
+echo Please choose the 2 numbers you wish to subtract
+set /p num1=
+set /p num2=
+echo %num1%-%num2%?
+pause
+set /a Answer=%num1%-%num2%
+echo %Answer%
+pause
+goto start
+ :c
+echo Multiplication
+echo Please choose the 2 numbers you wish to multiply
+set /p num1=
+set /p num2=
+echo %num1%*%num2%?
+pause
+set /a Answer=%num1%*%num2%
+echo %Answer%
+pause
+goto start
+ :d
+echo Division
+echo Please choose the 2 numbers you wish to divide
+set /p num1=
+set /p num2=
+echo %num1%/%num2%?
+pause
+set /a Answer=%num1%/%num2%
+echo %Answer%
+pause
+goto start
+ :e
+echo. Done!
+</code></pre>
+</div>
+</body>
+</html>

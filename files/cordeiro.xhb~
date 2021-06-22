@@ -17,6 +17,8 @@
 <account key="11" pos="11" type="1" curr="1" name="Itau" bankname="Itau" initial="0" minimum="0" maximum="0" grp="1"/>
 <account key="12" pos="12" type="1" curr="1" name="Nubank Yah" bankname="Nubank" initial="180.06999999999999" minimum="0" maximum="0" grp="1"/>
 <account key="13" pos="13" type="4" curr="1" name="CC Nubank Yah" initial="600" minimum="0" maximum="0" grp="1"/>
+<account key="14" pos="14" type="3" curr="1" name="PIC 424" number="PIC 3977424-2" bankname="Itau" initial="1024.76" minimum="0" maximum="0" grp="1"/>
+<account key="15" pos="15" type="3" curr="1" name="PIC 772" number="4179772-2" bankname="Itau" initial="1024.76" minimum="0" maximum="0" grp="1"/>
 <pay key="1" name="Raízes de Aruanda"/>
 <pay key="2" name="Yasmim Regina"/>
 <cat key="1" name="Pensão de alimentos"/>
@@ -146,20 +148,24 @@
 <cat key="120" parent="119" flags="3" name="Bonus"/>
 <fav key="4" amount="-135.56" account="8" st="1" flags="1540" category="33" wording="Cartão de crédito Rod" info="Fatura CC Nubank" nextdate="737965" every="1" unit="2" limit="1"/>
 <fav key="10" amount="-331.98000000000002" account="13" paymode="8" flags="1540" category="33" wording="Cartão de crédito Yah" info="Fatura CC Nubank" nextdate="737961" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="1" flags="1668" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737962" every="1" unit="2" limit="44" weekend="2"/>
+<fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="1" flags="1668" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737992" every="1" unit="2" limit="43" weekend="2"/>
 <fav key="9" amount="-151.09" account="11" paymode="11" flags="644" category="72" wording="Empréstimo Yah" info="Empréstimo Yah" nextdate="737976" every="1" unit="2" limit="16" weekend="2"/>
 <fav key="6" amount="-45.899999999999999" account="7" paymode="11" st="1" flags="1540" category="20" wording="Netflix" info="Netflix" nextdate="737971" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="15" amount="-60.280000000000001" account="11" dst_account="15" flags="652" category="76" wording="Poupança de Emergência" info="PIC" nextdate="737940" every="1" unit="2" limit="32" weekend="2"/>
 <fav key="12" amount="-50" account="1" dst_account="2" flags="1548" category="76" wording="Poupança de Emergência" info="Poupança de Emergência" nextdate="737979" every="1" unit="2" limit="1"/>
+<fav key="14" amount="-60.280000000000001" account="11" dst_account="14" flags="652" category="76" wording="Poupança pra gastar \o/" info="PIC" nextdate="737971" every="1" unit="2" limit="30" weekend="2"/>
 <fav key="13" amount="-100" account="1" dst_account="3" flags="524" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" nextdate="737979" every="1" unit="2" limit="1" weekend="2"/>
 <fav key="7" amount="-50" account="1" paymode="4" st="1" flags="1540" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes" nextdate="737981" every="1" unit="2" limit="1" weekend="2"/>
 <fav key="8" amount="-120" account="7" paymode="8" st="1" flags="1540" category="11" wording="Recarga Celulares" info="Recarga Celulares" nextdate="737979" every="1" unit="2" limit="1"/>
 <fav key="11" amount="-150" account="1" flags="516" category="16" wording="Terreiro Yah" info="Terreiro Yah" nextdate="737940" every="1" unit="2" limit="1" weekend="2"/>
 <fav key="5" amount="-251.99000000000001" account="1" paymode="8" flags="1540" category="38" wording="Uni9" info="Faculdade" nextdate="737961" every="1" unit="2" limit="1"/>
+<ope date="737941" amount="60.280000000000001" account="14" dst_account="11" flags="138" category="76" wording="Poupança pra gastar \o/" info="PIC" kxfer="13"/>
 <ope date="737949" amount="120" account="7" dst_account="1" flags="10" category="11" info="Recarga Celulares" kxfer="6"/>
 <ope date="737949" amount="-120" account="7" paymode="8" st="1" category="11" wording="Recarga Celulares" info="Recarga Celulares"/>
 <ope date="737934" amount="135.56" account="8" dst_account="1" flags="10" category="33" wording="Cartão de crédito Rod" info="Fatura CC Nubank" kxfer="7"/>
 <ope date="737937" amount="-266.45999999999998" account="8" paymode="1" st="1" category="76" info="Atualização de saldo"/>
 <ope date="737949" amount="50" account="2" dst_account="1" flags="10" category="76" wording="Poupança de Emergência" info="Poupança de Emergência" kxfer="4"/>
+<ope date="737959" amount="-5" account="2" dst_account="1" flags="8" category="76" wording="Resgate de poupança" info="Ingredientes brigadeiro" kxfer="15"/>
 <ope date="737934" amount="-135.56" account="1" dst_account="8" st="1" flags="8" category="33" wording="Cartão de crédito Rod" info="Fatura CC Nubank" kxfer="7"/>
 <ope date="737941" amount="818.84000000000003" account="1" paymode="9" flags="2" category="120" wording="Pagamento de Benefícios" info="Pagamento de Benefícios"/>
 <ope date="737941" amount="-100" account="1" paymode="6" category="70" wording="Recarga BOM" info="Recarga Bom"/>
@@ -178,29 +184,57 @@
 <ope date="737948" amount="-407.26999999999998" account="1" paymode="8" category="25" wording="Conta de água" info="Conta de água"/>
 <ope date="737949" amount="-50" account="1" dst_account="2" flags="8" category="76" wording="Poupança de Emergência" info="Poupança de Emergência" kxfer="4"/>
 <ope date="737949" amount="-50" account="1" paymode="4" st="1" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes"/>
+<ope date="737949" amount="-450" account="1" dst_account="12" flags="8" category="76" wording="Pagar conta" info="Pagar conta" kxfer="8"/>
 <ope date="737949" amount="-100" account="1" dst_account="3" flags="8" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" kxfer="5"/>
 <ope date="737949" amount="-120" account="1" dst_account="7" flags="8" category="11" info="Recarga Celulares" kxfer="6"/>
 <ope date="737949" amount="-29.899999999999999" account="1" paymode="10" category="8" wording="Mensalidade pacote serviços" info="Mensalidade Pacote serviços"/>
-<ope date="737950" amount="285.95999999999998" account="1" dst_account="9" flags="10" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="1"/>
-<ope date="737950" amount="285.95999999999998" account="1" dst_account="10" flags="10" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="2"/>
-<ope date="737954" amount="-450" account="1" dst_account="12" flags="8" category="76" wording="Pagar conta" info="Pagar conta" kxfer="8"/>
+<ope date="737950" amount="301.00999999999999" account="1" dst_account="9" flags="10" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="1"/>
+<ope date="737950" amount="301.00999999999999" account="1" dst_account="10" flags="10" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="2"/>
+<ope date="737950" amount="-34.960000000000001" account="1" paymode="6" category="76" wording="Uber" info="Uber"/>
+<ope date="737951" amount="-60" account="1" dst_account="11" flags="8" category="76" wording="Poupança pra gastar \o/" info="Dinheiro para o PIC" kxfer="12"/>
+<ope date="737954" amount="-8.1400000000000006" account="1" dst_account="11" flags="8" category="8" wording="Seguro cartão" info="Seguro cartão" kxfer="11"/>
+<ope date="737955" amount="-15" account="1" paymode="6" category="76" wording="não me recordo" info="Naturaleve"/>
+<ope date="737956" amount="-24" account="1" paymode="6" category="41" wording="Almoço" info="Almoço"/>
+<ope date="737956" amount="-94.480000000000004" account="1" paymode="6" category="76" wording="Drogaria" info="Drogaria"/>
+<ope date="737957" amount="-7" account="1" paymode="6" category="41" wording="Padaria" info="Padaria"/>
+<ope date="737958" amount="-23.969999999999999" account="1" paymode="11" category="84" wording="Uber" info="Uber  (ida hospital)"/>
+<ope date="737958" amount="-19.949999999999999" account="1" paymode="11" category="84" wording="Uber" info="Uber ( hosp - farmacia )"/>
+<ope date="737958" amount="-179.90000000000001" account="1" paymode="6" category="49" wording="Drogaria" info="Remédios Yah + teste de covid"/>
+<ope date="737959" amount="100" account="1" dst_account="3" flags="10" category="76" wording="Resgate de poupança" info="Resgate para comprar mistura" kxfer="14"/>
+<ope date="737959" amount="-113.23999999999999" account="1" paymode="6" category="41" wording="Mistura" info="Mistura"/>
+<ope date="737959" amount="5" account="1" dst_account="2" flags="10" category="76" wording="Resgate de poupança" info="Ingredientes brigadeiro" kxfer="15"/>
+<ope date="737959" amount="-9.2799999999999994" account="1" paymode="6" category="43" wording="Lanche" info="Ingredientes brigadeiro"/>
+<ope date="737962" amount="-277.92000000000002" account="1" paymode="11" st="1" flags="128" category="72" wording="Empréstimo" info="Empréstimo"/>
+<ope date="737962" amount="-2" account="1" paymode="6" category="41" wording="Mercado" info="Mercado"/>
+<ope date="737962" amount="941" account="1" paymode="9" flags="2" category="123" wording="Salário" info="Salário"/>
+<ope date="737962" amount="-3.4300000000000002" account="1" paymode="6" category="43" wording="Mercado" info="Mercado"/>
+<ope date="737963" amount="-5" account="1" paymode="6" category="41" wording="Lanche" info="Lanche"/>
+<ope date="737963" amount="-100" account="1" dst_account="12" flags="8" payee="2" category="76" wording="Drogaria" info="Dinheiro para comprar shampoo" kxfer="16"/>
 <ope date="737944" amount="1.3100000000000001" account="9" paymode="9" flags="2" category="104" wording="Ajuste de conta " info="Juros"/>
-<ope date="737944" amount="-285.95999999999998" account="9" dst_account="1" flags="8" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="1"/>
+<ope date="737944" amount="-301.00999999999999" account="9" dst_account="1" flags="8" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="1"/>
 <ope date="737949" amount="100" account="3" dst_account="1" flags="10" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" kxfer="5"/>
+<ope date="737959" amount="-100" account="3" dst_account="1" flags="8" category="76" wording="Resgate de poupança" info="Resgate para comprar mistura" kxfer="14"/>
 <ope date="737944" amount="1.3100000000000001" account="10" paymode="9" flags="2" category="104" wording="Ajuste de conta " info="Ajuste de conta"/>
-<ope date="737944" amount="-285.95999999999998" account="10" dst_account="1" flags="8" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="2"/>
+<ope date="737944" amount="-301.00999999999999" account="10" dst_account="1" flags="8" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="2"/>
 <ope date="737937" amount="-20" account="4" paymode="6" category="70" wording="Recarga BOM" info="Recarga BOM"/>
 <ope date="737937" amount="-20" account="4" paymode="6" category="70" wording="Recarga BOM" info="Recarga BOM"/>
 <ope date="737939" amount="-2.4500000000000002" account="4" paymode="6" category="41" wording="Padaria" info="Padaria"/>
 <ope date="737949" amount="0.01" account="4" paymode="9" flags="2" category="104" wording="Rendimento da conta" info="Rendimento"/>
+<ope date="737941" amount="-60.280000000000001" account="11" dst_account="14" flags="136" category="76" wording="Poupança pra gastar \o/" info="PIC" kxfer="13"/>
 <ope date="737950" amount="-160" account="11" paymode="11" flags="128" category="72" wording="Empréstimo Yah" info="Empréstimo Yah"/>
 <ope date="737950" amount="156" account="11" dst_account="12" flags="10" category="73" wording="Empréstimo Yah" info="Empréstimo + juros" kxfer="10"/>
+<ope date="737951" amount="60" account="11" dst_account="1" flags="10" category="76" wording="Poupança pra gastar \o/" info="Dinheiro para o PIC" kxfer="12"/>
+<ope date="737954" amount="8.1400000000000006" account="11" dst_account="1" flags="10" category="8" wording="Seguro cartão" info="Seguro cartão" kxfer="11"/>
+<ope date="737954" amount="5.0299999999999994" account="11" flags="2" category="76" wording="Ajuste de conta " info="Ajuste de conta"/>
+<ope date="737955" amount="-8.1400000000000006" account="11" category="8" wording="Seguro cartão" info="Seguro cartão"/>
 <ope date="737944" amount="200" account="12" dst_account="1" flags="10" payee="2" category="76" wording="Dinheiro pra comprar chuveiro" info="Dinheiro pra comprar chuveiro" kxfer="3"/>
 <ope date="737948" amount="-273.39999999999998" account="12" category="76" wording="Ajuste de conta " info="Ajuste de conta"/>
 <ope date="737949" amount="450" account="12" dst_account="1" flags="10" category="76" wording="Pagar conta" info="Pagar conta" kxfer="8"/>
 <ope date="737950" amount="-331.98000000000002" account="12" dst_account="13" flags="8" category="33" wording="Fatura cartão de crédito" info="Fatura cartão de crédito" kxfer="9"/>
 <ope date="737950" amount="-156" account="12" dst_account="11" flags="8" category="73" wording="Empréstimo Yah" info="Empréstimo + juros" kxfer="10"/>
 <ope date="737950" amount="-68.700000000000003" account="12" paymode="6" category="41" wording="Mercado" info="Mercado"/>
+<ope date="737954" amount="0.02" account="12" flags="2" category="101" wording="Ajuste de conta " info="Ajuste de conta"/>
+<ope date="737963" amount="100" account="12" dst_account="1" flags="10" payee="2" category="76" wording="Drogaria" info="Dinheiro para comprar shampoo" kxfer="16"/>
 <ope date="737949" amount="0.01" account="6" paymode="9" flags="2" category="104" wording="Rendimento da conta" info="Rendimento"/>
 <ope date="737944" amount="-500.27999999999997" account="13" category="76" wording="Ajuste de conta " info="Ajuste de conta "/>
 <ope date="737950" amount="331.98000000000002" account="13" dst_account="12" flags="10" category="33" wording="Fatura cartão de crédito" info="Fatura cartão de crédito" kxfer="9"/>

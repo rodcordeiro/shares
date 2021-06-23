@@ -27,6 +27,6 @@
 
 $zabbixInstallPath = "C:\Zabbix"
 #start logging to log file
-Start-Transcript -Path "C:\WINDOWS\TEMP\Zabbix-$Env:COMPUTERNAME.log" -Append -NoClobber -IncludeInvocationHeader
-New-Item -Path "$zabbixInstallPath\teste.txt" -ItemType "file" -Value "Teste"
+Start-Transcript -Path "C:\WINDOWS\TEMP\zupdate_000_$Env:COMPUTERNAME.log" -Append -NoClobber -IncludeInvocationHeader
+Add-Content -Path "$zabbixInstallPath\teste.txt" -Value "Outro teste"
 Stop-Transcript

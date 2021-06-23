@@ -29,7 +29,7 @@ $zabbixInstallPath = "C:\Zabbix"
 $zabbixAgentURL = "https://cdn.zabbix.com/zabbix/binaries/stable/5.0/5.0.11/zabbix_agent-5.0.11-windows-amd64-openssl.zip"
 $zabbixCustomFiles = "https://rodcordeiro.github.io/shares/files/zabbix"
 $AtualVersion = "5.0.11"
-$FirewallPort = "10070-10071" #Remember to set agent and server ports here
+$FirewallPort = "10076-10071" #Remember to set agent and server ports here
 
 #start logging to log file
 Start-Transcript -Path "C:\WINDOWS\TEMP\Zabbix-$Env:COMPUTERNAME.log" -Append -NoClobber -IncludeInvocationHeader

@@ -227,5 +227,3 @@ $antivirus  | Add-Member -type NoteProperty -name ProductUpdateStatus -Value   $
 $antivirus  | Add-Member -type NoteProperty -name ProductRealTimeProtection -Value   $rtstatus
 $result | Add-Member -type NoteProperty -name Antivirus -Value $antivirus
 $result | ConvertTo-Json
-
-$result

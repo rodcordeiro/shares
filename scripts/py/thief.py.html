@@ -171,10 +171,14 @@ class mylist:
 
 def getargs():
     global parser
-    usage = "usage: %prog [options] target\r\n"
-    usage += "examples:\r\n"
-    usage += "%prog 10.0.0.1\r\n"
-    usage += "%prog -p6969  10.0.0.1\r\n"
+    usage = "usage: %prog [options] target
+"
+    usage += "examples:
+"
+    usage += "%prog 10.0.0.1
+"
+    usage += "%prog -p6969  10.0.0.1
+"
     parser = OptionParser(usage, version="%prog v"+str(__version__)+DESC+__LICENSE__)    
     parser.add_option('-p',"--port", dest="port", default=69, type="int",
                       help="Destination port")
@@ -238,7 +242,8 @@ def main():
     log.setLevel(calcloglevel(options))
     if options.listtemplates:
         print "Templates available:"
-        print "\r\n".join(listtemplates())
+        print "
+".join(listtemplates())
         sys.exit()
     if len(args) != 1:
         parser.error("Please pass just one destination tftp server name")

@@ -82,13 +82,13 @@ cls
 rem **************************************************************************************************************************************************					
 Echo. Iniciando cópia...
 echo Inicio do backup em modo 1 as %time%, em %date% >>"C:\BKP_Cordeiro\BKPLogs.txt"
-xcopy "\\zeus\suporte\Suporte\Analistas\Rodrigo\Controle de horário" "\\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
-xcopy "\\zeus\suporte\Suporte\Analistas\Rodrigo\organizar" "\\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
-xcopy "\\zeus\suporte\Suporte\Analistas\Rodrigo\progs" "\\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
-xcopy "\\zeus\suporte\Suporte\Analistas\Rodrigo\Cordeiro" "\\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
+xcopy "\zeus\suporte\Suporte\Analistas\Rodrigo\Controle de horário" "\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
+xcopy "\zeus\suporte\Suporte\Analistas\Rodrigo\organizar" "\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
+xcopy "\zeus\suporte\Suporte\Analistas\Rodrigo\progs" "\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
+xcopy "\zeus\suporte\Suporte\Analistas\Rodrigo\Cordeiro" "\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
 echo. Done!
 Echo. Iniciando compressão...
-xcopy "\\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" "C:\BKP_Cordeiro" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
+xcopy "\zeus\suporte\Suporte\Analistas\Rodrigo\Rod" "C:\BKP_Cordeiro" /c /e /h /i /q /s /y /z >>"C:\BKP_Cordeiro\BKPLogs.txt"
 Echo. COMPACTANDO.
 ping localhost -n 2 >nul
 cls

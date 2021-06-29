@@ -16,3 +16,4 @@ users
 wp
 glpi
 zabbix
+grafana

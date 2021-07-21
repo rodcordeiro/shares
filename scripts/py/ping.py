@@ -7,7 +7,7 @@ def ping(host):
     if  platform.system().lower()=="windows":
         ping_str = "-n 5"
     else:
-        ping_str = "-c 1"
+        ping_str = "-c 5"
 
     resposta = os.system("ping " + ping_str + " " + host)
     return resposta == 0

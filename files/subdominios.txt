@@ -17,3 +17,9 @@ wp
 glpi
 zabbix
 grafana
+monit
+monitoramento
+monitor
+controller
+dash
+wiki

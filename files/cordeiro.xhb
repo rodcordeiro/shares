@@ -151,10 +151,10 @@
 <fav key="3" amount="-277.92000000000002" account="1" paymode="11" st="1" flags="1668" category="72" wording="Empréstimo" info="Empréstimo" nextdate="737992" every="1" unit="2" limit="43" weekend="2"/>
 <fav key="9" amount="-151.09" account="11" paymode="11" flags="644" category="72" wording="Empréstimo Yah" info="Empréstimo Yah" nextdate="737976" every="1" unit="2" limit="16" weekend="2"/>
 <fav key="6" amount="-45.899999999999999" account="7" paymode="11" st="1" flags="1540" category="20" wording="Netflix" info="Netflix" nextdate="737971" every="1" unit="2" limit="1" weekend="2"/>
-<fav key="15" amount="-60.280000000000001" account="11" dst_account="15" flags="652" category="76" wording="Poupança de Emergência" info="PIC" nextdate="737940" every="1" unit="2" limit="32" weekend="2"/>
 <fav key="12" amount="-50" account="1" dst_account="2" flags="1548" category="76" wording="Poupança de Emergência" info="Poupança de Emergência" nextdate="737979" every="1" unit="2" limit="1"/>
-<fav key="14" amount="-60.280000000000001" account="11" dst_account="14" flags="652" category="76" wording="Poupança pra gastar \o/" info="PIC" nextdate="737971" every="1" unit="2" limit="30" weekend="2"/>
+<fav key="15" amount="-60.280000000000001" account="11" dst_account="15" flags="652" category="76" wording="Poupança de Emergência" info="PIC" nextdate="737940" every="1" unit="2" limit="32" weekend="2"/>
 <fav key="13" amount="-100" account="1" dst_account="3" flags="524" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" nextdate="737979" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="14" amount="-60.280000000000001" account="11" dst_account="14" flags="652" category="76" wording="Poupança pra gastar \o/" info="PIC" nextdate="737971" every="1" unit="2" limit="30" weekend="2"/>
 <fav key="7" amount="-50" account="1" paymode="4" st="1" flags="1540" payee="1" category="84" wording="Raízes" info="Mensalidade Raízes" nextdate="737981" every="1" unit="2" limit="1" weekend="2"/>
 <fav key="8" amount="-120" account="7" paymode="8" st="1" flags="1540" category="11" wording="Recarga Celulares" info="Recarga Celulares" nextdate="737979" every="1" unit="2" limit="1"/>
 <fav key="11" amount="-150" account="1" flags="516" category="16" wording="Terreiro Yah" info="Terreiro Yah" nextdate="737940" every="1" unit="2" limit="1" weekend="2"/>
@@ -214,6 +214,7 @@
 <ope date="737963" amount="-5" account="1" paymode="6" category="41" wording="Lanche" info="Lanche"/>
 <ope date="737963" amount="-100" account="1" dst_account="12" flags="8" payee="2" category="76" wording="Drogaria" info="Dinheiro para comprar shampoo" kxfer="16"/>
 <ope date="737963" amount="-45.899999999999999" account="1" dst_account="7" flags="8" category="20" wording="Netflix" info="Valor para Netflix" kxfer="17"/>
+<ope date="737963" amount="-26.93" account="1" paymode="11" category="84" wording="Uber" info="Uber"/>
 <ope date="737944" amount="1.3100000000000001" account="9" paymode="9" flags="2" category="104" wording="Ajuste de conta " info="Juros"/>
 <ope date="737944" amount="-301.00999999999999" account="9" dst_account="1" flags="8" category="76" wording="Dindin resgatado" info="Dindin resgatado" kxfer="1"/>
 <ope date="737949" amount="100" account="3" dst_account="1" flags="10" category="76" wording="Poupança pra gastar \o/" info="Poupança pra gastar \o/" kxfer="5"/>

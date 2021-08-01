@@ -3,16 +3,7 @@
 	Automated installation of zabbix agent
 .DESCRIPTION
   This script provides automate installation and configuration of zabbix agent, also downloads incrementals scripts.
-.PARAMETER <zabbixInstallPath>
-	Type of action: dsicover, get or other
-.PARAMETER <Key>
-	Key - attirbute for 	
-.PARAMETER <Value>
-	Value - var for key, may be single or multiply
-.INPUTS
-  Input 3 variables
-.OUTPUTS
-  Output in JSON format for Zabbix 
+
 .NOTES
   Version:        1.0
   Author:         p.kuznetsov@itmicus.ru
@@ -32,7 +23,7 @@ $AtualVersion = "5.0.11"
 $FirewallPort = "10076-10071" #Remember to set agent and server ports here
 
 #start logging to log file
-Start-Transcript -Path "C:\WINDOWS\TEMP\Zabbix-$Env:COMPUTERNAME.log" -Append -NoClobber -IncludeInvocationHeader
+Start-Transcript -Path ".\Zabbix-$Env:COMPUTERNAME.log" -Append -NoClobber -IncludeInvocationHeader
 
 #Remove previous firewallRule and creates new with validated properties
 function FirewallRules{

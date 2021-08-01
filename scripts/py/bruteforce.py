@@ -14,15 +14,15 @@ subdominios = []
 
 ### FUNÇÕES
 def porta(dominio):
-        portas = [80,8080,443,8443,21,23,110,587,143,993]
-        for porta in portas:
+	portas = [80,8080,443,8443,21,23,110,587,143,993]
+	for porta in portas:
 		servicos = []
-                cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                cliente.settimeout(1)
-                codigo = cliente.connect_ex((dominio, porta))
-                if codigo == 0:
+		cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		cliente.settimeout(1)
+		codigo = cliente.connect_ex((dominio, porta))
+		if codigo == 0:
 			servicos.append(porta)
-                        print porta, "Open"
+			print(porta, "Open")
 	return servicos
 
 
@@ -31,7 +31,7 @@ def porta(dominio):
 try:
 	dominio = argumentos[1]
 except:
-	print "Faltam argumentos! A sintaxe correta é: python bruteforce.py dominio.com"
+	print("Faltam argumentos! A sintaxe correta é: python bruteforce.py dominio.com")
 	sys.exit(1)
 
 try:
@@ -39,7 +39,7 @@ try:
 	linhas = arquivo.read().splitlines()
 	arquivo.close()
 except:
-	print "Arquivo não encontrado"
+	print("Arquivo não encontrado")
 	sys.exit(1)
 
 file = open("resultado_"+dominio+".txt", "a")
@@ -50,16 +50,16 @@ for linha in linhas:
 	file.write(subdominio)
 	try:
 		respostas = dns.resolver.query(subdominio, 'a')
-		print "--------------------------"
-		print "-->  ",subdominio
+		print("--------------------------")
+		print("-->  ",subdominio)
 		for resultado in respostas:
 			resultado = str(resultado)
 			dominios_validos.append(resultado)
 			porta(resultado)
-			print subdominio, resultado
+			print(subdominio, resultado)
 			pass
 	except:
-		print "subdominio " +subdominio+ " é invalido"
+		print("subdominio " +subdominio+ " é invalido")
 		dominios_invalidos.append(subdominio)
 		pass
 

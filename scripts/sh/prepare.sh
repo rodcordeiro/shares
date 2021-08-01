@@ -44,10 +44,17 @@ apt-get upgrade -y
 apt-get autoremove
 apt-get autoclean
 
-recomendacoes=$(apt-cache depends gedit | grep "Recomenda")
+dependencies=$(apt-cache depends gedit)
+recomendacoes=$(echo $dependencies | grep "Recomenda" | cut -d":" -f2)
 for dado in $recomendacoes; do
   if [ $dado != "Recomenda:" ]; then
-    apt-get install $dado -y
+    echo $dado
+  fi
+done;
+sugestoes=$(echo $dependencies | grep "Sugere" | cut -d":" -f2)
+for dado in $sugestoes; do
+  if [ $dado != "Sugere:" ]; then
+    echo $dado
   fi
 done;
 """ > /usr/local/bin/atualizar.sh
@@ -357,4 +364,26 @@ fi
 
 preparar
 iniciar
+
+# Loop through wireshark utils to find the ones that the system cannot
+utils=(androiddump capinfos captype ciscodump dftest dumpcap editcap idl2wrs
+  mergecap mmdbresolve randpkt randpktdump reordercap sshdump text2pcap tshark
+  udpdump wireshark pcap-filter wireshark-filter)
+
+for util in ${utils[*]}; do
+  if [[ -z $(which $util) ]]; then
+    echo $util
+  fi
+done
+
+
+
+wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O /usr/share/wordlists/SecList.zip 
+unzip -o /usr/share/wordlists/SecList.zip -d /usr/share/wordlists/SecList
+folder=$(ls /usr/share/wordlists/SecList)
+mv -f /usr/share/wordlists/SecList/$folder/* /usr/share/wordlists/
+rm -f /usr/share/wordlists/SecList.zip *.md LICENSE
+
+
+
 

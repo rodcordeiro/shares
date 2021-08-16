@@ -4,6 +4,7 @@ This folder of the repo keeps all the PowerShell files shared between projects
 ---------------------------
 [CheckFreeDisk.ps1.html](CheckFreeDisk.ps1.html)<br>
 [class_study.ps1.html](class_study.ps1.html)<br>
+[CreateCert.ps1.html](CreateCert.ps1.html)<br>
 [mario.ps1.html](mario.ps1.html)<br>
 [SendEmail.ps1.html](SendEmail.ps1.html)<br>
 [SendMultipleEmails.ps1.html](SendMultipleEmails.ps1.html)<br>

@@ -2,63 +2,47 @@
 This folder of the repo keeps all the files and docs used on my projects (like vcards)
 
 ---------------------------
-[Alura.txt
-bethehero.jks
-betheheroKeyCredentials.txt
-ContratoDeLocacao.pdf
-cordeiro.xhb
-cordeiro.xhb~
-Curriculo Yasmim Regina de Souza Gonçalves.docx
-Curriculo Yasmim Regina de Souza Gonçalves.pdf
-Documentacao.zip
-Fallout.xlsm
-flag.txt
-Jogos.txt
-krunkerAssets
-mago.html
-me.xcf
-MK_Yah.xlsm
-OmniStack11.pdf
-PlanilhaReembolso_Data.xlsm
-rodcordeiro.xcf
-RodrigoCordeiro.pdf
-rodrigo_cordeiro.vcf
-RodrigoCurriculobkp.docx
-RodrigoCurriculobkp.pdf
-RodrigoCurriculo.docx
-saporra.txt
-smb.conf
-subdominios.txt
-Visit Report Airon Prosegur classico.xls
-zabbix](Alura.txt
-bethehero.jks
-betheheroKeyCredentials.txt
-ContratoDeLocacao.pdf
-cordeiro.xhb
-cordeiro.xhb~
-Curriculo Yasmim Regina de Souza Gonçalves.docx
-Curriculo Yasmim Regina de Souza Gonçalves.pdf
-Documentacao.zip
-Fallout.xlsm
-flag.txt
-Jogos.txt
-krunkerAssets
-mago.html
-me.xcf
-MK_Yah.xlsm
-OmniStack11.pdf
-PlanilhaReembolso_Data.xlsm
-rodcordeiro.xcf
-RodrigoCordeiro.pdf
-rodrigo_cordeiro.vcf
-RodrigoCurriculobkp.docx
-RodrigoCurriculobkp.pdf
-RodrigoCurriculo.docx
-saporra.txt
-smb.conf
-subdominios.txt
-Visit Report Airon Prosegur classico.xls
-zabbix)<br>
+[bethehero.jks](bethehero.jks)<br>
+[betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
+[ContratoDeLocacao.pdf](ContratoDeLocacao.pdf)<br>
+[cordeiro.xhb](cordeiro.xhb)<br>
+[cordeiro.xhb~](cordeiro.xhb~)<br>
+[Curriculo](Curriculo)<br>
+[Yasmim](Yasmim)<br>
+[Regina](Regina)<br>
+[de](de)<br>
+[Souza](Souza)<br>
+[Gonçalves.docx](Gonçalves.docx)<br>
+[Curriculo](Curriculo)<br>
+[Yasmim](Yasmim)<br>
+[Regina](Regina)<br>
+[de](de)<br>
+[Souza](Souza)<br>
+[Gonçalves.pdf](Gonçalves.pdf)<br>
+[Fallout.xlsm](Fallout.xlsm)<br>
+[flag.txt](flag.txt)<br>
+[Jogos.txt](Jogos.txt)<br>
+[krunkerAssets](krunkerAssets)<br>
+[mago.html](mago.html)<br>
+[me.xcf](me.xcf)<br>
+[OmniStack11.pdf](OmniStack11.pdf)<br>
+[PlanilhaReembolso_Data.xlsm](PlanilhaReembolso_Data.xlsm)<br>
+[rodcordeiro.cer](rodcordeiro.cer)<br>
+[rodcordeiro.xcf](rodcordeiro.xcf)<br>
+[rodrigo.beltis.cer](rodrigo.beltis.cer)<br>
+[rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
+[RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>
+[RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
+[RodrigoCurriculobkp.docx](RodrigoCurriculobkp.docx)<br>
+[RodrigoCurriculobkp.pdf](RodrigoCurriculobkp.pdf)<br>
+[saporra.txt](saporra.txt)<br>
+[smb.conf](smb.conf)<br>
+[subdominios.txt](subdominios.txt)<br>
+[Visit](Visit)<br>
+[Report](Report)<br>
+[Airon](Airon)<br>
+[Prosegur](Prosegur)<br>
+[classico.xls](classico.xls)<br>
 
 ---------------------------
 

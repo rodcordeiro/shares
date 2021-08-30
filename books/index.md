@@ -3,6 +3,8 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 
 ---------------------------
 [1000nomes.pdf](1000nomes.pdf)<br>
+[2020-Scrum-Guide-PortugueseBR-2.0.pdf](2020-Scrum-Guide-PortugueseBR-2.0.pdf)<br>
+[2020-Scrum-Guide-US.pdf](2020-Scrum-Guide-US.pdf)<br>
 [AArteDeInvadir_KevinD.Mitnick.pdf](AArteDeInvadir_KevinD.Mitnick.pdf)<br>
 [ApontandoDoiminio.pdf](ApontandoDoiminio.pdf)<br>
 [Blue-Team-Field-Manual.pdf](Blue-Team-Field-Manual.pdf)<br>
@@ -12,17 +14,17 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Debian_GNU-Linux_Bible.pdf](Debian_GNU-Linux_Bible.pdf)<br>
 [desenvolvimento-web-com-python-e-django.pdf](desenvolvimento-web-com-python-e-django.pdf)<br>
 [EBOOK_Dashboard.pdf](EBOOK_Dashboard.pdf)<br>
+[Eragon_I.pdf](Eragon_I.pdf)<br>
 [Eragon_II_Eldest.pdf](Eragon_II_Eldest.pdf)<br>
 [Eragon_III_Brisingr.pdf](Eragon_III_Brisingr.pdf)<br>
-[Eragon_I.pdf](Eragon_I.pdf)<br>
 [Eragon_IV_Herança.pdf](Eragon_IV_Herança.pdf)<br>
 [gallifreyan.pdf](gallifreyan.pdf)<br>
 [Guia_do_Hacker_Brasileiro.pdf](Guia_do_Hacker_Brasileiro.pdf)<br>
 [HowToCodeInHTML5AndCSS3.pdf](HowToCodeInHTML5AndCSS3.pdf)<br>
 [Instalacao_configuracao_windows.pdf](Instalacao_configuracao_windows.pdf)<br>
+[Intro_Linux_e_ShellScripting.pdf](Intro_Linux_e_ShellScripting.pdf)<br>
 [IntroducaoAoPython.pdf](IntroducaoAoPython.pdf)<br>
 [Introducing_InnoDB_Cluster.pdf](Introducing_InnoDB_Cluster.pdf)<br>
-[Intro_Linux_e_ShellScripting.pdf](Intro_Linux_e_ShellScripting.pdf)<br>
 [Java-Como_Programar.pdf](Java-Como_Programar.pdf)<br>
 [jwt-handbook-v0_14_1.pdf](jwt-handbook-v0_14_1.pdf)<br>
 [KaliLinuxIntrusionandExploitationCookbook.epub](KaliLinuxIntrusionandExploitationCookbook.epub)<br>
@@ -37,6 +39,7 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Php-Programando_Com_Orientação_a_Objetos-1.pdf](Php-Programando_Com_Orientação_a_Objetos-1.pdf)<br>
 [Professional_LAMP.pdf](Professional_LAMP.pdf)<br>
 [progit.pdf](progit.pdf)<br>
+[Python_Ava_1.pdf](Python_Ava_1.pdf)<br>
 [Python_Ava_10.pdf](Python_Ava_10.pdf)<br>
 [Python_Ava_11.pdf](Python_Ava_11.pdf)<br>
 [Python_Ava_12.pdf](Python_Ava_12.pdf)<br>
@@ -46,7 +49,6 @@ This folder of the repo keeps all the books (.pdf, .epub, .txt, url's)
 [Python_Ava_16.pdf](Python_Ava_16.pdf)<br>
 [Python_Ava_17.pdf](Python_Ava_17.pdf)<br>
 [Python_Ava_18.pdf](Python_Ava_18.pdf)<br>
-[Python_Ava_1.pdf](Python_Ava_1.pdf)<br>
 [Python_Ava_2.pdf](Python_Ava_2.pdf)<br>
 [Python_Ava_3.pdf](Python_Ava_3.pdf)<br>
 [Python_Ava_4.pdf](Python_Ava_4.pdf)<br>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>finder.py | Cordeiro's DEV</title>
+<title>Get-PCInfo.ps1 | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,102 +63,89 @@
 
 </head>
 <body>
-<h3><a href='finder.py' download='finder.py'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='Get-PCInfo.ps1' download='Get-PCInfo.ps1'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='python'>
-#!/usr/bin/env python
-# copyrighted by sandrogauci <sandro@enablesecurity.com> 2011
-# 
+<pre><code class='PowerShell'>
+﻿Param($machine)
 
-import socket
-import select 
-import sys
-import datetime
-import random
-from lib.tftplib import tftp, tftpstruct
-from lib.iphelper import ip4range
-import random
-import os
-from lib.common import __LICENSE__, __version__
-from time import sleep
-import logging
-from optparse import OptionParser
+function GetComputerInfo{
+    Param($mc)
+    # Ping the machine to see if it is online
+    $online=PingMachine $mc
+    if ($online -eq $true)
+    {
+        # Ping Success
 
-DESC =    """
+        # ComputerSystem info
+        $CompInfo = Get-WmiObject Win32_ComputerSystem -comp $mc
 
-   Finder.py finds tftp servers quickly
-    """
+        # OS info
+        $OSInfo = Get-WmiObject Win32_OperatingSystem -comp $mc
 
+        # Serial No
+        $BiosInfo = Get-WmiObject Win32_BIOS -comp $mc
 
-def getargs():
-    usage = "usage: %prog [options] target\r\n"
-    usage += "examples:\r\n"
-    usage += "%prog 10.0.0.1/18 192.168.2.1/24\r\n"
-    usage += "%prog -p6969  10.0.0.1/24\r\n"
-    parser = OptionParser(usage, version="%prog v"+str(__version__)+DESC+__LICENSE__)
-    parser.add_option("--port", '-p', dest="port", default=69, type="int",
-                      help="Destination port")
-    parser.add_option("--filename", '-f', dest="filename",
-                      help="filename to use in the GET msg")
-    (options, args) = parser.parse_args()
-    if len(args) == 0:
-        parser.error("Please pass some ip ranges")
-    return (options, args)
+        # CPU Info
+        $CPUInfo = Get-WmiObject Win32_Processor -comp $mc
 
-def main():
-    log = logging.getLogger(__name__)
-    log.setLevel(logging.INFO)
-    options,args = getargs()
-    ipranges = ip4range(*args)
-    port = options.port
-    if options.filename:
-        fn = options.filename
-    else:
-        fn = str(random.randrange(1000,9999)) + '.xml'
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-    s.settimeout(5)
-    t = tftp()
-    start_time = datetime.datetime.now()
-    finito = False
-    data = t.makerrq(fn)
-    while 1:
-        r,w,e = select.select([s],[],[],0.1)
-        if len(r) > 0:        
-            for s in r:
-                try:
-                    recv = s.recvfrom(1024)
-                except socket.error,e:
-                    print e
-                    continue            
-                buff = recv[0]
-                ipaddr = recv[1]
-                try:
-                    response = tftpstruct.parse(buff)
-                except Exception,e:
-                    print e
-                log.info("IP: %s:%s responded: %s" % (ipaddr[0],ipaddr[1],response))
-        else:
-            if finito:
-                break
-            if not finito:
-                try:
-                    dst = ipranges.next(),port
-                except StopIteration:
-                    finito = True
-                    continue
-                try:
-                    log.debug('sending to %s:%s' % dst)
-                    s.sendto(data,dst)
-                except socket.error, err:
-                    log.warn('Socket error: %s %s' % (dst,err))
-                    
-    
-    log.info("Duration: %s" %  (datetime.datetime.now() - start_time))
+        #OS Build Info
+        #$OSBuildInfo = (Get-WmiObject Win32_OperatingSystem -computernam -comp $mc
 
-if __name__ == "__main__":
-    logging.basicConfig()
-    main()
+        # Create custom Object
+        $myobj = "" | Select-Object Name,Domain,Model,MachineSN,OS,ServicePack,WindowsSN,Uptime,RAM,Disk,CPU,Architecture,InstallDate,Description
+        $myobj.Name = $CompInfo.Name
+        $myobj.Domain = $CompInfo.Domain
+        $myobj.Model = $CompInfo.Model
+        $myobj.MachineSN = $BiosInfo.SerialNumber
+        $myobj.OS = $OSInfo.Caption
+        $myobj.Description = (Get-Adcomputer $mc -Properties description | select Description -ExpandProperty description)
+        $myobj.ServicePack = $OSInfo.servicepackmajorversion
+        $myobj.WindowsSN = $OSInfo.SerialNumber
+        $myobj.uptime = (Get-Date) - [System.DateTime]::ParseExact($OSInfo.LastBootUpTime.Split(".")[0],'yyyyMMddHHmmss',$null)
+        $myobj.uptime = "$($myobj.uptime.Days) days, $($myobj.uptime.Hours) hours," +`
+          " $($myobj.uptime.Minutes) minutes, $($myobj.uptime.Seconds) seconds" 
+
+        $myobj.RAM = "{0:n2} GB" -f ($CompInfo.TotalPhysicalMemory/1gb)
+        $myobj.Disk = GetDriveInfo $mc
+        $myobj.CPU = $CPUInfo.Name
+        $myobj.Architecture = $OSInfo.OSArchitecture
+        $myobj.InstallDate = ([WMI]'').ConvertToDateTime($OSinfo.InstallDate)
+        
+        #Return Custom Object"
+        $myobj
+    }
+    else
+    {
+        # Ping Failed!
+        Write-Host "Error: $mc not Pingable" -fore white -BackgroundColor Red
+    }
+}
+
+function GetDriveInfo{
+    Param($comp)
+    # Get disk sizes
+    $logicalDisk = Get-WmiObject Win32_LogicalDisk -Filter "DriveType=3" -ComputerName $comp
+    foreach($disk in $logicalDisk)
+    {
+        $diskObj = "" | Select-Object Disk,Size,FreeSpace
+        $diskObj.Disk = $disk.DeviceID
+        $diskObj.Size = "{0:n0} GB" -f (($disk | Measure-Object -Property Size -Sum).sum/1gb)
+        $diskObj.FreeSpace = "{0:n0} GB" -f (($disk | Measure-Object -Property FreeSpace -Sum).sum/1gb)
+
+        $text = "{0}  {1}  Free: {2}" -f $diskObj.Disk,$diskObj.size,$diskObj.Freespace
+        $msg += $text + [char]13 + [char]10 
+    }
+    $msg
+}
+
+function PingMachine {
+   Param([string]$machinename)
+   $pingresult = Get-WmiObject win32_pingstatus -f "address='$machinename'"
+   if($pingresult.statuscode -eq 0) {$true} else {$false}
+}
+
+# Main - run all the functions
+GetComputerInfo ($machine)  | Select-Object Name, Domain, Description, OS, ServicePack, Architecture, Model, CPU, Disk, RAM, InstallDate, Uptime
 </code></pre>
 </div>
 </body>

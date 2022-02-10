@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>finder.py | Cordeiro's DEV</title>
+<title>New-PassPhase.ps1 | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,102 +63,107 @@
 
 </head>
 <body>
-<h3><a href='finder.py' download='finder.py'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='New-PassPhase.ps1' download='New-PassPhase.ps1'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='python'>
-#!/usr/bin/env python
-# copyrighted by sandrogauci <sandro@enablesecurity.com> 2011
-# 
+<pre><code class='PowerShell'>
+#Requires -Module NameIT
 
-import socket
-import select 
-import sys
-import datetime
-import random
-from lib.tftplib import tftp, tftpstruct
-from lib.iphelper import ip4range
-import random
-import os
-from lib.common import __LICENSE__, __version__
-from time import sleep
-import logging
-from optparse import OptionParser
+function New-PassPhrase {
+    [CmdletBinding()]
+    param (
+        [Parameter()]
+        [int]
+        $MinPasswordLength = 10,
 
-DESC =    """
+        [Parameter()]
+        [int]
+        $Count = 1,
 
-   Finder.py finds tftp servers quickly
-    """
+        [Parameter()]
+        [bool]
+        $Complexity = $true
+    )
 
+    begin {
+        $WordTypes = "Noun", "Verb", "color", "adjective", "month"
+        $Specials = '~', '!', '@', '#', '%', '^', '&', '*', '_', '-', '+', '=', ':', ';', '<', '>', '.', '?'
 
-def getargs():
-    usage = "usage: %prog [options] target\r\n"
-    usage += "examples:\r\n"
-    usage += "%prog 10.0.0.1/18 192.168.2.1/24\r\n"
-    usage += "%prog -p6969  10.0.0.1/24\r\n"
-    parser = OptionParser(usage, version="%prog v"+str(__version__)+DESC+__LICENSE__)
-    parser.add_option("--port", '-p', dest="port", default=69, type="int",
-                      help="Destination port")
-    parser.add_option("--filename", '-f', dest="filename",
-                      help="filename to use in the GET msg")
-    (options, args) = parser.parse_args()
-    if len(args) == 0:
-        parser.error("Please pass some ip ranges")
-    return (options, args)
+        $Wordlist = [System.Collections.Generic.List[PSObject]]::new()
+    }
 
-def main():
-    log = logging.getLogger(__name__)
-    log.setLevel(logging.INFO)
-    options,args = getargs()
-    ipranges = ip4range(*args)
-    port = options.port
-    if options.filename:
-        fn = options.filename
-    else:
-        fn = str(random.randrange(1000,9999)) + '.xml'
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-    s.settimeout(5)
-    t = tftp()
-    start_time = datetime.datetime.now()
-    finito = False
-    data = t.makerrq(fn)
-    while 1:
-        r,w,e = select.select([s],[],[],0.1)
-        if len(r) > 0:        
-            for s in r:
-                try:
-                    recv = s.recvfrom(1024)
-                except socket.error,e:
-                    print e
-                    continue            
-                buff = recv[0]
-                ipaddr = recv[1]
-                try:
-                    response = tftpstruct.parse(buff)
-                except Exception,e:
-                    print e
-                log.info("IP: %s:%s responded: %s" % (ipaddr[0],ipaddr[1],response))
-        else:
-            if finito:
-                break
-            if not finito:
-                try:
-                    dst = ipranges.next(),port
-                except StopIteration:
-                    finito = True
-                    continue
-                try:
-                    log.debug('sending to %s:%s' % dst)
-                    s.sendto(data,dst)
-                except socket.error, err:
-                    log.warn('Socket error: %s %s' % (dst,err))
-                    
-    
-    log.info("Duration: %s" %  (datetime.datetime.now() - start_time))
+    process {
+        for ($i = 1; $i -le 20; $i++) {
+            $Random = Get-Random $WordTypes
+            $Wordlist.Add((Invoke-Generate $Random))
+        }
 
-if __name__ == "__main__":
-    logging.basicConfig()
-    main()
+        for ($i = 1; $i -le $Count; $i++) {
+
+            $Number = Get-Random -Maximum 20
+            $PassPhrase = $Wordlist[$Number]
+
+            if ($($PassPhrase.length) -lt $MinPasswordLength) {
+                $Number = Get-Random -Maximum 20
+                $RandomList1 = [System.Collections.Generic.List[PSObject]]::new()
+
+                $Randomlist1.Add($($Wordlist[$Number]))
+                $RandomList1.Add($PassPhrase)
+
+                If ($Complexity) {
+                    $Randomlist1.Add($(Get-Random -Maximum 900))
+                    $Randomlist1.Add($(Get-Random -Maximum 80))
+                    $RandomList1.Add($(Get-Random $Specials))
+                    $RandomList1.Add($(Get-Random $Specials))
+                    $RandomList1.Add($(Get-Random $Specials))
+                }
+
+                $PassPhrase = -join ($RandomList1 | Sort-Object { Get-Random })
+
+                if ($($PassPhrase.length) -lt $MinPasswordLength) {
+                    $Number = Get-Random -Maximum 20
+                    $RandomList2 = [System.Collections.Generic.List[PSObject]]::new()
+                    $Randomlist2.Add($($Wordlist[$Number]))
+                    $RandomList2.Add($PassPhrase)
+
+                    If ($Complexity) {
+                        $RandomList2.Add($(Get-Random $Specials))
+                        $RandomList2.Add($(Get-Random $Specials))
+                        $RandomList2.Add($(Get-Random $Specials))
+                        $Randomlist2.Add($(Get-Random -Maximum 100))
+                        $Randomlist2.Add($(Get-Random -Maximum 60))
+                    }
+
+                    $PassPhrase = -join ($RandomList2 | Sort-Object { Get-Random })
+
+                    if ($($PassPhrase.length) -lt $MinPasswordLength) {
+                        $Number = Get-Random -Maximum 20
+                        $RandomList3 = [System.Collections.Generic.List[PSObject]]::new()
+                        $Randomlist3.Add($($Wordlist[$Number]))
+                        $RandomList3.Add($PassPhrase)
+
+                        If ($Complexity) {
+                            $RandomList3.Add($(Get-Random $Specials))
+                            $RandomList3.Add($(Get-Random $Specials))
+                            $RandomList3.Add($(Get-Random $Specials))
+                            $Randomlist3.Add($(Get-Random -Maximum 100))
+                            $Randomlist3.Add($(Get-Random -Maximum 200))
+                        } #end Complexity3
+
+                        $PassPhrase = -join ($RandomList3 | Sort-Object { Get-Random })
+                    } #end if
+                }
+            } #end if
+
+            else {
+                $passphrase = -join ($(Get-Random $Specials), $PassPhrase, (Get-Random -Maximum 900), $(Get-Random $Specials))
+                $PassPhrase
+            } #end else#
+
+            $PassPhrase
+        }
+    }
+    end {}
+}
 </code></pre>
 </div>
 </body>

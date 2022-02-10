@@ -4,6 +4,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 ---------------------------
 [bethehero.jks](bethehero.jks)<br>
 [betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
+[Contole%20despesas%202.xlsx_0.ods](Contole%20despesas%202.xlsx_0.ods)<br>
 [ContratoDeLocacao.pdf](ContratoDeLocacao.pdf)<br>
 [cordeiro.xhb](cordeiro.xhb)<br>
 [cordeiro.xhb~](cordeiro.xhb~)<br>
@@ -30,11 +31,11 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [rodcordeiro.cer](rodcordeiro.cer)<br>
 [rodcordeiro.xcf](rodcordeiro.xcf)<br>
 [rodrigo.beltis.cer](rodrigo.beltis.cer)<br>
-[rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
 [RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>
-[RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
+[rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
 [RodrigoCurriculobkp.docx](RodrigoCurriculobkp.docx)<br>
 [RodrigoCurriculobkp.pdf](RodrigoCurriculobkp.pdf)<br>
+[RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
 [saporra.txt](saporra.txt)<br>
 [smb.conf](smb.conf)<br>
 [subdominios.txt](subdominios.txt)<br>

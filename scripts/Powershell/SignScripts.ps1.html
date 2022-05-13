@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>Passwd | Cordeiro's DEV</title>
+<title>SignScripts.ps1 | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,10 +63,47 @@
 
 </head>
 <body>
-<h3><a href='Passwd' download='Passwd'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='SignScripts.ps1' download='SignScripts.ps1'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='dos'>
-
+<pre><code class='PowerShell'>
+function SignScripts {
+    <# 
+.SYNOPSIS 
+    Sign a script with a certificate 
+.DESCRIPTION
+    Sign a script with a valid certificate
+.Parameter <Path>
+    Path to script to sign
+.Example
+    sign ./example.ps1
+.Example
+    sign C:\Scripts\example.ps1
+#> 
+    
+    param([parameter(ValueFromPipelineByPropertyName)][string]$Path)
+    if (!$Path) {
+        Write-Host "You must pass the path argument"
+        Break
+    }
+    Write-Host ""
+    $certificates = Get-ChildItem cert:\LocalMachine\My
+    if (!$certificates) {
+        return Write-Host "There's no available certificate. Please refer to https://guidooliveira.com/gerando-certificados-para-assinar-digitalmente-seus-scripts/ for instructions about creating sign certificate"
+    }
+    $counter = 1;
+    Write-Host "Bellow are the available certificates:"
+    $certificates | ForEach-Object {
+        $cer = $_ | Select-Object Subject
+        Write-Host "$counter | $cer"
+        $counter = $counter + 1
+    }
+    Write-Host ""
+      
+    $opt = $(Read-Host -Prompt "Enter the certificate number choosed") - 1
+    $certificate = $certificates[$opt]
+      
+    Set-AuthenticodeSignature $Path $certificate
+}
 </code></pre>
 </div>
 </body>

@@ -7,10 +7,16 @@ jobs:
   UpdateReadme:
     name: Update readme files
     runs-on: ubuntu-latest
+
     steps:
+      - name: Shows variables 
+        shell: bash
+        run: |
+          echo "GithubActor=$GITHUB_ACTOR"
+          echo $GITHUB_ENV
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: List files
+      - name: Update readme/index files
         shell: bash
         run: |
           ./update_readme.sh
@@ -20,3 +26,7 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
           args: Readme.md
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        name: Push updates
+        with:
+          commit_message: Updating Readme

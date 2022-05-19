@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Shows variables 
+      - name: Shows variables
         shell: bash
         run: |
           echo "GithubActor=$GITHUB_ACTOR"
-          echo $GITHUB_ENV
+          echo ${{github.event.pusher.name}}
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Update readme/index files

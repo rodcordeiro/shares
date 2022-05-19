@@ -7,7 +7,7 @@ jobs:
   UpdateReadme:
     name: Update readme files
     runs-on: ubuntu-latest
-    if: github.event.pusher.name != "rodcordeiro"
+    #if: github.event.pusher.name != "rodcordeiro"
     steps:
       - name: Shows variables
         shell: bash

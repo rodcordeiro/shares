@@ -1,0 +1,22 @@
+name: "Update readme"
+
+on:
+  push:
+    branches: ["master"]
+jobs:
+  UpdateReadme:
+    name: Update readme files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: List files
+        shell: bash
+        run: |
+          ./update_readme.sh
+      - name: Send index.md
+        uses: sinshutu/upload-to-discord@v2.0.0
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: Readme.md

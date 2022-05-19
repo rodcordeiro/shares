@@ -7,6 +7,8 @@ Dim valor As String
 Dim result As String
 Dim file As String
 Dim columns As Integer
+Dim LRandomNumber As Integer
+
 
 file = "C:\Users\Rodrigo Cordeiro\Desktop\result.txt"
 columns = 0
@@ -15,44 +17,16 @@ columns = 0
 Open file For Output As 1
 
 
-Range("A1").Select
+Range("A2").Select
 
 Do While ActiveCell.Value <> ""
+  LRandomNumber = Int((6 - 1 + 1) * Rnd + 1)
   result = ActiveCell.Value
-  valor = "INSERT INTO PDA_TB_PRODUTO_EAN(CODIGO_CLIENTE,EAN,PRODUTO,COR,TAMANHO,GRADE,QUANTIDADE,USUINC,DATINC) VALUES (" & result & ","
+  valor = "INSERT INTO PDA_TB_EC_RECEBIMENTO_ITEM (CODIGO_RECEBIMENTO,CODIGO_CLIENTE,CODIGO_PEDIDO,PRODUTO,COR,TAMANHO,QUANTIDADE,CUSTO,DESCONTO,VALOR_TOTAL,QUANTIDADE_RECEBIMENTO,USUINC,DATINC) VALUES (85,3,273," & result & ",NULL,NULL,"&LRandomNumber&",NULL,NULL,NULL,"&LRandomNumber&",1,GETDATE())"
   columns = columns + 1
   
-  'EAN
-  Cells(ActiveCell.Row, ActiveCell.Column + 2).Select
-  result = ActiveCell.Value
-  valor = valor & result & ","
-  
-  
-  'produto
-  valor = valor & result & ","
-  
-  'cor
-  Cells(ActiveCell.Row, ActiveCell.Column + 1).Select
-  result = ActiveCell.Value
-  valor = valor & result & ","
-  
-  'tamanho
-  valor = valor & "NULL,"
-  
-  'grade
-  valor = valor & "NULL,"
-  
-  'quantidade
-  valor = valor & "NULL,"
-  
-  'usuinc
-  valor = valor & "1,"
-  
-  'getdate
-  valor = valor & "GETDATE())"
-  
   Print #1, valor 
-  Cells(ActiveCell.Row + 1, ActiveCell.Column - 3).Select
+  Cells(ActiveCell.Row + 1, ActiveCell.Column).Select
 Loop
 
 
@@ -60,3 +34,6 @@ MsgBox "Export completed" , vbInformation, "Rodrigo Cordeiro informa:"
 Close 1
 
 End Sub
+
+  
+  

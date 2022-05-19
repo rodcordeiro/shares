@@ -7,13 +7,12 @@ jobs:
   UpdateReadme:
     name: Update readme files
     runs-on: ubuntu-latest
-
+    if: github.event.pusher.name != "rodcordeiro"
     steps:
       - name: Shows variables
         shell: bash
         run: |
-          echo "GithubActor=$GITHUB_ACTOR"
-          echo ${{github.event.pusher.name}}
+          echo "GithubActor=${{github.event.pusher.name}}"
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Update readme/index files

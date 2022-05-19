@@ -91,7 +91,7 @@ Import-Certificate -FilePath ./Certificate.cer -CertStoreLocation Cert:\LocalMac
 
 # Assinando um script
 $cert = @(Get-ChildItem cert:\LocalMachine\My -codesigning | Where-Object {$_.Subject -match "CN=Rodrigo Cordeiro | Beltis TI"})[0]
-Set-AuthenticodeSignature .\teste.ps1 $cert
+Set-AuthenticodeSignature .	este.ps1 $cert
 </code></pre>
 </div>
 </body>

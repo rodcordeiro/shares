@@ -105,16 +105,16 @@ echo ""
 }
 help(){
     echo -e """------------------------------------------------
-\e[1mReset DHCP
-\e[2m\e[96mAuthor: \e[2mRodrigo Cordeiro\e[0m
+[1mReset DHCP
+[2m[96mAuthor: [2mRodrigo Cordeiro[0m
 
 This script provides facilities to reseting the ip addresses trhough DHCP and gives additional functionalities.
 Usage:
-\e[3m\e[1mNo argumments\e[0m: When no argumments are passed to the scripts it runs the default function to renew de DHCP client in silent mode.
+[3m[1mNo argumments[0m: When no argumments are passed to the scripts it runs the default function to renew de DHCP client in silent mode.
 
-\e[3m\e[1m-v\e[0m: Renew the DHCP client in verbose mode.
+[3m[1m-v[0m: Renew the DHCP client in verbose mode.
 
-\e[3m\e[1m-e\e[0m: Returns the external IP of the device.
+[3m[1m-e[0m: Returns the external IP of the device.
 """
 }
 
@@ -126,7 +126,7 @@ execution(){
 
 ###UserCheck
 if ! [ $(id -u) = 0 ]; then
-   echo -e "\e[2mThis script must be run as root, use \e[0m\e[3m\e[1m\e[96msudo $0"
+   echo -e "[2mThis script must be run as root, use [0m[3m[1m[96msudo $0"
    exit 1
 fi
 
@@ -146,7 +146,7 @@ else
             commands=("help")
             break
         else
-            echo -e "\e[2mInvalid argument. Use -h to see help."
+            echo -e "[2mInvalid argument. Use -h to see help."
             echo ""
         fi
     done

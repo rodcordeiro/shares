@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>ativar_proxy.vbs | Cordeiro's DEV</title>
+<title>Passwd_gen.bat | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,15 +63,60 @@
 
 </head>
 <body>
-<h3><a href='ativar_proxy.vbs' download='ativar_proxy.vbs'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='Passwd_gen.bat' download='Passwd_gen.bat'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='VBScript'>
-dim oShell
-set oShell = Wscript.CreateObject("Wscript.Shell")
-
-if msgbox("Este programa tem o Intuito de configurar o proxy para que possa navegar dentro e fora da Akta. Deseja habilitar ou desabilitar o Poxy?" & Chr(13) & Chr(10) & Chr(13) & Chr(10) & "- SIM: Caso esteja na Akta "& Chr(13) & Chr(10) & "- NAO: Caso esteja fora da Akta", vbQuestion or vbYesNo,"TI Akta Motors") = vbYes then
-oShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable", 1, "REG_DWORD"
-oShell.RegWrite "HKCU\Software\Microsoft\Windows</code></pre>
+<pre><code class='dos'>
+@echo off
+:Start2
+cls
+goto Start
+:Start
+title Password Generator
+echo I will make you a new password.  %random%
+echo Please write the password down somewhere in case you forget it.
+echo ----------------------------------------­-----------------------
+echo 1) 1 Random Password
+echo 2) 5 Random Passwords
+echo 3) 10 Random Passwords
+echo Input your choice
+set input=
+set /p input= Choice:
+if %input%==1 goto A if NOT goto Start2
+if %input%==2 goto B if NOT goto Start2
+if %input%==3 goto C if NOT goto Start2
+:A
+cls
+echo Your password is %random%
+echo Now choose what you want to do.
+echo 1) Go back to the beginning
+echo 2) Exit
+set input=
+set /p input= Choice:
+if %input%==1 goto Start2 if NOT goto Start 2
+if %input%==2 goto Exit if NOT goto Start 2
+:Exit
+exit
+:B
+cls
+echo Your 5 passwords are %random%, %random%, %random%, %random%, %random%.
+echo Now choose what you want to do.
+echo 1) Go back to the beginning
+echo 2) Exit
+set input=
+set /p input= Choice:
+if %input%==1 goto Start2 if NOT goto Start 2
+if %input%==2 goto Exit if NOT goto Start 2
+:C
+cls
+echo Your 10 Passwords are %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%
+echo Now choose what you want to do.
+echo 1) Go back to the beginning
+echo 2) Exit
+set input=
+set /p input= Choice:
+if %input%==1 goto Start2 if NOT goto Start 2
+if %input%==2 goto Exit if NOT goto Start 2
+</code></pre>
 </div>
 </body>
 </html>

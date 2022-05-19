@@ -76,11 +76,18 @@ $repos = @(
 
 $repos | ForEach-Object {
     cd ~/projetos/pda
-    git clone $_.repo $_.alias
-    cd $_.alias
-    $_.branches  | ForEach-Object {
-        git checkout $_
-        git pull --set-upstream origin $_
+    if($_.alias){
+        $Alias = $_.alias
+    } else {
+        $Alias = $_.split('/')[-1]
+    }
+    git clone $_.repo $Alias
+    cd $Alias
+    if ($_.branches){
+        $_.branches  | ForEach-Object {
+            git checkout $_
+            git pull --set-upstream origin $_
+        }
     }
     git push -u origin --all
     yarn

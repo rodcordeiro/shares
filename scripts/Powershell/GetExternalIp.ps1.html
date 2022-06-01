@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>gen.bat | Cordeiro's DEV</title>
+<title>GetExternalIp.ps1 | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,10 +63,11 @@
 
 </head>
 <body>
-<h3><a href='gen.bat' download='gen.bat'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='GetExternalIp.ps1' download='GetExternalIp.ps1'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
-<pre><code class='dos'>
-
+<pre><code class='PowerShell'>
+$wc = new-object System.Net.WebClient
+$wc.DownloadString("http://myexternalip.com/raw")
 </code></pre>
 </div>
 </body>

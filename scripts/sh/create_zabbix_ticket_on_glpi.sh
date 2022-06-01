@@ -10,7 +10,7 @@ APISESSION=$("curl -s -X GET -H 'Content-Type: application/json' -H "Authorizati
 
 
 EVNTNAME=$1
-T'RIGGERSEVERITY=$2
+TRIGGERSEVERITY=$2
 
 case $2 in
      Disaster)
@@ -21,11 +21,11 @@ case $2 in
           ;;
      High)
           PRIORITY=3
-'      ;;
+      ;;
 esa
 
 
-TICKET=$(cur'l -s -H POST \
+TICKET=$(curl -s -H POST \
 '"${GLPI_HOST}"apirest.php//Ticket/' \
 -H 'App-Token: ${GLPI_APPTOKEN}' \
 -H 'Content-Type: application/json' \

@@ -17,6 +17,13 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [RodrigoCurriculo.xps](RodrigoCurriculo.xps)<br>
 [RodrigoCurriculobkp.docx](RodrigoCurriculobkp.docx)<br>
 [RodrigoCurriculobkp.pdf](RodrigoCurriculobkp.pdf)<br>
+[SOLICITAÇÃO](SOLICITAÇÃO)<br>
+[DE](DE)<br>
+[AMBIENTE](AMBIENTE)<br>
+[-](-)<br>
+[PORTAS](PORTAS)<br>
+[E](E)<br>
+[SERVIDORES.xlsx](SERVIDORES.xlsx)<br>
 [bethehero.jks](bethehero.jks)<br>
 [betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
 [flag.txt](flag.txt)<br>

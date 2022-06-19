@@ -10,6 +10,7 @@ This repo keeps all kind of files that I use on my web projects, like audios, im
 [fonts](fonts)<br>
 [img](img)<br>
 [package-lock.json](package-lock.json)<br>
+[renovate.json](renovate.json)<br>
 [scripts](scripts)<br>
 
 ---------------------------

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<title>CreateCert.ps1 | Cordeiro's DEV</title>
+<title>convertStringToB64.js | Cordeiro's DEV</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>	
 <link rel='apple-touch-icon' sizes='57x57' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-57x57.png'>
 <link rel='apple-touch-icon' sizes='60x60' href='https://rodcordeiro.github.io/shares/favicons/game/apple-icon-60x60.png'>
@@ -63,36 +63,27 @@
 
 </head>
 <body>
-<h3><a href='CreateCert.ps1' download='CreateCert.ps1'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
+<h3><a href='convertStringToB64.js' download='convertStringToB64.js'>Download item</a>  |  <a href='./'>Voltar<a/></h3>
 <div>
 <pre><code class='PowerShell'>
-# https://github.com/adbertram/Random-PowerShell-Work/blob/master/Security/New-SelfSignedCertificateEx.ps1
-
-# Criando um certificado raiz capaz de emitir um certificado de assinatura de código
-$signerRoot = New-SelfSignedCertificate -Subject "CN=Rodrigo Cordeiro" -HashAlgorithm Sha256 -CertStoreLocation Cert:\LocalMachine\My -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3") -KeyUsageProperty None -KeyUsage None
-
-
-# Criando um certificado de assinatura
-$beltisPowershellSign = New-SelfSignedCertificate -Subject "CN=Rodrigo Cordeiro | Beltis TI" -HashAlgorithm Sha256 -CertStoreLocation Cert:\LocalMachine\My -Signer $signerRoot -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3") -KeyUsageProperty None -KeyUsage None -FriendlyName "Beltis Scripts"
-$RodcordeiroSign = New-SelfSignedCertificate -Subject "CN=RodCordeiro" -HashAlgorithm Sha256 -CertStoreLocation Cert:\LocalMachine\My -Signer $signerRoot -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3") -KeyUsageProperty None -KeyUsage None -FriendlyName "RodCordeiro"
-
-# Verificando o certificado de assinatura
-Get-ChildItem cert:\LocalMachine\My -codesigning | Where-Object {$_.Subject -match "CN=RodCordeiro"}
-Get-ChildItem cert:\LocalMachine\My -codesigning | Where-Object {$_.Subject -match "CN=Rodrigo Cordeiro | Beltis TI"}
-
-# Mova o certificado de assinatura para o repositório de certificados raiz confiáveis
-Move-Item -Path "Cert:\LocalMachine\My\$($signerRoot.Thumbprint)" -Destination Cert:\LocalMachine\Root
-
-# Exporting Certificate
-$cert = Get-ChildItem cert:\LocalMachine\My -codesigning | Where-Object {$_.Subject -match "CN=Rodrigo Cordeiro | Beltis TI"}
-Export-Certificate -Type CERT -Cert $cert -FilePath ./rodrigo.beltis.cer
-
-# Importing Certificate
-Import-Certificate -FilePath ./Certificate.cer -CertStoreLocation Cert:\LocalMachine\My
-
-# Assinando um script
-$cert = @(Get-ChildItem cert:\LocalMachine\My -codesigning | Where-Object {$_.Subject -match "CN=Rodrigo Cordeiro | Beltis TI"})[0]
-Set-AuthenticodeSignature .	este.ps1 $cert
+// usage 
+/**
+ * USAGE:
+ *  node -e "require('readline') .createInterface({input:process.stdin,output:process.stdout,historySize:0}) .question('PAT> ',p => { b64=Buffer.from(p.trim()).toString('base64');console.log(b64);process.exit(); })"
+ *  OR 
+ *  node convertStringToB64.js
+ */
+require("readline")
+  .createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    historySize: 0,
+  })
+  .question("PAT> ", (p) => {
+    b64 = Buffer.from(p.trim()).toString("base64");
+    console.log(b64);
+    process.exit();
+  });
 </code></pre>
 </div>
 </body>

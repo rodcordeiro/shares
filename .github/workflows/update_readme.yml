@@ -14,7 +14,7 @@ jobs:
         run: |
           echo "GithubActor=${{github.event.pusher.name}}"
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Update readme/index files
         shell: bash
         run: |

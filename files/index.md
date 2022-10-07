@@ -10,7 +10,6 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [Jogos.txt](Jogos.txt)<br>
 [NFs](NFs)<br>
 [OmniStack11.pdf](OmniStack11.pdf)<br>
-[PlanilhaReembolso_Data.xlsm](PlanilhaReembolso_Data.xlsm)<br>
 [RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>
 [RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
 [RodrigoCurriculo.pdf](RodrigoCurriculo.pdf)<br>

@@ -2,6 +2,9 @@
 This folder of the repo keeps all the files and docs used on my projects (like vcards)
 
 ---------------------------
+[Comprovante](Comprovante)<br>
+[-](-)<br>
+[LIVEPASS.pdf](LIVEPASS.pdf)<br>
 [ContoleDespesas.xlsm](ContoleDespesas.xlsm)<br>
 [ContratoDeLocacao.pdf](ContratoDeLocacao.pdf)<br>
 [Curriculo_Yasmim.docx](Curriculo_Yasmim.docx)<br>

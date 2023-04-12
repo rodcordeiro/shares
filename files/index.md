@@ -42,8 +42,6 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [smb.conf](smb.conf)<br>
 [subdominios.txt](subdominios.txt)<br>
 [wyd_requests_api.md](wyd_requests_api.md)<br>
-[~$rriculo_Yasmim.docx](~$rriculo_Yasmim.docx)<br>
-[~WRL1898.tmp](~WRL1898.tmp)<br>
 
 ---------------------------
 

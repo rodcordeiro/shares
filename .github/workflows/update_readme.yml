@@ -19,12 +19,12 @@ jobs:
         shell: bash
         run: |
           ./update_readme.sh
-      - name: Send index.md
-        uses: sinshutu/upload-to-discord@v2.0.0
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        with:
-          args: Readme.md
+      # - name: Send index.md
+      #   uses: sinshutu/upload-to-discord@v2.0.0
+      #   env:
+      #     DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      #   with:
+      #     args: Readme.md
       - uses: stefanzweifel/git-auto-commit-action@v4
         name: Push updates
         with:

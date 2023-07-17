@@ -10,6 +10,7 @@ This folder of the repo keeps all the audio files
 [mixkit-positive-notification-951.wav](mixkit-positive-notification-951.wav)<br>
 [porque_te_abates.mp4](porque_te_abates.mp4)<br>
 [sucesso.wav](sucesso.wav)<br>
+[time_to_get_up.mp3](time_to_get_up.mp3)<br>
 
 ---------------------------
 

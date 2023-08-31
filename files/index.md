@@ -13,6 +13,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [Jogos.txt](Jogos.txt)<br>
 [NFs](NFs)<br>
 [OmniStack11.pdf](OmniStack11.pdf)<br>
+[Pasta1.xlsx](Pasta1.xlsx)<br>
 [RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>
 [RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
 [RodrigoCurriculo.pdf](RodrigoCurriculo.pdf)<br>
@@ -30,9 +31,12 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
 [curriculo_atualizado.pdf](curriculo_atualizado.pdf)<br>
 [flag.txt](flag.txt)<br>
+[funcionalidades.md](funcionalidades.md)<br>
 [krunkerAssets](krunkerAssets)<br>
 [mago.html](mago.html)<br>
 [me.xcf](me.xcf)<br>
+[proposta.md](proposta.md)<br>
+[ref_proposta_comercial.md](ref_proposta_comercial.md)<br>
 [resume_english.docx](resume_english.docx)<br>
 [resume_english.pdf](resume_english.pdf)<br>
 [rodcordeiro.cer](rodcordeiro.cer)<br>

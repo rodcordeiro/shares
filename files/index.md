@@ -35,6 +35,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [krunkerAssets](krunkerAssets)<br>
 [mago.html](mago.html)<br>
 [me.xcf](me.xcf)<br>
+[minecraft.drawio](minecraft.drawio)<br>
 [proposta.md](proposta.md)<br>
 [ref_proposta_comercial.md](ref_proposta_comercial.md)<br>
 [resume_english.docx](resume_english.docx)<br>

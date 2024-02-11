@@ -12,7 +12,6 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [Fallout.xlsm](Fallout.xlsm)<br>
 [Jogos.txt](Jogos.txt)<br>
 [NFs](NFs)<br>
-[OmniStack11.pdf](OmniStack11.pdf)<br>
 [Pasta1.xlsx](Pasta1.xlsx)<br>
 [RodrigoCordeiro.pdf](RodrigoCordeiro.pdf)<br>
 [RodrigoCurriculo.docx](RodrigoCurriculo.docx)<br>
@@ -29,6 +28,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [SERVIDORES.xlsx](SERVIDORES.xlsx)<br>
 [bethehero.jks](bethehero.jks)<br>
 [betheheroKeyCredentials.txt](betheheroKeyCredentials.txt)<br>
+[certs](certs)<br>
 [curriculo_atualizado.pdf](curriculo_atualizado.pdf)<br>
 [flag.txt](flag.txt)<br>
 [funcionalidades.md](funcionalidades.md)<br>

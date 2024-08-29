@@ -32,7 +32,6 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [curriculo_atualizado.pdf](curriculo_atualizado.pdf)<br>
 [flag.txt](flag.txt)<br>
 [funcionalidades.md](funcionalidades.md)<br>
-[grafana](grafana)<br>
 [krunkerAssets](krunkerAssets)<br>
 [mago.html](mago.html)<br>
 [me.xcf](me.xcf)<br>

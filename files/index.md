@@ -2,6 +2,7 @@
 This folder of the repo keeps all the files and docs used on my projects (like vcards)
 
 ---------------------------
+[Bookshelf-2024-09-10.csv](Bookshelf-2024-09-10.csv)<br>
 [Comprovante](Comprovante)<br>
 [-](-)<br>
 [LIVEPASS.pdf](LIVEPASS.pdf)<br>

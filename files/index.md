@@ -35,6 +35,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [funcionalidades.md](funcionalidades.md)<br>
 [grafana](grafana)<br>
 [krunkerAssets](krunkerAssets)<br>
+[livros_atualizados.xlsx](livros_atualizados.xlsx)<br>
 [mago.html](mago.html)<br>
 [me.xcf](me.xcf)<br>
 [minecraft.drawio](minecraft.drawio)<br>

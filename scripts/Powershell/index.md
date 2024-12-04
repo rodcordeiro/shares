@@ -8,6 +8,7 @@ This folder of the repo keeps all the PowerShell files shared between projects
 [Get-PCInfo.ps1.html](Get-PCInfo.ps1.html)<br>
 [GetExternalIp.ps1.html](GetExternalIp.ps1.html)<br>
 [New-PassPhase.ps1.html](New-PassPhase.ps1.html)<br>
+[ObserverClass.ps1.html](ObserverClass.ps1.html)<br>
 [SendEmail.ps1.html](SendEmail.ps1.html)<br>
 [SendMultipleEmails.ps1.html](SendMultipleEmails.ps1.html)<br>
 [SignScripts.ps1.html](SignScripts.ps1.html)<br>

@@ -1,0 +1,22 @@
+CREATE TABLE `vb_tb_dwellers` (
+  `id` varchar(36) NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `name` varchar(100) NOT NULL,
+  `gender` char(1) NOT NULL,
+  `lvl` int(11) NOT NULL,
+  `father` varchar(255) DEFAULT NULL,
+  `mother` varchar(255) DEFAULT NULL,
+  `strength` int(11) NOT NULL,
+  `perception` int(11) NOT NULL,
+  `endurance` int(11) NOT NULL,
+  `charism` int(11) NOT NULL,
+  `intelligence` int(11) NOT NULL,
+  `agility` int(11) NOT NULL,
+  `luck` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_dwellers_attrb` (`id`,`strength`,`perception`,`endurance`,`charism`,`intelligence`,`agility`,`luck`),
+  KEY `idx_dwellers_father` (`id`,`father`),
+  KEY `idx_dwellers_mother` (`id`,`mother`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci

@@ -1,0 +1,21 @@
+CREATE TABLE `bk_tb_transactions` (
+  `id` varchar(36) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `value` double NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `account` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `batch_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_transaction_owner` (`owner`),
+  KEY `FK_transaction_category` (`category`),
+  KEY `idx_account_transaction` (`id`,`account`),
+  KEY `idx_category_transaction` (`id`,`category`),
+  KEY `idx_account_category` (`account`,`category`),
+  CONSTRAINT `FK_transaction_account` FOREIGN KEY (`account`) REFERENCES `bk_tb_accounts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_transaction_category` FOREIGN KEY (`category`) REFERENCES `bk_tb_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_transaction_owner` FOREIGN KEY (`owner`) REFERENCES `bk_tb_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci

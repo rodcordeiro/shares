@@ -1,10 +1,1 @@
-CREATE TABLE `es_tb_user` (
-  `id` varchar(36) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UQ_a4f913a5b5f07c339e44e942d47` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"es_tb_user","Create Table":"CREATE TABLE `es_tb_user` (\n  `id` varchar(36) NOT NULL,\n  `password` varchar(255) NOT NULL,\n  `username` varchar(255) NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),\n  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `UQ_a4f913a5b5f07c339e44e942d47` (`username`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"}

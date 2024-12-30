@@ -1,10 +1,1 @@
-CREATE TABLE `MONETO_TB_PAYMENTS` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(36) NOT NULL,
-  `created_at` datetime(6) NOT NULL DEFAULT current_timestamp(6),
-  `updated_at` datetime(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `deleted_at` datetime(6) DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `IDX_30694c8813f35f14738ca7aa11` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"MONETO_TB_PAYMENTS","Create Table":"CREATE TABLE `MONETO_TB_PAYMENTS` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `uuid` varchar(36) NOT NULL,\n  `created_at` datetime(6) NOT NULL DEFAULT current_timestamp(6),\n  `updated_at` datetime(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),\n  `deleted_at` datetime(6) DEFAULT NULL,\n  `name` varchar(255) NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `IDX_30694c8813f35f14738ca7aa11` (`uuid`)\n) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"}

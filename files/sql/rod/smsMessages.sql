@@ -1,7 +1,1 @@
-CREATE TABLE `smsMessages` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `content` text DEFAULT NULL,
-  `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"smsMessages","Create Table":"CREATE TABLE `smsMessages` (\n  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,\n  `content` text DEFAULT NULL,\n  `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),\n  `updatedAt` timestamp NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"}

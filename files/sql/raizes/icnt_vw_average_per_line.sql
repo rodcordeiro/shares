@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`u766359255_raizes`@`%` SQL SECURITY DEFINER VIEW `icnt_vw_average_per_line` AS select avg(`counts`.`cnt`) AS `Media_pontos_por_linha` from (select count(0) AS `cnt` from `icnt_pontos` group by `icnt_pontos`.`linha`) `counts`

@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`u766359255_raizes`@`%` SQL SECURITY DEFINER VIEW `icnt_vw_total_points` AS select count(`P`.`id`) AS `TOTAL_PONTOS` from `icnt_pontos` `P` order by count(`P`.`id`) desc

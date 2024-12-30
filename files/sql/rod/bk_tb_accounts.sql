@@ -1,15 +1,1 @@
-CREATE TABLE `bk_tb_accounts` (
-  `id` varchar(36) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `ammount` double NOT NULL,
-  `paymentType` varchar(255) NOT NULL,
-  `owner` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `threshold` double NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_account_owner` (`owner`),
-  KEY `FK_account_payment_type` (`paymentType`),
-  CONSTRAINT `FK_account_owner` FOREIGN KEY (`owner`) REFERENCES `bk_tb_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_account_payment_type` FOREIGN KEY (`paymentType`) REFERENCES `bk_tb_payments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"bk_tb_accounts","Create Table":"CREATE TABLE `bk_tb_accounts` (\n  `id` varchar(36) NOT NULL,\n  `name` varchar(255) NOT NULL,\n  `ammount` double NOT NULL,\n  `paymentType` varchar(255) NOT NULL,\n  `owner` varchar(255) NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),\n  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),\n  `threshold` double NOT NULL,\n  PRIMARY KEY (`id`),\n  KEY `FK_account_owner` (`owner`),\n  KEY `FK_account_payment_type` (`paymentType`),\n  CONSTRAINT `FK_account_owner` FOREIGN KEY (`owner`) REFERENCES `bk_tb_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,\n  CONSTRAINT `FK_account_payment_type` FOREIGN KEY (`paymentType`) REFERENCES `bk_tb_payments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"}

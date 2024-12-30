@@ -1,11 +1,1 @@
-CREATE TABLE `MONETO_TB_USERS_PREFERENCES` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(36) NOT NULL,
-  `created_at` datetime(6) NOT NULL DEFAULT current_timestamp(6),
-  `updated_at` datetime(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `deleted_at` datetime(6) DEFAULT NULL,
-  `theme` varchar(255) NOT NULL DEFAULT 'dark',
-  `notifications` tinyint(4) NOT NULL DEFAULT 1,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `IDX_d4f96ab58db5ee28b05320ab88` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"MONETO_TB_USERS_PREFERENCES","Create Table":"CREATE TABLE `MONETO_TB_USERS_PREFERENCES` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `uuid` varchar(36) NOT NULL,\n  `created_at` datetime(6) NOT NULL DEFAULT current_timestamp(6),\n  `updated_at` datetime(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),\n  `deleted_at` datetime(6) DEFAULT NULL,\n  `theme` varchar(255) NOT NULL DEFAULT 'dark',\n  `notifications` tinyint(4) NOT NULL DEFAULT 1,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `IDX_d4f96ab58db5ee28b05320ab88` (`uuid`)\n) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"}

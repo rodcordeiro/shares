@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`u766359255_raizes`@`%` SQL SECURITY DEFINER VIEW `icnt_vw_total_with_audio` AS select count(`P`.`audio_link`) AS `COM_AUDIO`,count(`P`.`id`) - count(`P`.`audio_link`) AS `SEM_AUDIO` from `icnt_pontos` `P`

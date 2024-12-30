@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`u766359255_raizes`@`%` SQL SECURITY DEFINER VIEW `vw_giras_por_linha` AS select `il`.`nome` AS `linha`,count(`tgl`.`linha`) AS `giras` from (`tb_giras_linhas` `tgl` join `tb_linhas` `il` on(`tgl`.`linha` = `il`.`id`)) group by `tgl`.`linha`

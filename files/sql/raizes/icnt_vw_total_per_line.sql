@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`u766359255_raizes`@`%` SQL SECURITY DEFINER VIEW `icnt_vw_total_per_line` AS select `L`.`id` AS `id`,`L`.`linha` AS `linha`,count(`P`.`id`) AS `TOTAL_PONTOS` from (`icnt_linha` `L` join `icnt_pontos` `P` on(`P`.`linha` = `L`.`id`)) group by `P`.`linha` desc order by count(`P`.`id`) desc,`L`.`linha`

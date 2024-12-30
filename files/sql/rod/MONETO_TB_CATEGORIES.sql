@@ -1,0 +1,21 @@
+CREATE TABLE `MONETO_TB_CATEGORIES` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(36) NOT NULL,
+  `created_at` datetime(6) NOT NULL DEFAULT current_timestamp(6),
+  `updated_at` datetime(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `deleted_at` datetime(6) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `icon` varchar(255) NOT NULL,
+  `positive` tinyint(4) NOT NULL,
+  `internal` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'Internal category, like transfer between accounts. Not to be used in reports.',
+  `owner` int(11) NOT NULL,
+  `category` int(11) DEFAULT NULL,
+  `transient` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'A transient category is a category that holds transactions pending to be correctly categorized',
+  `classification` enum('0','1','2') NOT NULL COMMENT 'Category classification between duty, necessary and wish. ',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `IDX_b62edb21a28a9f087ef068de5b` (`uuid`),
+  KEY `FK_a4d59912969bb81ae7905d6c0d2` (`owner`),
+  KEY `FK_dcc1c7f1796eb4ffb34dc72f30f` (`category`),
+  CONSTRAINT `FK_a4d59912969bb81ae7905d6c0d2` FOREIGN KEY (`owner`) REFERENCES `MONETO_TB_USERS` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_dcc1c7f1796eb4ffb34dc72f30f` FOREIGN KEY (`category`) REFERENCES `MONETO_TB_CATEGORIES` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci

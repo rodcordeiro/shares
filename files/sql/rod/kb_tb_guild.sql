@@ -1,10 +1,1 @@
-CREATE TABLE `kb_tb_guild` (
-  `id` varchar(36) NOT NULL,
-  `created_at` datetime(6) NOT NULL DEFAULT current_timestamp(6),
-  `updated_at` datetime(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `guildId` varchar(255) NOT NULL,
-  `azureToken` varchar(255) NOT NULL,
-  `azureQueryId` varchar(255) NOT NULL,
-  `azureOrganization` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"kb_tb_guild","Create Table":"CREATE TABLE `kb_tb_guild` (\n  `id` varchar(36) NOT NULL,\n  `created_at` datetime(6) NOT NULL DEFAULT current_timestamp(6),\n  `updated_at` datetime(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),\n  `guildId` varchar(255) NOT NULL,\n  `azureToken` varchar(255) NOT NULL,\n  `azureQueryId` varchar(255) NOT NULL,\n  `azureOrganization` varchar(255) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"}

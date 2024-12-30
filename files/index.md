@@ -49,6 +49,7 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [rodrigo_cordeiro.vcf](rodrigo_cordeiro.vcf)<br>
 [saporra.txt](saporra.txt)<br>
 [smb.conf](smb.conf)<br>
+[sql](sql)<br>
 [subdominios.txt](subdominios.txt)<br>
 [wyd_requests_api.md](wyd_requests_api.md)<br>
 

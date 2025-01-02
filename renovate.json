@@ -2,7 +2,7 @@
   "branchPrefix": "updates/",
   "packageRules": [
     {
-      "updateTypes": [
+      "matchUpdateTypes": [
         "minor",
         "patch",
         "pin",
@@ -11,7 +11,7 @@
       "automerge": true
     },
     {
-      "updateTypes": [
+      "matchUpdateTypes": [
         "major"
       ],
       "automerge": false
@@ -24,7 +24,7 @@
   "labels": [
     "dependencies"
   ],
-  "recreateClosed": true,
+  "recreateWhen": "always",
   "rebaseWhen": "conflicted",
   "vulnerabilityAlerts": {
     "labels": [
@@ -35,9 +35,9 @@
     ]
   },
   "extends": [
-    "config:base",
+    "config:recommended",
     ":dependencyDashboard",
-    "github>whitesource/merge-confidence:beta",
+    "mergeConfidence:all-badges",
     "github>rodcordeiro/.github:renovate"
   ]
 }

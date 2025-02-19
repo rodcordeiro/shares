@@ -1,0 +1,88 @@
+{
+  "active": true,
+  "connections": {
+    "RabbitMQ Trigger": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-30T16:32:06.533Z",
+  "id": "PwtYSIgOizRHzAMf",
+  "meta": null,
+  "name": "Rabbit notifications",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "n8n",
+        "options": {
+          "assertExchange": true,
+          "assertQueue": true,
+          "binding": {
+            "bindings": [
+              {
+                "exchange": "Notifications",
+                "routingKey": "notification"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": true
+        }
+      },
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        0
+      ],
+      "id": "e0a9f9ce-bea7-4789-b190-de53ef36ba59",
+      "name": "RabbitMQ Trigger",
+      "credentials": {
+        "rabbitmq": {
+          "id": "YKPa7yJaTY8ppSj1",
+          "name": "RabbitMQ N8N Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "=## {{ $json.content.title }}\n> {{ $json.content.description }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        160,
+        0
+      ],
+      "id": "d12397aa-f3a7-4d8b-b84b-0e3acab11eab",
+      "name": "Discord",
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "RiA5jqb4WiIcmb6i",
+          "name": "Dath Testes"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "repo_name": "shares",
+  "repo_owner": "rodcordeiro",
+  "repo_path": "files/n8n",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-30T19:58:16.000Z",
+  "versionId": "1a6f5b4d-944a-42f0-bd12-2aa57eb41549"
+}

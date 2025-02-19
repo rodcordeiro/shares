@@ -1,1 +1,1588 @@
-{"createdAt":"2024-12-11T13:58:38.777Z","updatedAt":"2024-12-11T14:23:42.000Z","id":"RLM6uB1hrWmkDQqe","name":"Bkp","active":true,"nodes":[{"parameters":{"triggerTimes":{"item":[{"hour":23,"minute":59}]}},"name":"Daily at 23:59","type":"n8n-nodes-base.cron","position":[-440,480],"typeVersion":1,"id":"96b865d6-6673-4ab4-982a-6dcf96e1fb34"},{"parameters":{"operation":"getAll","returnAll":true,"filters":{}},"id":"16a8651d-3e4a-43f8-a576-aefefac3f8f3","name":"Grafana","type":"n8n-nodes-base.grafana","typeVersion":1,"position":[0,480],"credentials":{"grafanaApi":{"id":"dOXUc24krD8kEvvt","name":"Grafana n8n"}}},{"parameters":{"resource":"file","operation":"get","owner":{"__rl":true,"value":"rodcordeiro","mode":""},"repository":{"__rl":true,"value":"Shares","mode":"name"},"filePath":"/files/grafana","asBinaryProperty":false,"additionalParameters":{}},"name":"Get dashs","type":"n8n-nodes-base.github","position":[0,700],"executeOnce":true,"typeVersion":1,"alwaysOutputData":false,"id":"8d2d5cb3-0b73-49c7-9932-e91c21dee748","credentials":{"githubApi":{"id":"V3AmMUZRRtrRloDu","name":"GitHub rodcordeiro"}}},{"parameters":{"mode":"mergeByKey","propertyName1":"uid","propertyName2":"uid"},"name":"Merge3","type":"n8n-nodes-base.merge","position":[760,680],"typeVersion":1,"id":"8d727875-730c-4955-b7b2-d0a5b9907345"},{"parameters":{"resource":"file","operation":"get","owner":{"__rl":true,"value":"rodcordeiro","mode":"name"},"repository":{"__rl":true,"value":"shares","mode":"name"},"filePath":"={{ $json.path }}","asBinaryProperty":false,"additionalParameters":{}},"id":"dbbb6246-4b6a-4968-a0eb-383dab0090e6","name":"GitHub","type":"n8n-nodes-base.github","typeVersion":1,"position":[180,700],"credentials":{"githubApi":{"id":"V3AmMUZRRtrRloDu","name":"GitHub rodcordeiro"}}},{"parameters":{"functionCode":"return items\n  .map(item => {\n  return {json:{...item,uid:item.json.name.replace('.json','')}}\n});\n"},"name":"TransformGrafanaGithub","type":"n8n-nodes-base.function","position":[360,700],"typeVersion":1,"id":"409f506e-06f8-4a73-b184-76b26ed521ae"},{"parameters":{"mode":"removeKeyMatches","propertyName1":"uid","propertyName2":"uid"},"name":"Merge2","type":"n8n-nodes-base.merge","position":[760,500],"typeVersion":1,"id":"3a5c570a-2ac0-4e8e-990e-d1f7cf8d5135"},{"parameters":{"resource":"file","owner":{"__rl":true,"value":"rodcordeiro","mode":""},"repository":{"__rl":true,"value":"shares","mode":""},"filePath":"=files/grafana/{{ $json.dashboard.title}}.json","fileContent":"={{JSON.stringify($json)}}","commitMessage":"=[Grafana Backup] {{ $json.dashboard.title }} created ({{new Date(Date.now()).toLocaleDateString()}})"},"name":"Create file1","type":"n8n-nodes-base.github","position":[1160,500],"typeVersion":1,"id":"2dc4f11c-d89a-4dfe-9a60-4ff3550c5d2c","credentials":{"githubApi":{"id":"V3AmMUZRRtrRloDu","name":"GitHub rodcordeiro"}}},{"parameters":{"resource":"file","operation":"edit","owner":{"__rl":true,"value":"rodcordeiro","mode":""},"repository":{"__rl":true,"value":"shares","mode":""},"filePath":"=files/grafana/{{$json.dashboard.uid}}.json","fileContent":"={{ JSON.stringify($json)}}","commitMessage":"=[N8N Backup] {{$json.dashboard.title}} ({{new Date(Date.now()).toLocaleDateString()}})"},"name":"GitHub Edit1","type":"n8n-nodes-base.github","position":[1160,680],"typeVersion":1,"id":"1c90b7d7-7520-420e-a28b-dcf6fea74fdd","credentials":{"githubApi":{"id":"V3AmMUZRRtrRloDu","name":"GitHub rodcordeiro"}}},{"parameters":{"operation":"get","dashboardUidOrUrl":"={{ $json.uid }}"},"id":"d1c15820-d577-444d-8fa5-9db610988797","name":"getDash","type":"n8n-nodes-base.grafana","typeVersion":1,"position":[980,500],"credentials":{"grafanaApi":{"id":"dOXUc24krD8kEvvt","name":"Grafana n8n"}}},{"parameters":{"operation":"get","dashboardUidOrUrl":"={{ $json.uid }}"},"id":"530a8682-8f1c-4227-97b5-851d452ca869","name":"getDash1","type":"n8n-nodes-base.grafana","typeVersion":1,"position":[980,680],"credentials":{"grafanaApi":{"id":"dOXUc24krD8kEvvt","name":"Grafana n8n"}}},{"parameters":{"mode":"keepKeyMatches","propertyName1":"id","propertyName2":"id"},"name":"Merge","type":"n8n-nodes-base.merge","position":[760,200],"typeVersion":1,"id":"ab760d51-c6c7-494f-9dc4-6b287dcb278e"},{"parameters":{"resource":"file","operation":"get","owner":{"__rl":true,"value":"rodcordeiro","mode":"name"},"repository":{"__rl":true,"value":"shares","mode":"name"},"filePath":"={{ $json.path }}","asBinaryProperty":false,"additionalParameters":{}},"id":"fb5fd07d-d014-4eb9-9e76-71612f690683","name":"GitHub1","type":"n8n-nodes-base.github","typeVersion":1,"position":[180,220],"credentials":{"githubApi":{"id":"V3AmMUZRRtrRloDu","name":"GitHub rodcordeiro"}}},{"parameters":{"mode":"removeKeyMatches","propertyName1":"id","propertyName2":"id"},"name":"Merge4","type":"n8n-nodes-base.merge","position":[760,20],"typeVersion":1,"id":"5ec3e1f7-460f-4977-8a47-20c296c4764b"},{"parameters":{"resource":"file","owner":{"__rl":true,"value":"rodcordeiro","mode":""},"repository":{"__rl":true,"value":"shares","mode":""},"filePath":"=files/n8n/{{ $json.name}}.json","fileContent":"={{JSON.stringify($json)}}","commitMessage":"=[N8N Backup] {{ $json.name}} workflow created ({{new Date(Date.now()).toLocaleDateString()}})"},"name":"Create file","type":"n8n-nodes-base.github","position":[1160,20],"typeVersion":1,"id":"f1efc8c5-505e-46d1-ba09-ade50d5d01d6","credentials":{"githubApi":{"id":"V3AmMUZRRtrRloDu","name":"GitHub rodcordeiro"}}},{"parameters":{"resource":"file","operation":"edit","owner":{"__rl":true,"value":"rodcordeiro","mode":""},"repository":{"__rl":true,"value":"shares","mode":""},"filePath":"=files/n8n/{{$json.id}}.json","fileContent":"={{ JSON.stringify($json)}}","commitMessage":"=[N8N Backup] {{$json.name}} workflow updated ({{new Date(Date.now()).toLocaleDateString()}})"},"name":"GitHub Edit","type":"n8n-nodes-base.github","position":[1160,200],"typeVersion":1,"id":"aa94c35b-9119-4bca-97d9-207a7fa17d12","credentials":{"githubApi":{"id":"V3AmMUZRRtrRloDu","name":"GitHub rodcordeiro"}}},{"parameters":{"resource":"file","operation":"get","owner":{"__rl":true,"value":"rodcordeiro","mode":""},"repository":{"__rl":true,"value":"Shares","mode":"name"},"filePath":"/files/n8n","asBinaryProperty":false,"additionalParameters":{}},"name":"Get workflows","type":"n8n-nodes-base.github","position":[0,220],"executeOnce":true,"typeVersion":1,"alwaysOutputData":false,"id":"9e4da80a-c0b9-4574-aa8c-dff1cc89de75","credentials":{"githubApi":{"id":"V3AmMUZRRtrRloDu","name":"GitHub rodcordeiro"}}},{"parameters":{"filters":{},"requestOptions":{}},"id":"7eb3889f-0fb1-4698-a71f-8c85af0b8132","name":"workflows","type":"n8n-nodes-base.n8n","typeVersion":1,"position":[0,0],"credentials":{"n8nApi":{"id":"KJSuVqydkfLtpdc2","name":"N8N"}}},{"parameters":{"functionCode":"return items\n  .map(item => {\n  return {json:{...item,\n                id:item.json.name.replace('.json','')}}\n});\n"},"name":"TransformN8nGithub","type":"n8n-nodes-base.function","position":[360,220],"typeVersion":1,"id":"5420d04d-e4a8-4e6b-85fd-4e56d3492eae"},{"parameters":{"operation":"get","workflowId":{"__rl":true,"value":"={{ $json.id }}","mode":"id"},"requestOptions":{}},"id":"a43ff886-75ae-4bd8-b4be-fd0943b4e2df","name":"n8n","type":"n8n-nodes-base.n8n","typeVersion":1,"position":[980,20],"credentials":{"n8nApi":{"id":"KJSuVqydkfLtpdc2","name":"N8N"}}},{"parameters":{"authentication":"webhook","content":"={{ $json.commit.message }}","options":{}},"id":"98798534-98d9-4237-a4de-25f929f84303","name":"Discord","type":"n8n-nodes-base.discord","typeVersion":2,"position":[1380,20],"credentials":{"discordWebhookApi":{"id":"RiA5jqb4WiIcmb6i","name":"Dath Testes"}}},{"parameters":{"authentication":"webhook","content":"={{ $json.commit.message }}","options":{}},"id":"eaa9e61c-af35-424c-b34a-b16372d93971","name":"Discord1","type":"n8n-nodes-base.discord","typeVersion":2,"position":[1340,500],"credentials":{"discordWebhookApi":{"id":"RiA5jqb4WiIcmb6i","name":"Dath Testes"}}}],"connections":{"Daily at 23:59":{"main":[[{"node":"Grafana","type":"main","index":0},{"node":"workflows","type":"main","index":0},{"node":"Get workflows","type":"main","index":0},{"node":"Get dashs","type":"main","index":0}]]},"Get dashs":{"main":[[{"node":"GitHub","type":"main","index":0}]]},"Grafana":{"main":[[{"node":"Merge3","type":"main","index":0},{"node":"Merge2","type":"main","index":0}]]},"GitHub":{"main":[[{"node":"TransformGrafanaGithub","type":"main","index":0}]]},"TransformGrafanaGithub":{"main":[[{"node":"Merge3","type":"main","index":1},{"node":"Merge2","type":"main","index":1}]]},"Merge3":{"main":[[{"node":"getDash1","type":"main","index":0}]]},"Merge2":{"main":[[{"node":"getDash","type":"main","index":0}]]},"getDash":{"main":[[{"node":"Create file1","type":"main","index":0}]]},"getDash1":{"main":[[{"node":"GitHub Edit1","type":"main","index":0}]]},"Merge":{"main":[[{"node":"GitHub Edit","type":"main","index":0}]]},"GitHub1":{"main":[[{"node":"TransformN8nGithub","type":"main","index":0}]]},"Merge4":{"main":[[{"node":"n8n","type":"main","index":0}]]},"Get workflows":{"main":[[{"node":"GitHub1","type":"main","index":0}]]},"workflows":{"main":[[{"node":"Merge","type":"main","index":0},{"node":"Merge4","type":"main","index":0}]]},"TransformN8nGithub":{"main":[[{"node":"Merge","type":"main","index":1},{"node":"Merge4","type":"main","index":1}]]},"n8n":{"main":[[{"node":"Create file","type":"main","index":0}]]},"Create file":{"main":[[{"node":"Discord","type":"main","index":0}]]},"Create file1":{"main":[[{"node":"Discord1","type":"main","index":0}]]}},"settings":{"executionOrder":"v1"},"staticData":null,"meta":null,"pinData":{},"versionId":"7af8a34b-e505-40d7-9079-3428d7d0b12f","triggerCount":1,"shared":[{"createdAt":"2024-12-11T13:58:38.782Z","updatedAt":"2024-12-11T13:58:38.782Z","role":"workflow:owner","workflowId":"RLM6uB1hrWmkDQqe","projectId":"gMJuDzn3AudtUYlf","project":{"createdAt":"2024-12-11T00:44:53.743Z","updatedAt":"2024-12-11T13:46:47.490Z","id":"gMJuDzn3AudtUYlf","name":"Rodrigo Cordeiro <rodrigomendoncca@gmail.com>","type":"personal","projectRelations":[{"createdAt":"2024-12-11T00:44:54.251Z","updatedAt":"2024-12-11T00:44:54.251Z","role":"project:personalOwner","userId":"9ac6b9ff-3f89-4431-85f3-f4a10250cafb","projectId":"gMJuDzn3AudtUYlf","user":{"createdAt":"2024-12-11T00:33:52.347Z","updatedAt":"2024-12-11T14:10:16.069Z","id":"9ac6b9ff-3f89-4431-85f3-f4a10250cafb","email":"rodrigomendoncca@gmail.com","firstName":"Rodrigo","lastName":"Cordeiro","personalizationAnswers":{"version":"v4","personalization_survey_submitted_at":"2024-12-11T13:47:09.945Z","personalization_survey_n8n_version":"1.70.4","companyType":"personal","reportedSource":"friend"},"settings":{"userActivated":false,"isOnboarded":true},"role":"global:owner","disabled":false,"mfaEnabled":false,"isPending":false,"isOwner":true}}]}}],"tags":[]}
+{
+  "active": false,
+  "connections": {
+    "Daily at 23:59": {
+      "main": [
+        [
+          {
+            "node": "Grafana",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "workflows",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get workflows",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get dashs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "GetTables",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get dashs1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "GetTables1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get dashs2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get dashs": {
+      "main": [
+        [
+          {
+            "node": "GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Grafana": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub": {
+      "main": [
+        [
+          {
+            "node": "TransformGrafanaGithub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TransformGrafanaGithub": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge3": {
+      "main": [
+        [
+          {
+            "node": "getDash1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "getDash",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getDash": {
+      "main": [
+        [
+          {
+            "node": "Create file1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getDash1": {
+      "main": [
+        [
+          {
+            "node": "GitHub Edit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "GitHub5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub1": {
+      "main": [
+        [
+          {
+            "node": "TransformN8nGithub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge4": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get workflows": {
+      "main": [
+        [
+          {
+            "node": "GitHub1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "workflows": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TransformN8nGithub": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "n8n": {
+      "main": [
+        [
+          {
+            "node": "GitHub2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create file1": {
+      "main": [
+        [
+          {
+            "node": "Discord1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetTables": {
+      "main": [
+        [
+          {
+            "node": "GetSchemas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetSchemas": {
+      "main": [
+        [
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get dashs1": {
+      "main": [
+        [
+          {
+            "node": "GitHub3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge5": {
+      "main": [
+        [
+          {
+            "node": "GitHub Edit2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub3": {
+      "main": [
+        [
+          {
+            "node": "TransformGrafanaGithub1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TransformGrafanaGithub1": {
+      "main": [
+        [
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge6",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge6": {
+      "main": [
+        [
+          {
+            "node": "Create file2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create file2": {
+      "main": [
+        [
+          {
+            "node": "Discord2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Edit2": {
+      "main": [
+        [
+          {
+            "node": "Discord2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetTables1": {
+      "main": [
+        [
+          {
+            "node": "GetSchemas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetSchemas1": {
+      "main": [
+        [
+          {
+            "node": "TransformGrafanaGithub3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get dashs2": {
+      "main": [
+        [
+          {
+            "node": "GitHub4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge7": {
+      "main": [
+        [
+          {
+            "node": "GitHub Edit3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub4": {
+      "main": [
+        [
+          {
+            "node": "TransformGrafanaGithub2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TransformGrafanaGithub2": {
+      "main": [
+        [
+          {
+            "node": "Merge7",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge8",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge8": {
+      "main": [
+        [
+          {
+            "node": "Create file3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create file3": {
+      "main": [
+        [
+          {
+            "node": "Discord3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Edit3": {
+      "main": [
+        [
+          {
+            "node": "Discord3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TransformGrafanaGithub3": {
+      "main": [
+        [
+          {
+            "node": "Merge8",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub2": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-11T13:58:38.777Z",
+  "id": "RLM6uB1hrWmkDQqe",
+  "meta": null,
+  "name": "Bkp",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "hour": 23,
+              "minute": 59
+            }
+          ]
+        }
+      },
+      "name": "Daily at 23:59",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        -660,
+        880
+      ],
+      "typeVersion": 1,
+      "id": "96b865d6-6673-4ab4-982a-6dcf96e1fb34"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "returnAll": true,
+        "filters": {}
+      },
+      "id": "16a8651d-3e4a-43f8-a576-aefefac3f8f3",
+      "name": "Grafana",
+      "type": "n8n-nodes-base.grafana",
+      "typeVersion": 1,
+      "position": [
+        0,
+        480
+      ],
+      "credentials": {
+        "grafanaApi": {
+          "id": "dOXUc24krD8kEvvt",
+          "name": "Grafana n8n"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": ""
+        },
+        "repository": {
+          "__rl": true,
+          "value": "Shares",
+          "mode": "name"
+        },
+        "filePath": "/files/grafana",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "name": "Get dashs",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        0,
+        700
+      ],
+      "executeOnce": true,
+      "typeVersion": 1,
+      "alwaysOutputData": false,
+      "id": "8d2d5cb3-0b73-49c7-9932-e91c21dee748",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "mergeByKey",
+        "propertyName1": "uid",
+        "propertyName2": "uid"
+      },
+      "name": "Merge3",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        760,
+        680
+      ],
+      "typeVersion": 1,
+      "id": "8d727875-730c-4955-b7b2-d0a5b9907345"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "={{ $json.path }}",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "dbbb6246-4b6a-4968-a0eb-383dab0090e6",
+      "name": "GitHub",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        180,
+        700
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "return items\n  .map(item => {\n  return {json:{...item,uid:item.json.name.replace('.json','')}}\n});\n"
+      },
+      "name": "TransformGrafanaGithub",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        360,
+        700
+      ],
+      "typeVersion": 1,
+      "id": "409f506e-06f8-4a73-b184-76b26ed521ae"
+    },
+    {
+      "parameters": {
+        "mode": "removeKeyMatches",
+        "propertyName1": "uid",
+        "propertyName2": "uid"
+      },
+      "name": "Merge2",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        760,
+        500
+      ],
+      "typeVersion": 1,
+      "id": "3a5c570a-2ac0-4e8e-990e-d1f7cf8d5135"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "=files/grafana/{{ $json.dashboard.title}}.json",
+        "fileContent": "={{JSON.stringify($json)}}",
+        "commitMessage": "=[Grafana Backup] {{ $json.dashboard.title }} created ({{new Date(Date.now()).toLocaleDateString()}})"
+      },
+      "name": "Create file1",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        1160,
+        500
+      ],
+      "typeVersion": 1,
+      "id": "2dc4f11c-d89a-4dfe-9a60-4ff3550c5d2c",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "list",
+          "cachedResultName": "shares",
+          "cachedResultUrl": "https://github.com/rodcordeiro/shares"
+        },
+        "filePath": "=files/grafana/{{$json.dashboard.uid}}.json",
+        "fileContent": "={{ JSON.stringify($json)}}",
+        "commitMessage": "=[N8N Backup] {{$json.dashboard.title}} ({{new Date(Date.now()).toLocaleDateString()}})"
+      },
+      "name": "GitHub Edit1",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        1160,
+        680
+      ],
+      "typeVersion": 1,
+      "id": "1c90b7d7-7520-420e-a28b-dcf6fea74fdd",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dashboardUidOrUrl": "={{ $json.uid }}"
+      },
+      "id": "d1c15820-d577-444d-8fa5-9db610988797",
+      "name": "getDash",
+      "type": "n8n-nodes-base.grafana",
+      "typeVersion": 1,
+      "position": [
+        980,
+        500
+      ],
+      "credentials": {
+        "grafanaApi": {
+          "id": "dOXUc24krD8kEvvt",
+          "name": "Grafana n8n"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dashboardUidOrUrl": "={{ $json.uid }}"
+      },
+      "id": "530a8682-8f1c-4227-97b5-851d452ca869",
+      "name": "getDash1",
+      "type": "n8n-nodes-base.grafana",
+      "typeVersion": 1,
+      "position": [
+        980,
+        680
+      ],
+      "credentials": {
+        "grafanaApi": {
+          "id": "dOXUc24krD8kEvvt",
+          "name": "Grafana n8n"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "keepKeyMatches",
+        "propertyName1": "id",
+        "propertyName2": "id"
+      },
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        740,
+        120
+      ],
+      "typeVersion": 1,
+      "id": "ab760d51-c6c7-494f-9dc4-6b287dcb278e"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "={{ $json.path }}",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "fb5fd07d-d014-4eb9-9e76-71612f690683",
+      "name": "GitHub1",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        160,
+        140
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "removeKeyMatches",
+        "propertyName1": "id",
+        "propertyName2": "id"
+      },
+      "name": "Merge4",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        740,
+        -60
+      ],
+      "typeVersion": 1,
+      "id": "5ec3e1f7-460f-4977-8a47-20c296c4764b"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": ""
+        },
+        "repository": {
+          "__rl": true,
+          "value": "Shares",
+          "mode": "name"
+        },
+        "filePath": "/files/n8n",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "name": "Get workflows",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        -20,
+        140
+      ],
+      "executeOnce": true,
+      "typeVersion": 1,
+      "alwaysOutputData": false,
+      "id": "9e4da80a-c0b9-4574-aa8c-dff1cc89de75",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "filters": {},
+        "requestOptions": {}
+      },
+      "id": "7eb3889f-0fb1-4698-a71f-8c85af0b8132",
+      "name": "workflows",
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        -80
+      ],
+      "credentials": {
+        "n8nApi": {
+          "id": "KJSuVqydkfLtpdc2",
+          "name": "N8N"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "return items\n  .map(item => {\n  return {json:{...item,\n                id:item.json.name.replace('.json','')}}\n});\n"
+      },
+      "name": "TransformN8nGithub",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        340,
+        140
+      ],
+      "typeVersion": 1,
+      "id": "5420d04d-e4a8-4e6b-85fd-4e56d3492eae"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "workflowId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "requestOptions": {}
+      },
+      "id": "a43ff886-75ae-4bd8-b4be-fd0943b4e2df",
+      "name": "n8n",
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        960,
+        -60
+      ],
+      "credentials": {
+        "n8nApi": {
+          "id": "KJSuVqydkfLtpdc2",
+          "name": "N8N"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "={{ $json.commit.message }}",
+        "options": {}
+      },
+      "id": "98798534-98d9-4237-a4de-25f929f84303",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        1580,
+        -60
+      ],
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "RiA5jqb4WiIcmb6i",
+          "name": "Dath Testes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "={{ $json.commit.message }}",
+        "options": {}
+      },
+      "id": "eaa9e61c-af35-424c-b34a-b16372d93971",
+      "name": "Discord1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        1340,
+        500
+      ],
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "RiA5jqb4WiIcmb6i",
+          "name": "Dath Testes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT table_name, table_type, engine, table_collation, create_options \nFROM information_schema.tables \nWHERE table_schema = 'u766359255_rod';",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        0,
+        1060
+      ],
+      "id": "fdc9054f-a8da-4e86-8a18-9f6c39285992",
+      "name": "GetTables",
+      "credentials": {
+        "mySql": {
+          "id": "dLsnY9xeanRdLjzD",
+          "name": "Rod"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SHOW CREATE TABLE {{ $json.table_name }};",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        1060
+      ],
+      "id": "f796a72a-dfc9-4a00-bbb4-27844a66c89e",
+      "name": "GetSchemas",
+      "credentials": {
+        "mySql": {
+          "id": "dLsnY9xeanRdLjzD",
+          "name": "Rod"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "Shares",
+          "mode": "name"
+        },
+        "filePath": "/files/sql/rod",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "name": "Get dashs1",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        0,
+        1280
+      ],
+      "executeOnce": true,
+      "typeVersion": 1,
+      "alwaysOutputData": false,
+      "id": "b2f7ea5e-a883-4cee-b81c-c649d16c5a00",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "mergeByKey",
+        "propertyName1": "Table",
+        "propertyName2": "Table"
+      },
+      "name": "Merge5",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        760,
+        1260
+      ],
+      "typeVersion": 1,
+      "id": "b31444ea-5d4b-45e8-a958-1d3008d0be10"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "={{ $json.path }}",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "6383c0e9-9aad-41fe-b26c-153be43b043a",
+      "name": "GitHub3",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        180,
+        1280
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "return items\n  .map(item => {\n  return {json:{...item,Table:item.json.name.replace('.sql','')}}\n});\n"
+      },
+      "name": "TransformGrafanaGithub1",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        360,
+        1280
+      ],
+      "typeVersion": 1,
+      "id": "ca4ed0eb-3046-4b69-91cc-9f3466180575"
+    },
+    {
+      "parameters": {
+        "mode": "removeKeyMatches",
+        "propertyName1": "Table",
+        "propertyName2": "Table"
+      },
+      "name": "Merge6",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        760,
+        1080
+      ],
+      "typeVersion": 1,
+      "id": "b44fecc5-8700-448b-a015-480fdd9dcc1f"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "=files/sql/rod/{{ $json.Table }}.sql",
+        "fileContent": "={{ $json['Create Table'] }}",
+        "commitMessage": "=[Rod DB Backup] {{ $json.Table }} created ({{new Date(Date.now()).toLocaleDateString()}})"
+      },
+      "name": "Create file2",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        1160,
+        1080
+      ],
+      "typeVersion": 1,
+      "id": "3a2e7c79-29e9-4e93-afd1-558f79141a4c",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "list",
+          "cachedResultName": "shares",
+          "cachedResultUrl": "https://github.com/rodcordeiro/shares"
+        },
+        "filePath": "=files/sql/rod/{{$json.Table}}.sql",
+        "fileContent": "={{ JSON.stringify($json)}}",
+        "commitMessage": "=[Rod DB Backup] {{$json.Table}} ({{new Date(Date.now()).toLocaleDateString()}})"
+      },
+      "name": "GitHub Edit2",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        1160,
+        1260
+      ],
+      "typeVersion": 1,
+      "id": "d29c791e-35cd-4d0f-a4eb-51f70e4fc551",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "={{ $json.commit.message }}",
+        "options": {}
+      },
+      "id": "40588ba7-85e5-4bf2-8947-24e8fcc1923d",
+      "name": "Discord2",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        1160
+      ],
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "RiA5jqb4WiIcmb6i",
+          "name": "Dath Testes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## ROD_DB",
+        "height": 480,
+        "width": 1640,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        980
+      ],
+      "typeVersion": 1,
+      "id": "13e1eb47-2b35-4974-b07f-2248f89a3498",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Grafana",
+        "height": 480,
+        "width": 1640,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        420
+      ],
+      "typeVersion": 1,
+      "id": "4b825fc2-c0d1-40a0-bb84-2a0d46e74a80",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## N8N workflows",
+        "height": 480,
+        "width": 1640,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        -140
+      ],
+      "typeVersion": 1,
+      "id": "87d50432-41cf-4b81-b8b9-28f1f12be388",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT table_name, table_type, engine, table_collation, create_options \nFROM information_schema.tables \nWHERE table_schema = 'u766359255_raizes';",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        0,
+        1620
+      ],
+      "id": "8744b80e-077c-4a45-b1d3-a19f142934f3",
+      "name": "GetTables1",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SHOW CREATE TABLE {{ $json.table_name }};",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        1620
+      ],
+      "id": "f2f67cef-4a3e-4622-9f0a-5b311e2679d9",
+      "name": "GetSchemas1",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "Shares",
+          "mode": "name"
+        },
+        "filePath": "/files/sql/raizes",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "name": "Get dashs2",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        0,
+        1840
+      ],
+      "executeOnce": true,
+      "typeVersion": 1,
+      "alwaysOutputData": false,
+      "id": "ed04873a-5ea1-4eb1-abfb-22137f63c5e3",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "mergeByKey",
+        "propertyName1": "Table",
+        "propertyName2": "Table"
+      },
+      "name": "Merge7",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        760,
+        1820
+      ],
+      "typeVersion": 1,
+      "id": "09be759c-086a-4135-9697-ff64f332b42d"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "={{ $json.path }}",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "77b8d227-be05-48a2-b1b4-e6adaaaf7dfd",
+      "name": "GitHub4",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        220,
+        1840
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "return items\n  .map(item => {\n  return {json:{...item,Table:item.json.name.replace('.sql','')}}\n});\n"
+      },
+      "name": "TransformGrafanaGithub2",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        380,
+        1840
+      ],
+      "typeVersion": 1,
+      "id": "0798f4b3-d3f4-4f96-b862-2b6956fe6c0c"
+    },
+    {
+      "parameters": {
+        "mode": "removeKeyMatches",
+        "propertyName1": "Table",
+        "propertyName2": "Table"
+      },
+      "name": "Merge8",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        760,
+        1640
+      ],
+      "typeVersion": 1,
+      "id": "e11cd3f1-1208-42e1-8720-16235492f8c1"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "=files/sql/raizes/{{ $json.Table }}.sql",
+        "fileContent": "={{ $json.json['Create Table'] ?$json.json['Create Table'] : $json.json['Create View'] }}",
+        "commitMessage": "=[Raizes DB Backup] {{ $json.Table }} created ({{new Date(Date.now()).toLocaleDateString()}})"
+      },
+      "name": "Create file3",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        1160,
+        1640
+      ],
+      "typeVersion": 1,
+      "id": "8f3e2aa5-53fd-4687-bcc2-7cba790dff0d",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "list",
+          "cachedResultName": "shares",
+          "cachedResultUrl": "https://github.com/rodcordeiro/shares"
+        },
+        "filePath": "=files/sql/raizes/{{$json.Table}}.sql",
+        "fileContent": "={{ $json.json['Create Table'] ?$json.json['Create Table'] : $json.json['Create View'] }}",
+        "commitMessage": "=[Raizes DB Backup] {{$json.Table}} ({{new Date(Date.now()).toLocaleDateString()}})"
+      },
+      "name": "GitHub Edit3",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        1160,
+        1820
+      ],
+      "typeVersion": 1,
+      "id": "dbe815c0-9488-46a5-b9e6-c27d21c7f43d",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "={{ $json.commit.message }}",
+        "options": {}
+      },
+      "id": "61b76502-c653-49ab-adf8-ff62c42d9620",
+      "name": "Discord3",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        1720
+      ],
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "RiA5jqb4WiIcmb6i",
+          "name": "Dath Testes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Raizes_DB",
+        "height": 480,
+        "width": 1640,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        1540
+      ],
+      "typeVersion": 1,
+      "id": "7a395b6a-721e-4248-bc06-8c747b3d114b",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "functionCode": "return items\n  .map(item => {\n  return {json:{...item,Table:item.json.Table?item.json.Table:item.json.View}}\n});\n"
+      },
+      "name": "TransformGrafanaGithub3",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        380,
+        1620
+      ],
+      "typeVersion": 1,
+      "id": "648ce4c1-ed0e-4548-ad06-8d6c446372b6"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "=files/n8n/{{ $json.name}}.json",
+        "fileContent": "={{JSON.stringify($json)}}",
+        "commitMessage": "=[N8N Backup] {{ $json.name}} workflow created ({{new Date(Date.now()).toLocaleDateString()}})"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        -60
+      ],
+      "id": "382457b7-a97c-4d85-9418-afe50c4ab4a5",
+      "name": "GitHub2",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "rodcordeiro",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "shares",
+          "mode": "name"
+        },
+        "filePath": "=files/n8n/{{$json.name}}.json",
+        "fileContent": "={{ JSON.stringify($json)}}",
+        "commitMessage": "=[N8N Backup] {{$json.name}} workflow updated ({{new Date(Date.now()).toLocaleDateString()}})"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        960,
+        120
+      ],
+      "id": "2a1ef236-1ca8-484c-a7b2-ddf541d72ae4",
+      "name": "GitHub5",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "repo_name": "shares",
+  "repo_owner": "rodcordeiro",
+  "repo_path": "files/n8n",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-13T17:41:47.000Z",
+  "versionId": "9d42f612-992e-4118-b700-66340a292964"
+}

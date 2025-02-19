@@ -40,6 +40,8 @@ This folder of the repo keeps all the files and docs used on my projects (like v
 [me.xcf](me.xcf)<br>
 [minecraft.drawio](minecraft.drawio)<br>
 [n8n](n8n)<br>
+[n8nCAyH6KidIQABOHc7.json](n8nCAyH6KidIQABOHc7.json)<br>
+[n8nE5gvbeVaHcLVfJjs.json](n8nE5gvbeVaHcLVfJjs.json)<br>
 [proposta.md](proposta.md)<br>
 [ref_proposta_comercial.md](ref_proposta_comercial.md)<br>
 [resume_english.docx](resume_english.docx)<br>

@@ -1,0 +1,120 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-11T13:52:25.660Z",
+  "id": "lrr2dtkUALYU25Le",
+  "meta": null,
+  "name": "Azure Devops",
+  "nodes": [
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"project\": \"{{ $('Webhook').item.json.query.project }}\",\n  \"url\": \"{{ $('Webhook').item.json.query.url }}\"\n}",
+        "options": {}
+      },
+      "id": "ff6a982c-89a5-4605-b1a4-28b2c45f824c",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "path": "devops/pipeline",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "96c8198d-0022-4364-b925-2bbe9ccaa602",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "c92f5345-543c-46ff-9a79-b3419f3888f1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "LfPer9NpcQ1gQp7E",
+          "name": "Azure Devops Headers"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "=**ATUALIZAÇÔES**\nBuild do {{ $json.query.project }} executada com sucesso. [Clique para ver mais]({{ $json.query.url }})",
+        "options": {
+          "avatar_url": "https://png.pngtree.com/png-vector/20240607/ourmid/pngtree-thinking-robot-png-image_12619398.png"
+        }
+      },
+      "id": "8c9bc5c8-eac1-4882-8602-f4a2541563e3",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        300,
+        160
+      ],
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "46Pff7zsNdKnnGOl",
+          "name": "Koda Notifications"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chatMessage",
+        "chatId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.microsoftTeams",
+      "typeVersion": 2,
+      "position": [
+        300,
+        340
+      ],
+      "id": "1a91a532-9665-4388-b0a0-750dd5496e3e",
+      "name": "Microsoft Teams",
+      "disabled": true
+    }
+  ],
+  "pinData": {},
+  "repo_name": "shares",
+  "repo_owner": "rodcordeiro",
+  "repo_path": "files/n8n",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-13T17:41:55.000Z",
+  "versionId": "6f54f3aa-9dd9-4739-8e07-fa69b41f6fe1"
+}

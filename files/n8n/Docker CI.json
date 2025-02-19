@@ -1,0 +1,310 @@
+{
+  "active": false,
+  "connections": {
+    "Docker Image published": {
+      "main": [
+        [
+          {
+            "node": "formatter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "SSH1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord": {
+      "main": [
+        []
+      ]
+    },
+    "Get running containers": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "template": {
+      "main": [
+        [
+          {
+            "node": "Get running containers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formatter": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SSH1": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Get running containers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-11T14:08:09.730Z",
+  "id": "AGyGcS984LrwPkJd",
+  "meta": null,
+  "name": "Docker CI",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "={{ $('Code').item.json.container }} atualizado!",
+        "options": {
+          "avatar_url": "https://dwglogo.com/wp-content/uploads/2017/09/1300px-Docker_container_engine_logo-768x529.png",
+          "username": "Ms. Whale"
+        }
+      },
+      "id": "b630a468-b61c-482c-92a1-0c4c6a5a7616",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        340,
+        60
+      ],
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "RiA5jqb4WiIcmb6i",
+          "name": "Dath Testes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Exemplo payload webhook docker\n```\n{\n  \"callback_url\": \"https://registry.hub.docker.com/u/svendowideit/testhook/hook/2141b5bi5i5b02bec211i4eeih0242eg11000a/\",\n  \"push_data\": {\n    \"pushed_at\": 1417566161,\n    \"pusher\": \"trustedbuilder\",\n    \"tag\": \"latest\"\n  },\n  \"repository\": {\n    \"comment_count\": 0,\n    \"date_created\": 1417494799,\n    \"description\": \"\",\n    \"dockerfile\": \"#\\n# BUILD\\u0009\\u0009docker build -t svendowideit/apt-cacher .\\n# RUN\\u0009\\u0009docker run -d -p 3142:3142 -name apt-cacher-run apt-cacher\\n#\\n# and then you can run containers with:\\n# \\u0009\\u0009docker run -t -i -rm -e http_proxy http://192.168.1.2:3142/ debian bash\\n#\\nFROM\\u0009\\u0009ubuntu\\n\\n\\nVOLUME\\u0009\\u0009[/var/cache/apt-cacher-ng]\\nRUN\\u0009\\u0009apt-get update ; apt-get install -yq apt-cacher-ng\\n\\nEXPOSE \\u0009\\u00093142\\nCMD\\u0009\\u0009chmod 777 /var/cache/apt-cacher-ng ; /etc/init.d/apt-cacher-ng start ; tail -f /var/log/apt-cacher-ng/*\\n\",\n    \"full_description\": \"Docker Hub based automated build from a GitHub repo\",\n    \"is_official\": false,\n    \"is_private\": true,\n    \"is_trusted\": true,\n    \"name\": \"testhook\",\n    \"namespace\": \"svendowideit\",\n    \"owner\": \"svendowideit\",\n    \"repo_name\": \"svendowideit/testhook\",\n    \"repo_url\": \"https://registry.hub.docker.com/u/svendowideit/testhook/\",\n    \"star_count\": 0,\n    \"status\": \"Active\"\n  }\n}\n```",
+        "height": 514,
+        "width": 422,
+        "color": 7
+      },
+      "id": "e73dfc80-ebb8-4d9d-ad69-fb481823103e",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        640,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "657998bf-e6ad-445d-9ccd-132772f691d7",
+        "responseMode": "lastNode",
+        "responseData": "noData",
+        "options": {}
+      },
+      "id": "e0c404ca-75b7-43b7-b9e2-d2326ca203ef",
+      "name": "Docker Image published",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1040,
+        60
+      ],
+      "webhookId": "657998bf-e6ad-445d-9ccd-132772f691d7"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1040,
+        220
+      ],
+      "id": "42033f65-c602-4f02-952a-820ff0a77680",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input\n  .first()\n  .json\n  .stdout\n  .split('\\n')\n  .map(i=>{\n    const[container,imageWithTag]=i.split('|');\n    const [image,tag] = imageWithTag.split(\":\");\n    \n    if (image === $('formatter').first().json.repository.repo_name)\n      return {container,image}\n    \n  }).filter(Boolean)"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        60
+      ],
+      "id": "3a80fd7d-ede1-40cb-a446-3bc0c898ab39",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "=cd /home/rodcordeiro/composes/{{ $('Code').item.json.container }} && docker compose pull && docker compose up -d && docker system prune -f",
+        "cwd": "/home/rodcordeiro"
+      },
+      "id": "406c2c63-38ed-4d5b-bccf-518194aa45fd",
+      "name": "SSH1",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        180,
+        60
+      ],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "o8p9CTME5kONjFn5",
+          "name": "SSH root"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "docker ps --format \"{{.Names}}|{{.Image}}\"",
+        "cwd": "/home/rodcordeiro"
+      },
+      "id": "5427a711-fe21-4af8-a768-239b46979304",
+      "name": "Get running containers",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        60
+      ],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "o8p9CTME5kONjFn5",
+          "name": "SSH root"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{   \"callback_url\": \"https://registry.hub.docker.com/u/svendowideit/testhook/hook/2141b5bi5i5b02bec211i4eeih0242eg11000a/\",   \"push_data\": {     \"pushed_at\": 1417566161,     \"pusher\": \"trustedbuilder\",     \"tag\": \"latest\"   },   \"repository\": {     \"comment_count\": 0,     \"date_created\": 1417494799,     \"description\": \"\",     \"dockerfile\": \"#\\n# BUILD\\u0009\\u0009docker build -t svendowideit/apt-cacher .\\n# RUN\\u0009\\u0009docker run -d -p 3142:3142 -name apt-cacher-run apt-cacher\\n#\\n# and then you can run containers with:\\n# \\u0009\\u0009docker run -t -i -rm -e http_proxy http://192.168.1.2:3142/ debian bash\\n#\\nFROM\\u0009\\u0009ubuntu\\n\\n\\nVOLUME\\u0009\\u0009[/var/cache/apt-cacher-ng]\\nRUN\\u0009\\u0009apt-get update ; apt-get install -yq apt-cacher-ng\\n\\nEXPOSE \\u0009\\u00093142\\nCMD\\u0009\\u0009chmod 777 /var/cache/apt-cacher-ng ; /etc/init.d/apt-cacher-ng start ; tail -f /var/log/apt-cacher-ng/*\\n\",     \"full_description\": \"Docker Hub based automated build from a GitHub repo\",     \"is_official\": false,     \"is_private\": true,     \"is_trusted\": true,     \"name\": \"testhook\",     \"namespace\": \"svendowideit\",     \"owner\": \"svendowideit\",     \"repo_name\": \"docker.n8n.io/n8nio/n8n\",     \"repo_url\": \"https://registry.hub.docker.com/u/svendowideit/testhook/\",     \"star_count\": 0,     \"status\": \"Active\"   } }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -820,
+        220
+      ],
+      "id": "1709dacb-8afd-477b-b16a-486b5f0c5050",
+      "name": "template"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ $json.body ?$json.body : ({})}}",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -820,
+        60
+      ],
+      "id": "c331e6bc-9b51-460a-ac62-152a13a60765",
+      "name": "formatter",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('formatter').item.json.push_data.tag }}",
+                    "rightValue": "latest",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -640,
+        60
+      ],
+      "id": "1d95c1b3-52e3-4534-9180-a0ed239e636c",
+      "name": "Switch"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "shares",
+  "repo_owner": "rodcordeiro",
+  "repo_path": "files/n8n",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-13T17:40:58.000Z",
+  "versionId": "e779510f-234f-4afa-a8f3-07ee7b8be25c"
+}

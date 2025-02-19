@@ -1,0 +1,382 @@
+{
+  "active": false,
+  "connections": {
+    "Obter Comandos SHOW CREATE TABLE": {
+      "main": [
+        [
+          {
+            "node": "Processar Consultas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Processar Consultas": {
+      "main": [
+        [
+          {
+            "node": "Executar SHOW CREATE TABLE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Executar SHOW CREATE TABLE": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatar como SQL": {
+      "main": [
+        []
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Obter Comandos SHOW CREATE TABLE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obter Nomes das Tabelas": {
+      "main": [
+        [
+          {
+            "node": "Preparar Lista de Tabelas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Lista de Tabelas": {
+      "main": [
+        [
+          {
+            "node": "Schemas",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combinar Schema e Dados": {
+      "main": [
+        []
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dados": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Schemas": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-30T19:16:00.080Z",
+  "id": "S6TY4oW1RETyhHuy",
+  "meta": null,
+  "name": "bkp_sql_test",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT CONCAT('SHOW CREATE TABLE ', table_name, ';') as query FROM information_schema.tables WHERE table_schema = 'u766359255_raizes';"
+      },
+      "name": "Obter Comandos SHOW CREATE TABLE",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 1,
+      "position": [
+        200,
+        20
+      ],
+      "id": "c6422556-e97b-4ab9-8de2-3c3afe4cbdca",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "const queries = items.map(item => item.json.query);\nreturn queries.map(query => ({ json: { query }}));"
+      },
+      "name": "Processar Consultas",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        400,
+        20
+      ],
+      "id": "765007af-f391-4606-b863-ae576cbf2fcd"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{$json[\"query\"]}}"
+      },
+      "name": "Executar SHOW CREATE TABLE",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 1,
+      "position": [
+        600,
+        20
+      ],
+      "id": "a4bf28ab-87cb-4e86-983e-3ac9c5c6660a",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "let sql = '';\nfor (const item of items) {\n  const createTable = item.json[\"Create Table\"] || '';\n  if (createTable) {\n    sql += createTable + ';\n\\n';\n  }\n}\nreturn [{ json: { sql }}];"
+      },
+      "name": "Formatar como SQL",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        780,
+        -180
+      ],
+      "id": "17c0636b-a42f-46a7-b905-9d1242758517",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        20
+      ],
+      "id": "64bc9f2c-977d-4aea-b6b6-37dae3c4d76f",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nlet sql = \"\";\nfor (const item of $input.all()) {\n  sql += item['Create Table']? `\\n\\n${item['Create Table']}` : ''\n}\n\nreturn [{ json: { sql }}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        760,
+        20
+      ],
+      "id": "c8d216a2-dc47-4a37-9f25-4d5e3c17ec4c",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT table_name FROM information_schema.tables WHERE table_schema = 'u766359255_raizes';"
+      },
+      "name": "Obter Nomes das Tabelas",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        380
+      ],
+      "id": "c0a43bb2-ceae-44b2-a075-8a41346de114",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "const tables = items.map(item => item.json.table_name);\nreturn tables.map(table => ({ json: { table_name: table } }));"
+      },
+      "name": "Preparar Lista de Tabelas",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        140,
+        380
+      ],
+      "id": "528ad68d-6036-4ac4-b6f1-2b2a48f4a8b5"
+    },
+    {
+      "parameters": {
+        "functionCode": "let sql = '';\nitems.forEach(item => {\n  if (item.json['Create Table']) {\n    sql += item.json['Create Table'] + ';\n\\n';\n  } else {\n    const tableName = $json['table_name'];\n    const rows = item.json;\n    const columns = Object.keys(rows[0] || {});\n\n    if (columns.length > 0) {\n      sql += `INSERT INTO ${tableName} (${columns.join(', ')}) VALUES `;\n      const values = rows.map(row => '(' + columns.map(col => `'${row[col] || ''}'`).join(', ') + ')');\n      sql += values.join(', ') + ';\n\\n';\n    }\n  }\n});\nreturn [{ json: { sql }}];"
+      },
+      "name": "Combinar Schema e Dados",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        620
+      ],
+      "id": "79782d00-199f-4f7a-b0dc-0c3360c80a36"
+    },
+    {
+      "parameters": {
+        "fileName": "/data/database_export.sql",
+        "options": {}
+      },
+      "name": "Salvar como Arquivo",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        960,
+        180
+      ],
+      "id": "534925a9-b483-40da-ad40-f5d695261723",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        880,
+        380
+      ],
+      "id": "d2966b6a-41ea-4de2-a842-26b72c723b15",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "return items\n  .map(item => {\n  return {\n    json:{\n      ...item,\n      isTable: !!item.json.Table,\n      Table: item.json.Table?item.json.Table:item.json.View\n    }\n  }\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        280
+      ],
+      "id": "23c386d8-cfed-4460-82c4-a04ba47fcd12",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const tables = {}\n\n$input.all().forEach(item => {\n  console.log({item:$('Dados').all().item[0].json});\n  if(!tables[item.json.Table]){\n    tables[item.json.Table] = {\n      Table: item.json.json['Create Table']?item.json.json['Create Table']:item.json.json['Create View']\n    }\n  }\n  tables[item.json.Table][\"Dados\"]=$('Dados').all().item.filter(j=>j.json.Table === item.json.Table)\n    // .itemMatching(i=>i.items.filter(j=>j.Table === item.json.Table))\n  \n//   if (item.json['Create Table']) {\n//     sql += item.json['Create Table'] + `;\n// \\n`;\n//   } else {\n//     const tableName = item.json['Table'];\n//     const rows = item.json;\n//     const columns = Object.keys(rows[0] || {});\n\n//     if (columns.length > 0) {\n//       sql += `INSERT INTO ${tableName} (${columns.join(', ')}) VALUES `;\n//       const values = rows.map(row => '(' + columns.map(col => `'${row[col] || ''}'`).join(', ') + ')');\n//       sql += values.join(', ') + ';\\n\\n';\n//     }\n//   }\n});\nconsole.log(tables)\nreturn [{ json: { sql: tables }}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1060,
+        380
+      ],
+      "id": "b3a5f8b0-81a2-4bf4-8166-a9f2ee1b31ca",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT '{{$json[\"table_name\"]}}' as 'Table', {{$json[\"table_name\"]}}.* from {{$json[\"table_name\"]}}\n",
+        "options": {
+          "queryBatching": "independently"
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        340,
+        480
+      ],
+      "id": "fd6b104c-ca4e-48f4-82a3-ab9279bf9a00",
+      "name": "Dados",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SHOW CREATE TABLE {{ $json.table_name }};",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        340,
+        280
+      ],
+      "id": "738b00d6-3b6e-4aa9-a508-a5d7ed9b783b",
+      "name": "Schemas",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "repo_name": "shares",
+  "repo_owner": "rodcordeiro",
+  "repo_path": "files/n8n",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-12-30T20:34:47.000Z",
+  "versionId": "8a4b8b83-754c-4d93-9a2b-023ac6e11329"
+}

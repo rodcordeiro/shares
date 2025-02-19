@@ -1,1 +1,366 @@
-{"createdAt":"2024-12-11T14:20:45.522Z","updatedAt":"2024-12-11T14:20:45.522Z","id":"3IADVXu15KKshBA4","name":"Notion knowledge base AI assistant","active":false,"nodes":[{"parameters":{"model":"gpt-3.5-turbo","options":{"temperature":0.7,"timeout":25000}},"id":"a807f4ef-0e5d-4094-a47e-6ada9542d344","name":"OpenAI Chat Model","type":"@n8n/n8n-nodes-langchain.lmChatOpenAi","position":[1020,380],"typeVersion":1},{"parameters":{"toolDescription":"=Use this tool to search the \"\" Notion app database.\n\nIt is structured with question and answer format. \nYou can filter query result by:\n- By keyword\n- filter by tag.\n\nKeyword and Tag have an OR relationship not AND.\n\n","method":"POST","url":"=https://api.notion.com/v1/databases/{{ $json.notionID }}/query","authentication":"predefinedCredentialType","nodeCredentialType":"notionApi","sendBody":true,"specifyBody":"json","jsonBody":"{\n  \"filter\": {\n    \"or\": [\n      {\n        \"property\": \"question\",\n        \"rich_text\": {\n          \"contains\": \"{keyword}\"\n        }\n      },\n      {\n        \"property\": \"tags\",\n        \"multi_select\": {\n          \"contains\": \"{tag}\"\n        }\n      }\n    ]\n  },\n  \"sorts\": [\n    {\n      \"property\": \"updated_at\",\n      \"direction\": \"ascending\"\n    }\n  ]\n}","placeholderDefinitions":{"values":[{"name":"keyword","description":"Searches question of the record. Use one keyword at a time."},{"name":"tag","description":"=Options: {{ $json.tagsOptions }}"}]}},"id":"4b1bf629-f6f1-43be-98bb-53ad044e40bc","name":"Search notion database","type":"@n8n/n8n-nodes-langchain.toolHttpRequest","position":[1320,380],"typeVersion":1.1},{"parameters":{"resource":"database","databaseId":{"__rl":true,"value":"14b58d4e-bf0f-806b-aa84-c684fcd706f3","mode":"list","cachedResultName":"zettelkastenkb","cachedResultUrl":"https://www.notion.so/14b58d4ebf0f806baa84c684fcd706f3"},"simple":false},"id":"f0623dc8-3324-420e-81e0-0aab9223ee6c","name":"Get database details","type":"n8n-nodes-base.notion","position":[760,140],"typeVersion":2.2},{"parameters":{"contextWindowLength":4},"id":"42d8791a-fc04-4826-9062-7969749b9793","name":"Window Buffer Memory","type":"@n8n/n8n-nodes-langchain.memoryBufferWindow","position":[1160,380],"typeVersion":1.2},{"parameters":{"toolDescription":"=Use this tool to retrieve Notion page content using the page ID. \n\nIt is structured with question and answer format. \nYou can filter query result by:\n- By keyword\n- filter by tag.\n\nKeyword and Tag have an OR relationship not AND.\n\n","url":"https://api.notion.com/v1/blocks/{page_id}/children","authentication":"predefinedCredentialType","nodeCredentialType":"notionApi","placeholderDefinitions":{"values":[{"name":"page_id","description":"Notion page id from 'Search notion database' tool results"}]},"optimizeResponse":true,"dataField":"results","fieldsToInclude":"selected","fields":"id, type, paragraph.text, heading_1.text, heading_2.text, heading_3.text, bulleted_list_item.text, numbered_list_item.text, to_do.text, children"},"id":"b77aaf30-54f9-409a-a404-fe31fc1ee18d","name":"Search inside database record","type":"@n8n/n8n-nodes-langchain.toolHttpRequest","position":[1480,380],"notesInFlow":true,"typeVersion":1.1,"notes":" "},{"parameters":{"assignments":{"assignments":[{"id":"a8e58791-ba51-46a2-8645-386dd1a0ff6e","name":"sessionId","type":"string","value":"={{ $('When chat message received').item.json.sessionId }}"},{"id":"434209de-39d5-43d8-a964-0fcb7396306c","name":"action","type":"string","value":"={{ $('When chat message received').item.json.action }}"},{"id":"cad4c972-51a9-4e16-a627-b00eea77eb30","name":"chatInput","type":"string","value":"={{ $('When chat message received').item.json.chatInput }}"},{"id":"8e88876c-2714-494d-bd5e-5e80c99f83e3","name":"notionID","type":"string","value":"={{ $('Get database details').item.json.id }}"},{"id":"a88a15f6-317c-4d2e-9d64-26f5ccaf7a97","name":"databaseName","type":"string","value":"={{ $json.title[0].text.content }}"},{"id":"7c3bf758-8ed3-469a-8695-6777f4af4fb9","name":"tagsOptions","type":"string","value":"={{ $json.properties.tags.multi_select.options.map(item => item.name).join(',') }}"}]},"options":{}},"id":"10608786-543b-4d76-bbda-61fd005be5ac","name":"Format schema","type":"n8n-nodes-base.set","position":[960,140],"typeVersion":3.4},{"parameters":{"content":"## Notion knowledge base assistant [v1]\nBuilt as part of the [30 Day AI Sprint](https://30dayaisprint.notion.site/) by [@maxtkacz](https://x.com/maxtkacz)\n","height":95.12709218477178,"width":462.3561535890252,"color":6},"id":"871a1fc6-2bfd-430b-aabb-e5d4e065af9b","name":"Sticky Note","type":"n8n-nodes-base.stickyNote","position":[0,0],"typeVersion":1},{"parameters":{"content":"### FAQ\n- In `Get database details` if you see a `The resource you are requesting could not be found` error, you need to add your connection to the database (in the Notion app).\n- The `Get database details` pulls most recent `Tags` and informs AI Agent of them. However this step adds ~250-800ms per run. Watch detailed video to see how to remove this step. ","height":172.4760209818479,"width":462.3561535890252,"color":7},"id":"bdc0fcfb-6d5b-45d1-a29b-c4695d522c7c","name":"Sticky Note1","type":"n8n-nodes-base.stickyNote","position":[0,820],"typeVersion":1},{"parameters":{"promptType":"define","text":"={{ $json.chatInput }}","options":{"systemMessage":"=# Role:\nYou are a helpful agent. Query the \"{{ $json.databaseName }}\" Notion database to find relevant records or summarize insights based on multiple records.\n\n# Behavior:\n\nBe clear, very concise, efficient, and accurate in responses. Do not hallucinate.\nIf the request is ambiguous, ask for clarification. Do not embellish, only use facts from the Notion records. Do not offer general advice.\n\n# Error Handling:\n\nIf no matching records are found, try alternative search criteria. Example 1: Laptop, then Computer, then Equipment. Example 2: meetings, then meeting.\nClearly explain any issues with queries (e.g., missing fields or unsupported filters).\n\n# Output:\n\nReturn concise, user-friendly results or summaries.\nFor large sets, show top results by default and offer more if needed. Output URLs in markdown format. \n\nWhen a record has the answer to user question, always output the URL to that page. Do not output links twice."}},"id":"48737b52-0edc-4e21-b69a-577a0519998b","name":"AI Agent","type":"@n8n/n8n-nodes-langchain.agent","position":[1160,140],"typeVersion":1.6},{"parameters":{"public":true,"initialMessages":"=Happy {{ $today.weekdayLong }}!\nKnowledge source assistant at your service. How can I help you?","options":{"subtitle":"","title":"Notion Knowledge Base"}},"id":"42112298-efba-4c93-b732-64846d5b386c","name":"When chat message received","type":"@n8n/n8n-nodes-langchain.chatTrigger","position":[560,140],"webhookId":"b76d02c0-b406-4d21-b6bf-8ad2c623def3","typeVersion":1.1},{"parameters":{"content":"### Template set up quickstart video 👇\n[![Video Thumbnail](https://uploads.n8n.io/maxt/notion-db-assistant-embedded-thumb.png#full-width)](https://www.youtube.com/watch?v=ynLZwS2Nhnc)\n","height":318.2958135288425,"width":463.90418399676537,"color":7},"id":"c5217509-e5b2-4846-9391-4a2b4d0274b9","name":"Sticky Note2","type":"n8n-nodes-base.stickyNote","position":[0,120],"typeVersion":1},{"parameters":{"content":"### Written set up steps\n1. Add a Notion credential to your n8n workspace (follow [this Notion guide](https://developers.notion.com/docs/create-a-notion-integration))\n2. [Duplicate Company knowledge base Notion template](https://www.notion.so/templates/knowledge-base-ai-assistant-with-n8n) to your Notion workspace, then make sure to share the new knowledge base with connection you created in Step 1. \n3. Add Notion cred to `Get database details`:`Credential to connect with` parameter, then to `Search notion database`:`Notion API` parameter (same for `Search inside database record`)\n4. Add OpenAI credential to `Open AI Chat Model` node (tested and working with Anthropic Claude 3.5 too)\n5. In `Get database details`, select the db you created from Step 2 in `Database` dropdown.\n6. Click `Chat` button to test the workflow. Then Activate it and copy the `Chat URL` from `When chat message received`.","height":332.14098134070576,"width":461.5634274842711,"color":7},"id":"c64947e9-717b-4179-b1e0-ee074165b6a2","name":"Sticky Note3","type":"n8n-nodes-base.stickyNote","position":[0,460],"typeVersion":1}],"connections":{"Format schema":{"main":[[{"node":"AI Agent","type":"main","index":0}]]},"OpenAI Chat Model":{"ai_languageModel":[[{"node":"AI Agent","type":"ai_languageModel","index":0}]]},"Get database details":{"main":[[{"node":"Format schema","type":"main","index":0}]]},"Window Buffer Memory":{"ai_memory":[[{"node":"AI Agent","type":"ai_memory","index":0}]]},"Search notion database":{"ai_tool":[[{"node":"AI Agent","type":"ai_tool","index":0}]]},"When chat message received":{"main":[[{"node":"Get database details","type":"main","index":0}]]},"Search inside database record":{"ai_tool":[[{"node":"AI Agent","type":"ai_tool","index":0}]]}},"settings":{"executionOrder":"v1"},"staticData":null,"meta":null,"pinData":{},"versionId":"f8c5a361-4ea8-4514-9b77-a976108cb8c8","triggerCount":0,"shared":[{"createdAt":"2024-12-11T14:20:45.586Z","updatedAt":"2024-12-11T14:20:45.586Z","role":"workflow:owner","workflowId":"3IADVXu15KKshBA4","projectId":"gMJuDzn3AudtUYlf","project":{"createdAt":"2024-12-11T00:44:53.743Z","updatedAt":"2024-12-11T13:46:47.490Z","id":"gMJuDzn3AudtUYlf","name":"Rodrigo Cordeiro <rodrigomendoncca@gmail.com>","type":"personal","projectRelations":[{"createdAt":"2024-12-11T00:44:54.251Z","updatedAt":"2024-12-11T00:44:54.251Z","role":"project:personalOwner","userId":"9ac6b9ff-3f89-4431-85f3-f4a10250cafb","projectId":"gMJuDzn3AudtUYlf","user":{"createdAt":"2024-12-11T00:33:52.347Z","updatedAt":"2024-12-11T14:10:16.069Z","id":"9ac6b9ff-3f89-4431-85f3-f4a10250cafb","email":"rodrigomendoncca@gmail.com","firstName":"Rodrigo","lastName":"Cordeiro","personalizationAnswers":{"version":"v4","personalization_survey_submitted_at":"2024-12-11T13:47:09.945Z","personalization_survey_n8n_version":"1.70.4","companyType":"personal","reportedSource":"friend"},"settings":{"userActivated":false,"isOnboarded":true},"role":"global:owner","disabled":false,"mfaEnabled":false,"isPending":false,"isOwner":true}}]}}],"tags":[]}
+{
+  "active": false,
+  "connections": {
+    "Format schema": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get database details": {
+      "main": [
+        [
+          {
+            "node": "Format schema",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search notion database": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Get database details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search inside database record": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-11T14:20:45.522Z",
+  "id": "3IADVXu15KKshBA4",
+  "meta": null,
+  "name": "Notion knowledge base AI assistant",
+  "nodes": [
+    {
+      "parameters": {
+        "model": "gpt-3.5-turbo",
+        "options": {
+          "temperature": 0.7,
+          "timeout": 25000
+        }
+      },
+      "id": "a807f4ef-0e5d-4094-a47e-6ada9542d344",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        1020,
+        380
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Use this tool to search the \"\" Notion app database.\n\nIt is structured with question and answer format. \nYou can filter query result by:\n- By keyword\n- filter by tag.\n\nKeyword and Tag have an OR relationship not AND.\n\n",
+        "method": "POST",
+        "url": "=https://api.notion.com/v1/databases/{{ $json.notionID }}/query",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "notionApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"filter\": {\n    \"or\": [\n      {\n        \"property\": \"question\",\n        \"rich_text\": {\n          \"contains\": \"{keyword}\"\n        }\n      },\n      {\n        \"property\": \"tags\",\n        \"multi_select\": {\n          \"contains\": \"{tag}\"\n        }\n      }\n    ]\n  },\n  \"sorts\": [\n    {\n      \"property\": \"updated_at\",\n      \"direction\": \"ascending\"\n    }\n  ]\n}",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "keyword",
+              "description": "Searches question of the record. Use one keyword at a time."
+            },
+            {
+              "name": "tag",
+              "description": "=Options: {{ $json.tagsOptions }}"
+            }
+          ]
+        }
+      },
+      "id": "4b1bf629-f6f1-43be-98bb-53ad044e40bc",
+      "name": "Search notion database",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "position": [
+        1320,
+        380
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "resource": "database",
+        "databaseId": {
+          "__rl": true,
+          "value": "14b58d4e-bf0f-806b-aa84-c684fcd706f3",
+          "mode": "list",
+          "cachedResultName": "zettelkastenkb",
+          "cachedResultUrl": "https://www.notion.so/14b58d4ebf0f806baa84c684fcd706f3"
+        },
+        "simple": false
+      },
+      "id": "f0623dc8-3324-420e-81e0-0aab9223ee6c",
+      "name": "Get database details",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        760,
+        140
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 4
+      },
+      "id": "42d8791a-fc04-4826-9062-7969749b9793",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        1160,
+        380
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Use this tool to retrieve Notion page content using the page ID. \n\nIt is structured with question and answer format. \nYou can filter query result by:\n- By keyword\n- filter by tag.\n\nKeyword and Tag have an OR relationship not AND.\n\n",
+        "url": "https://api.notion.com/v1/blocks/{page_id}/children",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "notionApi",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "page_id",
+              "description": "Notion page id from 'Search notion database' tool results"
+            }
+          ]
+        },
+        "optimizeResponse": true,
+        "dataField": "results",
+        "fieldsToInclude": "selected",
+        "fields": "id, type, paragraph.text, heading_1.text, heading_2.text, heading_3.text, bulleted_list_item.text, numbered_list_item.text, to_do.text, children"
+      },
+      "id": "b77aaf30-54f9-409a-a404-fe31fc1ee18d",
+      "name": "Search inside database record",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "position": [
+        1480,
+        380
+      ],
+      "notesInFlow": true,
+      "typeVersion": 1.1,
+      "notes": " "
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a8e58791-ba51-46a2-8645-386dd1a0ff6e",
+              "name": "sessionId",
+              "type": "string",
+              "value": "={{ $('When chat message received').item.json.sessionId }}"
+            },
+            {
+              "id": "434209de-39d5-43d8-a964-0fcb7396306c",
+              "name": "action",
+              "type": "string",
+              "value": "={{ $('When chat message received').item.json.action }}"
+            },
+            {
+              "id": "cad4c972-51a9-4e16-a627-b00eea77eb30",
+              "name": "chatInput",
+              "type": "string",
+              "value": "={{ $('When chat message received').item.json.chatInput }}"
+            },
+            {
+              "id": "8e88876c-2714-494d-bd5e-5e80c99f83e3",
+              "name": "notionID",
+              "type": "string",
+              "value": "={{ $('Get database details').item.json.id }}"
+            },
+            {
+              "id": "a88a15f6-317c-4d2e-9d64-26f5ccaf7a97",
+              "name": "databaseName",
+              "type": "string",
+              "value": "={{ $json.title[0].text.content }}"
+            },
+            {
+              "id": "7c3bf758-8ed3-469a-8695-6777f4af4fb9",
+              "name": "tagsOptions",
+              "type": "string",
+              "value": "={{ $json.properties.tags.multi_select.options.map(item => item.name).join(',') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "10608786-543b-4d76-bbda-61fd005be5ac",
+      "name": "Format schema",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        960,
+        140
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "## Notion knowledge base assistant [v1]\nBuilt as part of the [30 Day AI Sprint](https://30dayaisprint.notion.site/) by [@maxtkacz](https://x.com/maxtkacz)\n",
+        "height": 95.12709218477178,
+        "width": 462.3561535890252,
+        "color": 6
+      },
+      "id": "871a1fc6-2bfd-430b-aabb-e5d4e065af9b",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### FAQ\n- In `Get database details` if you see a `The resource you are requesting could not be found` error, you need to add your connection to the database (in the Notion app).\n- The `Get database details` pulls most recent `Tags` and informs AI Agent of them. However this step adds ~250-800ms per run. Watch detailed video to see how to remove this step. ",
+        "height": 172.4760209818479,
+        "width": 462.3561535890252,
+        "color": 7
+      },
+      "id": "bdc0fcfb-6d5b-45d1-a29b-c4695d522c7c",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        820
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "=# Role:\nYou are a helpful agent. Query the \"{{ $json.databaseName }}\" Notion database to find relevant records or summarize insights based on multiple records.\n\n# Behavior:\n\nBe clear, very concise, efficient, and accurate in responses. Do not hallucinate.\nIf the request is ambiguous, ask for clarification. Do not embellish, only use facts from the Notion records. Do not offer general advice.\n\n# Error Handling:\n\nIf no matching records are found, try alternative search criteria. Example 1: Laptop, then Computer, then Equipment. Example 2: meetings, then meeting.\nClearly explain any issues with queries (e.g., missing fields or unsupported filters).\n\n# Output:\n\nReturn concise, user-friendly results or summaries.\nFor large sets, show top results by default and offer more if needed. Output URLs in markdown format. \n\nWhen a record has the answer to user question, always output the URL to that page. Do not output links twice."
+        }
+      },
+      "id": "48737b52-0edc-4e21-b69a-577a0519998b",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        1160,
+        140
+      ],
+      "typeVersion": 1.6
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "=Happy {{ $today.weekdayLong }}!\nKnowledge source assistant at your service. How can I help you?",
+        "options": {
+          "subtitle": "",
+          "title": "Notion Knowledge Base"
+        }
+      },
+      "id": "42112298-efba-4c93-b732-64846d5b386c",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "position": [
+        560,
+        140
+      ],
+      "webhookId": "b76d02c0-b406-4d21-b6bf-8ad2c623def3",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "content": "### Template set up quickstart video 👇\n[![Video Thumbnail](https://uploads.n8n.io/maxt/notion-db-assistant-embedded-thumb.png#full-width)](https://www.youtube.com/watch?v=ynLZwS2Nhnc)\n",
+        "height": 318.2958135288425,
+        "width": 463.90418399676537,
+        "color": 7
+      },
+      "id": "c5217509-e5b2-4846-9391-4a2b4d0274b9",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        120
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Written set up steps\n1. Add a Notion credential to your n8n workspace (follow [this Notion guide](https://developers.notion.com/docs/create-a-notion-integration))\n2. [Duplicate Company knowledge base Notion template](https://www.notion.so/templates/knowledge-base-ai-assistant-with-n8n) to your Notion workspace, then make sure to share the new knowledge base with connection you created in Step 1. \n3. Add Notion cred to `Get database details`:`Credential to connect with` parameter, then to `Search notion database`:`Notion API` parameter (same for `Search inside database record`)\n4. Add OpenAI credential to `Open AI Chat Model` node (tested and working with Anthropic Claude 3.5 too)\n5. In `Get database details`, select the db you created from Step 2 in `Database` dropdown.\n6. Click `Chat` button to test the workflow. Then Activate it and copy the `Chat URL` from `When chat message received`.",
+        "height": 332.14098134070576,
+        "width": 461.5634274842711,
+        "color": 7
+      },
+      "id": "c64947e9-717b-4179-b1e0-ee074165b6a2",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        460
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "repo_name": "shares",
+  "repo_owner": "rodcordeiro",
+  "repo_path": "files/n8n",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-12-11T14:20:45.522Z",
+  "versionId": "f8c5a361-4ea8-4514-9b77-a976108cb8c8"
+}

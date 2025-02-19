@@ -1,0 +1,350 @@
+{
+  "active": false,
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Remove Duplicates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Duplicates": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "MySQL2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MySQL1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-19T15:14:31.340Z",
+  "id": "ZjpdyVsnBkc3Ebxi",
+  "meta": null,
+  "name": "Bookshelf",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Books update",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Books",
+              "fieldType": "file",
+              "acceptFileTypes": ".csv",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -380,
+        40
+      ],
+      "id": "b9dfd0c8-1822-49e5-9504-b8ee8e3b2a36",
+      "name": "On form submission",
+      "webhookId": "532d1591-af21-4744-ac7c-25ac081dd9e6"
+    },
+    {
+      "parameters": {
+        "binaryPropertyName": "Books",
+        "options": {
+          "readAsString": true
+        }
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        40
+      ],
+      "id": "406f5454-c84d-47a2-b52c-e44005f40862",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "Title",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 2,
+      "position": [
+        40,
+        40
+      ],
+      "id": "63a32159-5a97-4ebd-93d3-b7bbcad965c4",
+      "name": "Remove Duplicates"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": []
+        },
+        "includeOtherFields": true,
+        "include": "except",
+        "excludeFields": "Read,Flashcards",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        40
+      ],
+      "id": "0456f1b0-1167-4831-9e30-c87ad6c91afa",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT\n  *\nfrom\n  Books a\nwhere\n  a.Book_Id = {{ $json['Book_Id'] }}",
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        760,
+        -40
+      ],
+      "id": "3e8dcc7b-fe65-4090-8d9d-649f2d14a381",
+      "name": "MySQL",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "dLsnY9xeanRdLjzD",
+          "name": "Rod"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d554618d-0960-43a5-8ba4-50a2f1493fd3",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": "",
+              "operator": {
+                "type": "array",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1140,
+        120
+      ],
+      "id": "c43e2760-e1e9-4485-bc3d-f870e4e72bd5",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "Books",
+          "mode": "list",
+          "cachedResultName": "Books"
+        },
+        "options": {
+          "replaceEmptyStrings": true
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1320,
+        280
+      ],
+      "id": "32e79f0a-3d43-4202-955b-8925d6dc0749",
+      "name": "MySQL1",
+      "credentials": {
+        "mySql": {
+          "id": "dLsnY9xeanRdLjzD",
+          "name": "Rod"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "function replaceSpaces(input ) {\n  const updatedRow  = {};\n  for (const key in input) {\n    if (key !== \"Read\" && key !== \"Flashcards\")\n      updatedRow[key.replace(/\\ /gi, \"_\")] = input[key];\n  }\n  return updatedRow;\n}\n\nfor (const item of $input.all()) {\n  item.json = replaceSpaces(item.json);\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        40
+      ],
+      "id": "d768769f-add6-4144-b8a2-3d363f9ce97a",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Books",
+          "mode": "list",
+          "cachedResultName": "Books"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Book_Id",
+        "valueToMatchOn": "=$json.Book_Id",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Tags",
+              "value": "$json.Tags"
+            }
+          ]
+        },
+        "options": {
+          "replaceEmptyStrings": true
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1320,
+        40
+      ],
+      "id": "633f9e59-e727-4af5-8dbd-0574a6ce06e4",
+      "name": "MySQL2",
+      "credentials": {
+        "mySql": {
+          "id": "dLsnY9xeanRdLjzD",
+          "name": "Rod"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        940,
+        120
+      ],
+      "id": "4d11042e-ae33-4113-a3bc-dfe451411bb2",
+      "name": "Merge"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "shares",
+  "repo_owner": "rodcordeiro",
+  "repo_path": "files/n8n",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-01-13T17:41:49.000Z",
+  "versionId": "43ea4877-a9b7-4d9d-8e67-a68896e6c4e8"
+}

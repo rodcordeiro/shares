@@ -13,6 +13,11 @@
             "node": "Respond to Webhook",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "RabbitMQ",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -77,6 +82,7 @@
         300,
         160
       ],
+      "webhookId": "85372cd1-996e-4fba-b600-b8b22db1e48f",
       "credentials": {
         "discordWebhookApi": {
           "id": "46Pff7zsNdKnnGOl",
@@ -97,12 +103,37 @@
       "type": "n8n-nodes-base.microsoftTeams",
       "typeVersion": 2,
       "position": [
-        300,
-        340
+        -100,
+        280
       ],
       "id": "1a91a532-9665-4388-b0a0-750dd5496e3e",
       "name": "Microsoft Teams",
       "disabled": true
+    },
+    {
+      "parameters": {
+        "mode": "exchange",
+        "exchange": "Notifications",
+        "exchangeType": "direct",
+        "routingKey": "notification",
+        "sendInputData": false,
+        "message": "={\n    \"type\": \"action\",\n    \"title\": \"Notificacao de pipeline\",\n    \"description\": \"\",\n    \"actions\": [\n        {\n            \"name\": \"warning\",\n            \"action\": \"Show-Notification 'Um pipeline Terminou' 'O pipeline {{ $json.query.project }} terminou' 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjpBZBPyUPZZhVBPyhZS2NmGBjEmPEmcTm1A&s'\"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        300,
+        360
+      ],
+      "id": "ec7f956e-68a5-435e-8227-e42e233a9635",
+      "name": "RabbitMQ",
+      "credentials": {
+        "rabbitmq": {
+          "id": "YKPa7yJaTY8ppSj1",
+          "name": "RabbitMQ N8N Account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -115,6 +146,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-13T17:41:55.000Z",
-  "versionId": "6f54f3aa-9dd9-4739-8e07-fa69b41f6fe1"
+  "updatedAt": "2025-02-25T14:58:59.000Z",
+  "versionId": "cb9d3aea-2498-4835-b408-12d9f59870f0"
 }

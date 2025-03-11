@@ -100,17 +100,6 @@
         ]
       ]
     },
-    "filter": {
-      "main": [
-        [
-          {
-            "node": "Sort2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Read/Write Files from Disk1": {
       "main": [
         [
@@ -155,21 +144,21 @@
       "main": [
         [
           {
-            "node": "filter",
+            "node": "filterBy",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "filter1",
+            "node": "filterIn",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "filter1": {
+    "filterBy": {
       "main": [
         [
           {
@@ -179,11 +168,84 @@
           }
         ]
       ]
+    },
+    "filterIn": {
+      "main": [
+        [
+          {
+            "node": "Sort2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Discord1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MigrateToYoutube": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pontos para atualizar": {
+      "main": [
+        [
+          {
+            "node": "MigrateToYoutube",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WithoutAudio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Discord2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WithoutAudio": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-12-11T14:10:30.137Z",
   "id": "QfmOecB9bdFQSJEG",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "Raizes",
   "nodes": [
     {
@@ -280,6 +342,7 @@
         840,
         20
       ],
+      "webhookId": "cd4f7ab8-57bb-4f24-8f9a-5e1d43e54a3b",
       "credentials": {
         "discordWebhookApi": {
           "id": "RiA5jqb4WiIcmb6i",
@@ -394,20 +457,6 @@
     },
     {
       "parameters": {
-        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\n// for (const item of $input.all()) {\nreturn  $('points').all().filter(i=>i.json.linha.id === $('linha').first().json.linha[0])\n\n\n"
-      },
-      "id": "fd00e2aa-3d35-4dde-b899-b47abe133a09",
-      "name": "filter",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        80,
-        -340
-      ],
-      "alwaysOutputData": true
-    },
-    {
-      "parameters": {
         "jsCode": "return $('points').all()"
       },
       "id": "c72b0c76-75e2-474a-9201-ad478b5cecf7",
@@ -418,20 +467,6 @@
         80,
         20
       ]
-    },
-    {
-      "parameters": {
-        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\n// for (const item of $input.all()) {\nconsole.log($('linha').first().json.linha,typeof $('linha').first().json.linha)\nreturn  $('points').all().filter(i=> $('linha').first().json.linha.includes(i.json.linha.id))\n\n\n"
-      },
-      "id": "e4b116e1-584f-411a-8393-043c686cb4c5",
-      "name": "filter1",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        80,
-        -160
-      ],
-      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -518,6 +553,213 @@
       ],
       "alwaysOutputData": false,
       "executeOnce": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\n// for (const item of $input.all()) {\nreturn  $('points').all().filter(i=>i.json.linha.id === $('linha').first().json.linha[0])\n\n\n"
+      },
+      "id": "fd00e2aa-3d35-4dde-b899-b47abe133a09",
+      "name": "filterBy",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        -340
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\n// for (const item of $input.all()) {\nconsole.log($('linha').first().json.linha,typeof $('linha').first().json.linha)\nreturn  $('points').all().filter(i=> $('linha').first().json.linha.includes(i.json.linha.id))\n\n\n"
+      },
+      "id": "e4b116e1-584f-411a-8393-043c686cb4c5",
+      "name": "filterIn",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        -160
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "36a82c38-eb70-4f64-bf48-ac2380a49bcc",
+              "leftValue": "={{ $('MigrateToYoutube').all().length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1320,
+        20
+      ],
+      "id": "8af44af1-4c42-4e56-9a74-1e2f5cd061da",
+      "name": "If",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "=Você ainda possui {{  $('MigrateToYoutube').all().length }} pontos que precisa atualizar o áudio para o youtube.",
+        "options": {
+          "avatar_url": "HTTPS://rodcordeiro.github.io/shares/favicons/favicon-raizes/ms-icon-144x144.png",
+          "username": "Raízes"
+        }
+      },
+      "id": "77de0d3c-478b-4690-bd56-45e96a464dca",
+      "name": "Discord1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        -1000,
+        0
+      ],
+      "webhookId": "cd4f7ab8-57bb-4f24-8f9a-5e1d43e54a3b",
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "RiA5jqb4WiIcmb6i",
+          "name": "Dath Testes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "id": "7993be9b-2911-4bf5-a63c-1ce33e204609",
+      "name": "Pontos para atualizar",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1760,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select\n  *\nfrom\n  tb_pontos a\nwhere\n  a.audio_url is not null\n  and a.audio_url not like '%youtu.be%'",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1540,
+        20
+      ],
+      "id": "0b752da3-5be8-4690-b7f6-bb0c6c3ae5f5",
+      "name": "MigrateToYoutube",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "36a82c38-eb70-4f64-bf48-ac2380a49bcc",
+              "leftValue": "={{ $('WithoutAudio').all().length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1320,
+        220
+      ],
+      "id": "a0711db7-d5cf-44af-9c4b-c8da15f965a2",
+      "name": "If1",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "=Você ainda possui {{  $('WithoutAudio').all().length }} pontos que não possuem um áudio vinculado!",
+        "options": {
+          "avatar_url": "HTTPS://rodcordeiro.github.io/shares/favicons/favicon-raizes/ms-icon-144x144.png",
+          "username": "Raízes"
+        }
+      },
+      "id": "dcc50686-b2ca-4393-9ee5-1c5f087448a5",
+      "name": "Discord2",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        -1000,
+        200
+      ],
+      "webhookId": "cd4f7ab8-57bb-4f24-8f9a-5e1d43e54a3b",
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "RiA5jqb4WiIcmb6i",
+          "name": "Dath Testes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select\n  *\nfrom\n  tb_pontos a\nwhere\n  a.audio_url is null",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1540,
+        220
+      ],
+      "id": "b3c4c4ee-422b-4db3-ae48-5aa4f2a83b61",
+      "name": "WithoutAudio",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -530,10 +772,13 @@
   "staticData": {
     "node:Ponto do dia": {
       "recurrenceRules": []
+    },
+    "node:Pontos para atualizar": {
+      "recurrenceRules": []
     }
   },
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2025-01-15T12:53:32.000Z",
-  "versionId": "41bed2e9-6d77-40ee-9f49-fdb6add2a8fd"
+  "triggerCount": 2,
+  "updatedAt": "2025-03-10T13:43:05.000Z",
+  "versionId": "958a39df-8e4b-4862-ae85-78bf25d503cd"
 }

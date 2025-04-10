@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Daily": {
       "main": [
@@ -434,6 +434,6 @@
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-02-06T12:48:10.000Z",
+  "updatedAt": "2025-04-09T20:35:29.000Z",
   "versionId": "fb02e4da-2a44-46da-ab1b-364cfe55a9ed"
 }

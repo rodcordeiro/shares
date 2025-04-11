@@ -111,6 +111,7 @@
         420,
         0
       ],
+      "webhookId": "1b4c7480-53f4-4c72-b38f-4c259d956145",
       "credentials": {
         "discordWebhookApi": {
           "id": "HTMLJDOd7rFJsX9c",
@@ -155,7 +156,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT count(a.id) as total, b.positive\n  FROM bk_tb_transactions a \n  join bk_tb_categories b on a.category = b.id \n WHERE a.category in (\n  'da842e12-9627-4636-85e9-b833bb9adf93',\n  'b5c6184e-7e7a-44bf-a60d-919fb1be1ed0'\n )",
+        "query": "SELECT\n  count(a.id) as total,\n  b.positive\nFROM\n  bk_tb_transactions a\n  join bk_tb_categories b on a.category = b.id\nWHERE\n  a.category in (\n    select\n      c.value\n    from\n      bk_tb_parameter_values c\n      join bk_tb_parameters d on c.parameter = d.id\n    where\n      d.key in (\n        'unknown_negative_category',\n        'unknown_positive_category'\n      )\n  )",
         "options": {}
       },
       "id": "f9e25a08-e290-4d5c-9bc0-b586dce257ba",
@@ -215,7 +216,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT\n  count(a.id) as total_transactions,\n  sum(case when b.positive then 1 else 0 end) as positive,\n  sum(case when b.positive then 0 else 1 end) as negative\nFROM\n  bk_tb_transactions a\n  join bk_tb_categories b on a.category = b.id\nWHERE\n  a.category in (\n    'da842e12-9627-4636-85e9-b833bb9adf93',\n    'b5c6184e-7e7a-44bf-a60d-919fb1be1ed0'\n  )\n",
+        "query": "SELECT\n  count(a.id) as total_transactions,\n  sum(case when b.positive then 1 else 0 end) as positive,\n  sum(case when b.positive then 0 else 1 end) as negative\nFROM\n  bk_tb_transactions a\n  join bk_tb_categories b on a.category = b.id\nWHERE\n  a.category in (\n    select\n      c.value\n    from\n      bk_tb_parameter_values c\n      join bk_tb_parameters d on c.parameter = d.id\n    where\n      d.key in (\n        'unknown_negative_category',\n        'unknown_positive_category'\n      )\n  )\n",
         "options": {}
       },
       "id": "da674a99-4984-4520-bf46-4e3dc0f9a928",
@@ -256,6 +257,7 @@
         220
       ],
       "executeOnce": true,
+      "webhookId": "0c2bc1fd-7b5e-404d-8203-0da809a82d80",
       "credentials": {
         "discordWebhookApi": {
           "id": "HTMLJDOd7rFJsX9c",
@@ -281,6 +283,6 @@
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-04-09T20:35:45.000Z",
-  "versionId": "40205074-ff66-4ada-97c5-22a1e3ed6b86"
+  "updatedAt": "2025-04-10T19:27:02.000Z",
+  "versionId": "3652e58f-d04d-4eee-98c9-f4fb74a150ef"
 }

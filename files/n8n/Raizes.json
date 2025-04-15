@@ -328,7 +328,7 @@
     {
       "parameters": {
         "authentication": "webhook",
-        "content": "=\nBom dia gente, benção pais, mães e mais velhos e que Logun Edé e Exu nos abençoem e bora de ponto. Ponto de {{ $json.linha.nome }}, no ritmo {{ $json.ritmo.nome }}.\n\n```\n{{ $json.letra }}\n```\n\n{{ $json.audio_url }}\n\nMais pontos de {{ $json.linha.nome }} no https://raizes.rodrigocordeiro.com.br/index.php?buscar={{ $json.linha.nome.urlEncode() }}#{{ $json.id }}",
+        "content": "=\nBom dia gente, benção pais, mães e mais velhos e que Logun Edé e Exu nos abençoem e bora de ponto. Ponto de {{ $json.tipo === 'Subida'?\"subida de\":'' }} {{ $json.linha.nome }}, no ritmo {{ $json.ritmo.nome }}.\n\n```\n{{ $json.letra }}\n```\n\n{{ $json.audio_url }}\n\nMais pontos de {{ $json.linha.nome }} no https://raizes.rodrigocordeiro.com.br/index.php?buscar={{ $json.linha.nome.urlEncode() }}#{{ $json.id }}",
         "options": {
           "avatar_url": "HTTPS://rodcordeiro.github.io/shares/favicons/favicon-raizes/ms-icon-144x144.png",
           "username": "Raízes"
@@ -779,6 +779,6 @@
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-03-10T13:43:05.000Z",
-  "versionId": "958a39df-8e4b-4862-ae85-78bf25d503cd"
+  "updatedAt": "2025-04-14T14:25:35.000Z",
+  "versionId": "5c14b796-68a0-42c2-a0e4-111e96dad75a"
 }

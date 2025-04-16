@@ -1,1 +1,0 @@
-CREATE ALGORITHM=UNDEFINED DEFINER=`u766359255_raizes`@`%` SQL SECURITY DEFINER VIEW `icnt_vw_total_per_rythm` AS select `R`.`id` AS `id`,`R`.`ritmo` AS `ritmo`,count(`P`.`id`) AS `TOTAL_PONTOS` from (`icnt_ritmos` `R` join `icnt_pontos` `P` on(`P`.`ritmo` = `R`.`id`)) group by `P`.`ritmo` order by count(`P`.`id`) desc

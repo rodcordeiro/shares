@@ -241,6 +241,349 @@
             "node": "Purge Logs",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Backup schemas",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Backup schemas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get File": {
+      "main": [
+        [
+          {
+            "node": "Merge Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If file too large": {
+      "main": [
+        [
+          {
+            "node": "Get File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Items": {
+      "main": [
+        [
+          {
+            "node": "isDiffOrNew",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "isDiffOrNew": {
+      "main": [
+        [
+          {
+            "node": "Check Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status": {
+      "main": [
+        [
+          {
+            "node": "Same file - Do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "File is different",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "File is new",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Same file - Do nothing": {
+      "main": [
+        [
+          {
+            "node": "Return",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File is different": {
+      "main": [
+        [
+          {
+            "node": "Edit existing file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File is new": {
+      "main": [
+        [
+          {
+            "node": "Create new file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit existing file": {
+      "main": [
+        [
+          {
+            "node": "Return",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get file data": {
+      "main": [
+        [
+          {
+            "node": "If file too large",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Get file data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge Items",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Backup schemas": {
+      "main": [
+        [
+          {
+            "node": "GetSchemas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetSchemas": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create new file": {
+      "main": [
+        [
+          {
+            "node": "Return",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Backup schemas1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "Configurate fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get File1": {
+      "main": [
+        [
+          {
+            "node": "Merge Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If file too large1": {
+      "main": [
+        [
+          {
+            "node": "Get File1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get file data1": {
+      "main": [
+        [
+          {
+            "node": "If file too large1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurate fields": {
+      "main": [
+        [
+          {
+            "node": "Get file data1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge Items1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Items1": {
+      "main": [
+        [
+          {
+            "node": "isDiffOrNew1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "isDiffOrNew1": {
+      "main": [
+        [
+          {
+            "node": "Check Status1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Edit existing file1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create new file1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit existing file1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create new file1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -786,6 +1129,736 @@
           "name": "Raízes"
         }
       }
+    },
+    {
+      "parameters": {
+        "content": "## Backup schema ubworkflow",
+        "height": 812,
+        "width": 2311,
+        "color": 6
+      },
+      "id": "efb04d00-878f-4e9b-84ef-074a197c3cc6",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1600,
+        660
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8d513345-6484-431f-afb7-7cf045c90f4f",
+              "name": "Done",
+              "type": "boolean",
+              "value": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bd3936b6-8cfd-47a2-bd9d-3fdbb6cae891",
+      "name": "Return",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        360,
+        860
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.download_url }}",
+        "options": {}
+      },
+      "id": "438fb594-d76c-4132-89bb-096a99f679c6",
+      "name": "Get File",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -720,
+        740
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "45ce825e-9fa6-430c-8931-9aaf22c42585",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.content }}",
+              "rightValue": ""
+            },
+            {
+              "id": "9619a55f-7fb1-4f24-b1a7-7aeb82365806",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.error }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "93571771-813b-4b18-8747-d3ae610101f5",
+      "name": "If file too large",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        -960,
+        760
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "multiplex",
+        "options": {}
+      },
+      "id": "7f22a06b-cb95-4c01-ae43-e2c91e4ecd5b",
+      "name": "Merge Items",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        -960,
+        1020
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "\n\n\n// Check if file returned with content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n\n    $input.all()[0].json.github_status = \"different\";\n\n} else {\n  // Order JSON object\n  \n  // Proper formatting\n  $input.all()[0].json.github_status = \"new\";\n}\n\n// Return items\nreturn $input.all();\n"
+      },
+      "id": "416a0390-574c-4127-9cb9-6f66b6173350",
+      "name": "isDiffOrNew",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        -760,
+        1020
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$json.github_status}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "same"
+            },
+            {
+              "value2": "different",
+              "output": 1
+            },
+            {
+              "value2": "new",
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 2
+      },
+      "id": "92c7ce3a-2f58-4ebf-b312-fe8c9d54dc10",
+      "name": "Check Status",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        -360,
+        1020
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "e264b8d3-5bde-464a-aaf6-0e4ed2eaf9a6",
+      "name": "Same file - Do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        -140,
+        860
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "b406ee2a-47bb-4f41-b9dd-dd525df7c9b6",
+      "name": "File is different",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        -140,
+        1020
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "b08c1183-187d-4cb5-a80f-2d6fdafd635f",
+      "name": "File is new",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        -140,
+        1220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Config').item.json.repo_owner }}",
+          "mode": ""
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Config').item.json.repo_name }}",
+          "mode": ""
+        },
+        "filePath": "={{ $('Config').item.json.repo_path }}/{{$('Config').item.json.table}}.schema.sql",
+        "fileContent": "={{$('Config').item.json.schema}}",
+        "commitMessage": "={{$('Config').item.json.table}}.schema ({{$json.github_status}})"
+      },
+      "id": "e37c3655-e001-413a-ab4f-2b8cbc0ad4c8",
+      "name": "Edit existing file",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        80,
+        1020
+      ],
+      "typeVersion": 1,
+      "webhookId": "4389a66a-e2b3-438c-808e-39ce35b4bc73",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Config').item.json.repo_owner }}",
+          "mode": ""
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Config').item.json.repo_name }}",
+          "mode": ""
+        },
+        "filePath": "=/{{ $('Config').item.json.repo_path }}/{{$json.table}}.schema.sql",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "43ccd484-7127-4c89-976b-dc73c218e974",
+      "name": "Get file data",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        -1160,
+        760
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "webhookId": "d075f19b-0576-49ec-a11a-f9a78342ce71",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8f6d1741-772f-462a-811f-4c334185e4f0",
+              "name": "repo_owner",
+              "type": "string",
+              "value": "=rodcordeiro"
+            },
+            {
+              "id": "8cac215c-4fd7-422f-9fd2-6b2d1e5e0383",
+              "name": "repo_name",
+              "type": "string",
+              "value": "=shares"
+            },
+            {
+              "id": "eee305e9-4164-462a-86bd-80f0d58a31ae",
+              "name": "repo_path",
+              "type": "string",
+              "value": "=files/sql/raizes"
+            },
+            {
+              "id": "f61e641f-844b-41fd-880d-4fc5e318cca3",
+              "name": "table",
+              "value": "={{ $json.Table }}",
+              "type": "string"
+            },
+            {
+              "id": "8762dffe-e4fd-4e7d-ba8e-a5f27f6b6c1a",
+              "name": "schema",
+              "value": "={{ $json['Create Table'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "a534eb92-f90c-40ea-a905-f3a46ab4aa90",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -1160,
+        1040
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SHOW CREATE TABLE {{ $json.table_name }};",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1360,
+        1040
+      ],
+      "id": "86fe341f-1f4a-4a24-a0a8-219e213a2872",
+      "name": "GetSchemas",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT table_name, table_type, engine, table_collation, create_options \nFROM information_schema.tables \nWHERE table_schema = 'u766359255_raizes';",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1560,
+        1040
+      ],
+      "id": "6b6454ed-2df3-45a6-aa9a-9cefb7b0730f",
+      "name": "Backup schemas",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Config').item.json.repo_owner }}",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Config').item.json.repo_name }}",
+          "mode": "name"
+        },
+        "filePath": "={{ $('Config').item.json.repo_path }}/{{$('Config').item.json.table}}.schema.sql",
+        "fileContent": "={{$('Config').item.json.schema}}",
+        "commitMessage": "={{$('Config').item.json.table}}.schema ({{$json.github_status}})"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        80,
+        1220
+      ],
+      "id": "f635b19b-a59c-4eef-9d4d-5d6c248afc70",
+      "name": "Create new file",
+      "webhookId": "d0a6edb1-90a9-4206-bd31-a82d56fc5df6",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT table_name, table_type, engine, table_collation, create_options \nFROM information_schema.tables \nWHERE table_schema = 'u766359255_raizes';",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1520,
+        1980
+      ],
+      "id": "bc26c15d-5b72-47c0-ae10-bd5e99adc04b",
+      "name": "Backup schemas1",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1340,
+        1980
+      ],
+      "id": "f9dca121-25f9-4111-affb-76726e59ab8e",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "={{ $json.table_name }}",
+          "mode": "name"
+        },
+        "returnAll": true,
+        "options": {
+          "queryBatching": "independently",
+          "detailedOutput": true
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1060,
+        2140
+      ],
+      "id": "e1aeebc4-eabc-4ca0-9e71-738a1b829520",
+      "name": "MySQL",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.download_url }}",
+        "options": {}
+      },
+      "id": "7d9c2473-5454-4174-8eda-62fd9b859dcb",
+      "name": "Get File1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -280,
+        1860
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "45ce825e-9fa6-430c-8931-9aaf22c42585",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.content }}",
+              "rightValue": ""
+            },
+            {
+              "id": "9619a55f-7fb1-4f24-b1a7-7aeb82365806",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.error }}",
+              "rightValue": ""
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cd9023f7-f964-4cd0-b868-29737380eed9",
+      "name": "If file too large1",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        -460,
+        1880
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "multiplex",
+        "options": {}
+      },
+      "id": "03874fbe-3263-4137-a3ef-ecdc160429fd",
+      "name": "Merge Items1",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        -120,
+        2140
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $json.repo_owner }}",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $json.repo_name }}",
+          "mode": "name"
+        },
+        "filePath": "=/{{ $json.repo_path }}/{{$json.table_name}}.data.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "e8cebcf7-0555-436e-aa34-a84d6281bf86",
+      "name": "Get file data1",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        -620,
+        1880
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "webhookId": "d075f19b-0576-49ec-a11a-f9a78342ce71",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f7fb55e8-f99b-42d3-9402-cf53f79092a0",
+              "name": "data",
+              "value": "={{ $json.data }}",
+              "type": "array"
+            },
+            {
+              "id": "6277bfc6-8bb4-4a2d-b050-4fa9e33d3a3b",
+              "name": "table_name",
+              "value": "={{ $('Loop Over Items').item.json.table_name }}",
+              "type": "string"
+            },
+            {
+              "id": "d6df6b8e-426a-4b46-a6b8-3038b9d5ce69",
+              "name": "repo_owner",
+              "value": "rodcordeiro",
+              "type": "string"
+            },
+            {
+              "id": "fafcca4b-7d23-4872-a0f4-3cd2d56c4153",
+              "name": "repo_name",
+              "value": "shares",
+              "type": "string"
+            },
+            {
+              "id": "418781e6-3ea8-4ae6-8545-81f475d753ab",
+              "name": "repo_path",
+              "value": "files/sql/raizes",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -840,
+        2140
+      ],
+      "id": "62d8c81f-00fe-4f33-91a2-6955708a3f61",
+      "name": "Configurate fields"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "\nif (Object.keys($input.item.json).includes(\"content\")) {\n  $input.item.json.github_status = \"different\";\n} else {\n  $input.item.json.github_status = \"new\";\n}\n\n// Return items\nreturn $input.item;\n"
+      },
+      "id": "3fe273f8-29bd-42c2-b940-87be771007f7",
+      "name": "isDiffOrNew1",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        60,
+        2140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$json.github_status}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "same"
+            },
+            {
+              "value2": "different",
+              "output": 1
+            },
+            {
+              "value2": "new",
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 2
+      },
+      "id": "7c72ebde-2466-4233-a628-fab81748ac51",
+      "name": "Check Status1",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        260,
+        2120
+      ],
+      "typeVersion": 1,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $json.repo_owner }}",
+          "mode": ""
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $json.repo_name }}",
+          "mode": ""
+        },
+        "filePath": "={{ $json.repo_path }}/{{$json.table_name}}.data.json",
+        "fileContent": "={{$json.data}}",
+        "commitMessage": "={{$json.table_name}}.schema ({{$json.github_status}})"
+      },
+      "id": "ee4825af-4c3a-44b2-af5f-4b334c25ae79",
+      "name": "Edit existing file1",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        680,
+        2120
+      ],
+      "typeVersion": 1,
+      "webhookId": "4389a66a-e2b3-438c-808e-39ce35b4bc73",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $json.repo_owner }}",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $json.repo_name }}",
+          "mode": "name"
+        },
+        "filePath": "={{ $json.repo_path }}/{{$json.table_name}}.data.json",
+        "fileContent": "={{$json.data.toJsonString()}}",
+        "commitMessage": "={{$json.table_name}}.data ({{$json.github_status}})"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        700,
+        2320
+      ],
+      "id": "ea42869c-0095-4f3c-b788-aaada91bf755",
+      "name": "Create new file1",
+      "webhookId": "d0a6edb1-90a9-4206-bd31-a82d56fc5df6",
+      "credentials": {
+        "githubApi": {
+          "id": "V3AmMUZRRtrRloDu",
+          "name": "GitHub rodcordeiro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Backup data workflow",
+        "height": 812,
+        "width": 2571,
+        "color": 6
+      },
+      "id": "9b0ffe04-c9ff-4325-aa61-c4e80e3352f6",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1620,
+        1800
+      ],
+      "typeVersion": 1
     }
   ],
   "pinData": {},
@@ -804,10 +1877,13 @@
     },
     "node:Outras ações diárias": {
       "recurrenceRules": []
+    },
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
     }
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-04-16T14:06:59.000Z",
-  "versionId": "bd86ca81-d9b2-48c7-80f8-bff0fbff2eb4"
+  "updatedAt": "2025-04-16T20:02:25.000Z",
+  "versionId": "b9899340-4648-470b-a40d-b67f3fe42182"
 }

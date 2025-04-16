@@ -202,22 +202,6 @@
         ]
       ]
     },
-    "Pontos para atualizar": {
-      "main": [
-        [
-          {
-            "node": "MigrateToYoutube",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "WithoutAudio",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "If1": {
       "main": [
         [
@@ -234,6 +218,27 @@
         [
           {
             "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Outras ações diárias": {
+      "main": [
+        [
+          {
+            "node": "MigrateToYoutube",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WithoutAudio",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Purge Logs",
             "type": "main",
             "index": 0
           }
@@ -643,25 +648,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 6
-            }
-          ]
-        }
-      },
-      "id": "7993be9b-2911-4bf5-a63c-1ce33e204609",
-      "name": "Pontos para atualizar",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        -1760,
-        20
-      ]
-    },
-    {
-      "parameters": {
         "operation": "executeQuery",
         "query": "select\n  *\nfrom\n  tb_pontos a\nwhere\n  a.audio_url is not null\n  and a.audio_url not like '%youtu.be%'",
         "options": {}
@@ -760,6 +746,46 @@
           "name": "Raízes"
         }
       }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "id": "7993be9b-2911-4bf5-a63c-1ce33e204609",
+      "name": "Outras ações diárias",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1760,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "DELETE FROM tb_pontos_log\nWHERE changed_at < NOW() - INTERVAL 4 WEEK;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1540,
+        440
+      ],
+      "id": "679e800d-d1ac-4f1f-b832-22a40717718a",
+      "name": "Purge Logs",
+      "credentials": {
+        "mySql": {
+          "id": "sLdn6o1M8m3Wkgol",
+          "name": "Raízes"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -775,10 +801,13 @@
     },
     "node:Pontos para atualizar": {
       "recurrenceRules": []
+    },
+    "node:Outras ações diárias": {
+      "recurrenceRules": []
     }
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-04-14T14:25:35.000Z",
-  "versionId": "5c14b796-68a0-42c2-a0e4-111e96dad75a"
+  "updatedAt": "2025-04-16T14:06:59.000Z",
+  "versionId": "bd86ca81-d9b2-48c7-80f8-bff0fbff2eb4"
 }

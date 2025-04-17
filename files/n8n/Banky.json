@@ -75,7 +75,9 @@
   },
   "createdAt": "2024-12-11T14:14:22.860Z",
   "id": "hkOsoO3ZnZvJXSI5",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "Banky",
   "nodes": [
     {
@@ -121,6 +123,7 @@
     },
     {
       "parameters": {
+        "queue": "banky",
         "options": {}
       },
       "id": "545f0d23-da32-4e18-a7ca-6a0d5cfd7783",
@@ -131,7 +134,12 @@
         -20,
         560
       ],
-      "disabled": true
+      "credentials": {
+        "rabbitmq": {
+          "id": "YKPa7yJaTY8ppSj1",
+          "name": "RabbitMQ N8N Account"
+        }
+      }
     },
     {
       "parameters": {
@@ -282,7 +290,7 @@
     }
   },
   "tags": [],
-  "triggerCount": 2,
-  "updatedAt": "2025-04-10T19:27:02.000Z",
-  "versionId": "3652e58f-d04d-4eee-98c9-f4fb74a150ef"
+  "triggerCount": 3,
+  "updatedAt": "2025-04-16T20:06:25.000Z",
+  "versionId": "07b3a173-3666-4d1b-8e30-af8548bdd44e"
 }

@@ -11,11 +11,24 @@
           }
         ]
       ]
+    },
+    "Discord": {
+      "main": [
+        [
+          {
+            "node": "RabbitMQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-01-30T16:32:06.533Z",
   "id": "PwtYSIgOizRHzAMf",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "Rabbit notifications",
   "nodes": [
     {
@@ -32,7 +45,7 @@
               }
             ]
           },
-          "acknowledge": "executionFinishesSuccessfully",
+          "acknowledge": "laterMessageNode",
           "jsonParseBody": true
         }
       },
@@ -60,15 +73,36 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        160,
+        80,
         0
       ],
       "id": "d12397aa-f3a7-4d8b-b84b-0e3acab11eab",
       "name": "Discord",
+      "webhookId": "0dd1137c-24c4-47cc-bc35-c4ccb3fb6943",
+      "retryOnFail": false,
       "credentials": {
         "discordWebhookApi": {
           "id": "RiA5jqb4WiIcmb6i",
           "name": "Dath Testes"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteMessage"
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        300,
+        0
+      ],
+      "id": "e5f288ec-12b3-45b1-95b3-ac1ecda85f36",
+      "name": "RabbitMQ",
+      "credentials": {
+        "rabbitmq": {
+          "id": "YKPa7yJaTY8ppSj1",
+          "name": "RabbitMQ N8N Account"
         }
       }
     }
@@ -83,6 +117,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-09T20:42:47.000Z",
-  "versionId": "1a6f5b4d-944a-42f0-bd12-2aa57eb41549"
+  "updatedAt": "2025-04-24T19:39:33.000Z",
+  "versionId": "e8e51d9e-ee8e-4902-88cf-a457cc48ee00"
 }

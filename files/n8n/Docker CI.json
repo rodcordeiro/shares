@@ -114,9 +114,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        340,
-        60
+        280,
+        160
       ],
+      "webhookId": "78efc304-3fb7-4dd5-8fce-bb2044769c44",
       "credentials": {
         "discordWebhookApi": {
           "id": "RiA5jqb4WiIcmb6i",
@@ -163,21 +164,21 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1040,
-        220
+        -820,
+        260
       ],
       "id": "42033f65-c602-4f02-952a-820ff0a77680",
       "name": "When clicking ‘Test workflow’"
     },
     {
       "parameters": {
-        "jsCode": "return $input\n  .first()\n  .json\n  .stdout\n  .split('\\n')\n  .map(i=>{\n    const[container,imageWithTag]=i.split('|');\n    const [image,tag] = imageWithTag.split(\":\");\n    \n    if (image === $('formatter').first().json.repository.repo_name)\n      return {container,image}\n    \n  }).filter(Boolean)"
+        "jsCode": "return $input\n  .first()\n  .json\n  .stdout\n  .split('\\n')\n  .map(i=>{\n    const[container,imageWithTag]=i.split('|');\n    const [image,_tag] = imageWithTag.split(\":\");\n    \n    if (image === $('formatter').first().json.repository.repo_name)\n      return {container,image}\n    \n   })\n  .filter(Boolean)"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        0,
-        60
+        -160,
+        160
       ],
       "id": "3a80fd7d-ede1-40cb-a446-3bc0c898ab39",
       "name": "Code"
@@ -193,8 +194,8 @@
       "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
       "position": [
-        180,
-        60
+        60,
+        160
       ],
       "credentials": {
         "sshPrivateKey": {
@@ -214,8 +215,8 @@
       "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
       "position": [
-        -420,
-        60
+        -380,
+        160
       ],
       "credentials": {
         "sshPrivateKey": {
@@ -233,8 +234,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -820,
-        220
+        -600,
+        260
       ],
       "id": "1709dacb-8afd-477b-b16a-486b5f0c5050",
       "name": "template"
@@ -288,7 +289,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -640,
+        -600,
         60
       ],
       "id": "1d95c1b3-52e3-4534-9180-a0ed239e636c",
@@ -305,6 +306,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-13T17:40:58.000Z",
-  "versionId": "e779510f-234f-4afa-a8f3-07ee7b8be25c"
+  "updatedAt": "2025-04-24T19:40:05.000Z",
+  "versionId": "e425a81a-1567-442d-bf4b-6f2579ce2115"
 }

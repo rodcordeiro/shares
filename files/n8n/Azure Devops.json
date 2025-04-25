@@ -39,7 +39,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        300,
+        120,
         0
       ]
     },
@@ -55,8 +55,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        0,
-        0
+        -100,
+        200
       ],
       "webhookId": "c92f5345-543c-46ff-9a79-b3419f3888f1",
       "credentials": {
@@ -79,8 +79,8 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        300,
-        160
+        120,
+        200
       ],
       "webhookId": "85372cd1-996e-4fba-b600-b8b22db1e48f",
       "credentials": {
@@ -104,7 +104,7 @@
       "typeVersion": 2,
       "position": [
         -100,
-        280
+        660
       ],
       "id": "1a91a532-9665-4388-b0a0-750dd5496e3e",
       "name": "Microsoft Teams",
@@ -124,8 +124,8 @@
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1.1,
       "position": [
-        300,
-        360
+        120,
+        400
       ],
       "id": "ec7f956e-68a5-435e-8227-e42e233a9635",
       "name": "RabbitMQ",
@@ -147,6 +147,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-27T13:15:09.000Z",
-  "versionId": "109151a5-27c7-4524-b46f-9cd578e5c28f"
+  "updatedAt": "2025-04-24T19:39:46.000Z",
+  "versionId": "4bd99d9f-eef8-4f82-bf95-3ecd2c6d4b3f"
 }

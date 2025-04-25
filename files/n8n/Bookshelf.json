@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "On form submission": {
       "main": [
@@ -16,85 +16,40 @@
       "main": [
         [
           {
-            "node": "Remove Duplicates",
+            "node": "Code1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Remove Duplicates": {
+    "Code1": {
       "main": [
         [
           {
-            "node": "Edit Fields",
+            "node": "Remove Duplicates1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Edit Fields": {
+    "Remove Duplicates1": {
       "main": [
         [
           {
-            "node": "Code",
+            "node": "Update the book",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "MySQL": {
+    "Update the book": {
       "main": [
         [
           {
-            "node": "Merge",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If": {
-      "main": [
-        [
-          {
-            "node": "MySQL2",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "MySQL1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code": {
-      "main": [
-        [
-          {
-            "node": "MySQL",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Merge": {
-      "main": [
-        [
-          {
-            "node": "If",
+            "node": "RabbitMQ",
             "type": "main",
             "index": 0
           }
@@ -104,7 +59,9 @@
   },
   "createdAt": "2024-12-19T15:14:31.340Z",
   "id": "ZjpdyVsnBkc3Ebxi",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "Bookshelf",
   "nodes": [
     {
@@ -115,18 +72,20 @@
             {
               "fieldLabel": "Books",
               "fieldType": "file",
-              "acceptFileTypes": ".csv",
+              "acceptFileTypes": ".xlsx,.xlsm",
               "requiredField": true
             }
           ]
         },
-        "options": {}
+        "options": {
+          "path": "bookshelf"
+        }
       },
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.2,
       "position": [
-        -380,
-        40
+        -1220,
+        -300
       ],
       "id": "b9dfd0c8-1822-49e5-9504-b8ee8e3b2a36",
       "name": "On form submission",
@@ -134,205 +93,102 @@
     },
     {
       "parameters": {
+        "operation": "xls",
         "binaryPropertyName": "Books",
-        "options": {
-          "readAsString": true
-        }
+        "options": {}
       },
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
       "position": [
-        -180,
-        40
+        -1000,
+        -300
       ],
       "id": "406f5454-c84d-47a2-b52c-e44005f40862",
       "name": "Extract from File"
     },
     {
       "parameters": {
+        "jsCode": "\nfunction replaceSpaces(input) {\n  let updatedRow = {};\n  for (const key in input) {\n    if (key !== \"Read\" && key !== \"Flashcards\")\n      updatedRow[key.replace(/\\ /gi, \"_\").toLowerCase()] = input[key];\n  }\n  return updatedRow;\n}\nfor (const item of $input.all()) {\n  item.json = replaceSpaces(item.json);\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -780,
+        -300
+      ],
+      "id": "37d80224-e6fe-4586-b501-d2b1a1ef6ca4",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
         "compare": "selectedFields",
-        "fieldsToCompare": "Title",
+        "fieldsToCompare": "book_id",
         "options": {}
       },
       "type": "n8n-nodes-base.removeDuplicates",
       "typeVersion": 2,
       "position": [
-        40,
-        40
+        -560,
+        -300
       ],
-      "id": "63a32159-5a97-4ebd-93d3-b7bbcad965c4",
-      "name": "Remove Duplicates"
+      "id": "b38d8fee-f7e1-4a0e-842e-cc1eb8338a16",
+      "name": "Remove Duplicates1"
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": []
-        },
-        "includeOtherFields": true,
-        "include": "except",
-        "excludeFields": "Read,Flashcards",
+        "mode": "exchange",
+        "exchange": "Notifications",
+        "exchangeType": "direct",
+        "routingKey": "notification",
+        "sendInputData": false,
+        "message": "=\n{\n    \"type\": \"action\",\n    \"title\": \"Bookshelf updated\",\n    \"description\": \"Acabamos a atualização do bookshelf, com um total de {{ $('Remove Duplicates1').all().length }} livros.\",\n    \"actions\": [\n        {\n            \"name\": \"Greeting\",\n            \"action\": \"Show-Notification -ToastTitle 'Bookshelf' -ToastText 'Acabamos a atualização do bookshelf, com um total de {{ $('Remove Duplicates1').all().length }} livros' -IconUri 'https://rodcordeiro.github.io/shares/img/Closed_Book_Icon.svg' \"\n        }\n    ]\n}",
         "options": {}
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
       "position": [
-        300,
-        40
+        -120,
+        -300
       ],
-      "id": "0456f1b0-1167-4831-9e30-c87ad6c91afa",
-      "name": "Edit Fields"
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT\n  *\nfrom\n  Books a\nwhere\n  a.Book_Id = {{ $json['Book_Id'] }}",
-        "options": {
-          "detailedOutput": true
-        }
-      },
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        760,
-        -40
-      ],
-      "id": "3e8dcc7b-fe65-4090-8d9d-649f2d14a381",
-      "name": "MySQL",
-      "alwaysOutputData": true,
+      "id": "530ef695-ef06-48ab-8812-726024a49a99",
+      "name": "RabbitMQ",
+      "executeOnce": true,
       "credentials": {
-        "mySql": {
-          "id": "dLsnY9xeanRdLjzD",
-          "name": "Rod"
+        "rabbitmq": {
+          "id": "YKPa7yJaTY8ppSj1",
+          "name": "RabbitMQ N8N Account"
         }
       }
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "d554618d-0960-43a5-8ba4-50a2f1493fd3",
-              "leftValue": "={{ $json.data }}",
-              "rightValue": "",
-              "operator": {
-                "type": "array",
-                "operation": "exists",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1140,
-        120
-      ],
-      "id": "c43e2760-e1e9-4485-bc3d-f870e4e72bd5",
-      "name": "If"
-    },
-    {
-      "parameters": {
+        "operation": "upsert",
         "table": {
           "__rl": true,
           "value": "Books",
           "mode": "list",
           "cachedResultName": "Books"
         },
+        "columnToMatchOn": "book_id",
         "options": {
+          "queryBatching": "independently",
           "replaceEmptyStrings": true
         }
       },
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1320,
-        280
+        -340,
+        -300
       ],
-      "id": "32e79f0a-3d43-4202-955b-8925d6dc0749",
-      "name": "MySQL1",
+      "id": "d8121a36-b28d-4c00-a467-fad4cea1bfe9",
+      "name": "Update the book",
       "credentials": {
         "mySql": {
           "id": "dLsnY9xeanRdLjzD",
           "name": "Rod"
         }
       }
-    },
-    {
-      "parameters": {
-        "jsCode": "function replaceSpaces(input ) {\n  const updatedRow  = {};\n  for (const key in input) {\n    if (key !== \"Read\" && key !== \"Flashcards\")\n      updatedRow[key.replace(/\\ /gi, \"_\")] = input[key];\n  }\n  return updatedRow;\n}\n\nfor (const item of $input.all()) {\n  item.json = replaceSpaces(item.json);\n}\n\nreturn $input.all();"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        520,
-        40
-      ],
-      "id": "d768769f-add6-4144-b8a2-3d363f9ce97a",
-      "name": "Code"
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "Books",
-          "mode": "list",
-          "cachedResultName": "Books"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "Book_Id",
-        "valueToMatchOn": "=$json.Book_Id",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "Tags",
-              "value": "$json.Tags"
-            }
-          ]
-        },
-        "options": {
-          "replaceEmptyStrings": true
-        }
-      },
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        1320,
-        40
-      ],
-      "id": "633f9e59-e727-4af5-8dbd-0574a6ce06e4",
-      "name": "MySQL2",
-      "credentials": {
-        "mySql": {
-          "id": "dLsnY9xeanRdLjzD",
-          "name": "Rod"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "combineBy": "combineAll",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3,
-      "position": [
-        940,
-        120
-      ],
-      "id": "4d11042e-ae33-4113-a3bc-dfe451411bb2",
-      "name": "Merge"
     }
   ],
   "pinData": {},
@@ -344,7 +200,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 2,
-  "updatedAt": "2025-01-13T17:41:49.000Z",
-  "versionId": "43ea4877-a9b7-4d9d-8e67-a68896e6c4e8"
+  "triggerCount": 1,
+  "updatedAt": "2025-04-24T19:00:58.000Z",
+  "versionId": "f77d7b36-1a78-407d-9b55-d6f73871bdc2"
 }

@@ -1792,7 +1792,7 @@
           "mode": ""
         },
         "filePath": "={{ $json.repo_path }}/{{$json.table_name}}.data.json",
-        "fileContent": "={{$json.data}}",
+        "fileContent": "={{$json.data.toJsonString()}}",
         "commitMessage": "={{$json.table_name}}.schema ({{$json.github_status}})"
       },
       "id": "ee4825af-4c3a-44b2-af5f-4b334c25ae79",
@@ -1884,6 +1884,6 @@
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-04-16T20:02:25.000Z",
-  "versionId": "b9899340-4648-470b-a40d-b67f3fe42182"
+  "updatedAt": "2025-04-24T17:37:14.000Z",
+  "versionId": "68e48ff7-5e1f-458e-9365-62dd37d9fbe8"
 }

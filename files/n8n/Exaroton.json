@@ -1,0 +1,295 @@
+{
+  "active": true,
+  "connections": {
+    "Daily trigger": {
+      "main": [
+        [
+          {
+            "node": "Reset server setup",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get billing pool",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get billing pool": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Urgent notification",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Warning notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-28T13:18:02.157Z",
+  "id": "O4oPouOdVwbfnitx",
+  "meta": null,
+  "name": "Exaroton",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.exaroton.com/v1/servers/G4cLkUGCGJBPFIWD/options/ram",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer T7OTlh0pX6XHMY7mligBdZMnci350Q0rHO4IeUanGEZwKdXC5UW0UtiXXa9aP9medyP1H1I8Eq71bOSveKhraOTdj1sYURB4TeAm"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "ram",
+              "value": "2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -300,
+        -80
+      ],
+      "id": "fcd03804-834c-4dd4-a8f2-f19684dc2582",
+      "name": "Reset server setup"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -900,
+        -80
+      ],
+      "id": "5f460128-0ba9-461f-a2af-95ff77acb0d8",
+      "name": "Daily trigger"
+    },
+    {
+      "parameters": {
+        "content": "# Reset server setup\nReturns the server configuration setup to default everyday, granting credits saving.\n## Defaults:\n- RAM: 2Gb",
+        "height": 340,
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -520,
+        -260
+      ],
+      "typeVersion": 1,
+      "id": "869b0f8c-1d7b-49e4-bc12-8853383e09e2",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "url": "https://api.exaroton.com/v1/billing/pools/IewnWb5JGTLsXjb3",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer T7OTlh0pX6XHMY7mligBdZMnci350Q0rHO4IeUanGEZwKdXC5UW0UtiXXa9aP9medyP1H1I8Eq71bOSveKhraOTdj1sYURB4TeAm"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -480,
+        300
+      ],
+      "id": "c5be6cc6-b6f1-4b37-942e-31537c6b4dcb",
+      "name": "Get billing pool"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.data.credits }}",
+                    "rightValue": 50,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lt"
+                    },
+                    "id": "6f975ef0-df5d-4639-9638-2092f0f9f91d"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "urgent"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "5b201320-66f7-47a4-a5f7-1bd3ff4ae102",
+                    "leftValue": "={{ $json.data.credits }}",
+                    "rightValue": 100,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "warning"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -260,
+        300
+      ],
+      "id": "09c7fe60-c293-462c-a486-18ce9f49bee4",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "mode": "exchange",
+        "exchange": "Notifications",
+        "exchangeType": "direct",
+        "routingKey": "notification",
+        "sendInputData": false,
+        "message": "=\n{\n    \"type\": \"action\",\n    \"title\": \"Exaroton\",\n    \"description\": \"Os créditos estão acabando! Os créditos do servidor Warzone estão em R$ {{ $('Get billing pool').item.json.data.credits }}.\",\n    \"actions\": [\n        {\n            \"name\": \"Greeting\",\n            \"action\": \"Show-Notification -ToastTitle 'Exaroton' -ToastText 'Os créditos estão acabando! Os créditos do servidor Warzone estão em R$ {{ $('Get billing pool').item.json.data.credits }}.' -IconUri 'https://rodcordeiro.github.io/shares/img/warzone-icon.png' \"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        20,
+        280
+      ],
+      "id": "82f06169-09c2-4537-beb8-611715cdfbd8",
+      "name": "Urgent notification",
+      "executeOnce": true,
+      "credentials": {
+        "rabbitmq": {
+          "id": "YKPa7yJaTY8ppSj1",
+          "name": "RabbitMQ N8N Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "exchange",
+        "exchange": "Notifications",
+        "exchangeType": "direct",
+        "routingKey": "notification",
+        "sendInputData": false,
+        "message": "=\n{\n    \"type\": \"action\",\n    \"title\": \"Exaroton\",\n    \"description\": \"Os créditos estão baixos! Os créditos do servidor Warzone estão em R$ {{ $('Get billing pool').item.json.data.credits }}. É melhor ficar atento!\",\n    \"actions\": [\n        {\n            \"name\": \"Greeting\",\n            \"action\": \"Show-Notification -ToastTitle 'Exaroton' -ToastText 'Os créditos estão baixos! Os créditos do servidor Warzone estão em R$ {{ $('Get billing pool').item.json.data.credits }}. É melhor ficar atento!' -IconUri 'https://rodcordeiro.github.io/shares/img/warzone-icon.png' \"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        40,
+        500
+      ],
+      "id": "66cabe0e-e946-4c79-82db-37a9a1d52ddc",
+      "name": "Warning notification",
+      "executeOnce": true,
+      "credentials": {
+        "rabbitmq": {
+          "id": "YKPa7yJaTY8ppSj1",
+          "name": "RabbitMQ N8N Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Validate Credit status\n",
+        "height": 500,
+        "width": 820
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -560,
+        180
+      ],
+      "typeVersion": 1,
+      "id": "cf3d6d27-3a87-4586-85e9-43ae841cf037",
+      "name": "Sticky Note1"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "shares",
+  "repo_owner": "rodcordeiro",
+  "repo_path": "files/n8n",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Daily trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-28T14:12:24.000Z",
+  "versionId": "4b6dd817-18a4-4309-a681-0eba8ac51b11"
+}

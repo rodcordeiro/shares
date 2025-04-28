@@ -13,6 +13,11 @@
             "node": "Get billing pool",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Fetch Discord Events",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -45,11 +50,51 @@
           }
         ]
       ]
+    },
+    "Update setup for event": {
+      "main": [
+        []
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Update setup for event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Discord Events": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-28T13:18:02.157Z",
   "id": "O4oPouOdVwbfnitx",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "Exaroton",
   "nodes": [
     {
@@ -274,6 +319,115 @@
       "typeVersion": 1,
       "id": "cf3d6d27-3a87-4586-85e9-43ae841cf037",
       "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.exaroton.com/v1/servers/G4cLkUGCGJBPFIWD/options/ram",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer T7OTlh0pX6XHMY7mligBdZMnci350Q0rHO4IeUanGEZwKdXC5UW0UtiXXa9aP9medyP1H1I8Eq71bOSveKhraOTdj1sYURB4TeAm"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "ram",
+              "value": "4"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        60,
+        960
+      ],
+      "id": "e1f805f3-14f1-4c8f-b96c-8458a16650b7",
+      "name": "Update setup for event"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.today }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    },
+                    "id": "5ca1babe-5e8b-401c-8ce5-356b002a3632"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -140,
+        960
+      ],
+      "id": "9e24dedb-bd12-4bc1-a177-4845c3f4b74f",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": " $input.item.json.today = false;\n\nconst today = new Date();\nconst start_date = new Date($input.item.json.scheduled_start_time);\nconst offsetHours = -3;\n$input.item.json.scheduled_start_time = new Date(start_date.getTime() + offsetHours * 60 * 60 * 1000).toString();\n\nif(`${today.getFullYear()}-${today.getMonth()}-${today.getDate()}` == `${start_date.getFullYear()}-${start_date.getMonth()}-${start_date.getDate()}`)\n{\n  $input.item.json.today = true;\n}\n\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -320,
+        960
+      ],
+      "id": "95af7a14-4f9b-4735-ada3-acd4beecc03f",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "url": "https://discord.com/api/v10/guilds/1365322585918672956/scheduled-events",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "discordBotApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -500,
+        960
+      ],
+      "id": "3ff5e165-7d6c-438a-9292-6cccc007f408",
+      "name": "Fetch Discord Events",
+      "credentials": {
+        "discordBotApi": {
+          "id": "omniN0wQnQm4hFce",
+          "name": "DMBot Token"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -286,10 +440,13 @@
   "staticData": {
     "node:Daily trigger": {
       "recurrenceRules": []
+    },
+    "node:Daily trigger1": {
+      "recurrenceRules": []
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-28T14:12:24.000Z",
-  "versionId": "4b6dd817-18a4-4309-a681-0eba8ac51b11"
+  "updatedAt": "2025-04-28T17:17:00.000Z",
+  "versionId": "7c8f2d96-f4cc-49ff-ab32-0b45346570fe"
 }

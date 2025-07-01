@@ -25,7 +25,7 @@ jobs:
       #     DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       #   with:
       #     args: Readme.md
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         name: Push updates
         with:
           commit_message: Updating Readme

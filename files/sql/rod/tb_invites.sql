@@ -1,9 +1,1 @@
-CREATE TABLE `tb_invites` (
-  `id` varchar(40) NOT NULL DEFAULT uuid(),
-  `name` varchar(255) NOT NULL,
-  `customized_text` text DEFAULT NULL,
-  `confirmed` bit(1) DEFAULT NULL,
-  `confirmed_at` datetime DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"tb_invites","Create Table":"CREATE TABLE `tb_invites` (\n  `id` varchar(40) NOT NULL DEFAULT uuid(),\n  `name` varchar(255) NOT NULL,\n  `customized_text` text DEFAULT NULL,\n  `confirmed` bit(1) DEFAULT NULL,\n  `confirmed_at` datetime DEFAULT NULL,\n  `created_at` datetime NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci","json":{"name":"tb_invites.sql","path":"files/sql/rod/tb_invites.sql","sha":"0900b3c14da0a11fe2c77a05b21c591101c8a9e5","size":339,"url":"https://api.github.com/repos/rodcordeiro/shares/contents/files/sql/rod/tb_invites.sql?ref=master","html_url":"https://github.com/rodcordeiro/shares/blob/master/files/sql/rod/tb_invites.sql","git_url":"https://api.github.com/repos/rodcordeiro/shares/git/blobs/0900b3c14da0a11fe2c77a05b21c591101c8a9e5","download_url":"https://raw.githubusercontent.com/rodcordeiro/shares/master/files/sql/rod/tb_invites.sql","type":"file","content":"Q1JFQVRFIFRBQkxFIGB0Yl9pbnZpdGVzYCAoCiAgYGlkYCB2YXJjaGFyKDQw\nKSBOT1QgTlVMTCBERUZBVUxUIHV1aWQoKSwKICBgbmFtZWAgdmFyY2hhcigy\nNTUpIE5PVCBOVUxMLAogIGBjdXN0b21pemVkX3RleHRgIHRleHQgREVGQVVM\nVCBOVUxMLAogIGBjb25maXJtZWRgIGJpdCgxKSBERUZBVUxUIE5VTEwsCiAg\nYGNvbmZpcm1lZF9hdGAgZGF0ZXRpbWUgREVGQVVMVCBOVUxMLAogIGBjcmVh\ndGVkX2F0YCBkYXRldGltZSBOT1QgTlVMTCwKICBQUklNQVJZIEtFWSAoYGlk\nYCkKKSBFTkdJTkU9SW5ub0RCIERFRkFVTFQgQ0hBUlNFVD11dGY4bWI0IENP\nTExBVEU9dXRmOG1iNF91bmljb2RlX2Np\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/rodcordeiro/shares/contents/files/sql/rod/tb_invites.sql?ref=master","git":"https://api.github.com/repos/rodcordeiro/shares/git/blobs/0900b3c14da0a11fe2c77a05b21c591101c8a9e5","html":"https://github.com/rodcordeiro/shares/blob/master/files/sql/rod/tb_invites.sql"}},"pairedItem":{"item":31},"index":31}

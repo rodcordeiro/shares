@@ -4,6 +4,8 @@ This folder of the repo keeps all the PowerShell files shared between projects
 ---------------------------
 [CheckFreeDisk.ps1.html](CheckFreeDisk.ps1.html)<br>
 [CreateCert.ps1.html](CreateCert.ps1.html)<br>
+[Export-RabbitMQQueueMessages](Export-RabbitMQQueueMessages)<br>
+[Export-RabbitMQQueueMessages.html](Export-RabbitMQQueueMessages.html)<br>
 [Get-ConsoleColors.ps1.html](Get-ConsoleColors.ps1.html)<br>
 [Get-PCInfo.ps1.html](Get-PCInfo.ps1.html)<br>
 [GetExternalIp.ps1.html](GetExternalIp.ps1.html)<br>

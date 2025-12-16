@@ -1,5 +1,1 @@
-CREATE TABLE `religious_lines` (
-  `id` char(36) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"religious_lines","Create Table":"CREATE TABLE `religious_lines` (\n  `id` char(36) NOT NULL,\n  `name` varchar(100) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"}

@@ -1,9 +1,1 @@
-CREATE TABLE `plant_images` (
-  `id` char(36) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `plant_id` char(36) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`),
-  KEY `plant_id` (`plant_id`),
-  CONSTRAINT `plant_images_ibfk_1` FOREIGN KEY (`plant_id`) REFERENCES `plants` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+{"Table":"plant_images","Create Table":"CREATE TABLE `plant_images` (\n  `id` char(36) NOT NULL,\n  `url` varchar(255) NOT NULL,\n  `plant_id` char(36) NOT NULL,\n  `created_at` datetime DEFAULT current_timestamp(),\n  PRIMARY KEY (`id`),\n  KEY `plant_id` (`plant_id`),\n  CONSTRAINT `plant_images_ibfk_1` FOREIGN KEY (`plant_id`) REFERENCES `plants` (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"}

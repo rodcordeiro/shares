@@ -1,5 +1,1 @@
-CREATE TABLE `__EFMigrationsHistory` (
-  `MigrationId` varchar(150) NOT NULL,
-  `ProductVersion` varchar(32) NOT NULL,
-  PRIMARY KEY (`MigrationId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci
+{"Table":"__EFMigrationsHistory","Create Table":"CREATE TABLE `__EFMigrationsHistory` (\n  `MigrationId` varchar(150) NOT NULL,\n  `ProductVersion` varchar(32) NOT NULL,\n  PRIMARY KEY (`MigrationId`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"}

@@ -1,0 +1,21 @@
+CREATE TABLE `bk_tb_feedback_auto_review_effective_alias` (
+  `id` varchar(36) NOT NULL,
+  `owner` varchar(64) NOT NULL,
+  `field` varchar(32) NOT NULL,
+  `pattern` varchar(128) NOT NULL,
+  `canonicalValue` varchar(128) NOT NULL,
+  `runtimeStatus` enum('active','inactive','paused') NOT NULL DEFAULT 'active',
+  `candidateVersion` varchar(64) NOT NULL,
+  `previousVersion` varchar(64) DEFAULT NULL,
+  `activatedBy` varchar(64) NOT NULL,
+  `activatedAt` datetime NOT NULL,
+  `deactivatedBy` varchar(64) DEFAULT NULL,
+  `deactivatedAt` datetime DEFAULT NULL,
+  `deactivationKind` varchar(32) DEFAULT NULL,
+  `notes` text DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `IDX_effective_alias_owner_field_pattern_canonical` (`owner`,`field`,`pattern`,`canonicalValue`),
+  KEY `IDX_effective_alias_owner_candidate` (`owner`,`candidateVersion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci

@@ -1,0 +1,21 @@
+CREATE TABLE `tb_audit_logs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `actor_user_id` int(11) DEFAULT NULL,
+  `actor_username` varchar(255) NOT NULL,
+  `action` varchar(50) NOT NULL,
+  `resource_type` varchar(100) NOT NULL,
+  `resource_id` varchar(255) DEFAULT NULL,
+  `before_json` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`before_json`)),
+  `after_json` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`after_json`)),
+  `origin` varchar(100) NOT NULL,
+  `http_method` varchar(10) NOT NULL,
+  `http_path` varchar(2048) NOT NULL,
+  `ip` varchar(45) DEFAULT NULL,
+  `user_agent` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `IDX_audit_logs_created_at` (`created_at`),
+  KEY `IDX_audit_logs_actor_created_at` (`actor_user_id`,`created_at`),
+  KEY `IDX_audit_logs_resource` (`resource_type`,`resource_id`),
+  CONSTRAINT `FK_audit_logs_actor_user` FOREIGN KEY (`actor_user_id`) REFERENCES `tb_user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci

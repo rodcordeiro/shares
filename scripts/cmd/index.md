@@ -23,7 +23,6 @@ This folder of the repo keeps all the batch scripts
 [template.bat.html](template.bat.html)<br>
 [teste.bat.html](teste.bat.html)<br>
 [testeII.bat.html](testeII.bat.html)<br>
-[virus.bat.html](virus.bat.html)<br>
 
 ---------------------------
 
